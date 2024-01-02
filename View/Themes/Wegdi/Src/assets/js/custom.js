@@ -252,7 +252,37 @@ $(document).ready(function () {
 
 
 
+$(document).ready(function() {
+   $("#xmlstart").click(function() {
+     // Tedarikçi Adı'nı büyük harfe çevirme
+     var tedarikciAdi = $("#tedarikciadi").val();
+     $("#tedarikciadi").val(tedarikciAdi.toUpperCase());
 
+     // Tedarikçi Linki'nin URL olup olmadığını kontrol etme
+     var tedarikciLink = $("#tedarkcilink").val();
+     if (!isValidUrl(tedarikciLink)) {
+       alert("Lütfen geçerli bir URL giriniz.");
+       return;
+     }
+
+     // Baştan ve sondan boşlukları silme
+     $("#tedarkcilink").val(tedarikciLink.trim());
+
+     // Onaylandı simgesini gösterme
+     $("#xmlstart").html("Onaylandı <i class='fa fa-check'></i>");
+   });
+
+   // URL geçerliliğini kontrol etme fonksiyonu
+   function isValidUrl(url) {
+     var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+       '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+       '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+       '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+       '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+       '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+     return pattern.test(url);
+   }
+ });
 
 
 
