@@ -25,6 +25,7 @@ $ModalAdd = array(
     'Module' => array('Add', 'Edit', 'Query', 'Remove','List'),
     'Supplier' => array('List','Add'),
     'Product' => array('List','Add'),
+    'Categories' => array('List','Add'),
 
 
     'GeoIP' => array('Edit'),
@@ -45,6 +46,8 @@ $ThemesConf = array(
     'Module' => array('Add', 'Edit','List'),
     'Supplier' => array('List','Add'),
     'Product' => array('List','Add'),
+    'Categories' => array('List','Add'),
+
 
     'GeoIP' => array('Edit'),
     'Home' => ''
