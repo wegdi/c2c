@@ -279,7 +279,7 @@ $(document).ready(function() {
          $("#xmlstart").html("Geçerli bir URL değil");
        }
      } else {
-       $("#xmlstart").html("2 Alanda Boş Olamaz");
+       $("#xmlstart").html("İki Alanda Boş Olamaz");
      }
 
      // Baştan ve sondan boşlukları silme
