@@ -274,7 +274,7 @@ $(document).ready(function() {
      if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '') {
        // Geçerli bir URL ise "Onaylandı" simgesini gösterme
        if (isValidUrl(tedarikciLink)) {
-         $("#xmlstart").html("Onaylandı <i class='fa fa-check'></i>");
+         $("#xmlstart").html("Kaydet <i class='fa fa-check'></i>");
        } else {
          $("#xmlstart").html("Geçerli bir URL değil");
        }
