@@ -261,9 +261,10 @@ $(document).ready(function() {
 
 
 
+
+
 $(document).ready(function() {
-   // Her iki input için keyup olayı ekleme
-   $("#tedarikciadi, #tedarkcilink").on('keyup', function() {
+   $("#xmlstart").on('click', function() {
      // Tedarikçi Adı'nı büyük harfe çevirme
      var tedarikciAdi = $("#tedarikciadi").val();
      $("#tedarikciadi").val(tedarikciAdi.toUpperCase());
@@ -273,9 +274,27 @@ $(document).ready(function() {
 
      // Her iki input da dolu mu kontrol etme
      if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '') {
-       // Geçerli bir URL ise "Onaylandı" simgesini gösterme
+       // Geçerli bir URL ise AJAX ile verileri post etme
        if (isValidUrl(tedarikciLink)) {
-         $("#xmlstart").html("Onaylandı <i class='fa fa-check'></i>");
+         var formData = {
+           tedarikciAdi: tedarikciAdi,
+           tedarikciLink: tedarikciLink
+         };
+
+         $.ajax({
+           type: "POST",
+           url: "/Modal/Supplier/Add/Add.php",
+           data: JSON.stringify(formData),
+           contentType: "application/json",
+           success: function(response) {
+             console.log(response);
+             // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
+           },
+           error: function(error) {
+             console.error(error);
+             // Hata durumunda gerekli işlemleri yapabilirsiniz.
+           }
+         });
        } else {
          $("#xmlstart").html("Geçerli bir URL değil");
        }
@@ -292,7 +311,7 @@ $(document).ready(function() {
      var pattern = new RegExp('^(https?:\\/\\/)?' +
        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
        '((\\d{1,3}\\.){3}\\d{1,3}))' +
-       '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+       '(\\:\\d+)?(\\/[--a-z\\d%_.~+]*)*' +
        '(\\?[;&a-z\\d%_.~+=-]*)?' +
        '(\\#[-a-z\\d_]*)?$','i');
      return pattern.test(url);
