@@ -10,7 +10,7 @@ define('HTTPS_SERVER', 'https://'.$host.'/');
 $dir = dirname(__FILE__);
 //Firma Bilgileri
 
-define('URL', 'https://ads.akillipanda.com');
+define('URL', 'https://c2c.wegdi.com');
 
 
 define('GET_TOKEN', 'SCvsETFFMlIj17h8H3OoIGEk277FpMka9yf4K6kbuC1uGbcKeX');
