@@ -262,9 +262,10 @@ $(document).ready(function() {
 $(document).ready(function() {
     // Her iki input için keyup olayı ekleme
     $("#tedarikciadi, #tedarkcilink").on('keyup', function() {
-      $("#birinci").removeClass("col-xl-5").addClass("col-xl-12");
+
+      $("#birinci").removeClass("col-xl-5").addClass("col-xl-5");
       $("#ikinci").hide();
-      
+
       // Tedarikçi Adı'nı büyük harfe çevirme
       var tedarikciAdi = $("#tedarikciadi").val();
       $("#tedarikciadi").val(tedarikciAdi.toUpperCase());
