@@ -16,8 +16,6 @@ $security->LoginControl($guvenlik);
 
       <div class="card-body">
         <form class="" id="xmlpost">
-
-
         <div class="row">
           <div class="col-xxl-12 col-md-12 text-center mb-3">
             <label for="exampleInputrounded" class="form-label">Tedarikçi Adı</label>
@@ -29,7 +27,7 @@ $security->LoginControl($guvenlik);
           </div>
 
           <div class="col-xxl-12 col-md-12 text-center mb-3">
-            <button type="button" class="btn rounded-pill btn-primary waves-effect waves-light" id="xmlstart">Kaydet</button>
+            <button type="button" class="btn rounded-pill btn-primary waves-effect waves-light" id="xmlstart">Kontrol Et</button>
           </div>
         </div>
         </form>

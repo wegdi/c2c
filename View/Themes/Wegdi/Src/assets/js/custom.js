@@ -274,7 +274,7 @@ $(document).ready(function() {
        $("#xmlstart").html("Geçerli bir URL değil");
      } else {
        // Geçerli bir URL ise "Onaylandı" simgesini gösterme
-       $("#xmlstart").html("Onaylandı <i class='fa fa-check'></i>");
+       $("#xmlstart").html("Kaydet <i class='fa fa-check'></i>");
      }
 
      // Baştan ve sondan boşlukları silme
