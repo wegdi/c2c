@@ -23,21 +23,11 @@ $ModalAdd = array(
     'Notifications' => array('Add', 'Edit', 'Query', 'Remove','List'),
     'Status' => array('Add', 'Edit', 'Query', 'Remove','List'),
     'Module' => array('Add', 'Edit', 'Query', 'Remove','List'),
-    'Companies' => array('Add', 'Edit', 'Query', 'Remove','List'),
-    'Google' => array('Add', 'Edit', 'Query', 'Remove','List','AdGroup','Keyword','Search','Conversion','Preview'),
-    'Googleadmin' => array('Add', 'Edit', 'Query', 'Remove','List','AdGroup','Keyword','Search','Conversion','Preview'),
-    'Mycustomers' => array('Add', 'Edit', 'Query', 'Remove','List'),
-    'Accountingcustomer' => array('Order', 'Earnings'),
-    'Kyc' => array('Kyc','Verification'),
-    'Order' => array('Add', 'Edit', 'Query', 'Remove','List','Successful','Fail'),
-    'Adminorder' => array('Add', 'Edit', 'Query', 'Remove','List','Successful','Fail'),
-    'Meta' => array('Add', 'Edit', 'Query', 'Remove','List','Successful','Fail','AdGroup','Ads'),
-    'Invoice' => array('Add', 'Edit', 'Query', 'Remove','List'),
-    'Tools' => array('Add', 'Edit', 'Query', 'Remove','List','Technical'),
-    'Analytics' => array('Report','List'),
+    'Supplier' => array('List'),
     'GeoIP' => array('Edit'),
     'Profile' => array('Edit'),
     'Logout' => array('Exit'),
+
 );
 
 $ThemesConf = array(
@@ -50,20 +40,9 @@ $ThemesConf = array(
     'Profile' => array('Edit'),
     'Notifications' => array('Add', 'Edit','List'),
     'Module' => array('Add', 'Edit','List'),
+    'Supplier' => array('List'),
+
     'GeoIP' => array('Edit'),
-    'Companies' => array('Add', 'Edit', 'Remove','List'),
-    'Status' => array('Add', 'Edit','List'),
-    'Google' => array('Add', 'Edit', 'Query', 'Remove','List','AdGroup','Keyword','Search','Conversion','Preview'),
-    'Googleadmin' => array('Add', 'Edit', 'Query', 'Remove','List','AdGroup','Keyword','Search','Conversion','Preview'),
-    'Mycustomers' => array('Add', 'Edit', 'Query', 'Remove','List'),
-    'Order' => array('Add', 'Edit', 'Query', 'Remove','List','Successful','Fail'),
-    'Adminorder' => array('Add', 'Edit', 'Query', 'Remove','List','Successful','Fail'),
-    'Accountingcustomer' => array('Order', 'Earnings'),
-    'Kyc' => array('Kyc'),
-    'Meta' => array('Add', 'Edit', 'Query', 'Remove','List','Successful','Fail','AdGroup','Ads'),
-    'Invoice' => array('Add', 'Edit', 'Query', 'Remove','List'),
-    'Tools' => array('Add', 'Edit', 'Query', 'Remove','List','Technical'),
-    'Analytics' => array('Report','List'),
     'Home' => ''
 );
 
