@@ -8,7 +8,7 @@ $security->LoginControl($guvenlik);
 
 
 <div class="row justify-content-center">
-  <div class="col-xl-3">
+  <div class="col-xl-4">
     <div class="card">
       <div class="card-header">
         <h4 class="card-title mb-0 text-center">Xml Tedarikçi Ekle</h4>
@@ -38,7 +38,7 @@ $security->LoginControl($guvenlik);
     </div><!-- end card -->
   </div>
 
-  <div class="col-xl-3">
+  <div class="col-xl-4">
     <div class="card">
       <div class="card-header">
         <h4 class="card-title mb-0 text-center">Api İle Tedarikçi Ekle</h4>
