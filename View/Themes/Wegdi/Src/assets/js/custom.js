@@ -1,9 +1,4 @@
 
-
-
-
-
-
 $(document).ready(function () {
   $('#login-btn').on('click', function () {
     // Gather form data
