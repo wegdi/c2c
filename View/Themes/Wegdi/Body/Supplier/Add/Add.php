@@ -17,7 +17,7 @@ $security->LoginControl($guvenlik);
       <div class="card-body">
         <div class="row">
           <div class="col-xxl-12 col-md-12">
-                <label for="exampleInputrounded" class="form-label">Tedarikçi Adı</label>
+                <label for="exampleInputrounded" class="form-label text-center">Tedarikçi Adı</label>
                 <input type="text" class="form-control rounded-pill" id="exampleInputrounded" placeholder="Tedarikçi Adı Giriniz">
           </div>
         </div>
