@@ -16,11 +16,11 @@ $security->LoginControl($guvenlik);
 
       <div class="card-body">
         <div class="row">
-          <div class="col-xxl-12 col-md-12 text-center">
+          <div class="col-xxl-12 col-md-12 text-center mb-3">
                 <label for="exampleInputrounded" class="form-label">Tedarikçi Adı</label>
                 <input type="text" class="form-control rounded-pill" id="exampleInputrounded" placeholder="Tedarikçi Adı Giriniz">
           </div>
-          <div class="col-xxl-12 col-md-12 text-center">
+          <div class="col-xxl-12 col-md-12 text-center mb-3">
                 <label for="exampleInputrounded" class="form-label">Tedarikçi Linki</label>
                 <input type="text" class="form-control rounded-pill" id="exampleInputrounded" placeholder="Tedarikçi Linki Giriniz">
           </div>
