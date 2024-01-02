@@ -15,8 +15,12 @@ $security->LoginControl($guvenlik);
       </div><!-- end card header -->
 
       <div class="card-body">
-        <p class="text-muted">Use <code>data-simplebar</code> attribute and add <code>max-height: **px</code> to set default scrollbar.</p>
-
+        <div class="row">
+          <div class="col-xxl-12 col-md-12">
+                <label for="exampleInputrounded" class="form-label">Tedarikçi Adı</label>
+                <input type="text" class="form-control rounded-pill" id="exampleInputrounded" placeholder="Tedarikçi Adı Giriniz">
+          </div>
+        </div>
 
       </div><!-- end card-body -->
     </div><!-- end card -->
