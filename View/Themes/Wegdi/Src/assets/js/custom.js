@@ -260,25 +260,31 @@ $(document).ready(function() {
 });
 
 
+
 $(document).ready(function() {
-   $("#tedarikciadi").on('keyup', function() {
-     var tedarikciAdi = $(this).val();
-     $(this).val(tedarikciAdi.toUpperCase());
-   });
+   // Her iki input için keyup olayı ekleme
+   $("#tedarikciadi, #tedarkcilink").on('keyup', function() {
+     // Tedarikçi Adı'nı büyük harfe çevirme
+     var tedarikciAdi = $("#tedarikciadi").val();
+     $("#tedarikciadi").val(tedarikciAdi.toUpperCase());
 
-   $("#tedarkcilink").on('keyup', function() {
-     var tedarikciLink = $(this).val();
+     // Tedarikçi Linki'ni kontrol etme
+     var tedarikciLink = $("#tedarkcilink").val();
 
-     if (!isValidUrl(tedarikciLink)) {
-       // Geçerli bir URL değilse uyarı verme
-       $("#xmlstart").html("Geçerli bir URL değil");
-     } else {
+     // Her iki input da dolu mu kontrol etme
+     if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '') {
        // Geçerli bir URL ise "Onaylandı" simgesini gösterme
-       $("#xmlstart").html("Kaydet <i class='fa fa-check'></i>");
+       if (isValidUrl(tedarikciLink)) {
+         $("#xmlstart").html("Onaylandı <i class='fa fa-check'></i>");
+       } else {
+         $("#xmlstart").html("Geçerli bir URL değil");
+       }
+     } else {
+       $("#xmlstart").html("");
      }
 
      // Baştan ve sondan boşlukları silme
-     $(this).val(tedarikciLink.trim());
+     $("#tedarkcilink").val(tedarikciLink.trim());
    });
 
    // URL geçerliliğini kontrol etme fonksiyonu
