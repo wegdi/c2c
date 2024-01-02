@@ -41,7 +41,6 @@ $ThemesConf = array(
     'Notifications' => array('Add', 'Edit','List'),
     'Module' => array('Add', 'Edit','List'),
     'Supplier' => array('List'),
-
     'GeoIP' => array('Edit'),
     'Home' => ''
 );
