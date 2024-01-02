@@ -52,9 +52,9 @@ define('DB_DRIVER', 'mongodb');
 define('DB_HOSTNAME', '176.9.98.123');
 define('DB_USERNAME', 'admin');
 define('DB_PASSWORD', 'Omur1996a');
-define('DB_DATABASE', 'ads_wegdi');
+define('DB_DATABASE', 'c2c_wegdi');
 define('DB_PORT', '3306');
-define('DB_EK', 'ads_wegdi.');
+define('DB_EK', 'c2c_wegdi.');
 
 
 $guvenlik =
