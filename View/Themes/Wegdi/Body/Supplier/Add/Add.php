@@ -52,11 +52,7 @@ $security->LoginControl($guvenlik);
             <label for="exampleInputrounded" class="form-label">Tedarikçi Adı</label>
             <input type="text" class="form-control rounded-pill" id="exampleInputrounded" placeholder="Tedarikçi Adı Giriniz">
           </div>
-          <div class="col-xxl-12 col-md-12 text-center mb-3">
-            <label for="exampleInputrounded" class="form-label">Tedarikçi Linki</label>
-            <input type="text" class="form-control rounded-pill" id="exampleInputrounded" placeholder="Tedarikçi Linki Giriniz">
-          </div>
-
+        
           <div class="col-xxl-12 col-md-12 text-center mb-3">
             <button type="button" class="btn rounded-pill btn-primary waves-effect waves-light" id="xmlstart">Kaydet</button>
           </div>
