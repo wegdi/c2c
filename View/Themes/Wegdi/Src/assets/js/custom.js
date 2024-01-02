@@ -246,46 +246,6 @@ $(document).ready(function () {
 });
 
 
-
-
-
-
-
-
-$(document).ready(function() {
-   $("#xmlstart").click(function() {
-     // Tedarikçi Adı'nı büyük harfe çevirme
-     var tedarikciAdi = $("#tedarikciadi").val();
-     $("#tedarikciadi").val(tedarikciAdi.toUpperCase());
-
-     // Tedarikçi Linki'nin URL olup olmadığını kontrol etme
-     var tedarikciLink = $("#tedarkcilink").val();
-     if (!isValidUrl(tedarikciLink)) {
-       alert("Lütfen geçerli bir URL giriniz.");
-       return;
-     }
-
-     // Baştan ve sondan boşlukları silme
-     $("#tedarkcilink").val(tedarikciLink.trim());
-
-     // Onaylandı simgesini gösterme
-     $("#xmlstart").html("Onaylandı <i class='fa fa-check'></i>");
-   });
-
-   // URL geçerliliğini kontrol etme fonksiyonu
-   function isValidUrl(url) {
-     var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-       '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-       '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-       '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-       '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-       '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-     return pattern.test(url);
-   }
- });
-
-
-
 $(document).ready(function() {
   // When the "Remove" button is clicked, set the value of the input field
   $(document).on('click', '.remove-list', function() {
@@ -298,3 +258,37 @@ $(document).ready(function() {
     $('#remove-id-input').val('');
   });
 });
+
+
+$(document).ready(function() {
+   $("#tedarikciadi").on('keyup', function() {
+     var tedarikciAdi = $(this).val();
+     $(this).val(tedarikciAdi.toUpperCase());
+   });
+
+   $("#tedarkcilink").on('keyup', function() {
+     var tedarikciLink = $(this).val();
+
+     if (!isValidUrl(tedarikciLink)) {
+       // Geçerli bir URL değilse uyarı verme
+       $("#xmlstart").html("Geçerli bir URL değil");
+     } else {
+       // Geçerli bir URL ise "Onaylandı" simgesini gösterme
+       $("#xmlstart").html("Onaylandı <i class='fa fa-check'></i>");
+     }
+
+     // Baştan ve sondan boşlukları silme
+     $(this).val(tedarikciLink.trim());
+   });
+
+   // URL geçerliliğini kontrol etme fonksiyonu
+   function isValidUrl(url) {
+     var pattern = new RegExp('^(https?:\\/\\/)?' +
+       '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+       '((\\d{1,3}\\.){3}\\d{1,3}))' +
+       '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+       '(\\?[;&a-z\\d%_.~+=-]*)?' +
+       '(\\#[-a-z\\d_]*)?$','i');
+     return pattern.test(url);
+   }
+ });
