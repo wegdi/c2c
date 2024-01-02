@@ -7,7 +7,7 @@ $security->LoginControl($guvenlik);
 
 
 
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-xl-6">
     <div class="card">
       <div class="card-header">
