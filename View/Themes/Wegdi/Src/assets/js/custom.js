@@ -260,11 +260,9 @@ $(document).ready(function() {
 });
 
 
-
-
-
 $(document).ready(function() {
-   $("#xmlstart").on('click', function() {
+   // Her iki input için keyup olayı ekleme
+   $("#tedarikciadi, #tedarkcilink").on('keyup', function() {
      // Tedarikçi Adı'nı büyük harfe çevirme
      var tedarikciAdi = $("#tedarikciadi").val();
      $("#tedarikciadi").val(tedarikciAdi.toUpperCase());
@@ -274,27 +272,9 @@ $(document).ready(function() {
 
      // Her iki input da dolu mu kontrol etme
      if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '') {
-       // Geçerli bir URL ise AJAX ile verileri post etme
+       // Geçerli bir URL ise "Onaylandı" simgesini gösterme
        if (isValidUrl(tedarikciLink)) {
-         var formData = {
-           tedarikciAdi: tedarikciAdi,
-           tedarikciLink: tedarikciLink
-         };
-
-         $.ajax({
-           type: "POST",
-           url: "/Modal/Supplier/Add/Add.php",
-           data: JSON.stringify(formData),
-           contentType: "application/json",
-           success: function(response) {
-             console.log(response);
-             // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
-           },
-           error: function(error) {
-             console.error(error);
-             // Hata durumunda gerekli işlemleri yapabilirsiniz.
-           }
-         });
+         $("#xmlstart").html("Onaylandı <i class='fa fa-check'></i>");
        } else {
          $("#xmlstart").html("Geçerli bir URL değil");
        }
@@ -304,6 +284,38 @@ $(document).ready(function() {
 
      // Baştan ve sondan boşlukları silme
      $("#tedarkcilink").val(tedarikciLink.trim());
+   });
+
+   // Button click olayını ekleme
+   $("#xmlstart").on('click', function() {
+     var tedarikciAdi = $("#tedarikciadi").val();
+     var tedarikciLink = $("#tedarkcilink").val();
+
+     // Her iki input da dolu mu ve geçerli bir URL mi kontrol etme
+     if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '' && isValidUrl(tedarikciLink)) {
+       // AJAX ile verileri post etme
+       var formData = {
+         tedarikciAdi: tedarikciAdi,
+         tedarikciLink: tedarikciLink
+       };
+
+       $.ajax({
+         type: "POST",
+         url: "/Modal/Supplier/Add/Add.php",
+         data: JSON.stringify(formData),
+         contentType: "application/json",
+         success: function(response) {
+           console.log(response);
+           // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
+         },
+         error: function(error) {
+           console.error(error);
+           // Hata durumunda gerekli işlemleri yapabilirsiniz.
+         }
+       });
+     } else {
+       alert("Lütfen geçerli bilgileri giriniz.");
+     }
    });
 
    // URL geçerliliğini kontrol etme fonksiyonu
