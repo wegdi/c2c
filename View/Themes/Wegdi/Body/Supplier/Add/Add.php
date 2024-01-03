@@ -27,7 +27,7 @@ $security->LoginControl($guvenlik);
           </div>
 
           <div class="col-xxl-12 col-md-12 text-center mb-3">
-            <button type="button" class="btn rounded-pill btn-primary waves-effect waves-light" id="xmlstart">Kontrol Et</button>
+            <button type="button" class="btn rounded-pill btn-primary waves-effect waves-light" onclick="FromSave('#xmlpost')" form="xmlpost" id="xmlstart">Kontrol Et</button>
           </div>
         </div>
         </form>

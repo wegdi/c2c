@@ -7,14 +7,8 @@ $db=new General();
 
 
 $data = array(
-    'tr' => $db->Guvenlik($_POST["tr"]),
-    'en' => $db->Guvenlik($_POST["en"]),
-    'Authority' => $db->Guvenlik($_POST["authority"]),
-    'Pages' => '', // Burada uygun bir değer atamanız gerekecektir
-    'Parent_ID' => $db->Guvenlik($_POST["parent_id"]),
-    'Seo_Url' => $db->Seflink($db->Guvenlik($_POST["en"])), // Parantez eksikti
-    'Icon' => $db->Guvenlik($_POST["icon"]),
-    'Order' => $db->Guvenlik($_POST["order"])
+    'Name' => $db->Guvenlik($_POST["tedarikciadi"]),
+    'Link' => $db->Guvenlik($_POST["tedarkcilink"]),
 );
 
-echo $db->Add("Menus", $data); // `Add` fonksiyonunu düzgün şekilde çağırın
+echo $db->Add("Supplier", $data); // `Add` fonksiyonunu düzgün şekilde çağırın
