@@ -11,6 +11,15 @@ $json = json_encode($xml);
 
 $json_decode=json_decode($json,1);
 // JSON verisini ekrana yazdır
+$i = 0;
+foreach ($json_decode["stok"] as $product) {
+    if($i<= 5){
+        echo $product[$i];
+        echo '<br>';
+    }
 
+    $i = $i+1;
+    # code...
+}
 echo count($json_decode["stok"]);
 ?>
