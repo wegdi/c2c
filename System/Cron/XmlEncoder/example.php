@@ -11,11 +11,13 @@ $json = json_encode($xml);
 
 $json_decode=json_decode($json,1);
 // JSON verisini ekrana yazdır
+/*
 $i = 0;
 while($i <= 4){
     print_r($json_decode["stok"][$i]);
     $i = $i+1;
-}
-echo 'son';
-//echo count($json_decode["stok"]);
+}*/
+echo '<pre>';
+print_r($json_decode["stok"]);
+echo '</pre>';
 ?>
