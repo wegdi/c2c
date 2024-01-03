@@ -11,6 +11,7 @@ $json = json_encode($xml);
 
 $json_decode=json_decode($json,1);
 // JSON verisini ekrana yazdır
-
+echo '<pre>';
 print_r($json_decode);
+echo '</pre>';
 ?>
