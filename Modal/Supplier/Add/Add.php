@@ -7,8 +7,8 @@ $db=new General();
 
 
 $data = array(
-    'Name' => $db->Guvenlik($_POST["tedarikciadi"]),
-    'Link' => $db->Guvenlik($_POST["tedarkcilink"]),
+    'Name' => $db->Guvenlik($_POST["tedarikciAdi"]),
+    'Link' => $db->Guvenlik($_POST["tedarikciLink"]),
 );
 
 echo $db->Add("Supplier", $data); // `Add` fonksiyonunu düzgün şekilde çağırın
