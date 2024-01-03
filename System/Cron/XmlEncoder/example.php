@@ -18,6 +18,6 @@ while($i <= 4){
     $i = $i+1;
 }*/
 echo '<pre>';
-print_r($json_decode["stok"]);
+print_r($json_decode);
 echo '</pre>';
 ?>
