@@ -294,7 +294,7 @@ $(document).ready(function() {
       var tedarikciAdi = $("#tedarikciadi").val();
       var tedarikciLink = $("#tedarkcilink").val();
       console.log("a", tedarikciAdi);
-      /*
+      
       // Her iki input da dolu mu ve geçerli bir URL mi kontrol etme
       if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '' && isValidUrl(tedarikciLink)) {
         // AJAX ile verileri post etme
@@ -322,7 +322,7 @@ $(document).ready(function() {
 
       } else {
         alert("Lütfen geçerli bilgileri giriniz.");
-      }*/
+      }
     });
 
     // URL geçerliliğini kontrol etme fonksiyonu
