@@ -43,11 +43,16 @@ echo count($donguler);
 if (count($donguler)==1) {
 
   $ilkDizi = reset($data["$donguler[0]"]);
-  print_R($ilkDizi);
+  foreach ($ilkDizi as $keyx => $valuex) {
+    echo $keyx.' -- '.$valuex;
+  }
+
 }elseif (count($donguler)==2) {
 
 $ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]);
-print_R($ilkDizi);
+foreach ($ilkDizi as $keyx => $valuex) {
+  echo $keyx.' -- '.$valuex;
+}
 }
 
 /*
