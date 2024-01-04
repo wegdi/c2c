@@ -80,11 +80,9 @@ $tumKeyler = [];
 // Key'leri toplama fonksiyonu
 function toplaKeyler($veri, &$keyler) {
     foreach ($veri as $key => $value) {
-        if (!is_numeric($key)) {
-            $keyler[] = $key;
-            if (is_array($value)) {
-                toplaKeyler($value, $keyler);
-            }
+        $keyler[] = $key;
+        if (is_array($value)) {
+            toplaKeyler($value, $keyler);
         }
     }
 }
@@ -102,6 +100,6 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
     echo "<br>";
 }
+print_r($tumKeyler);
 
-print_R($tumKeyler);
 ?>
