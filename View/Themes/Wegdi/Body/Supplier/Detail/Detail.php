@@ -54,7 +54,9 @@ $databaseKeys = [];
 getDatabaseKeys($ilkDizi);
 
 // Veritabanına kaydedilecek anahtarları yazdır
+echo "<pre>";
 print_r($databaseKeys);
+echo "</pre>";
 
 // Veritabanına kaydedilecek anahtarları almak için fonksiyon
 function getDatabaseKeys($veri, $parentKey = null) {
