@@ -65,7 +65,6 @@ foreach ($ilkDizi as $keyx => $valuex) {
 }
 }
 */
-
 // JSON dosyasının URL'si
 $jsonUrl = 'https://c2c.wegdi.com/Json/65968ec9c3a67.json';
 
@@ -82,7 +81,7 @@ $tumKeyler = [];
 function toplaKeyler($veri, &$keyler, $oncekiKey = '') {
     foreach ($veri as $key => $value) {
         // Sayıları ve tekrar eden değerleri hariç tut
-        if (!is_numeric($key) && $key !== $oncekiKey) {
+        if (!is_numeric($key) && $key !== $oncekiKey && !in_array($key, $keyler)) {
             $keyler[] = $key;
             if (is_array($value)) {
                 toplaKeyler($value, $keyler, $key);
