@@ -14,7 +14,6 @@ $data = json_decode($jsonData, true);
 
 $donguler = [];
 $final = [];
-
 // Üst anahtarları yazdırma
 foreach ($data as $ustAnahtar => $altDizi) {
     // Üst anahtarı string olarak almak istiyorsak
@@ -38,16 +37,33 @@ foreach ($data as $ustAnahtar => $altDizi) {
     echo "<br>";
 }
 
-// En üst düzeydeki alt diziyi yazdırma
-$ilkDizi = $data;
 
-foreach ($donguler as $dongu) {
-    $ilkDizi = reset($ilkDizi[$dongu]);
-}
+if (count($donguler)==1) {
 
-// İlk dizinin elemanlarını yazdırma
-foreach ($ilkDizi as $keyx => $valuex) {
-    echo $keyx . ' -- ';
+  $ilkDizi = reset($data["$donguler[0]"]);
+  foreach ($ilkDizi as $keyx => $valuex) {
+    echo $keyx.' -- ';
     echo "<br>";
+  }
+
+}elseif (count($donguler)==2) {
+
+$ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]);
+foreach ($ilkDizi as $keyx => $valuex) {
+  echo $keyx.' -- ';
+  echo "<br>";
 }
+}elseif (count($donguler)==3) {
+$ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]["$donguler[2]"]);
+foreach ($ilkDizi as $keyx => $valuex) {
+  echo $keyx.' -- ';
+}
+}elseif (count($donguler)==4) {
+$ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]["$donguler[2]"]["$donguler[3]"]);
+foreach ($ilkDizi as $keyx => $valuex) {
+  echo $keyx.' -- ';
+}
+}
+
+
 ?>
