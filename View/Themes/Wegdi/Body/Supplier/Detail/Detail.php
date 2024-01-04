@@ -87,7 +87,7 @@ echo '
 </div><!--end row-->
 ';
 
-
+// HTML tablo içeriğini oluşturan fonksiyon
 function printDiziIcerigi($veri, $parentKey = null, $indent = 0) {
     foreach ($veri as $anahtar => $deger) {
         $anahtarString = is_string($anahtar) ? $anahtar : json_encode($anahtar);
@@ -106,7 +106,7 @@ function printDiziIcerigi($veri, $parentKey = null, $indent = 0) {
         // Indentation for hierarchical display
         $indentation = str_repeat("&nbsp;", $indent * 4);
 
-        echo "<td>" . $indentation . $parentKey . " -> " . $anahtarString . $alt . "</td>";
+        echo "<td>" . $indentation . $anahtarString . $alt . "</td>";
 
         if (is_array($deger)) {
             echo "<td>";
@@ -122,6 +122,9 @@ function printDiziIcerigi($veri, $parentKey = null, $indent = 0) {
     Nereye:
     <select name="tag[root;item;stokkod]" onchange="changeXMLContent();" data-name="stokkod" data-value="3700696800027">
         <option value="-">- pas geç -</option>
+        <option value="product_id">Ürün ID</option>
+        <option value="product_name[1]">Ürün Adı (tr-tr)</option>
+        <option value="product_description[1]">Açıklama (tr-tr)</option>
         <!-- Add more options as needed -->
     </select>
     <input type="hidden" name="tag_cache[3][tag_name]" value="stokkod">
