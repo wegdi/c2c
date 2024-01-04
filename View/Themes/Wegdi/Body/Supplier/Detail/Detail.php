@@ -20,8 +20,8 @@ foreach ($data as $ustAnahtar => $altDizi) {
     echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
 
     // Alt diziyi yazdırma
-    foreach ($altDizi["Urun"] as $altAnahtar => $deger) {
-      echo $deger["UrunKartiID"];
+    foreach ($altDizi as $altAnahtar => $deger) {
+        print_r( $deger);
     }
 
     echo "<br>";
