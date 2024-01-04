@@ -89,14 +89,14 @@ function printDiziIcerigi($veri, $indent = 0) {
     foreach ($veri as $anahtar => $deger) {
         $anahtarString = is_string($anahtar) ? $anahtar : json_encode($anahtar);
         echo "<tr>";
-        echo "<td>" . str_repeat("&nbsp;", $indent * 4) . $anahtarString . "</td>";
+        echo "<td>" .  $anahtarString . "</td>";
 
         if (is_array($deger)) {
             echo "<td>";
             printDiziIcerigi($deger, $indent + 1);
             echo "</td>";
         } else {
-            echo "<td>" . str_repeat("&nbsp;", ($indent + 1) * 4)  . $deger . "</td>";
+            echo "<td>" .$deger . "</td>";
         }
 
         echo "</tr>";
