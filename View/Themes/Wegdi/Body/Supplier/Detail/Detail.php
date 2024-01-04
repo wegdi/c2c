@@ -101,11 +101,5 @@ foreach ($data as $ustAnahtar => $altDizi) {
     echo "<br>";
 }
 
-// Tüm key'leri ekrana yazdırma
-$keyler=[];
-foreach ($tumKeyler as $key) {
-    $keyler[]=$key;
-}
-$tumKeylerx = array_unique($keyler);
-print_r($tumKeylerx);
+
 ?>
