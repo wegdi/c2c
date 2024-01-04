@@ -89,7 +89,7 @@ function toplaKeyler($veri, &$keyler) {
         }
         echo $key;
       }else {
-        echo "string";
+        echo "sxsx";
       }
 
     }
