@@ -14,18 +14,13 @@ $data = json_decode($jsonData, true);
 
 // Üst anahtarları yazdırma
 foreach ($data as $ustAnahtar => $altDizi) {
-    print_r( $altDizi);
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
 
     echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
 
     // Alt diziyi yazdırma
-    foreach ($altDizi as $altAnahtar => $deger) {
-        // Eğer alt anahtar "UrunKartiID" ise değeri yazdır
-        if ($altAnahtar === "UrunKartiID") {
-            echo "    Alt Anahtar: " . $altAnahtar . "<br>";
-            echo "        Değer: " . $deger . "<br>";
-        }
+    foreach ($altDizi["Urun"] as $altAnahtar => $deger) {
+      print_r($deger);
     }
 
     echo "<br>";
