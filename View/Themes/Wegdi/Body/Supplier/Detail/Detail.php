@@ -105,7 +105,8 @@ function printDiziIcerigi($veri, $parentKey = null) {
             echo "<td>";
 
             foreach ($deger as $key => $value) {
-                print_r($value);
+              echo $key;echo "<br>";
+                echo $value;
             }
             //printDiziIcerigi($deger, $anahtarString);
             echo "</td>";
