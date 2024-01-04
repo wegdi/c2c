@@ -46,7 +46,7 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
     $response=json_decode($response,1);
     if ($response["success"]=="true") {
     $return = array(
-      'url' => URL.'/Detail/'.$uniqid.'/1',
+      'url' => URL.'/Supplier/Detail/'.$uniqid.'/1',
     );
     echo json_encode($return);
     }
