@@ -51,7 +51,10 @@ if (!empty($final)) {
     $ilkDeger = reset($final);
 }
 
-print_r($ilkDeger);
 
+
+foreach ($ilkDeger as $key => $value) {
+print_r($key);
+}
 
 ?>
