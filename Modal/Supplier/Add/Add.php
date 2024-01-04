@@ -18,12 +18,13 @@ if ($_POST["tedarikciLink"]!="" and $_POST["tedarikciLink"]!="") {
   $jsonFilePath = JSONFILE.$uniqid.'.json'; // Burada "your_filename.json" dosya adını değiştirebilirsiniz.
   file_put_contents($jsonFilePath, $json);
 
-  $json_decode = json_decode($json, true);
 
   $data = array(
       'SupplierName' => $db->Guvenlik($_POST["tedarikciAdi"]),
       'SupplierUrl' => $db->Guvenlik($_POST["tedarikciLink"]),
       'SupplierCode' => $uniqid,
+      'SupplierFilePath' => 'Json'.$uniqid.'.json'
+
   );
 
   echo $db->Add("Supplier", $data);
