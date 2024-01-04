@@ -6,6 +6,7 @@ $xmlUrl = 'https://b2b.dogan-oto.com.tr/bayi/xmlexportv3Dogan.aspx?code=%C4%B0ST
 // XML verisini PHP SimpleXML nesnesine dönüştür
 $xml = simplexml_load_file($xmlUrl);
 
+echo $xml;
 // SimpleXML nesnesini JSON formatına çevir
 $json = json_encode($xml);
 
