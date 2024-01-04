@@ -64,7 +64,7 @@ echo '
 
                     <th>Anahtar</th>
                     <th>Değer</th>
-
+<th>Değer</th>
                 </tr>
             </thead>
 
