@@ -80,6 +80,7 @@ $tumKeyler = [];
 // Key'leri toplama fonksiyonu
 function toplaKeyler($veri, &$keyler) {
     foreach ($veri as $key => $value) {
+      echo $key;
         $keyler[] = $key;
         if (is_array($value)) {
             toplaKeyler($value, $keyler);
@@ -105,7 +106,5 @@ foreach ($data as $ustAnahtar => $altDizi) {
 }
 
 // Tekrar edenleri kaldır
-$tumKeyler = array_unique($tumKeyler);
 
-print_r($tumKeyler);
 ?>
