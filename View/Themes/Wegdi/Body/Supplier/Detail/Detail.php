@@ -49,7 +49,12 @@ if (count($donguler) == 1) {
 
 
 if ($altAnahtarString) {
-  $yaz='<td>'.$altAnahtarString.'</td>';
+  $yaz='
+  <tr>
+  <td></td>
+    <td></td>
+
+  <td>'.$altAnahtarString.'</td></tr>';
 }
 
 
@@ -76,11 +81,9 @@ echo '
                       <td></td>
                         <td></td>
                     </tr>
-                    <tr>
+
                     '.$yaz.'
-                    <td></td>
-                      <td></td>
-                    </tr>
+
 
 
 ';
