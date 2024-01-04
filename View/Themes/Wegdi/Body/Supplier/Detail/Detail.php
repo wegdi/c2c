@@ -81,15 +81,9 @@ $tumKeyler = [];
 function toplaKeyler($veri, &$keyler) {
     foreach ($veri as $key => $value) {
 
-      if (!is_numeric($key)) {
-        echo "string";
-        $keyler[] = $key;
-        if (is_array($value)) {
-            toplaKeyler($value, $keyler);
-        }
-        echo $key;
-      }else {
-        echo "sxsx";
+      $keyler[] = $key;
+      if (is_array($value)) {
+          toplaKeyler($value, $keyler);
       }
 
     }
