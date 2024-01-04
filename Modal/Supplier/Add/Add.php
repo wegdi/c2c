@@ -24,7 +24,7 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
       'SupplierName' => $db->Guvenlik($_POST["tedarikciAdi"]),
       'SupplierUrl' => $db->Guvenlik($_POST["tedarikciLink"]),
       'SupplierCode' => $uniqid,
-      'SupplierFilePath' => 'Json'.$uniqid.'.json'
+      'SupplierFilePath' => '/Json/'.$uniqid.'.json'
 
   );
 
