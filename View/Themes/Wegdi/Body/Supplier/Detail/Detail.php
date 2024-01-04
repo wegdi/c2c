@@ -37,11 +37,11 @@ foreach ($data as $ustAnahtar => $altDizi) {
     echo "<br>";
 }
 
-
 // Alt anahtarları yazdırma
 foreach ($donguler as $anahtar) {
-    if (isset($data[$anahtar])) {
-        print_r($data[$anahtar]);
+    if (isset($data[$anahtar]) && is_array($data[$anahtar]) && count($data[$anahtar]) > 0) {
+        // Eğer değer bir dizi ise ve içerisinde elemanlar varsa, key'leri yazdır
+        echo "Key'ler: " . implode(", ", array_keys($data[$anahtar])) . "<br>";
     }
 }
 ?>
