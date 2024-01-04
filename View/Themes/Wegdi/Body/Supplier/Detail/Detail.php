@@ -98,10 +98,8 @@ foreach ($data as $ustAnahtar => $altDizi) {
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
 
     // Sayısal değer içeren key'leri kontrol et
-    if (!is_numeric($ustAnahtar) && !in_array($ustAnahtar, $tumKeyler)) {
-        echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
-        $tumKeyler[] = $ustAnahtarString;
-    }
+    $tumKeyler[] = $ustAnahtarString;
+
 
     // Alt diziyi yazdırma ve key'leri toplama
     toplaKeyler($altDizi, $tumKeyler);
@@ -111,7 +109,6 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
 // Tekrar edenleri kaldır
 $tumKeyler = array_unique($tumKeyler);
-
 print_r($tumKeyler);
 
 ?>
