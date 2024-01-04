@@ -43,9 +43,14 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
         'SupplierFilePath' => '/Json/'.$uniqid.'.json'
     );
 
-    echo $db->Add("Supplier", $data);
-
-    
+    $response= $db->Add("Supplier", $data);
+    $response=json_decode($response,1);
+    if ($response["success"]=="true") {
+    $return = array(
+      'url' => URL.'/Json/'.$uniqid.'.json',
+    );
+    echo json_encode($return);
+    }
 
 }
 ?>
