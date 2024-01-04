@@ -11,7 +11,10 @@ $jsonData = file_get_contents($jsonUrl);
 
 // JSON verisini PHP dizisine dönüştürme
 $datas = json_decode($jsonData, true);
-
+foreach ($datas as $key => $value) {
+    print_r($value);
+}
+/*
 $data = json_decode($jsonData, true);
 
 // Üst anahtarları yazdırma
@@ -34,8 +37,6 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
     echo "<br>";
 }
+*/
 
-foreach ($datas as $key => $value) {
-    print_r($value);
-}
 ?>
