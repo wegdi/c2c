@@ -66,6 +66,7 @@ foreach ($ilkDizi as $keyx => $valuex) {
 }
 */
 // JSON dosyasının URL'si
+// JSON dosyasının URL'si
 $jsonUrl = 'https://c2c.wegdi.com/Json/65968ec9c3a67.json';
 
 // JSON verisini alma
@@ -80,9 +81,11 @@ $tumKeyler = [];
 // Key'leri toplama fonksiyonu
 function toplaKeyler($veri, &$keyler) {
     foreach ($veri as $key => $value) {
-        $keyler[] = $key;
-        if (is_array($value)) {
-            toplaKeyler($value, $keyler);
+        if (!is_numeric($key)) {
+            $keyler[] = $key;
+            if (is_array($value)) {
+                toplaKeyler($value, $keyler);
+            }
         }
     }
 }
@@ -92,8 +95,11 @@ foreach ($data as $ustAnahtar => $altDizi) {
     // Üst anahtarı string olarak almak istiyorsak
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
 
-    echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
-    $tumKeyler[] = $ustAnahtarString;
+    // Sayısal değer içeren key'leri kontrol et
+    if (!is_numeric($ustAnahtar)) {
+        echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
+        $tumKeyler[] = $ustAnahtarString;
+    }
 
     // Alt diziyi yazdırma ve key'leri toplama
     toplaKeyler($altDizi, $tumKeyler);
@@ -101,7 +107,8 @@ foreach ($data as $ustAnahtar => $altDizi) {
     echo "<br>";
 }
 
-$s=array_unique($tumKeyler);
+// Tekrar edenleri kaldır
+$s = array_unique($tumKeyler);
 
 print_r($s);
 ?>
