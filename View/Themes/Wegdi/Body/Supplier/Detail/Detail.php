@@ -42,7 +42,7 @@ if (count($donguler)==1) {
 
   $ilkDizi = reset($data["$donguler[0]"]);
   foreach ($ilkDizi as $keyx => $valuex) {
-    echo $keyx.' -- '.$valuex;
+    echo $keyx.' -- ';
   }
 
 }elseif (count($donguler)==2) {
