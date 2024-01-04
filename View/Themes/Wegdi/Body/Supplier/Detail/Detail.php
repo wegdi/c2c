@@ -54,7 +54,7 @@ if (!empty($final)) {
 
 
 foreach ($ilkDeger as $key => $value) {
-echo $key;
+echo $key.' '.$value;
 echo "<br>";
 }
 
