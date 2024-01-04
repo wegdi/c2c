@@ -37,7 +37,6 @@ foreach ($data as $ustAnahtar => $altDizi) {
     echo "<br>";
 }
 
-print_r($donguler);
 
 // Alt anahtarları yazdırma
 foreach ($donguler as $anahtar) {
