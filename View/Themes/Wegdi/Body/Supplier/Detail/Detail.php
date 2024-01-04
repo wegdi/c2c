@@ -58,7 +58,7 @@ echo '
         <h5 class="card-title mb-0">Xml Eşleştirme</h5>
     </div>
     <div class="card-body">
-        <table id="MetaTable" class="display table table-bordered dt-responsive" style="width:100%">
+        <table id="MetaTablse" class="display table table-bordered dt-responsive" style="width:100%">
             <thead>
                 <tr>
 
