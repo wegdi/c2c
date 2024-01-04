@@ -39,6 +39,7 @@ $datas = json_decode($jsonData, true);
 foreach ($datas["$ustAnahtarString"] as $key => $value) {
 
   if ($altAnahtarString) {
+    echo "string";
     foreach ($value["$altAnahtarString"] as $key => $valxue) {
       print_r();
     }
