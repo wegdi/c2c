@@ -1,20 +1,34 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML İndirme</title>
+</head>
+<body>
 
-// XML verisini çekmek için URL
-$xmlUrl = 'https://b2b.dogan-oto.com.tr/bayi/xmlexportv3Dogan.aspx?code=%C4%B0STANBUL.0631';
+<script>
+    // Sayfa yenilendiğinde çalışacak JavaScript kodu
+    window.onload = function() {
+        // XML verisini çekmek için URL
+        var xmlUrl = 'https://b2b.dogan-oto.com.tr/bayi/xmlexportv3Dogan.aspx?code=%C4%B0STANBUL.0631';
 
-// XML verisini indir
-$xmlData = file_get_contents($xmlUrl);
+        // Yeni bir a etiketi oluştur
+        var link = document.createElement('a');
+        link.href = xmlUrl;
 
-// Eğer başarılı bir şekilde indirilemezse, hata mesajını göster
-if ($xmlData === FALSE) {
-    die('XML verisi indirilemedi.');
-}
+        // Dosya adını belirle
+        var fileName = 'indirilen_xml.xml';
 
-// XML verisini PHP SimpleXML nesnesine dönüştür
-$xml = simplexml_load_string($xmlData);
+        // İndirme işlemi için gerekli olan özellikleri ayarla
+        link.download = fileName;
+        link.target = '_blank';
 
-// Elde edilen SimpleXML nesnesini göster
-print_r($xml);
+        // Yeni oluşturulan a etiketini tıklama işlemi gerçekleştir
+        link.click();
+    };
+</script>
 
-?>
+</body>
+</html>
