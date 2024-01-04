@@ -45,8 +45,14 @@ foreach ($donguler as $anahtar) {
     }
 }
 
-foreach ($final as $key => $valuex) {
-  echo $key;
-  print_r($valuex);
+
+if (!empty($final)) {
+    // PHP dizisinin ilk elemanını alın
+    $ilkDeger = reset($final);
 }
+
+// İlk değeri yazdırın
+echo 'İlk Değer: ' . $ilkDeger;
+
+
 ?>
