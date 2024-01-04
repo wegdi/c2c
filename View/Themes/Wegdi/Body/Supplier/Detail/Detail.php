@@ -12,13 +12,14 @@ $jsonData = file_get_contents($jsonUrl);
 // JSON verisini PHP dizisine dönüştürme
 $data = json_decode($jsonData, true);
 
+$donguler = [];
 // Üst anahtarları yazdırma
 foreach ($data as $ustAnahtar => $altDizi) {
     // Üst anahtarı string olarak almak istiyorsak
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
 
     echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
-
+    $donguler[]=$ustAnahtarString;
     // Alt diziyi yazdırma
     foreach ($altDizi as $altAnahtar => $deger) {
         // Alt anahtarı sadece int değilse yazdır
@@ -27,9 +28,12 @@ foreach ($data as $ustAnahtar => $altDizi) {
             $altAnahtarString = is_string($altAnahtar) ? $altAnahtar : json_encode($altAnahtar);
 
             echo "    Alt Anahtar: " . $altAnahtarString . "<br>";
+            $donguler[]=$altAnahtarString;
+
         }
     }
 
     echo "<br>";
 }
+print_r($donguler);
 ?>
