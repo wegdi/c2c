@@ -91,7 +91,6 @@ function toplaKeyler($veri, &$keyler) {
 
 // Üst anahtarları yazdırma ve key'leri toplama
 foreach ($data as $ustAnahtar => $altDizi) {
-  print_r($altDizi);
 
     // Üst anahtarı string olarak almak istiyorsak
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
