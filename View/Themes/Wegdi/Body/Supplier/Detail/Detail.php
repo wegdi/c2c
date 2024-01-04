@@ -13,7 +13,7 @@ $jsonData = file_get_contents($jsonUrl);
 $data = json_decode($jsonData, true);
 
 $donguler = [];
-
+$final = [];
 // Üst anahtarları yazdırma
 foreach ($data as $ustAnahtar => $altDizi) {
     // Üst anahtarı string olarak almak istiyorsak
