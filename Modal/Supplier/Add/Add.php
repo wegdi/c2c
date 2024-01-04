@@ -29,7 +29,8 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
     // Dönüştürülmüş DOMDocument nesnesini SimpleXML nesnesine dönüştür
     $xml = simplexml_import_dom($dom);
 
-    $json = json_encode($xml, JSON_PRETTY_PRINT);
+    // JSON_ENCODE fonksiyonuna JSON_UNESCAPED_UNICODE sabitini ekleyerek Türkçe karakter uyumlu hale getir
+    $json = json_encode($xml, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
     $jsonFilePath = JSONFILE.$uniqid.'.json';
     echo $jsonFilePath;
