@@ -59,6 +59,11 @@ $ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]["$donguler[2]"]);
 foreach ($ilkDizi as $keyx => $valuex) {
   echo $keyx.' -- ';
 }
+}elseif (count($donguler)==4) {
+$ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]["$donguler[2]"]["$donguler[3]"]);
+foreach ($ilkDizi as $keyx => $valuex) {
+  echo $keyx.' -- ';
+}
 }
 
 
