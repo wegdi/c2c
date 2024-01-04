@@ -6,6 +6,7 @@ require_once(SYSTEM.'General/General.php');
 $db = new General();
 $uniqid = uniqid();
 
+print_r($_POST);
 if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
 
   // XML verisini PHP SimpleXML nesnesine dönüştür
