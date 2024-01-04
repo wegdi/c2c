@@ -99,7 +99,7 @@ foreach ($data as $ustAnahtar => $altDizi) {
     $tumKeyler[] = $ustAnahtarString;
 
     // Alt diziyi yazdırma ve key'leri toplama (en fazla 3 alt diziye kadar)
-    toplaKeyler($altDizi, $tumKeyler, 1, 2);
+    toplaKeyler($altDizi, $tumKeyler, 0, 2);
 
     echo "<br>";
 }
