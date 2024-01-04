@@ -44,12 +44,12 @@ echo $donguler[0];
 $toplamcount;
 
 for ($i = 0; $i < $toplamcount; $i++) {
-    $aa .= $donguler[$i];
+    $aa='.[".'.$donguler[i].'"]';
 
 }
 echo $aa;
-
+/*
 foreach ($datax["$donguler[0]"]["$donguler["1"]"] as $key => $value) {
   print_r($value);
-}
+}*/
 ?>
