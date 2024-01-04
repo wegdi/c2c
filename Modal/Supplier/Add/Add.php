@@ -43,6 +43,20 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
         'SupplierFilePath' => '/Json/'.$uniqid.'.json'
     );
 
-    //echo $db->Add("Supplier", $data);
+    echo $db->Add("Supplier", $data);
+
+
+    preg_match_all('/"(.+)": "(.+)"/', $jsonFilePath, $output_array);
+    $r = 0;
+    while($r<= count($output_array[1])){
+        $data = array(
+            'LeftData' => $db->Guvenlik($output_array[1][$r]),
+            'RightData' => $db->Guvenlik($output_array[2][$r])
+        );
+        $db->Add("RCategory", $data);
+        $r = $r+1;
+    }
+    echo 'bitti';
+
 }
 ?>
