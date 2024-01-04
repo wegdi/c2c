@@ -48,35 +48,45 @@ if (count($donguler) == 1) {
 }
 
 // HTML tablosu oluşturan fonksiyonu çağır
-printDiziIcerigi($ilkDizi);
 
+echo '
+
+<div class="row">
+<div class="col-lg-12">
+    <div class="card">
+    <div class="card-header">
+        <h5 class="card-title mb-0">Xml Eşleştirme</h5>
+    </div>
+    <div class="card-body">
+        <table id="MetaTable" class="display table table-bordered dt-responsive" style="width:100%">
+            <thead>
+                <tr>
+
+                    <th>Anahtar</th>
+                    <th>Değer</th>
+                      <th></th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+
+
+';
+printDiziIcerigi($ilkDizi);
+echo '
+</tbody>
+
+</table>
+</div>
+</div>
+</div><!--end col-->
+</div><!--end row-->
+';
 // HTML tablosu oluşturan fonksiyon
 function printDiziIcerigi($veri, $indent = 0) {
-    echo '
 
-    <div class="row">
-    <div class="col-lg-12">
-        <div class="card">
-        <div class="card-header">
-            <h5 class="card-title mb-0">Xml Eşleştirme</h5>
-        </div>
-        <div class="card-body">
-            <table id="MetaTable" class="display table table-bordered dt-responsive" style="width:100%">
-                <thead>
-                    <tr>
-
-                        <th>Anahtar</th>
-                        <th>Değer</th>
-                          <th></th>
-
-                    </tr>
-                </thead>
-
-                <tbody>
-
-
-
-    ';
     foreach ($veri as $anahtar => $deger) {
         $anahtarString = is_string($anahtar) ? $anahtar : json_encode($anahtar);
         echo "<tr>";
@@ -92,14 +102,6 @@ function printDiziIcerigi($veri, $indent = 0) {
 
         echo "</tr>";
     }
-    echo '
-    </tbody>
 
-</table>
-</div>
-    </div>
-  </div><!--end col-->
-</div><!--end row-->
-';
 }
 ?>
