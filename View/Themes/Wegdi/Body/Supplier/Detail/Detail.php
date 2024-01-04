@@ -64,7 +64,7 @@ echo '
 
                     <th>Anahtar</th>
                     <th>Değer</th>
-<th>Değer</th>
+
                 </tr>
             </thead>
 
@@ -91,7 +91,13 @@ function printDiziIcerigi($veri, $indent = 0) {
         echo "<tr>";
         echo "<td>" .  $anahtarString . "</td>";
 
-        echo "<td>" .$deger . "</td>";
+        if (is_array($deger)) {
+            echo "<td>";
+            printDiziIcerigi($deger, $indent + 1);
+            echo "</td>";
+        } else {
+            echo "<td>" .$deger . "</td>";
+        }
 
         echo "</tr>";
     }
