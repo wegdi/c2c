@@ -52,22 +52,31 @@ printDiziIcerigi($ilkDizi);
 
 // HTML tablosu oluşturan fonksiyon
 function printDiziIcerigi($veri, $indent = 0) {
-    echo "<table border='1'>";
+    echo "<table id='example' class='display' style='width:100%'>";
+    echo "<thead><tr><th>Key</th><th>Value</th></tr></thead>";
+    echo "<tbody>";
     foreach ($veri as $anahtar => $deger) {
         $anahtarString = is_string($anahtar) ? $anahtar : json_encode($anahtar);
-        echo "<tr>";
-        echo "<td>" . str_repeat("&nbsp;", $indent * 4) . "Anahtar: " . $anahtarString . "</td>";
 
         if (is_array($deger)) {
-            echo "<td>";
             printDiziIcerigi($deger, $indent + 1);
-            echo "</td>";
         } else {
-            echo "<td>" . str_repeat("&nbsp;", ($indent + 1) * 4) . "Değer: " . $deger . "</td>";
+            echo "<tr>";
+            echo "<td>" . $anahtarString . "</td>";
+            echo "<td>" . $deger . "</td>";
+            echo "</tr>";
         }
-
-        echo "</tr>";
     }
+    echo "</tbody>";
     echo "</table>";
+
+    echo "
+        <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+        <script src='https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
+            });
+        </script>";
 }
 ?>
