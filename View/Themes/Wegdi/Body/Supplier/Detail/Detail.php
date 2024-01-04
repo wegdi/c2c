@@ -47,7 +47,6 @@ if (count($donguler) == 1) {
     $ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]["$donguler[2]"]["$donguler[3]"]);
 }
 
-
 $databaseKeys = [];
 
 // Fonksiyonu çağır ve veritabanı anahtarlarını al
@@ -64,7 +63,7 @@ function getDatabaseKeys($veri, $parentKey = null) {
 
     foreach ($veri as $anahtar => $deger) {
         $currentKey = ($parentKey) ? $parentKey . ' -> ' . $anahtar : $anahtar;
-        $databaseKeys[] = $currentKey;
+        $databaseKeys[] = array('anahtar' => $currentKey, 'deger' => $deger);
 
         if (is_array($deger)) {
             getDatabaseKeys($deger, $currentKey);
