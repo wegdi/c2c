@@ -38,11 +38,8 @@ foreach ($data as $ustAnahtar => $altDizi) {
 $datas = json_decode($jsonData, true);
 foreach ($datas["$ustAnahtarString"] as $key => $value) {
 
-  if ($altAnahtarString) {
-    echo "string";
-    foreach ($value["Urun"] as $key => $valxue) {
-      print_r( $valxue);
-    }
+  foreach ($value["Urun"] as $key => $ddd) {
+    print_r($ddd);
   }
 }
 
