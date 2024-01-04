@@ -12,65 +12,24 @@ $jsonData = file_get_contents($jsonUrl);
 // JSON verisini PHP dizisine dönüştürme
 $data = json_decode($jsonData, true);
 
-// Üst ve Alt anahtarları saklamak için dizi oluştur
-$anahtarlar = array();
-
-// Üst anahtarları ve Alt diziyi birleştirme
+// Üst anahtarları yazdırma
 foreach ($data as $ustAnahtar => $altDizi) {
-    $altAnahtarlar = array_map(function ($altAnahtar) {
-        return is_string($altAnahtar) ? $altAnahtar : json_encode($altAnahtar);
-    }, array_keys($altDizi));
+    // Üst anahtarı string olarak almak istiyorsak
+    $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
 
-    // Alt anahtarlar içinde sadece string olanları seç
-    $sadeceStringAltAnahtarlar = array_filter($altAnahtarlar, 'is_string');
+    echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
 
-    // Sadece string olan varsa diziyi ekleyin
-    if (!empty($sadeceStringAltAnahtarlar)) {
-        $anahtarlar[] = array(
-            'ustAnahtar' => is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar),
-            'altAnahtarlar' => $sadeceStringAltAnahtarlar
-        );
+    // Alt diziyi yazdırma
+    foreach ($altDizi as $altAnahtar => $deger) {
+        // Alt anahtarı sadece int değilse yazdır
+        if (!is_int($altAnahtar)) {
+            // Alt anahtarı string olarak almak istiyorsak
+            $altAnahtarString = is_string($altAnahtar) ? $altAnahtar : json_encode($altAnahtar);
+
+            echo "    Alt Anahtar: " . $altAnahtarString . "<br>";
+        }
     }
+
+    echo "<br>";
 }
-
-// Oluşturulan diziyi ekrana yazdırma
-print_r($anahtarlar);
-?>
-<?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
-require_once(SECURITY.'Security.php');
-$security->LoginControl($guvenlik);
-
-// JSON dosyasının URL'si
-$jsonUrl = 'https://c2c.wegdi.com/Json/65968acc2a290.json';
-
-// JSON verisini alma
-$jsonData = file_get_contents($jsonUrl);
-
-// JSON verisini PHP dizisine dönüştürme
-$data = json_decode($jsonData, true);
-
-// Üst ve Alt anahtarları saklamak için dizi oluştur
-$anahtarlar = array();
-
-// Üst anahtarları ve Alt diziyi birleştirme
-foreach ($data as $ustAnahtar => $altDizi) {
-    $altAnahtarlar = array_map(function ($altAnahtar) {
-        return is_string($altAnahtar) ? $altAnahtar : json_encode($altAnahtar);
-    }, array_keys($altDizi));
-
-    // Alt anahtarlar içinde sadece string olanları seç
-    $sadeceStringAltAnahtarlar = array_filter($altAnahtarlar, 'is_string');
-
-    // Sadece string olan varsa diziyi ekleyin
-    if (!empty($sadeceStringAltAnahtarlar)) {
-        $anahtarlar[] = array(
-            'ustAnahtar' => is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar),
-            'altAnahtarlar' => $sadeceStringAltAnahtarlar
-        );
-    }
-}
-
-// Oluşturulan diziyi ekrana yazdırma
-print_r($anahtarlar);
 ?>
