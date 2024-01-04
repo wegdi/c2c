@@ -78,14 +78,11 @@ $data = json_decode($jsonData, true);
 $tumKeyler = [];
 
 // Key'leri toplama fonksiyonu
-function toplaKeyler($veri, &$keyler, $oncekiKey = '') {
+function toplaKeyler($veri, &$keyler) {
     foreach ($veri as $key => $value) {
-        // Sayıları ve tekrar eden değerleri hariç tut
-        if (!is_numeric($key) && $key !== $oncekiKey && !in_array($key, $keyler)) {
-            $keyler[] = $key;
-            if (is_array($value)) {
-                toplaKeyler($value, $keyler, $key);
-            }
+        $keyler[] = $key;
+        if (is_array($value)) {
+            toplaKeyler($value, $keyler);
         }
     }
 }
@@ -99,7 +96,7 @@ foreach ($data as $ustAnahtar => $altDizi) {
     $tumKeyler[] = $ustAnahtarString;
 
     // Alt diziyi yazdırma ve key'leri toplama
-    toplaKeyler($altDizi, $tumKeyler, $ustAnahtar);
+    toplaKeyler($altDizi, $tumKeyler);
 
     echo "<br>";
 }
