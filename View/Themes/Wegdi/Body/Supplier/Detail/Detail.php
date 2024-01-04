@@ -110,5 +110,8 @@ foreach ($data as $ustAnahtar => $altDizi) {
 }
 
 // Tekrar edenleri kaldır
+$tumKeyler = array_unique($tumKeyler);
+
+print_r($tumKeyler);
 
 ?>
