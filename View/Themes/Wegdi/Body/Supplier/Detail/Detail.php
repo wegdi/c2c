@@ -42,18 +42,10 @@ echo count($donguler);
 
 if (count($donguler)==1) {
 
-  foreach ($data["$donguler[0]"] as $key => $value) {
-      print_r($value);
-  }
-
-
-
-
+  $ilkDizi = reset($data["$donguler[0]"]);
+  print_R($ilkDizi);
 }elseif (count($donguler)==2) {
-  foreach ($data["$donguler[0]"]["$donguler[1]"] as $key => $value) {
-      echo $value;
-      break; // Döngüden çık
-  }
+
 $ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]);
 print_R($ilkDizi);
 }
