@@ -13,7 +13,6 @@ $jsonData = file_get_contents($jsonUrl);
 $data = json_decode($jsonData, true);
 
 $donguler = [];
-$finalKeys = [];
 
 // Üst anahtarları yazdırma
 foreach ($data as $ustAnahtar => $altDizi) {
@@ -32,15 +31,22 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
             echo "    Alt Anahtar: " . $altAnahtarString . "<br>";
             $donguler[] = $altAnahtarString;
-            $finalKeys[] = $altAnahtarString;
         }
     }
 
     echo "<br>";
 }
 
+
 // Alt anahtarları yazdırma
-foreach ($finalKeys as $key) {
-    echo "Final Key: " . $key . "<br>";
+foreach ($donguler as $anahtar) {
+    if (isset($data[$anahtar])) {
+        $final=$data[$anahtar];
+    }
+}
+
+foreach ($final as $key => $valuex) {
+  echo $key;
+  print_r($valuex);
 }
 ?>
