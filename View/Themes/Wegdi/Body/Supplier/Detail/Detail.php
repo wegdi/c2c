@@ -103,7 +103,10 @@ function printDiziIcerigi($veri, $parentKey = null) {
 
         if (is_array($deger)) {
             echo "<td>";
-            print_r($deger);
+
+            foreach ($deger as $key => $value) {
+                print_r($value);
+            }
             //printDiziIcerigi($deger, $anahtarString);
             echo "</td>";
         } else {
