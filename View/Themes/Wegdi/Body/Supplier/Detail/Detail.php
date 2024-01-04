@@ -20,7 +20,7 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
     // Alt diziyi yazdırma
     foreach ($altDizi["Urun"] as $altAnahtar => $deger) {
-      print_r($deger);
+      echo $deger["UrunKartiID"];
     }
 
     echo "<br>";
