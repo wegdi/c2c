@@ -40,8 +40,8 @@ foreach ($datas["$ustAnahtarString"] as $key => $value) {
 
   if ($altAnahtarString) {
     echo "string";
-    foreach ($value["$altAnahtarString"] as $key => $valxue) {
-      print_r();
+    foreach ($value["Urun"] as $key => $valxue) {
+      print_r( $valxue);
     }
   }
 }
