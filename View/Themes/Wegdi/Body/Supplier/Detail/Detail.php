@@ -80,20 +80,25 @@ $tumKeyler = [];
 // Key'leri toplama fonksiyonu
 function toplaKeyler($veri, &$keyler) {
     foreach ($veri as $key => $value) {
-        $keyler[] = $key;
-        if (is_array($value)) {
-            toplaKeyler($value, $keyler);
-        }
+
+      $keyler[] = $key;
+      if (is_array($value)) {
+          toplaKeyler($value, $keyler);
+      }
+
     }
 }
 
 // Üst anahtarları yazdırma ve key'leri toplama
 foreach ($data as $ustAnahtar => $altDizi) {
+  print_r($altDizi);
+
     // Üst anahtarı string olarak almak istiyorsak
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
 
     // Sayısal değer içeren key'leri kontrol et
     $tumKeyler[] = $ustAnahtarString;
+
 
     // Alt diziyi yazdırma ve key'leri toplama
     toplaKeyler($altDizi, $tumKeyler);
@@ -103,32 +108,6 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
 // Tekrar edenleri kaldır
 $tumKeyler = array_unique($tumKeyler);
+print_r($tumKeyler);
 
-// işlenmiş JSON verilerini döndürecek fonksiyon
-function getProcessedJSONData($data, $uniqueKeys) {
-    $processedData = [];
-
-    foreach ($data as $ustAnahtar => $altDizi) {
-        $processedData[$ustAnahtar] = processSubArray($altDizi, $uniqueKeys);
-    }
-
-    return $processedData;
-}
-
-function processSubArray($subArray, $uniqueKeys) {
-    $processedSubArray = [];
-
-    foreach ($subArray as $key => $value) {
-        if (!in_array($key, $uniqueKeys) || !is_array($value)) {
-            $processedSubArray[$key] = $value;
-        } else {
-            $processedSubArray[$key] = processSubArray($value, $uniqueKeys);
-        }
-    }
-
-    return $processedSubArray;
-}
-
-$processedData = getProcessedJSONData($data, $tumKeyler);
-print_r($processedData );
 ?>
