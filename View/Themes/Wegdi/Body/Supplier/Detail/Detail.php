@@ -10,6 +10,8 @@ $jsonUrl = 'https://c2c.wegdi.com/Json/65968ec9c3a67.json';
 $jsonData = file_get_contents($jsonUrl);
 
 // JSON verisini PHP dizisine dönüştürme
+$datas = json_decode($jsonData, true);
+
 $data = json_decode($jsonData, true);
 
 // Üst anahtarları yazdırma
@@ -31,5 +33,9 @@ foreach ($data as $ustAnahtar => $altDizi) {
     }
 
     echo "<br>";
+}
+
+foreach ($datas as $key => $value) {
+    print_r($value);
 }
 ?>
