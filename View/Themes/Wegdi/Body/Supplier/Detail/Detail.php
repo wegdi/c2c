@@ -13,7 +13,7 @@ $jsonData = file_get_contents($jsonUrl);
 $data = json_decode($jsonData, true);
 
 // Üst anahtarları yazdırma
-foreach ($data as $ustAnahtar => $altDizi) {
+foreach ($data["stok"] as $ustAnahtar => $altDizi) {
   print_r($altDizi);
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
 
