@@ -69,7 +69,7 @@ echo '
 ';
 
 // HTML tablo içeriğini oluşturan fonksiyonu çağır
-printDiziIcerigi($data);
+printDiziIcerigi($ilkDizi);
 
 // HTML tabloyu kapat
 echo '
