@@ -67,6 +67,10 @@ echo '
                         </tr>
                     </thead>
                     <tbody>
+                    <tr>
+                    <td>'.$ustAnahtarString.'</td>
+                      <td>'.$altAnahtarString.'</td>
+                    </tr>
 ';
 
 // HTML tablo içeriğini oluşturan fonksiyonu çağır
