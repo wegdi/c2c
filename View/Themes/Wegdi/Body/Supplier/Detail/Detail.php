@@ -11,6 +11,7 @@ $jsonData = file_get_contents($jsonUrl);
 
 // JSON verisini PHP dizisine dönüştürme
 $data = json_decode($jsonData, true);
+$datax = json_decode($jsonData, true);
 
 $donguler = [];
 // Üst anahtarları yazdırma
@@ -38,4 +39,8 @@ foreach ($data as $ustAnahtar => $altDizi) {
 print_r($donguler);
 
 echo count($donguler);
+
+foreach ($datax["$donguler[0]"] as $key => $value) {
+  // code...
+}
 ?>
