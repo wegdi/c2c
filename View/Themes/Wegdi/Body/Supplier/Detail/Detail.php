@@ -55,23 +55,11 @@ foreach ($ilkDizi as $keyx => $valuex) {
   echo "<br>";
 }
 }elseif (count($donguler)==3) {
-$ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]);
+$ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]["$donguler[2]"]);
 foreach ($ilkDizi as $keyx => $valuex) {
   echo $keyx.' -- ';
 }
 }
 
-/*
-if (!empty($final)) {
-    // PHP dizisinin ilk elemanını alın
-    $ilkDeger = reset($final);
-}
 
-
-
-foreach ($ilkDeger as $key => $value) {
-echo $key.' '.$value;
-echo "<br>";
-}
-*/
 ?>
