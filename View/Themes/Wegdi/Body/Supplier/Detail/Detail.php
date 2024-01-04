@@ -54,8 +54,8 @@ if (count($donguler)==1) {
       echo $value;
       break; // Döngüden çık
   }
-
-
+$ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]);
+print_R($ilkDizi);
 }
 
 /*
