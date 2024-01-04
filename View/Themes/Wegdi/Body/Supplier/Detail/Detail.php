@@ -14,6 +14,7 @@ $data = json_decode($jsonData, true);
 
 // Üst anahtarları yazdırma
 foreach ($data as $ustAnahtar => $altDizi) {
+  print_r($altDizi);
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
 
     echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
