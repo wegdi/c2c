@@ -40,6 +40,20 @@ foreach ($data as $ustAnahtar => $altDizi) {
 echo count($donguler);
 
 
+if (count($donguler)==1) {
+  if (!empty($final)) {
+      // PHP dizisinin ilk elemanını alın
+      $ilkDeger = reset($final);
+  }
+
+
+
+  foreach ($ilkDeger as $key => $value) {
+  echo $key.' '.$value;
+  echo "<br>";
+  }
+}
+
 /*
 if (!empty($final)) {
     // PHP dizisinin ilk elemanını alın
