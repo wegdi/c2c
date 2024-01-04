@@ -1,9 +1,13 @@
 <?php
-function get_cdata($element) {
-    $node = dom_import_simplexml($element);
-    $cdata = $node->ownerDocument->createCDATASection($node->textContent);
-    $node->replaceChild($cdata, $node->firstChild);
-    return $element;
+function convertCDATAtoText($node) {
+    foreach ($node->childNodes as $child) {
+        if ($child instanceof \DOMCdataSection) {
+            $textNode = $node->ownerDocument->createTextNode($child->nodeValue);
+            $node->replaceChild($textNode, $child);
+        } elseif ($child->hasChildNodes()) {
+            convertCDATAtoText($child);
+        }
+    }
 }
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
@@ -15,11 +19,15 @@ $uniqid = uniqid();
 
 if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
 
-    // XML verisini PHP SimpleXML nesnesine dönüştür
-    $xml = simplexml_load_file($_POST["tedarikciLink"]);
+    // XML verisini PHP DOMDocument nesnesine dönüştür
+    $dom = new \DOMDocument;
+    $dom->load($_POST["tedarikciLink"]);
 
-    // CDATA içeriklerini elde etmek için XML içeriğini döngü ile gezip get_cdata fonksiyonunu kullan
-    array_walk_recursive($xml, 'get_cdata');
+    // CDATA içeriğini text noduna dönüştür
+    convertCDATAtoText($dom);
+
+    // Dönüştürülmüş DOMDocument nesnesini SimpleXML nesnesine dönüştür
+    $xml = simplexml_import_dom($dom);
 
     $json = json_encode($xml, JSON_PRETTY_PRINT);
 
