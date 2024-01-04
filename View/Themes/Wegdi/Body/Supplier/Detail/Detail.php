@@ -37,7 +37,7 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
 $datas = json_decode($jsonData, true);
 foreach ($datas["$ustAnahtarString"] as $key => $value) {
-    echo $value["UrunKartiID"];
+  print_R($key);
 }
 
 ?>
