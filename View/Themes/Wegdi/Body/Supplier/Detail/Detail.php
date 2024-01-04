@@ -48,6 +48,10 @@ if (count($donguler) == 1) {
 }
 
 
+if ($altAnahtarString) {
+  $yaz='<td>'.$altAnahtarString.'</td>';
+}
+
 
 // HTML tabloyu başlat
 echo '
@@ -73,7 +77,7 @@ echo '
                         <td></td>
                     </tr>
                     <tr>
-                    <td>'.$altAnahtarString.'</td>
+                    '.$yaz.'
                     <td></td>
                       <td></td>
                     </tr>
