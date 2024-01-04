@@ -67,6 +67,7 @@ function printDiziIcerigi($veri, $indent = 0) {
 
                         <th>Anahtar</th>
                         <th>Değer</th>
+                          <th></th>
 
                     </tr>
                 </thead>
