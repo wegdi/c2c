@@ -41,6 +41,6 @@ print_r($donguler);
 echo count($donguler);
 
 foreach ($datax["$donguler[0]"] as $key => $value) {
-  // code...
+  print_r($value);
 }
 ?>
