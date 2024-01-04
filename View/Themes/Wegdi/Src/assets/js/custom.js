@@ -259,6 +259,8 @@ $(document).ready(function() {
   });
 });
 
+
+
 $(document).ready(function() {
     // Her iki input için keyup olayı ekleme
     $("#tedarikciadi, #tedarkcilink").on('keyup', function() {
@@ -309,6 +311,11 @@ $(document).ready(function() {
           data: formData,
           dataType: "Json",
           success: function(response) {
+            if (response.url) {
+      // Başarılı bir şekilde gönderildiğinde ve response içinde 'url' varsa yönlendirme yap
+      window.location.href = response.url;
+    }
+
             console.log(response);
             // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
           },
