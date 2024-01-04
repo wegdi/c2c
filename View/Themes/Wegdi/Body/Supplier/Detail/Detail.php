@@ -99,7 +99,16 @@ function printDiziIcerigi($veri, $parentKey = null) {
     foreach ($veri as $anahtar => $deger) {
         $anahtarString = is_string($anahtar) ? $anahtar : json_encode($anahtar);
         echo "<tr>";
-        echo "<td>" . $anahtarString . "</td>";
+
+        if (is_array($deger)) {
+
+            foreach ($deger as $key => $value) {
+              $alt.=$key.' ';
+            }
+        }
+
+
+        echo "<td>" . $anahtarString .   $alt. "</td>";
 
         if (is_array($deger)) {
             echo "<td>";
