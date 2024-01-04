@@ -11,7 +11,7 @@ $jsonData = file_get_contents($jsonUrl);
 
 // JSON verisini PHP dizisine dönüştürme
 $datas = json_decode($jsonData, true);
-foreach ($datas as $key => $value) {
+foreach ($datas["Urun"] as $key => $value) {
     print_r($value);
 }
 /*
