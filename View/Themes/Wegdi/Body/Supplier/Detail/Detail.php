@@ -41,17 +41,16 @@ echo count($donguler);
 
 
 if (count($donguler)==1) {
-  if (!empty($final)) {
-      // PHP dizisinin ilk elemanını alın
-      $ilkDeger = reset($final);
+
+  foreach ($data["$donguler[0]"] as $key => $value) {
+      print_r($value);
   }
 
 
 
-  foreach ($ilkDeger as $key => $value) {
-  echo $key.' '.$value;
-  echo "<br>";
-  }
+
+}elseif (count($donguler)==1) {
+  // code...
 }
 
 /*
