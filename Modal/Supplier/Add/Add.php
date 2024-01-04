@@ -46,7 +46,7 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
     echo $db->Add("Supplier", $data);
 
 
-    preg_match_all('/"(.+)": "(.+)"/', $jsonFilePath, $output_array);
+    preg_match_all('/"(.+)": "(.+)"/', "https://c2c.wegdi.com/Json/659693f87cc90.json", $output_array);
     $r = 0;
     while($r<= count($output_array[1])){
         $data = array(
