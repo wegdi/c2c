@@ -12,14 +12,15 @@ $jsonData = file_get_contents($jsonUrl);
 // JSON verisini PHP dizisine dönüştürme
 $data = json_decode($jsonData, true);
 
-// İlk anahtarın adını al
-$ilkAnahtarAdi = null;
+// Üst anahtarları yazdırma
+foreach ($data as $ustAnahtar => $altDizi) {
+    echo "Üst Anahtar: " . $ustAnahtar . "<br>";
 
-if (!empty($data) && is_array($data)) {
-    reset($data); // Diziyi sıfırla (başa konumlandır)
-    $ilkAnahtarAdi = key($data); // İlk anahtarın adını al
+    // Alt diziyi yazdırma
+    foreach ($altDizi as $altAnahtar => $deger) {
+        echo "    Alt Anahtar: " . $altAnahtar . "<br>";
+    }
+
+    echo "<br>";
 }
-
-// İlk anahtarın adını ekrana yazdırma
-echo "İlk Anahtar: " . $ilkAnahtarAdi;
 ?>
