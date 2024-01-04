@@ -33,7 +33,6 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
     $json = json_encode($xml, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
     $jsonFilePath = JSONFILE.$uniqid.'.json';
-    echo $jsonFilePath;
     file_put_contents($jsonFilePath, $json);
 
     $data = array(
