@@ -17,7 +17,8 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
 
   // JSON dosyasını belirli bir dizine kaydet
   $jsonFilePath = JSONFILE.$uniqid.'.json'; // Burada "your_filename.json" dosya adını değiştirebilirsiniz.
-  file_put_contents($jsonFilePath, $json);
+  echo $jsonFilePath;
+  //file_put_contents($jsonFilePath, $json);
 
 
   $data = array(
@@ -28,6 +29,6 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
 
   );
 
-  echo $db->Add("Supplier", $data);
+  //echo $db->Add("Supplier", $data);
 }
 ?>
