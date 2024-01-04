@@ -64,11 +64,7 @@ function getDatabaseKeys($veri, $parentKey = null) {
 
     foreach ($veri as $anahtar => $deger) {
         $currentKey = ($parentKey) ? $parentKey . ' -> ' . $anahtar : $anahtar;
-        $currentValue = $deger;
-
         $databaseKeys[] = $currentKey;
-        $databaseKeys[]= $currentValue;
-
 
         if (is_array($deger)) {
             getDatabaseKeys($deger, $currentKey);
