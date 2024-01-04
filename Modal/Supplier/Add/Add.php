@@ -6,15 +6,26 @@ require_once(SYSTEM.'General/General.php');
 $db=new General();
 $uniqid=uniqid();
 
-$data = array(
-    'SupplierName' => $db->Guvenlik($_POST["tedarikciAdi"]),
-    'SupplierUrl' => $db->Guvenlik($_POST["en"]),
-    'SupplierCode' => $$uniqid,
-    'Pages' => '', // Burada uygun bir değer atamanız gerekecektir
-    'Parent_ID' => $db->Guvenlik($_POST["parent_id"]),
-    'Seo_Url' => $db->Seflink($db->Guvenlik($_POST["en"])), // Parantez eksikti
-    'Icon' => $db->Guvenlik($_POST["icon"]),
-    'Order' => $db->Guvenlik($_POST["order"])
-);
+if ($_POST["tedarikciLink"]!="" and $_POST["tedarikciLink"]!="") {
 
-echo $db->Add("Supplier", $data); // `Add` fonksiyonunu düzgün şekilde çağırın
+  // XML verisini çekmek için URL
+  $xmlUrl = 'https://b2b.dogan-oto.com.tr/bayi/xmlexportv3Dogan.aspx?code=%C4%B0STANBUL.0631';
+
+  // XML verisini PHP SimpleXML nesnesine dönüştür
+  $xml = simplexml_load_file($xmlUrl);
+
+  // SimpleXML nesnesini JSON formatına çevir
+  $json = json_encode($xml);
+
+  $json_decode=json_decode($json,1);
+
+  $data = array(
+      'SupplierName' => $db->Guvenlik($_POST["tedarikciAdi"]),
+      'SupplierUrl' => $db->Guvenlik($_POST["tedarikciLink"]),
+      'SupplierCode' => $uniqid,
+
+  );
+
+  echo $db->Add("Supplier", $data);
+
+}
