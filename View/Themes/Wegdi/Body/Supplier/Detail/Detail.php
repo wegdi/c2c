@@ -55,6 +55,7 @@ if (count($donguler)==1) {
         // PHP dizisinin ilk elemanını alın
         $ilkDeger = reset($value);
     }
+    print_r($ilkDeger);
   }
 
 }
