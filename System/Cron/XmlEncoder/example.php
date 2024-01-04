@@ -31,7 +31,6 @@ $uniqid = uniqid();
     }
     echo 'bitti';
 
-}
 ?>
 
 
