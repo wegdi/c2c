@@ -21,6 +21,8 @@ define('THEMES_DIR', $dir.'/View/Themes/');
 define('THEMES', $dir.'/View/Themes/Wegdi/');
 define('THEM', '/View/Themes/Wegdi/');
 
+define('JSONFILE', $dir.'/Json/');
+
 define('FILE', $dir.'/File/Excel/');
 ////Facebook ve GoogleId
 define('Access_Token', 'EAASHUCBV8TQBOxWftymj0ZAya1975VLcPbB4EgGWmEYbkDm22nAs8hlBsshCMzTIXuJAqYfw6wLAp1ZAuJ3Tr9ywVZAlHPF4fGReVxPJbP2MZCLX5HL6BuUqXVroviJODjlI8NtqMUoXnwRcBolK6o44ZA8ZBJ08TiZBZB3hN12U6L5eBCs1HZAOGX5yRkoIpZBk5EAiaXSK4XGtoVZBpZBmxxytYIZA0wUZAZCs6WvvmAcl9lY6PsZD');
