@@ -44,7 +44,7 @@ echo $donguler[0];
 $toplamcount;
 
 for ($i = 0; $i < $toplamcount; $i++) {
-    $aa='.[".'.$donguler[i].'"]';
+    $aa.='.[".'.$donguler[$i].'"]';
 
 }
 echo $aa;
