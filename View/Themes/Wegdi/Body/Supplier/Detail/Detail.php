@@ -36,7 +36,7 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
 
 $datas = json_decode($jsonData, true);
-foreach ($datas["$ustAnahtarString"]["$altAnahtarString"] as $key => $value) {
+foreach ($datas->Urunler as $key => $value) {
 
       print_r($value);
 }
