@@ -104,7 +104,7 @@ function printDiziIcerigi($veri, $parentKey = null) {
 
             foreach ($deger as $key => $value) {
               if (!is_numeric($key)) {
-                $alt.=$key.'->';
+                $alt.=' -> '.$key;
 
               }
             }
