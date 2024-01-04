@@ -63,6 +63,7 @@ echo '
                         <tr>
                             <th>Anahtar</th>
                             <th>Değer</th>
+                            <th>Eşleştirme</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -95,7 +96,7 @@ function printDiziIcerigi($veri, $parentKey = null) {
         } else {
             echo "<td>" . $deger . "</td>";
         }
-
+        echo "<td>" "</td>";
         echo "</tr>";
     }
 }
