@@ -13,15 +13,21 @@ $jsonData = file_get_contents($jsonUrl);
 $data = json_decode($jsonData, true);
 
 // Üst anahtarları yazdırma
-foreach ($data["stok"] as $ustAnahtar => $altDizi) {
-  print_r($altDizi);
+foreach ($data as $ustAnahtar => $altDizi) {
+    // Üst anahtarı string olarak almak istiyorsak
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
 
     echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
 
     // Alt diziyi yazdırma
     foreach ($altDizi as $altAnahtar => $deger) {
-        print_r( $deger);
+        // Alt anahtarı sadece int değilse yazdır
+        if (!is_int($altAnahtar)) {
+            // Alt anahtarı string olarak almak istiyorsak
+            $altAnahtarString = is_string($altAnahtar) ? $altAnahtar : json_encode($altAnahtar);
+
+            echo "    Alt Anahtar: " . $altAnahtarString . "<br>";
+        }
     }
 
     echo "<br>";
