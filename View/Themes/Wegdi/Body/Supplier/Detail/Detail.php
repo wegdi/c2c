@@ -21,17 +21,10 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
     // Alt diziyi yazdırma
     foreach ($altDizi as $altAnahtar => $deger) {
-        // Alt anahtarı sadece int değilse yazdır
-        if (!is_int($altAnahtar)) {
-            // Alt anahtarı string olarak almak istiyorsak
-            $altAnahtarString = is_string($altAnahtar) ? $altAnahtar : json_encode($altAnahtar);
-
-            echo "    Alt Anahtar: " . $altAnahtarString . "<br>";
-
-            // Eğer alt anahtar "UrunKartiID" ise değeri yazdır
-            if ($altAnahtarString === "UrunKartiID") {
-                echo "        Değer: " . $deger . "<br>";
-            }
+        // Eğer alt anahtar "UrunKartiID" ise değeri yazdır
+        if ($altAnahtar === "UrunKartiID") {
+            echo "    Alt Anahtar: " . $altAnahtar . "<br>";
+            echo "        Değer: " . $deger . "<br>";
         }
     }
 
