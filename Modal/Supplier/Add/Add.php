@@ -12,11 +12,10 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
   // XML verisini PHP SimpleXML nesnesine dönüştür
   $xml = simplexml_load_file($_POST["tedarikciLink"]);
 
-  // SimpleXML nesnesini JSON formatına çevir
+
   $json = json_encode($xml, JSON_PRETTY_PRINT);
 
-  // JSON dosyasını belirli bir dizine kaydet
-  $jsonFilePath = JSONFILE.$uniqid.'.json'; // Burada "your_filename.json" dosya adını değiştirebilirsiniz.
+  $jsonFilePath = JSONFILE.$uniqid.'.json';
   echo $jsonFilePath;
   file_put_contents($jsonFilePath, $json);
 
