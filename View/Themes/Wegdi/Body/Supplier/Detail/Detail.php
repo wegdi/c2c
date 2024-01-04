@@ -130,6 +130,5 @@ function processSubArray($subArray, $uniqueKeys) {
 }
 
 $processedData = getProcessedJSONData($data, $tumKeyler);
-echo json_encode($processedData, JSON_PRETTY_PRINT);
-
+print_r($processedData );
 ?>
