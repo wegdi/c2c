@@ -38,10 +38,18 @@ foreach ($data as $ustAnahtar => $altDizi) {
 }
 print_r($donguler);
 
-echo count($donguler);
+$toplamcount count($donguler);
 echo $donguler[0];
 
-foreach ($datax["$donguler[0]"]["Urun"] as $key => $value) {
+$toplamcount;
+
+for ($i = 0; $i < $toplamcount; $i++) {
+    $aa .= $donguler[$i];
+
+}
+echo $aa;
+
+foreach ($datax["$donguler[0]"]["$donguler["1"]"] as $key => $value) {
   print_r($value);
 }
 ?>
