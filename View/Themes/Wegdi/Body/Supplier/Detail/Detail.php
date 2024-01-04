@@ -100,6 +100,8 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
     echo "<br>";
 }
-print_r($tumKeyler);
 
+$s=array_unique($tumKeyler);
+
+print_r($s);
 ?>
