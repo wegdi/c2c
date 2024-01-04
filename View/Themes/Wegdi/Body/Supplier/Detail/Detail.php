@@ -38,7 +38,7 @@ foreach ($data as $ustAnahtar => $altDizi) {
 }
 print_r($donguler);
 
-$toplamcount count($donguler);
+$toplamcount=count($donguler);
 echo $donguler[0];
 
 $toplamcount;
