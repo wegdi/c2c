@@ -91,13 +91,7 @@ function printDiziIcerigi($veri, $indent = 0) {
         echo "<tr>";
         echo "<td>" .  $anahtarString . "</td>";
 
-        if (is_array($deger)) {
-            echo "<td>";
-            printDiziIcerigi($deger, $indent + 1);
-            echo "</td>";
-        } else {
-            echo "<td>" .$deger . "</td>";
-        }
+        echo "<td>" .$deger . "</td>";
 
         echo "</tr>";
     }
