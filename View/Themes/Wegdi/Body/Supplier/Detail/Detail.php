@@ -2,7 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
-/*
+
 // JSON dosyasının URL'si
 $jsonUrl = 'https://c2c.wegdi.com/Json/65968ec9c3a67.json';
 
@@ -64,49 +64,6 @@ foreach ($ilkDizi as $keyx => $valuex) {
   echo $keyx.' -- ';
 }
 }
-*/
-$jsonUrl = 'https://c2c.wegdi.com/Json/65968acc2a290.json';
 
-// JSON verisini alma
-$jsonData = file_get_contents($jsonUrl);
-
-// JSON verisini PHP dizisine dönüştürme
-$data = json_decode($jsonData, true);
-
-// Tüm key'leri toplamak için kullanılacak dizi
-$tumKeyler = [];
-$eklenmisKeyler = [];
-
-// Key'leri toplama fonksiyonu
-function toplaKeyler($veri, &$keyler, &$eklenmisKeyler) {
-    foreach ($veri as $key => $value) {
-        if (!in_array($key, $eklenmisKeyler)) {
-            $keyler[] = $key;
-            $eklenmisKeyler[] = $key;
-        }
-
-        if (is_array($value)) {
-            toplaKeyler($value, $keyler, $eklenmisKeyler);
-        }
-    }
-}
-
-// Üst anahtarları yazdırma ve key'leri toplama
-foreach ($data as $ustAnahtar => $altDizi) {
-    // Üst anahtarı string olarak almak istiyorsak
-    $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
-
-    // Sayısal değer içeren key'leri kontrol et
-    $tumKeyler[] = $ustAnahtarString;
-
-    // Alt diziyi yazdırma ve key'leri toplama
-    toplaKeyler($altDizi, $tumKeyler, $eklenmisKeyler);
-
-    echo "<br>";
-}
-
-// Tekrar edenleri kaldır
-$tumKeyler = array_unique($tumKeyler);
-print_r($tumKeyler);
 
 ?>
