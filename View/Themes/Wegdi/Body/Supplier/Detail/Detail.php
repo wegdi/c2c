@@ -13,9 +13,17 @@ $jsonUrl = 'https://c2c.wegdi.com/Json/659694796d1cf.json';
 $jsonData = file_get_contents($jsonUrl);
 
 // JSON verisini PHP dizisine dönüştürme
-$decodedData = json_decode($jsonData, true);
+$data = json_decode($jsonData, true);
+
+
+// İlk elemanı al
+$ilkEleman = null;
+
+if (!empty($data['stok']) && is_array($data['stok'])) {
+    $ilkEleman = $data['stok'][0];
+}
 
 // PHP dizisini ekrana yazdırma
-print_r($decodedData);
+print_r($ilkEleman);
 
 ?>
