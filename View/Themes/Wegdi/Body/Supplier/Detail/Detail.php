@@ -27,14 +27,14 @@ foreach ($data as $ustAnahtar => $altDizi) {
             $altAnahtarString = is_string($altAnahtar) ? $altAnahtar : json_encode($altAnahtar);
 
             echo "    Alt Anahtar: " . $altAnahtarString . "<br>";
+
+            // Eğer alt anahtar "UrunKartiID" ise değeri yazdır
+            if ($altAnahtarString === "UrunKartiID") {
+                echo "        Değer: " . $deger . "<br>";
+            }
         }
     }
 
     echo "<br>";
-
-    // Alt diziyi yazdırma
-    foreach ($altDizi as $key => $value) {
-        print_r($value);
-    }
 }
 ?>
