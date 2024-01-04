@@ -10,7 +10,9 @@ print_r($_POST);
 if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
 
   // XML verisini PHP SimpleXML nesnesine dönüştür
-  $xml = simplexml_load_file($_POST["tedarikciLink"]);
+  //$xml = simplexml_load_file($_POST["tedarikciLink"]);
+
+  $xml = file_get_contents($_POST["tedarikciLink"]);
 
 
   $json = json_encode($xml, JSON_PRETTY_PRINT);
