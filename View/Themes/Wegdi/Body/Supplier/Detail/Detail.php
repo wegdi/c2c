@@ -51,8 +51,7 @@ if (!empty($final)) {
     $ilkDeger = reset($final);
 }
 
-// İlk değeri yazdırın
-echo 'İlk Değer: ' . $ilkDeger;
+print_r($ilkDeger);
 
 
 ?>
