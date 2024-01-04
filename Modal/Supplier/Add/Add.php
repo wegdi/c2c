@@ -45,18 +45,10 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
 
     echo $db->Add("Supplier", $data);
 
-
-    preg_match_all('/"(.+)": "(.+)"/', "https://c2c.wegdi.com/Json/659693f87cc90.json", $output_array);
-    $r = 0;
-    while($r<= count($output_array[1])){
-        $data = array(
-            'LeftData' => $db->Guvenlik($output_array[1][$r]),
-            'RightData' => $db->Guvenlik($output_array[2][$r])
-        );
-        $db->Add("RCategory", $data);
-        $r = $r+1;
+  /*  if (condition) {
+      // code...
     }
-    echo 'bitti';
+    */
 
 }
 ?>
