@@ -96,7 +96,7 @@ function printDiziIcerigi($veri, $parentKey = null) {
         } else {
             echo "<td>" . $deger . "</td>";
         }
-        echo "<td>".'s'."</td>";
+        echo "<td></td>";
         echo "</tr>";
     }
 }
