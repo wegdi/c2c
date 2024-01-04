@@ -40,8 +40,8 @@ print_r($donguler);
 
 echo count($donguler);
 echo $donguler[0];
-/*
-foreach ($datax["$donguler[0]"] as $key => $value) {
+
+foreach ($datax[{$donguler[0]}] as $key => $value) {
   print_r($value);
-}*/
+}
 ?>
