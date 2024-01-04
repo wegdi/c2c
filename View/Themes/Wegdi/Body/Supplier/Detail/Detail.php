@@ -37,15 +37,10 @@ foreach ($data as $ustAnahtar => $altDizi) {
     echo "<br>";
 }
 
-
-// Alt anahtarları yazdırma
-foreach ($donguler as $anahtar) {
-    if (isset($data[$anahtar])) {
-        $final=$data[$anahtar];
-    }
-}
+echo count($donguler);
 
 
+/*
 if (!empty($final)) {
     // PHP dizisinin ilk elemanını alın
     $ilkDeger = reset($final);
@@ -57,5 +52,5 @@ foreach ($ilkDeger as $key => $value) {
 echo $key.' '.$value;
 echo "<br>";
 }
-
+*/
 ?>
