@@ -51,12 +51,10 @@ if (count($donguler)==1) {
 
 }elseif (count($donguler)==2) {
   foreach ($data["$donguler[0]"]["$donguler[1]"] as $key => $value) {
-    if (!empty($value)) {
-        // PHP dizisinin ilk elemanını alın
-        $ilkDeger = reset($value);
-    }
-    print_r($ilkDeger);
+      echo $value;
+      break; // Döngüden çık
   }
+
 
 }
 
