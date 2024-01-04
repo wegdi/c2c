@@ -36,10 +36,6 @@ foreach ($data as $ustAnahtar => $altDizi) {
     echo "<br>";
 }
 print_r($donguler);
-$a=0;
-$tx = '';
-while ($a <= count($donguler)) {
-    $tx .= "[".$donguler[$a]."]";
-}
-echo $tx;
+
+echo count($donguler);
 ?>
