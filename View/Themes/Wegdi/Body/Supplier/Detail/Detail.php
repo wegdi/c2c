@@ -47,60 +47,56 @@ if (count($donguler) == 1) {
     $ilkDizi = reset($data["$donguler[0]"]["$donguler[1]"]["$donguler[2]"]["$donguler[3]"]);
 }
 
-// HTML tablosu oluşturan fonksiyonu çağır
 
+
+// HTML tabloyu başlat
 echo '
-
 <div class="row">
-<div class="col-lg-12">
-    <div class="card">
-    <div class="card-header">
-        <h5 class="card-title mb-0">Xml Eşleştirme</h5>
-    </div>
-    <div class="card-body">
-        <table id="MetaTablse" class="display table table-bordered dt-responsive" style="width:100%">
-            <thead>
-                <tr>
-
-                    <th>Anahtar</th>
-                    <th>Değer</th>
-
-                </tr>
-            </thead>
-
-            <tbody>
-
-
-
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Xml Eşleştirme</h5>
+            </div>
+            <div class="card-body">
+                <table id="MetaTablse" class="display table table-bordered dt-responsive" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Anahtar</th>
+                            <th>Değer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 ';
-printDiziIcerigi($ilkDizi);
-echo '
-</tbody>
 
-</table>
-</div>
-</div>
-</div><!--end col-->
+// HTML tablo içeriğini oluşturan fonksiyonu çağır
+printDiziIcerigi($data);
+
+// HTML tabloyu kapat
+echo '
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div><!--end col-->
 </div><!--end row-->
 ';
-// HTML tablosu oluşturan fonksiyon
-function printDiziIcerigi($veri, $indent = 0) {
 
+// HTML tablo içeriğini oluşturan fonksiyon
+function printDiziIcerigi($veri, $parentKey = null) {
     foreach ($veri as $anahtar => $deger) {
         $anahtarString = is_string($anahtar) ? $anahtar : json_encode($anahtar);
         echo "<tr>";
-        echo "<td>" .  $anahtarString . "</td>";
+        echo "<td>" . $anahtarString . "</td>";
 
         if (is_array($deger)) {
             echo "<td>";
-            printDiziIcerigi($deger, $indent + 1);
+            printDiziIcerigi($deger, $anahtarString);
             echo "</td>";
         } else {
-            echo "<td>" .$deger . "</td>";
+            echo "<td>" . $deger . "</td>";
         }
 
         echo "</tr>";
     }
-
 }
 ?>
