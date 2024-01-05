@@ -8,6 +8,38 @@
 
 
 <?php
+
+
+$options = [
+    "product_name" => "Ürün Adı",
+    "product_description" => "Açıklama",
+    "product_meta_description" => "Meta description",
+    "product_meta_keyword" => "Meta keyword",
+    "model" => "Ürün Kodu",
+    "sku" => "SKU",
+    "quantity" => "Stok",
+    "main_image" => "Ana Resim",
+    "image_1" => "Ürün resmi 1",
+    "image_2" => "Ürün resmi 2",
+    "image_3" => "Ürün resmi 3",
+    "image_4" => "Ürün resmi 4",
+    "image_5" => "Ürün resmi 5",
+    "image_6" => "Ürün resmi 6",
+    "image_7" => "Ürün resmi 7",
+    "image_8" => "Ürün resmi 8",
+    "image_9" => "Ürün resmi 9",
+    "image_10" => "Ürün resmi 10",
+    "manufacturer_name" => "Marka",
+    "price" => "Fiyat",
+    "product_option_price" => "Seçenek Fiyatı",
+    "product_option_quantity" => "Seçenek Stok",
+    "product_option_name" => "Seçenek Adı ",
+    "product_option_value" => "Seçenek Değeri ",
+    "product_attribute_group" => "Özellik Grubu ",
+    "product_attribute_name" => "Özellik Adı ",
+    "product_attribute_value" => "Özellik Değer "
+];
+
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
@@ -101,6 +133,9 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
         $tableHtml .= $item['deger'];
     }
 
+    foreach ($options as $keyc => $valuec) {
+        $option.='<option value="'.$keyc.'">'.$valuec.'</option>';
+    }
     $tableHtml .= "</td>";
     $tableHtml .= '<td>
 
@@ -111,33 +146,7 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
    <select class="form-select"  id="secler'.$say.'" name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent('.$say.');">
        <option value="-">- pas geç -</option>
-       <option value="product_name">Ürün Adı</option>
-       <option value="product_description">Açıklama </option>
-       <option value="product_meta_description">Meta description </option>
-       <option value="product_meta_keyword">Meta keyword </option>
-       <option value="model">Ürün Kodu</option>
-       <option value="sku">SKU</option>
-       <option value="quantity">Stok</option>
-       <option value="main_image">Ana Resim</option>
-       <option value="image_1">Ürün resmi 1</option>
-       <option value="image_2">Ürün resmi 2</option>
-       <option value="image_3">Ürün resmi 3</option>
-       <option value="image_4">Ürün resmi 4</option>
-       <option value="image_5">Ürün resmi 5</option>
-       <option value="image_6">Ürün resmi 6</option>
-       <option value="image_7">Ürün resmi 7</option>
-       <option value="image_8">Ürün resmi 8</option>
-       <option value="image_9">Ürün resmi 9</option>
-       <option value="image_10">Ürün resmi 10</option>
-       <option value="manufacturer_name">Marka</option>
-       <option value="price">Fiyat</option>
-       <option value="product_option_price">Seçenek Fiyatı</option>
-       <option value="product_option_quantity">Seçenek Stok</option>
-       <option value="product_option_name">Seçenek Adı </option>
-       <option value="product_option_value">Seçenek Değeri </option>
-       <option value="product_attribute_group">Özellik Grubu </option>
-       <option value="product_attribute_name">Özellik Adı </option>
-       <option value="product_attribute_value">Özellik Değer </option>
+        '.$option.'
    </select>
    <input type="hidden" name="tag" class="tag" id="taglar'.$say.'" value="'.$tag.'">
 
@@ -157,35 +166,6 @@ $tableHtml .= '</table>  </div>
 // Dışarıda kullanılacak HTML
 echo $tableHtml;
 
-$options = [
-    "product_name" => "Ürün Adı",
-    "product_description" => "Açıklama",
-    "product_meta_description" => "Meta description",
-    "product_meta_keyword" => "Meta keyword",
-    "model" => "Ürün Kodu",
-    "sku" => "SKU",
-    "quantity" => "Stok",
-    "main_image" => "Ana Resim",
-    "image_1" => "Ürün resmi 1",
-    "image_2" => "Ürün resmi 2",
-    "image_3" => "Ürün resmi 3",
-    "image_4" => "Ürün resmi 4",
-    "image_5" => "Ürün resmi 5",
-    "image_6" => "Ürün resmi 6",
-    "image_7" => "Ürün resmi 7",
-    "image_8" => "Ürün resmi 8",
-    "image_9" => "Ürün resmi 9",
-    "image_10" => "Ürün resmi 10",
-    "manufacturer_name" => "Marka",
-    "price" => "Fiyat",
-    "product_option_price" => "Seçenek Fiyatı",
-    "product_option_quantity" => "Seçenek Stok",
-    "product_option_name" => "Seçenek Adı ",
-    "product_option_value" => "Seçenek Değeri ",
-    "product_attribute_group" => "Özellik Grubu ",
-    "product_attribute_name" => "Özellik Adı ",
-    "product_attribute_value" => "Özellik Değer "
-];
 ?>
 
 
