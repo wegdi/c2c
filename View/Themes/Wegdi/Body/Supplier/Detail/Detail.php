@@ -3,7 +3,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
 
-echo $param1;
+echo $param2;
 //$Edit = $db->Query('Supplier',["_id" => $db->ObjectId($param2)], [], 'TEK');
 
 // JSON dosyasının URL'si
