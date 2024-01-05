@@ -62,7 +62,7 @@ $db = new General();
         $finder3 = new DomXPath($dom3);
         $classname3 = "filter-menu-category-content";
         $kategori3 = $finder3->query("//*[contains(@class, '$classname3')]//a");
-        if(!empty($kategori3)){
+        if($kategori3->length > 0){
             $t = 0;
             foreach ($kategori3 as $kategori3_item) {
                 echo '+++ https://www.onlineyedekparca.com'.$kategori3_item->getAttribute('href');
