@@ -64,7 +64,7 @@ $db = new General();
         $kategori3 = $finder3->query("//*[contains(@class, '$classname3')]//a");
         $t = 0;
         foreach ($kategori3 as $kategori3_item) {
-            echo '++https://www.onlineyedekparca.com'.$kategori3_item->getAttribute('href');
+            echo '+++https://www.onlineyedekparca.com'.$kategori3_item->getAttribute('href');
             echo '<br>';
             $uniqid3 = uniqid();
             $data3 = array(
