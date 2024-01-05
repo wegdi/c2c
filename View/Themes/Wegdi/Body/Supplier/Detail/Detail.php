@@ -67,7 +67,15 @@ function getDatabaseKeys($veri, $parentKey = null) {
     }
 }
 
-$tableHtml = '<table class="display table table-bordered dt-responsive">';
+$tableHtml = '
+<div class="row">
+  <div class="col-lg-12">
+      <div class="card">
+          <div class="card-header">
+              <h5 class="card-title mb-0"><?php echo  $db->BarGet($param0.'/'.$param1,LANGUAGES_GET_DIL); ?></h5>
+          </div>
+          <div class="card-body">
+<table class="display table table-bordered dt-responsive">';
 $tableHtml .= "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
 
 // DataTable içeriğini oluştur
@@ -88,7 +96,12 @@ foreach ($databaseKeys as $item) {
     $tableHtml .= "</tr>";
 }
 
-$tableHtml .= "</table>";
+$tableHtml .= "</table>  </div>
+</div>
+</div><!--end col-->
+</div><!--end row-->
+
+";
 
 // Dışarıda kullanılacak HTML
 echo $tableHtml;
