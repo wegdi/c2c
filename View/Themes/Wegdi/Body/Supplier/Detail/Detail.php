@@ -78,16 +78,7 @@ foreach ($databaseKeys as $item) {
 
     // Değer bir dizi içeriyorsa satır satır yazdır
     if (is_array($item['deger'])) {
-        foreach ($item['deger'] as $subValue) {
-            $tableHtml .= $subValue . "<br>";
-
-            // Eğer alt değerler de dizi içeriyorsa, onları da satır satır yazdır
-            if (is_array($subValue)) {
-                foreach ($subValue as $nestedValue) {
-                    $tableHtml .= $nestedValue . "<br>";
-                }
-            }
-        }
+      
     } else {
         $tableHtml .= $item['deger'];
     }
