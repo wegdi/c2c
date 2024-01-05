@@ -186,7 +186,7 @@ $options = [
             <h5 class="card-title mb-0">Xml Ön İzleme</h5>
         </div>
         <div class="card-body">
-          <table>
+          <table class="display table table-bordered dt-responsive">
             <?php foreach ($options as $key => $value): ?>
               <tr>
                 <th><?php echo $value; ?></th>
