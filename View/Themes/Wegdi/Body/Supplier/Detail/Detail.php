@@ -75,6 +75,8 @@ $tableHtml .= "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
 
 // DataTable içeriğini oluştur
 foreach ($databaseKeys as $item) {
+    $tag=trim($ustAnahtarString.'->'.$item['anahtar']);
+    $tag = str_replace("->",";", $tag);
     $tableHtml .= "<tr>";
     $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . "</td>";
     $tableHtml .= "<td>";
@@ -94,7 +96,7 @@ foreach ($databaseKeys as $item) {
 
   <div class="input-group">
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
-   <select class="form-select"  name="tag[root;item;stokkod]"  data-name="stokkod">
+   <select class="form-select"  name="tag['.$tag.']"  data-name="stokkod">
        <option value="-">- pas geç -</option>
        <option value="product_name[1]">Ürün Adı</option>
        <option value="product_description[1]">Açıklama </option>
