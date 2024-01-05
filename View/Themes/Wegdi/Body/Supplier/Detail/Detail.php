@@ -38,7 +38,7 @@ if (count($donguler) == 1) {
   foreach ($donguler as $index => $dongu) {
     if ($index === 2) {
         // Ortadaki elemanın indeksindeyiz, bu yüzden güncel $ilkDizi'yi alıyoruz
-        $ilkDizi = $ilkDizi[$dongu];
+      //  $ilkDizi = $ilkDizi[$dongu];
     }
     // Eğer $ortaIndex -1 ise, $dongulerCount çifttir ve orta eleman yoktur.
     // Eğer $ortaIndex 0 ise, sadece bir eleman vardır ve bu da zaten ortadır.
