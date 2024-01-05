@@ -83,7 +83,7 @@ function FromSaveGlobal(form, url, refresh = 0) {
   //tinyMCE.triggerSave();
 
   var requiredFields = $(form + ' [required]').length,
-    validRequiredFields = $(form + ' [required]:valid').length;
+  validRequiredFields = $(form + ' [required]:valid').length;
   if (requiredFields == validRequiredFields) {
     var formdata = new FormData($(form)[0]);
     $.ajax({
@@ -146,7 +146,7 @@ function FromSaveGlobalOrder(form, url, refresh = 0) {
   //tinyMCE.triggerSave();
 
   var requiredFields = $(form + ' [required]').length,
-    validRequiredFields = $(form + ' [required]:valid').length;
+  validRequiredFields = $(form + ' [required]:valid').length;
   if (requiredFields == validRequiredFields) {
     var formdata = new FormData($(form)[0]);
     $.ajax({
@@ -262,138 +262,138 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    // Her iki input için keyup olayı ekleme
-    $("#tedarikciadi, #tedarkcilink").on('keyup', function() {
+  // Her iki input için keyup olayı ekleme
+  $("#tedarikciadi, #tedarkcilink").on('keyup', function() {
 
-      $("#birinci").removeClass("col-xl-5").addClass("col-xl-5");
-      $("#ikinci").hide();
+    $("#birinci").removeClass("col-xl-5").addClass("col-xl-5");
+    $("#ikinci").hide();
 
-      // Tedarikçi Adı'nı büyük harfe çevirme
-      var tedarikciAdi = $("#tedarikciadi").val();
-      $("#tedarikciadi").val(tedarikciAdi.toUpperCase());
+    // Tedarikçi Adı'nı büyük harfe çevirme
+    var tedarikciAdi = $("#tedarikciadi").val();
+    $("#tedarikciadi").val(tedarikciAdi.toUpperCase());
 
-      // Tedarikçi Linki'ni kontrol etme
-      var tedarikciLink = $("#tedarkcilink").val();
+    // Tedarikçi Linki'ni kontrol etme
+    var tedarikciLink = $("#tedarkcilink").val();
 
-      // Her iki input da dolu mu kontrol etme
-      if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '') {
-        // Geçerli bir URL ise "Kaydet" simgesini gösterme
-        if (tedarikciLink) {
-          $("#xmlstart").html("Kaydet <i class='fa fa-check'></i>");
-        } else {
-          $("#xmlstart").html("Geçerli bir URL değil");
-        }
+    // Her iki input da dolu mu kontrol etme
+    if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '') {
+      // Geçerli bir URL ise "Kaydet" simgesini gösterme
+      if (tedarikciLink) {
+        $("#xmlstart").html("Kaydet <i class='fa fa-check'></i>");
       } else {
-        $("#xmlstart").html("İki Alanda Boş Olamaz");
+        $("#xmlstart").html("Geçerli bir URL değil");
       }
+    } else {
+      $("#xmlstart").html("İki Alanda Boş Olamaz");
+    }
 
-      // Baştan ve sondan boşlukları silme
-      $("#tedarkcilink").val(tedarikciLink.trim());
-    });
+    // Baştan ve sondan boşlukları silme
+    $("#tedarkcilink").val(tedarikciLink.trim());
+  });
 
-    // Button click olayını ekleme
-    $("#xmlstart").on('click', function() {
-      var tedarikciAdi = $("#tedarikciadi").val();
-      var tedarikciLink = $("#tedarkcilink").val();
-      console.log("a", tedarikciAdi);
+  // Button click olayını ekleme
+  $("#xmlstart").on('click', function() {
+    var tedarikciAdi = $("#tedarikciadi").val();
+    var tedarikciLink = $("#tedarkcilink").val();
+    console.log("a", tedarikciAdi);
 
-      // Her iki input da dolu mu ve geçerli bir URL mi kontrol etme
-      if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '' ) {
-        // AJAX ile verileri post etme
-        var formData = {
-          tedarikciAdi: tedarikciAdi,
-          tedarikciLink: tedarikciLink
-        };
+    // Her iki input da dolu mu ve geçerli bir URL mi kontrol etme
+    if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '' ) {
+      // AJAX ile verileri post etme
+      var formData = {
+        tedarikciAdi: tedarikciAdi,
+        tedarikciLink: tedarikciLink
+      };
 
-        $.ajax({
+      $.ajax({
         type: "POST",
         url: "/Modal/Supplier/Add/Add.php",
         data: formData,
         dataType: "Json",
         beforeSend: function() {
-            // İstek gönderilmeden önce Swal ile bekleyin mesajını göster
-            Swal.fire({
-                title: 'Lütfen bekleyin...',
-                html: 'Tedarikçi ekleniyor...',
-                allowOutsideClick: false,
-                onBeforeOpen: () => {
-                    Swal.showLoading();
-                }
-            });
+          // İstek gönderilmeden önce Swal ile bekleyin mesajını göster
+          Swal.fire({
+            title: 'Lütfen bekleyin...',
+            html: 'Tedarikçi ekleniyor...',
+            allowOutsideClick: false,
+            onBeforeOpen: () => {
+              Swal.showLoading();
+            }
+          });
         },
         success: function(response) {
-            // İstek başarılı olduğunda Swal'ı kapat
-            Swal.close();
+          // İstek başarılı olduğunda Swal'ı kapat
+          Swal.close();
 
-            if (response.url) {
-                window.location.href = response.url;
-            } else if (response.status == false) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Hata Oluştu...",
-                    text: response.message,
-                    footer: '<a href="' + response.urlc + '">Tedarikçiye Gitmek İçin Tıklayın</a>'
-                });
-            }
+          if (response.url) {
+            window.location.href = response.url;
+          } else if (response.status == false) {
+            Swal.fire({
+              icon: "error",
+              title: "Hata Oluştu...",
+              text: response.message,
+              footer: '<a href="' + response.urlc + '">Tedarikçiye Gitmek İçin Tıklayın</a>'
+            });
+          }
 
-            console.log(response);
-            // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
+          console.log(response);
+          // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
         },
         error: function(error) {
-            console.error(error);
-            // Hata durumunda gerekli işlemleri yapabilirsiniz.
+          console.error(error);
+          // Hata durumunda gerekli işlemleri yapabilirsiniz.
         }
-    });
+      });
 
 
 
 
-      } else {
-        alert("Lütfen geçerli bilgileri giriniz.");
-      }
-    });
-
-    // URL geçerliliğini kontrol etme fonksiyonu
-    function isValidUrl(url) {
-      var pattern = new RegExp('^(https?:\\/\\/)?' +
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
-        '((\\d{1,3}\\.){3}\\d{1,3}))' +
-        '(\\:\\d+)?(\\/[--a-z\\d%_.~+]*)*' +
-        '(\\?[;&a-z\\d%_.~+=-]*)?' +
-        '(\\#[-a-z\\d_]*)?$','i');
-      return pattern.test(url);
+    } else {
+      alert("Lütfen geçerli bilgileri giriniz.");
     }
   });
 
-
-
-  function changeJsonContent(slc) {
-    alert(slc);
-          // Seçilen değeri al
-          var selectedValue = $("#secler"+slc).val();
-          var tagValue = $("#taglar"+slc).val();
-
-          // AJAX kullanarak POST isteği gönder
-          $.ajax({
-              type: "POST",
-              url: "/Modal/Supplier/Detail/Detail.php",
-              data: { selectedValue: selectedValue,tag:tagValue,SupplierID:param3 }, // Gönderilecek veri
-              success: function(response) {
-                  updateOnizlemeget();
-                  // Başarılı bir şekilde gönderildiğinde yapılacak işlemler
-                  console.log(response);
-              },
-              error: function(error) {
-                  // Hata durumunda yapılacak işlemler
-                  console.error("Error:", error);
-              }
-          });
-      }
+  // URL geçerliliğini kontrol etme fonksiyonu
+  function isValidUrl(url) {
+    var pattern = new RegExp('^(https?:\\/\\/)?' +
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+    '((\\d{1,3}\\.){3}\\d{1,3}))' +
+    '(\\:\\d+)?(\\/[--a-z\\d%_.~+]*)*' +
+    '(\\?[;&a-z\\d%_.~+=-]*)?' +
+    '(\\#[-a-z\\d_]*)?$','i');
+    return pattern.test(url);
+  }
+});
 
 
 
-      $(document).ready(function() {
-        if (param2=='Detail') {
+function changeJsonContent(slc) {
+  alert(slc);
+  // Seçilen değeri al
+  var selectedValue = $("#secler"+slc).val();
+  var tagValue = $("#taglar"+slc).val();
+
+  // AJAX kullanarak POST isteği gönder
+  $.ajax({
+    type: "POST",
+    url: "/Modal/Supplier/Detail/Detail.php",
+    data: { selectedValue: selectedValue,tag:tagValue,SupplierID:param3 }, // Gönderilecek veri
+    success: function(response) {
+      updateOnizlemeget();
+      // Başarılı bir şekilde gönderildiğinde yapılacak işlemler
+      console.log(response);
+    },
+    error: function(error) {
+      // Hata durumunda yapılacak işlemler
+      console.error("Error:", error);
+    }
+  });
+}
+
+
+
+$(document).ready(function() {
+  if (param1=='Detail') {
     function updateOnizlemeget() {
       // Make an AJAX request to fetch HTML content from the specified URL
       $.ajax({
@@ -413,5 +413,5 @@ $(document).ready(function() {
     // Call the updateOnizlemeget function immediately and then every 3 seconds
     updateOnizlemeget(); // Call once when the page is loaded
     setInterval(updateOnizlemeget, 3000); // Then, call every 3 seconds
-    }
-  });
+  }
+});
