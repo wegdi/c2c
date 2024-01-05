@@ -129,6 +129,8 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
        <option value="product_attribute_name[1]">Özellik Adı (tr-tr)</option>
        <option value="product_attribute_value[1]">Özellik Değer (tr-tr)</option>
    </select>
+   <input type="hidden" name="tag" value="'.$tag.'">
+
 </div>
 
     </td>';
