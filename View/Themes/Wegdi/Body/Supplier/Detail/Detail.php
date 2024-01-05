@@ -81,7 +81,7 @@ $tableHtml .= "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
 // DataTable içeriğini oluştur
 foreach ($databaseKeys as $item) {
     $tableHtml .= "<tr>";
-    $tableHtml .= "<td>" . $item['anahtar'] . "</td>";
+    $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . "</td>";
     $tableHtml .= "<td>";
 
     // Değer bir dizi içeriyorsa satır satır yazdır
