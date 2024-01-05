@@ -17,7 +17,7 @@ require_once(SYSTEM.'General/General.php');
 $db = new General();
 //$uniqid = uniqid();
 
-    echo 'test';
+    echo 'test2';
     echo '<br>';
     //1. kategori bilgileri
     $domain = 'https://www.onlineyedekparca.com';
