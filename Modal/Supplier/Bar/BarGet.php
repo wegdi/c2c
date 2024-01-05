@@ -37,3 +37,11 @@ $options = [
     "product_attribute_value" => "Özellik Değer "
 ];
 ?>
+
+
+<table class="display table table-bordered dt-responsive">
+  <?php foreach ($options as $key => $value): ?>
+    <?php print_r($value); ?>
+  <?php endforeach; ?>
+
+</table>
