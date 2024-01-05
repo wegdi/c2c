@@ -77,7 +77,6 @@ $db = new General();
                 //$db->Add("Category_Menu", $data3);
             }
         }else{
-            echo '<br>';
             echo '+++ alt yok boş';
         }
         
