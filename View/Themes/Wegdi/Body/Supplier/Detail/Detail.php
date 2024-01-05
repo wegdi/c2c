@@ -181,7 +181,7 @@ $options = [
 
 
 <div class="col-lg-3">
-          <div class="card sticky-top">
+          <div class="card sticky-bottom">
         <div class="card-header">
             <h5 class="card-title mb-0">Xml Ön İzleme</h5>
         </div>
