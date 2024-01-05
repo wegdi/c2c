@@ -120,7 +120,7 @@ $tableHtml .= "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
 $say=0;
 foreach ($databaseKeys as $item) {
   $tag = $ustAnahtarString . '->' . $item['anahtar'];
-$tag = str_replace(["->", ' '], [';', ''], $tag);
+  $tag = str_replace(["->", ' '], [';', ''], $tag);
 
     $tableHtml .= "<tr>";
     $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . "</td>";
@@ -132,12 +132,12 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
     } else {
         $tableHtml .= $item['deger'];
     }
-
+    if ($jsonUrl["$keyc"]==$tag) {
+      $selected='selected';
+    }
     foreach ($options as $keyc => $valuec) {
 
-            if ($jsonUrl["$keyc"]==$tag) {
-              $selected='selected';
-            }
+
 
         $option.='<option '.$selected.' value="'.$keyc.'">'.$valuec.'</option>';
     }
