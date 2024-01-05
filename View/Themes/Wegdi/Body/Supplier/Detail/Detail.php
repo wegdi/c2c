@@ -71,28 +71,32 @@ function getDatabaseKeys($veri, $parentKey = null) {
     }
 }
 
-echo "<table>";
-echo "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
+$tableHtml = "<table>";
+$tableHtml .= "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
 
 // DataTable içeriğini oluştur
 foreach ($databaseKeys as $item) {
-    echo "<tr>";
-    echo "<td>" . $item['anahtar'] . "</td>";
-    echo "<td>";
+    $tableHtml .= "<tr>";
+    $tableHtml .= "<td>" . $item['anahtar'] . "</td>";
+    $tableHtml .= "<td>";
 
     // Değer bir dizi içeriyorsa satır satır yazdır
     if (is_array($item['deger'])) {
         foreach ($item['deger'] as $subValue) {
-            echo $subValue . "<br>";
+            $tableHtml .= $subValue . "<br>";
         }
     } else {
-        echo $item['deger'];
+        $tableHtml .= $item['deger'];
     }
 
-    echo "</td>";
-    echo "<td>Eşleştir</td>";
-    echo "</tr>";
+    $tableHtml .= "</td>";
+    $tableHtml .= "<td>Eşleştir</td>";
+    $tableHtml .= "</tr>";
 }
 
-echo "</table>";
+$tableHtml .= "</table>";
+
+// Dışarıda kullanılacak HTML
+echo $tableHtml;
+
 ?>
