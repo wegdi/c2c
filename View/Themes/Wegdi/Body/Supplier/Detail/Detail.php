@@ -26,7 +26,7 @@ foreach ($data as $ustAnahtar => $altDizi) {
     foreach ($altDizi as $altAnahtar => $deger) {
         // Alt anahtarı sadece int değilse yazdır
         if (!is_int($altAnahtar)) {
-            // Alt anahtar string olarak almak istiyorsak
+            // Alt anahtarı string olarak almak istiyorsak
             $altAnahtarString = is_string($altAnahtar) ? $altAnahtar : json_encode($altAnahtar);
 
             echo "    Alt Anahtar: " . $altAnahtarString . "<br>";
@@ -59,10 +59,6 @@ function getDatabaseKeys($veri, $parentKey = null) {
 
     foreach ($veri as $anahtar => $deger) {
         $currentKey = ($parentKey) ? $parentKey . ' -> ' . $anahtar : $anahtar;
-
-        // HTML etiketlerini render etmek için htmlspecialchars kullan
-        $deger = is_array($deger) ? $deger : htmlspecialchars($deger);
-
         $databaseKeys[] = array('anahtar' => $currentKey, 'deger' => $deger);
 
         if (is_array($deger)) {
@@ -82,12 +78,9 @@ foreach ($databaseKeys as $item) {
 
     // Değer bir dizi içeriyorsa satır satır yazdır
     if (is_array($item['deger'])) {
-        foreach ($item['deger'] as $subValue) {
-            // HTML etiketlerini render etmek için htmlspecialchars kullan
-            echo htmlspecialchars($subValue) . "<br>";
-        }
+
     } else {
-        echo $item['deger'];
+        $tableHtml .= $item['deger'];
     }
 
     $tableHtml .= "</td>";
@@ -99,4 +92,6 @@ $tableHtml .= "</table>";
 
 // Dışarıda kullanılacak HTML
 echo $tableHtml;
+
+
 ?>
