@@ -358,6 +358,7 @@ $(document).ready(function() {
               url: "/Modal/Supplier/Detail/Detail.php",
               data: { selectedValue: selectedValue,tag:tagValue,SupplierID:param3 }, // Gönderilecek veri
               success: function(response) {
+                  updateOnizlemeget();
                   // Başarılı bir şekilde gönderildiğinde yapılacak işlemler
                   console.log(response);
               },
