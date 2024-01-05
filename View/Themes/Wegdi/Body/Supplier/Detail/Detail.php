@@ -1,3 +1,10 @@
+<style>
+  .sticky-topx {
+    position: sticky;
+    top: 60px; /* Header'ın yüksekliği kadar bir değer ekleyin */
+  }
+</style>
+
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SECURITY.'Security.php');
@@ -181,7 +188,7 @@ $options = [
 
 
 <div class="col-lg-3">
-          <div class="card sticky-top">
+          <div class="card sticky-topx">
         <div class="card-header">
             <h5 class="card-title mb-0">Xml Ön İzleme</h5>
         </div>
