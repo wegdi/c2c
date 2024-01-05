@@ -122,10 +122,8 @@ foreach ($databaseKeys as $item) {
   $tag = $ustAnahtarString . '->' . $item['anahtar'];
   $tag = str_replace(["->", ' '], [';', ''], $tag);
 
-  if ($jsonUrl["$keyc"]==$tag) {
-    $selected='selected';
-    echo "string";
-  }
+
+
 
     $tableHtml .= "<tr>";
     $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar']  ."</td>";
@@ -139,7 +137,13 @@ foreach ($databaseKeys as $item) {
     }
 
     foreach ($options as $keyc => $valuec) {
-
+      
+      if (isset($jsonUrl["$keyc"])) {
+        if ($jsonUrl["$keyc"]==$tag) {
+          $selected='selected';
+          echo "string";
+        }
+      }
 
 
         $option.='<option '.$selected.' value="'.$keyc.'">'.$valuec.'</option>';
