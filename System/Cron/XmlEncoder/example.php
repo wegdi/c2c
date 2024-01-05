@@ -38,13 +38,14 @@ $uniqid = uniqid();
             while($k< count($kategori2[1])){
                 if($k == 0){
                     $uniqid2 = uniqid();
-                    $data = array(
-                        'Uniqid' => $uniqi2,
+                    $data2 = array(
+                        'Uniqid' => $uniqid2,
                         'GroupId'=> $uniqid,
                         'Url' => $kategori2[1][$k],
                         'Title' => $db->Guvenlik($kategori2[2][$k])
                     );
-                    $db->Add("Category_Menu", $data);
+                    print_r($data2);
+                    //$db->Add("Category_Menu", $data2);
                 }
                 $k = $k+1;
             }
