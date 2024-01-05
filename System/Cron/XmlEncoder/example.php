@@ -18,7 +18,7 @@ $db = new General();
 $uniqid = uniqid();
 
 
-    $domain = 'https://www.onlineyedekparca.com/';
+    $domain = 'https://www.onlineyedekparca.com';
 
     preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents("$domain"), $kategori);
     $r = 0;
@@ -27,10 +27,27 @@ $uniqid = uniqid();
             $uniqid = uniqid();
             $data = array(
                 'Uniqid' => $uniqid,
+                'GroupId'=> '0',
                 'Url' => '/kategori/opel-yedek-parca',
                 'Title' => $db->Guvenlik($kategori[2][$r])
             );
             $db->Add("Category_Menu", $data);
+            $domain2 = $domain.'/kategori/opel-yedek-parca';
+            preg_match_all('/<a\s+href="([^"]+)"\s+title="([^"]+)"[^>]*>(.*?)<\/a>/s', file_get_contents("$domain2"), $kategori2);
+            $k = 0;
+            while($k< count($kategori2[1])){
+                if($k == 0){
+                    $uniqid2 = uniqid();
+                    $data = array(
+                        'Uniqid' => $uniqi2,
+                        'GroupId'=> $uniqid,
+                        'Url' => $kategori2[1][$k],
+                        'Title' => $db->Guvenlik($kategori2[2][$k])
+                    );
+                    $db->Add("Category_Menu", $data);
+                }
+                $k = $k+1;
+            }
         }else{
             /*
             $uniqid = uniqid();
