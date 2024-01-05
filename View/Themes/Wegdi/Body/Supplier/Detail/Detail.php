@@ -96,12 +96,12 @@ foreach ($databaseKeys as $item) {
     $tableHtml .= "</tr>";
 }
 
-$tableHtml .= "</table>  </div>
+$tableHtml .= '</table>  </div>
 </div>
 </div><!--end col-->
 </div><!--end row-->
 
-";
+';
 
 // Dışarıda kullanılacak HTML
 echo $tableHtml;
