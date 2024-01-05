@@ -66,7 +66,7 @@ function getDatabaseKeys($veri, $parentKey = null) {
 
 $tableHtml = '
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-9">
       <div class="card">
           <div class="card-header">
               <h5 class="card-title mb-0">Xml Eşleştirme Tablosu</h5>
