@@ -181,7 +181,7 @@ $options = [
 
 
 <div class="col-lg-3">
-    <div class="card">
+          <div class="card sticky-top">
         <div class="card-header">
             <h5 class="card-title mb-0">Xml Ön İzleme</h5>
         </div>
@@ -194,7 +194,7 @@ $options = [
                   <?php if ($jsonUrl["$key"]): ?>
                     <i class="ri-checkbox-circle-line"></i>
                       <?php else: ?>
-                    <i class="ri-close-circle-line"></i> 
+                    <i class="ri-close-circle-line"></i>
                   <?php endif; ?>
 
                 </th>
