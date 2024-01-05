@@ -10,7 +10,7 @@ $SupplierTag = $db->Query('Supplier',["SupplierCode" => (string)$_POST["Supplier
 if ($SupplierTag["_id"]!="") {
 
   $data = array(
-       $_POST["tag"] => $_POST["selectedValue"]
+       $_POST["selectedValue"]  => $_POST["tag"]
   );
   echo $db->UpdateByObjectId("Supplier",(string)$SupplierTag["_id"], $data);
 
