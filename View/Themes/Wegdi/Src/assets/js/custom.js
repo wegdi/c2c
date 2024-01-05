@@ -317,9 +317,9 @@ $(document).ready(function() {
             alert(response.status);
             Swal.fire({
             icon: "error",
-            title: "Oops...",
+            title: "Hata Oluştu...",
             text: response.message,
-            footer: '<a href="#">Neden bu sorunu yaşıyorum?</a>'
+            footer: '<a href="/Issue/Detail">Neden bu sorunu yaşıyorum?</a>'
           });
           }
 
