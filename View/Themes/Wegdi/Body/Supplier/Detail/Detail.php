@@ -96,7 +96,6 @@ foreach ($databaseKeys as $item) {
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
    <select class="form-select"  name="tag[root;item;stokkod]"  data-name="stokkod">
        <option value="-">- pas geç -</option>
-       <option value="product_id">Ürün ID</option>
        <option value="product_name[1]">Ürün Adı</option>
        <option value="product_description[1]">Açıklama </option>
        <option value="product_meta_description[1]">Meta description </option>
