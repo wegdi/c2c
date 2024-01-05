@@ -312,13 +312,9 @@ $(document).ready(function() {
           dataType: "Json",
           success: function(response) {
             if (response.url) {
-      // Başarılı bir şekilde gönderildiğinde ve response içinde 'url' varsa yönlendirme yap
             window.location.href = response.url;
           }else if (response.status=="false") {
-            setTimeout(function() {
-               $(".alert-success").removeClass("d-none");
-           }, 5000);
-
+            alert("oss");
           }
 
             console.log(response);
