@@ -43,7 +43,7 @@ $uniqid = uniqid();
             $classname = "filter-menu-category-content";
             $kategori2 = $finder->query("//*[contains(@class, '$classname')]//a");
             echo '<pre>';
-            print_r($kategori2);
+            print_r($kategori2->getAttribute('href'));
             echo '</pre>';
             $k = 0;
             /*
