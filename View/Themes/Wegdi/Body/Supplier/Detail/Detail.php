@@ -52,10 +52,6 @@ $databaseKeys = [];
 // Fonksiyonu çağır ve veritabanı anahtarlarını al
 getDatabaseKeys($ilkDizi);
 
-// Veritabanına kaydedilecek anahtarları yazdır
-echo "<pre>";
-print_r($databaseKeys);
-echo "</pre>";
 
 // Veritabanına kaydedilecek anahtarları almak için fonksiyon
 function getDatabaseKeys($veri, $parentKey = null) {
