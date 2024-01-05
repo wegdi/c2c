@@ -374,7 +374,7 @@ $(document).ready(function() {
           function updateOnizlemeget() {
             // Make an AJAX request to fetch HTML content from the specified URL
             $.ajax({
-              url: '/Modal/Supplier/Bar/BarGet.php?SupplierCode?'+param3,
+              url: '/Modal/Supplier/Bar/BarGet.php?SupplierCode='+param3,
               method: 'GET',
               dataType: 'html',
               success: function(response) {
