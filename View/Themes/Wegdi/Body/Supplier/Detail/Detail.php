@@ -3,14 +3,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
 
-echo $param2;
-//$Edit = $db->Query('Supplier',["_id" => $db->ObjectId($param2)], [], 'TEK');
+$jsonUrl = $db->Query('Supplier',["SupplierCode" => (string)$param2], [], 'TEK');
 
 // JSON dosyasının URL'si
-$jsonUrl = 'https://c2c.wegdi.com/Json/65968becd3425.json';
+//$jsonUrl = 'https://c2c.wegdi.com/Json/65968becd3425.json';
 
 // JSON verisini alma
-$jsonData = file_get_contents($jsonUrl);
+$jsonData = file_get_contents("https://c2c.wegdi.com".$jsonUr["SupplierFilePath"]);
 
 // JSON verisini PHP dizisine dönüştürme
 $data = json_decode($jsonData, true);
