@@ -39,7 +39,7 @@ $db = new General();
             //$db->Add("Category_Menu", $data);
             //2. kategori bilgileri
             $domain2 = $domain.'/kategori/opel-yedek-parca';
-            echo '- '.$domain2;
+            echo '* '.$domain2;
             echo '<br>';
             $dom = new DOMDocument();
             $dom->loadHTML(file_get_contents("$domain2"));
@@ -81,6 +81,8 @@ $db = new General();
                     echo '+++ alt yok boş';
                 }
             }
+            echo '<br>';
+            echo '<br>';
         }
         $r = $r+1;
     }
