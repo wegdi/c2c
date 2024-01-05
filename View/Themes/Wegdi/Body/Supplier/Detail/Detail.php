@@ -140,7 +140,8 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
               $selected='selected';
             }
         }
-        $option.='<option '.$selected.' value="'.$keyc.'">'.$valuec.'</option>';
+
+        $option.='<option '.$selected.' value="'.$keyc.'">'.$jsonUrl["$keyc"].'</option>';
     }
     $tableHtml .= "</td>";
     $tableHtml .= '<td>
