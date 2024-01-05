@@ -18,10 +18,7 @@ $final = [];
 foreach ($data as $ustAnahtar => $altDizi) {
     // Üst anahtarı string olarak almak istiyorsak
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
-
-    echo "Üst Anahtar: " . $ustAnahtarString . "<br>";
     $donguler[] = $ustAnahtarString;
-
     // Alt diziyi yazdırma
     foreach ($altDizi as $altAnahtar => $deger) {
         // Alt anahtarı sadece int değilse yazdır
