@@ -97,18 +97,12 @@ foreach ($databaseKeys as $item) {
    <select class="form-select"  name="tag[root;item;stokkod]"  data-name="stokkod">
        <option value="-">- pas geç -</option>
        <option value="product_id">Ürün ID</option>
-       <option value="product_name[1]">Ürün Adı (tr-tr)</option>
-       <option value="product_description[1]">Açıklama (tr-tr)</option>
-       <option value="product_meta_description[1]">Meta description (tr-tr)</option>
-       <option value="product_meta_keyword[1]">Meta keyword (tr-tr)</option>
-       <option value="product_tag[1]">XML Ürün Etiketi (tr-tr)</option>
+       <option value="product_name[1]">Ürün Adı</option>
+       <option value="product_description[1]">Açıklama </option>
+       <option value="product_meta_description[1]">Meta description </option>
+       <option value="product_meta_keyword[1]">Meta keyword </option>
        <option value="model">Ürün Kodu</option>
        <option value="sku">SKU</option>
-       <option value="upc">UPC</option>
-       <option value="ean">EAN</option>
-       <option value="jan">JAN</option>
-       <option value="isbn">ISBN</option>
-       <option value="mpn">MPN</option>
        <option value="quantity">Stok</option>
        <option value="main_image">Ana Resim</option>
        <option value="image_1">Ürün resmi 1</option>
@@ -121,20 +115,8 @@ foreach ($databaseKeys as $item) {
        <option value="image_8">Ürün resmi 8</option>
        <option value="image_9">Ürün resmi 9</option>
        <option value="image_10">Ürün resmi 10</option>
-       <option value="product_category_name_1[1]">Kategori Adı 1 (tr-tr)</option>
-       <option value="product_category_name_2[1]">Kategori Adı 2 (tr-tr)</option>
-       <option value="product_category_name_3[1]">Kategori Adı 3 (tr-tr)</option>
-       <option value="product_category_name_4[1]">Kategori Adı 4 (tr-tr)</option>
-       <option value="product_category_name_5[1]">Kategori Adı 5 (tr-tr)</option>
-       <option value="product_category_name_6[1]">Kategori Adı 6 (tr-tr)</option>
        <option value="manufacturer_name">Marka</option>
        <option value="price">Fiyat</option>
-       <option value="special">Kampanya fiyatı</option>
-       <option value="weight">Ağırlık</option>
-       <option value="length">Uzunluk</option>
-       <option value="width">Genişlik</option>
-       <option value="height">Yükseklik</option>
-       <option value="minimum">Minimum Sipariş</option>
        <option value="product_option_price">Seçenek Fiyatı</option>
        <option value="product_option_quantity">Seçenek Stok</option>
        <option value="product_option_name[1]">Seçenek Adı (tr-tr)</option>
@@ -143,10 +125,6 @@ foreach ($databaseKeys as $item) {
        <option value="product_attribute_name[1]">Özellik Adı (tr-tr)</option>
        <option value="product_attribute_value[1]">Özellik Değer (tr-tr)</option>
    </select>
-   <input type="hidden" name="tag_cache[3][tag_name]" value="stokkod">
-   <input type="hidden" name="tag_cache[3][tag_content]" value="3700696800027">
-   <input type="hidden" name="tag_cache[3][tag_key]" value="root;item;stokkod">
-   <input type="hidden" name="tag_cache[3][level]" value="2">
 </div>
 
     </td>';
