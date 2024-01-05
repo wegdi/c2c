@@ -71,7 +71,7 @@ function getDatabaseKeys($veri, $parentKey = null) {
     }
 }
 
-$tableHtml = "<table>";
+$tableHtml = "<table class="display table table-bordered dt-responsive">";
 $tableHtml .= "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
 
 // DataTable içeriğini oluştur
