@@ -36,7 +36,7 @@ $db = new General();
     //$db->Add("Category_Menu", $data);
     //2. kategori bilgileri
     $domain2 = $domain.'/kategori/opel-yedek-parca';
-    echo '-'.$domain2;
+    echo '- '.$domain2;
     echo '<br>';
     $dom = new DOMDocument();
     $dom->loadHTML(file_get_contents("$domain2"));
@@ -55,26 +55,32 @@ $db = new General();
         //$db->Add("Category_Menu", $data2);
         //son kategori bilgileri
         $domain3 = $domain.$kategori2_item->getAttribute('href');
-        echo '--'.$domain3;
+        echo '-- '.$domain3;
         echo '<br>';
         $dom3 = new DOMDocument();
         $dom3->loadHTML(file_get_contents("$domain3"));
         $finder3 = new DomXPath($dom3);
         $classname3 = "filter-menu-category-content";
         $kategori3 = $finder3->query("//*[contains(@class, '$classname3')]//a");
-        $t = 0;
-        foreach ($kategori3 as $kategori3_item) {
-            echo '+++https://www.onlineyedekparca.com'.$kategori3_item->getAttribute('href');
+        if(!empty($kategori3)){
+            $t = 0;
+            foreach ($kategori3 as $kategori3_item) {
+                echo '+++ https://www.onlineyedekparca.com'.$kategori3_item->getAttribute('href');
+                echo '<br>';
+                $uniqid3 = uniqid();
+                $data3 = array(
+                    'Uniqid' => $uniqid3,
+                    'GroupId'=> $uniqid2,
+                    'Url' => $kategori3_item->getAttribute('href'),
+                    'Title' => $db->Guvenlik($kategori3_item->getAttribute('title'))
+                );
+                //$db->Add("Category_Menu", $data3);
+            }
+        }else{
             echo '<br>';
-            $uniqid3 = uniqid();
-            $data3 = array(
-                'Uniqid' => $uniqid3,
-                'GroupId'=> $uniqid2,
-                'Url' => $kategori3_item->getAttribute('href'),
-                'Title' => $db->Guvenlik($kategori3_item->getAttribute('title'))
-            );
-            //$db->Add("Category_Menu", $data3);
+            echo '+++ alt yok boş';
         }
+        
         $k = $k+1;
     }
     echo '<br>';
