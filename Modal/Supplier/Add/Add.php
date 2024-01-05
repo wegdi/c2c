@@ -19,6 +19,13 @@ $uniqid = uniqid();
 
 if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
 
+  $SupplierUrl = $db->Query('Supplier',["SupplierUrl" => (string)$_POST["tedarikciLink"]], [], 'TEK');
+  $SupplierName = $db->Query('Supplier',["SupplierName" => (string)$_POST["tedarikciAdi"]], [], 'TEK');
+
+
+  if ($SupplierUrl["_id"]=="" and $SupplierName["_id"]=="") {
+
+
     // XML verisini PHP DOMDocument nesnesine dönüştür
     $dom = new \DOMDocument;
     $dom->load($_POST["tedarikciLink"]);
@@ -50,7 +57,13 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
     );
     echo json_encode($return);
     }
-
+  }else {
+    $returnx = array(
+      'status' => false,
+      'message' => 'Tedarikçi Linki veya Tedarikçi Adı Sistemde Kayıtlı'
+    );
+    echo json_encode($returnx);
+  }
 }
 
 ?>
