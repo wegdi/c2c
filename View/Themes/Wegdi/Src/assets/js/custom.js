@@ -298,7 +298,7 @@ $(document).ready(function() {
       console.log("a", tedarikciAdi);
 
       // Her iki input da dolu mu ve geçerli bir URL mi kontrol etme
-      if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '' && isValidUrl(tedarikciLink)) {
+      if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '')) {
         // AJAX ile verileri post etme
         var formData = {
           tedarikciAdi: tedarikciAdi,
