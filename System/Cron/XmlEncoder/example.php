@@ -22,23 +22,24 @@ $uniqid = uniqid();
 
     preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents("$domain"), $kategori);
     $r = 0;
-    while($r<= count($kategori[1])){
+    while($r< count($kategori[1])){
         if($r == 0){
             $uniqid = uniqid();
             $data = array(
                 'Uniqid' => $uniqid,
-                'Url' => 'kategori/opel-yedek-parca',
+                'Url' => '/kategori/opel-yedek-parca',
                 'Title' => $db->Guvenlik($kategori[2][$r])
             );
             $db->Add("Category_Menu", $data);
         }else{
+            /*
             $uniqid = uniqid();
             $data = array(
                 'Uniqid' => $uniqid,
                 'Url' => $kategori[1][$r],
                 'Title' => $db->Guvenlik($kategori[2][$r])
             );
-            $db->Add("Category_Menu", $data);
+            $db->Add("Category_Menu", $data);*/
         }
         $r = $r+1;
     }
