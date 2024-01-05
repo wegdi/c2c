@@ -346,10 +346,11 @@ $(document).ready(function() {
 
 
 
-  function changeJsonContent() {
+  function changeJsonContent(slc) {
+    alert(slc);
           // Seçilen değeri al
-          var selectedValue = $(".form-select").val();
-          var tagValue = $(".tag").val();
+          var selectedValue = $("#secler"+slc).val();
+          var tagValue = $("#taglar"+slc).val();
 
           // AJAX kullanarak POST isteği gönder
           $.ajax({
