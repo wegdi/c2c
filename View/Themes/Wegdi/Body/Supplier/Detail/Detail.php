@@ -134,6 +134,7 @@ foreach ($databaseKeys as $item) {
     }
     if ($jsonUrl["$keyc"]==$tag) {
       $selected='selected';
+      echo "string";
     }
     foreach ($options as $keyc => $valuec) {
 
