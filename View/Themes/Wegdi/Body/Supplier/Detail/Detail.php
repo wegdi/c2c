@@ -124,11 +124,11 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
        <option value="price">Fiyat</option>
        <option value="product_option_price">Seçenek Fiyatı</option>
        <option value="product_option_quantity">Seçenek Stok</option>
-       <option value="product_option_name[1]">Seçenek Adı (tr-tr)</option>
-       <option value="product_option_value[1]">Seçenek Değeri (tr-tr)</option>
-       <option value="product_attribute_group[1]">Özellik Grubu (tr-tr)</option>
-       <option value="product_attribute_name[1]">Özellik Adı (tr-tr)</option>
-       <option value="product_attribute_value[1]">Özellik Değer (tr-tr)</option>
+       <option value="product_option_name">Seçenek Adı (tr-tr)</option>
+       <option value="product_option_value">Seçenek Değeri (tr-tr)</option>
+       <option value="product_attribute_group">Özellik Grubu (tr-tr)</option>
+       <option value="product_attribute_name">Özellik Adı (tr-tr)</option>
+       <option value="product_attribute_value">Özellik Değer (tr-tr)</option>
    </select>
    <input type="hidden" name="tag" class="tag" id="taglar'.$say.'" value="'.$tag.'">
 
@@ -148,7 +148,35 @@ $tableHtml .= '</table>  </div>
 // Dışarıda kullanılacak HTML
 echo $tableHtml;
 
-
+$options = [
+    "product_name" => "Ürün Adı",
+    "product_description" => "Açıklama",
+    "product_meta_description" => "Meta description",
+    "product_meta_keyword" => "Meta keyword",
+    "model" => "Ürün Kodu",
+    "sku" => "SKU",
+    "quantity" => "Stok",
+    "main_image" => "Ana Resim",
+    "image_1" => "Ürün resmi 1",
+    "image_2" => "Ürün resmi 2",
+    "image_3" => "Ürün resmi 3",
+    "image_4" => "Ürün resmi 4",
+    "image_5" => "Ürün resmi 5",
+    "image_6" => "Ürün resmi 6",
+    "image_7" => "Ürün resmi 7",
+    "image_8" => "Ürün resmi 8",
+    "image_9" => "Ürün resmi 9",
+    "image_10" => "Ürün resmi 10",
+    "manufacturer_name" => "Marka",
+    "price" => "Fiyat",
+    "product_option_price" => "Seçenek Fiyatı",
+    "product_option_quantity" => "Seçenek Stok",
+    "product_option_name" => "Seçenek Adı (tr-tr)",
+    "product_option_value" => "Seçenek Değeri (tr-tr)",
+    "product_attribute_group" => "Özellik Grubu (tr-tr)",
+    "product_attribute_name" => "Özellik Adı (tr-tr)",
+    "product_attribute_value" => "Özellik Değer (tr-tr)"
+];
 ?>
 
 
@@ -158,6 +186,14 @@ echo $tableHtml;
             <h5 class="card-title mb-0">Xml Ön İzleme</h5>
         </div>
         <div class="card-body">
+          <table>
+            <?php foreach ($options as $key => $value): ?>
+              <tr>
+                <th><?php echo $value; ?></th>
+              </tr>
+            <?php endforeach; ?>
+
+          </table>
 
 </div>
 </div>
