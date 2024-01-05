@@ -88,12 +88,12 @@ foreach ($databaseKeys as $item) {
             // Eğer alt değerler de dizi içeriyorsa, onları da satır satır yazdır
             if (is_array($subValue)) {
                 foreach ($subValue as $nestedValue) {
-                    //$tableHtml .= $nestedValue . "<br>";
+                    $tableHtml .= $nestedValue . "<br>";
                 }
             }
         }
     } else {
-      //  $tableHtml .= $item['deger'];
+        $tableHtml .= $item['deger'];
     }
 
     $tableHtml .= "</td>";
