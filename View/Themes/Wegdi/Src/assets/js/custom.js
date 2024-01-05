@@ -368,7 +368,6 @@ $(document).ready(function() {
 
 
 function changeJsonContent(slc) {
-  alert(slc);
   // Seçilen değeri al
   var selectedValue = $("#secler"+slc).val();
   var tagValue = $("#taglar"+slc).val();
