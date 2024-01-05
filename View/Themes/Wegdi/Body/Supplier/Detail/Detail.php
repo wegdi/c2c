@@ -4,6 +4,11 @@
     top: 60px; /* Header'ın yüksekliği kadar bir değer ekleyin */
   }
 </style>
+<!-- Success Alert -->
+<div class="alert alert-success alert-top-border alert-dismissible fade show" role="alert">
+    <i class="ri-notification-off-line me-3 align-middle fs-16 text-success"></i><strong>Success</strong> - Top border alert
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
