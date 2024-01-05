@@ -100,7 +100,7 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
 
   <div class="input-group">
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
-   <select class="form-select"  id="secler'.$say.'" name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent();">
+   <select class="form-select"  id="secler'.$say.'" name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent("secler'.$say.'");">
        <option value="-">- pas geç -</option>
        <option value="product_name">Ürün Adı</option>
        <option value="product_description">Açıklama </option>
