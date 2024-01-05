@@ -90,7 +90,6 @@ foreach ($databaseKeys as $item) {
     $tableHtml .= '<td>
 
     <div class="tag_content">
-   Nereye:
    <select name="tag[root;item;stokkod]" onchange="changeXMLContent();" data-name="stokkod" data-value="3700696800027">
        <option value="-">- pas geç -</option>
        <option value="product_id">Ürün ID</option>
