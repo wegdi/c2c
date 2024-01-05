@@ -33,12 +33,21 @@ foreach ($data as $ustAnahtar => $altDizi) {
 }
 
 if (count($donguler) == 1) {
-    $ilkDizi = reset($data["$donguler[0]"]);
+  foreach ($donguler as $index => $dongu) {
+    if ($index === 2) {
+        // Ortadaki elemanın indeksindeyiz, bu yüzden güncel $ilkDizi'yi alıyoruz
+        $ilkDizi = $ilkDizi[$dongu];
+    }
+    // Eğer $ortaIndex -1 ise, $dongulerCount çifttir ve orta eleman yoktur.
+    // Eğer $ortaIndex 0 ise, sadece bir eleman vardır ve bu da zaten ortadır.
+    // Dolayısıyla $ilkDizi herhangi bir güncelleme almayacaktır.
+}
+
 } elseif (count($donguler) == 2) {
   foreach ($donguler as $index => $dongu) {
     if ($index === 2) {
         // Ortadaki elemanın indeksindeyiz, bu yüzden güncel $ilkDizi'yi alıyoruz
-      //  $ilkDizi = $ilkDizi[$dongu];
+        $ilkDizi = $ilkDizi[$dongu];
     }
     // Eğer $ortaIndex -1 ise, $dongulerCount çifttir ve orta eleman yoktur.
     // Eğer $ortaIndex 0 ise, sadece bir eleman vardır ve bu da zaten ortadır.
