@@ -190,7 +190,14 @@ $options = [
             <?php foreach ($options as $key => $value): ?>
               <tr>
                 <th><?php echo $value; ?></th>
-                <th></th>
+                <th>
+                  <?php if ($jsonUrl["$key"]): ?>
+                      var
+                      <?php else: ?>
+                        yok
+                  <?php endif; ?>
+
+                </th>
               </tr>
             <?php endforeach; ?>
 
