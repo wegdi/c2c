@@ -306,30 +306,45 @@ $(document).ready(function() {
         };
 
         $.ajax({
-          type: "POST",
-          url: "/Modal/Supplier/Add/Add.php",
-          data: formData,
-          dataType: "Json",
-          success: function(response) {
-            if (response.url) {
-            window.location.href = response.url;
-          }else if (response.status==false) {
+        type: "POST",
+        url: "/Modal/Supplier/Add/Add.php",
+        data: formData,
+        dataType: "Json",
+        beforeSend: function() {
+            // İstek gönderilmeden önce Swal ile bekleyin mesajını göster
             Swal.fire({
-            icon: "error",
-            title: "Hata Oluştu...",
-            text: response.message,
-            footer: '<a href="'+response.urlc+'">Tedarikçiye Gitmek İçin Tıklayın</a>'
-          });
-          }
+                title: 'Lütfen bekleyin...',
+                html: 'Tedarikçi ekleniyor...',
+                allowOutsideClick: false,
+                onBeforeOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        },
+        success: function(response) {
+            // İstek başarılı olduğunda Swal'ı kapat
+            Swal.close();
+
+            if (response.url) {
+                window.location.href = response.url;
+            } else if (response.status == false) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Hata Oluştu...",
+                    text: response.message,
+                    footer: '<a href="' + response.urlc + '">Tedarikçiye Gitmek İçin Tıklayın</a>'
+                });
+            }
 
             console.log(response);
             // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
-          },
-          error: function(error) {
+        },
+        error: function(error) {
             console.error(error);
             // Hata durumunda gerekli işlemleri yapabilirsiniz.
-          }
-        });
+        }
+    });
+
 
 
 
