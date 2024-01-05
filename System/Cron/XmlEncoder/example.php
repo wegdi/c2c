@@ -34,7 +34,11 @@ $uniqid = uniqid();
             $db->Add("Category_Menu", $data);
             $domain2 = $domain.'/kategori/opel-yedek-parca';
             preg_match_all('/<a\s+href="([^"]+)"\s+title="([^"]+)"[^>]*>(.*?)<\/a>/s', file_get_contents("$domain2"), $kategori2);
+            echo '<pre>';
+            print_r($kategori2[1]);
+            echo '</pre>';
             $k = 0;
+            /*
             while($k< count($kategori2[1])){
                 if($k == 0){
                     $uniqid2 = uniqid();
@@ -48,7 +52,7 @@ $uniqid = uniqid();
                     //$db->Add("Category_Menu", $data2);
                 }
                 $k = $k+1;
-            }
+            }*/
         }else{
             /*
             $uniqid = uniqid();
