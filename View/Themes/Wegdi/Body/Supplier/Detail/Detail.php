@@ -126,8 +126,8 @@ foreach ($databaseKeys as $item) {
     echo "string";
   }
 
-    $tableHtml .= $selected."<tr>";
-    $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . "</td>";
+    $tableHtml .= "<tr>";
+    $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . $selected ."</td>";
     $tableHtml .= "<td>";
 
     // Değer bir dizi içeriyorsa satır satır yazdır
