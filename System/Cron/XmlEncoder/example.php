@@ -24,7 +24,7 @@ echo '<br>';
     echo $domain;
     echo '<br>';
     preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents("$domain"), $kategori);
-    $r = 1;
+    $r = 2;
     echo count($kategori[1]);
     echo '<br>';
     $uniqid = uniqid();
