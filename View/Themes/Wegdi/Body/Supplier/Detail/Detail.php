@@ -142,7 +142,6 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
 $tableHtml .= '</table>  </div>
 </div>
 </div><!--end col-->
-</div><!--end row-->
 
 ';
 
@@ -151,3 +150,6 @@ echo $tableHtml;
 
 
 ?>
+
+
+</div>
