@@ -192,9 +192,9 @@ $options = [
                 <th><?php echo $value; ?></th>
                 <th>
                   <?php if ($jsonUrl["$key"]): ?>
-                    <i class="ri-checkbox-circle-line"></i> 
+                    <i class="ri-checkbox-circle-line"></i>
                       <?php else: ?>
-                        yok
+                    <i class="ri-close-circle-line"></i> 
                   <?php endif; ?>
 
                 </th>
