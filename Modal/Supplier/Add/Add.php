@@ -60,7 +60,8 @@ if ($_POST["tedarikciAdi"]!="" and $_POST["tedarikciLink"]!="") {
   }else {
     $returnx = array(
       'status' => false,
-      'message' => 'Tedarikçi Linki veya Tedarikçi Adı Sistemde Kayıtlı'
+      'message' => 'Tedarikçi Linki veya Tedarikçi Adı Sistemde Kayıtlı',
+      'urlc' => URL.'/Supplier/Detail/'.$SupplierUrl["SupplierCode"]
     );
     echo json_encode($returnx);
   }

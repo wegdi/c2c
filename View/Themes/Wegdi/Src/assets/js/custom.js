@@ -314,12 +314,11 @@ $(document).ready(function() {
             if (response.url) {
             window.location.href = response.url;
           }else if (response.status==false) {
-            alert(response.status);
             Swal.fire({
             icon: "error",
             title: "Hata Oluştu...",
             text: response.message,
-            footer: '<a href="/Issue/Detail">Neden bu sorunu yaşıyorum?</a>'
+            footer: '<a href="'+response.urlc+'">Tedarikçiye Gitmek İçin Tıklayın</a>'
           });
           }
 
