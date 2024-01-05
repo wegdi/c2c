@@ -42,25 +42,20 @@ $uniqid = uniqid();
             $finder = new DomXPath($dom);
             $classname = "filter-menu-category-content";
             $kategori2 = $finder->query("//*[contains(@class, '$classname')]//a");
-            foreach ($kategori2 as $kategori2_item) {
-                echo $kategori2_item->getAttribute('href')."<br>";
-            }
             $k = 0;
-            /*
-            while($k< count($kategori2[1])){
+            foreach ($kategori2 as $kategori2_item) {
                 if($k == 0){
                     $uniqid2 = uniqid();
                     $data2 = array(
                         'Uniqid' => $uniqid2,
                         'GroupId'=> $uniqid,
-                        'Url' => $kategori2[1][$k],
-                        'Title' => $db->Guvenlik($kategori2[2][$k])
+                        'Url' => $kategori2_item->getAttribute('href'),
+                        'Title' => $db->Guvenlik($kategori2_item->getAttribute('title'))
                     );
-                    print_r($data2);
-                    //$db->Add("Category_Menu", $data2);
+                    $db->Add("Category_Menu", $data2);
                 }
                 $k = $k+1;
-            }*/
+            }
         }else{
             /*
             $uniqid = uniqid();
