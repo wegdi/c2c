@@ -93,7 +93,7 @@ foreach ($databaseKeys as $item) {
             }
         }
     } else {
-        $tableHtml .= $item['deger'];
+      //  $tableHtml .= $item['deger'];
     }
 
     $tableHtml .= "</td>";
