@@ -192,7 +192,7 @@ $options = [
                 <th><?php echo $value; ?></th>
                 <th>
                   <?php if ($jsonUrl["$key"]): ?>
-                      var
+                    <i class="ri-checkbox-circle-fill "></i> 
                       <?php else: ?>
                         yok
                   <?php endif; ?>
