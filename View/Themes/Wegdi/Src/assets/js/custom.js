@@ -393,6 +393,7 @@ $(document).ready(function() {
 
 
       $(document).ready(function() {
+        if (param2=='Detail') {
     function updateOnizlemeget() {
       // Make an AJAX request to fetch HTML content from the specified URL
       $.ajax({
@@ -412,4 +413,5 @@ $(document).ready(function() {
     // Call the updateOnizlemeget function immediately and then every 3 seconds
     updateOnizlemeget(); // Call once when the page is loaded
     setInterval(updateOnizlemeget, 3000); // Then, call every 3 seconds
+    }
   });
