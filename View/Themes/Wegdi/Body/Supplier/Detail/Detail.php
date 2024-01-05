@@ -80,7 +80,12 @@ foreach ($databaseKeys as $item) {
     $tableHtml .= "<td>" . $item['anahtar'] . "</td>";
     $tableHtml .= "<td>";
 
-      $tableHtml .= $item['deger'];
+    // Değer bir dizi içeriyorsa satır satır yazdır
+    if (is_array($item['deger'])) {
+      
+    } else {
+
+    }
 
     $tableHtml .= "</td>";
     $tableHtml .= "<td>Eşleştir</td>";
