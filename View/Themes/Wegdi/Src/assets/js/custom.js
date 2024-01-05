@@ -379,6 +379,14 @@ function changeJsonContent(slc) {
     data: { selectedValue: selectedValue,tag:tagValue,SupplierID:param3 }, // Gönderilecek veri
     success: function(response) {
       updateOnizlemeget();
+
+      if (response.success=='true') {
+        Swal.fire({
+          icon: "success",
+          title: "İşleminiz Başarılı..",
+          text: "Eşleşme Yapıldı",
+        });
+      }
       // Başarılı bir şekilde gönderildiğinde yapılacak işlemler
       console.log(response);
     },
