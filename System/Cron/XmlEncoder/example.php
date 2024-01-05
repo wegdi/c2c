@@ -41,7 +41,7 @@ $uniqid = uniqid();
             $kategori2 = $finder->query("//*[contains(@class, '$classname')]//a");
             $k = 0;
             foreach ($kategori2 as $kategori2_item) {
-                if($k <= 1){
+                if($k == 0){
                     $uniqid2 = uniqid();
                     $data2 = array(
                         'Uniqid' => $uniqid2,
