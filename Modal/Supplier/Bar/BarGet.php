@@ -41,7 +41,17 @@ $options = [
 
 <table class="display table table-bordered dt-responsive">
   <?php foreach ($options as $key => $value): ?>
-    <?php print_r($value); ?>
+    <tr>
+      <th><?php echo $value; ?></th>
+      <th>
+        <?php if ($jsonUrl["$key"]): ?>
+          <i class="ri-checkbox-circle-line"></i>
+            <?php else: ?>
+          <i class="ri-close-circle-line"></i>
+        <?php endif; ?>
+
+      </th>
+    </tr>
   <?php endforeach; ?>
 
 </table>
