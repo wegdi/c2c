@@ -121,13 +121,14 @@ $say=0;
 foreach ($databaseKeys as $item) {
   $tag = $ustAnahtarString . '->' . $item['anahtar'];
   $tag = str_replace(["->", ' '], [';', ''], $tag);
+
   if ($jsonUrl["$keyc"]==$tag) {
     $selected='selected';
     echo "string";
   }
 
     $tableHtml .= "<tr>";
-    $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . $selected ."</td>";
+    $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . $jsonUrl["$keyc"] ."</td>";
     $tableHtml .= "<td>";
 
     // Değer bir dizi içeriyorsa satır satır yazdır
