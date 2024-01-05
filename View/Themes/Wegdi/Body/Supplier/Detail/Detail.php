@@ -192,25 +192,10 @@ $options = [
         <div class="card-header">
             <h5 class="card-title mb-0">Xml Ön İzleme</h5>
         </div>
-        <div class="card-body">
-          <table class="display table table-bordered dt-responsive">
-            <?php foreach ($options as $key => $value): ?>
-              <tr>
-                <th><?php echo $value; ?></th>
-                <th>
-                  <?php if ($jsonUrl["$key"]): ?>
-                    <i class="ri-checkbox-circle-line"></i>
-                      <?php else: ?>
-                    <i class="ri-close-circle-line"></i>
-                  <?php endif; ?>
+        <div class="card-body" id="onizlemeget">
 
-                </th>
-              </tr>
-            <?php endforeach; ?>
 
-          </table>
-
-</div>
-</div>
-</div>
+        </div>
+        </div>
+        </div>
 </div>
