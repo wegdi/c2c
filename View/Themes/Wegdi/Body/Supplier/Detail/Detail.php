@@ -120,13 +120,10 @@ $tableHtml .= "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
 $say=0;
 foreach ($databaseKeys as $item) {
   $tag = $ustAnahtarString . '->' . $item['anahtar'];
-  $tag = str_replace(["->", ' '], [';', ''], $tag);
-
-
-
+$tag = str_replace(["->", ' '], [';', ''], $tag);
 
     $tableHtml .= "<tr>";
-    $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar']  ."</td>";
+    $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . "</td>";
     $tableHtml .= "<td>";
 
     // Değer bir dizi içeriyorsa satır satır yazdır
@@ -136,18 +133,7 @@ foreach ($databaseKeys as $item) {
         $tableHtml .= $item['deger'];
     }
 
-    foreach ($options as $keyc => $valuec) {
-      
-      if (isset($jsonUrl["$keyc"])) {
-        if ($jsonUrl["$keyc"]==$tag) {
-          $selected='selected';
-          echo "string";
-        }
-      }
-
-
-        $option.='<option '.$selected.' value="'.$keyc.'">'.$valuec.'</option>';
-    }
+  
     $tableHtml .= "</td>";
     $tableHtml .= '<td>
 
@@ -158,7 +144,33 @@ foreach ($databaseKeys as $item) {
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
    <select class="form-select"  id="secler'.$say.'" name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent('.$say.');">
        <option value="-">- pas geç -</option>
-        '.$option.'
+       <option value="product_name">Ürün Adı</option>
+       <option value="product_description">Açıklama </option>
+       <option value="product_meta_description">Meta description </option>
+       <option value="product_meta_keyword">Meta keyword </option>
+       <option value="model">Ürün Kodu</option>
+       <option value="sku">SKU</option>
+       <option value="quantity">Stok</option>
+       <option value="main_image">Ana Resim</option>
+       <option value="image_1">Ürün resmi 1</option>
+       <option value="image_2">Ürün resmi 2</option>
+       <option value="image_3">Ürün resmi 3</option>
+       <option value="image_4">Ürün resmi 4</option>
+       <option value="image_5">Ürün resmi 5</option>
+       <option value="image_6">Ürün resmi 6</option>
+       <option value="image_7">Ürün resmi 7</option>
+       <option value="image_8">Ürün resmi 8</option>
+       <option value="image_9">Ürün resmi 9</option>
+       <option value="image_10">Ürün resmi 10</option>
+       <option value="manufacturer_name">Marka</option>
+       <option value="price">Fiyat</option>
+       <option value="product_option_price">Seçenek Fiyatı</option>
+       <option value="product_option_quantity">Seçenek Stok</option>
+       <option value="product_option_name">Seçenek Adı </option>
+       <option value="product_option_value">Seçenek Değeri </option>
+       <option value="product_attribute_group">Özellik Grubu </option>
+       <option value="product_attribute_name">Özellik Adı </option>
+       <option value="product_attribute_value">Özellik Değer </option>
    </select>
    <input type="hidden" name="tag" class="tag" id="taglar'.$say.'" value="'.$tag.'">
 
