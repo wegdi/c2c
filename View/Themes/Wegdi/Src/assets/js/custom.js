@@ -350,11 +350,12 @@ $(document).ready(function() {
           // Seçilen değeri al
           var selectedValue = $(".form-select").val();
           var tagValue = $(".tag").val();
+
           // AJAX kullanarak POST isteği gönder
           $.ajax({
               type: "POST",
               url: "/Modal/Supplier/Detail/Detail.php",
-              data: { selectedValue: selectedValue,tag:tagValue }, // Gönderilecek veri
+              data: { selectedValue: selectedValue,tag:tagValue,SupplierID:param3 }, // Gönderilecek veri
               success: function(response) {
                   // Başarılı bir şekilde gönderildiğinde yapılacak işlemler
                   console.log(response);
