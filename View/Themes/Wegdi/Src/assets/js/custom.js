@@ -377,8 +377,8 @@ function changeJsonContent(slc) {
     type: "POST",
     url: "/Modal/Supplier/Detail/Detail.php",
     data: { selectedValue: selectedValue,tag:tagValue,SupplierID:param3 }, // Gönderilecek veri
+    dataType:'Json',
     success: function(response) {
-      updateOnizlemeget();
 
       if (response.success=='true') {
         Swal.fire({
@@ -386,6 +386,8 @@ function changeJsonContent(slc) {
           title: "İşleminiz Başarılı..",
           text: "Eşleşme Yapıldı",
         });
+        updateOnizlemeget();
+
       }
       // Başarılı bir şekilde gönderildiğinde yapılacak işlemler
       console.log(response);
