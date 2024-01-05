@@ -315,7 +315,12 @@ $(document).ready(function() {
             window.location.href = response.url;
           }else if (response.status==false) {
             alert(response.status);
-
+            Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: response.message,
+            footer: '<a href="#">Neden bu sorunu yaşıyorum?</a>'
+          });
           }
 
             console.log(response);
