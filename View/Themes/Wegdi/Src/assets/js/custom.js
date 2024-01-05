@@ -377,9 +377,9 @@ function changeJsonContent(slc) {
     type: "POST",
     url: "/Modal/Supplier/Detail/Detail.php",
     data: { selectedValue: selectedValue,tag:tagValue,SupplierID:param3 }, // Gönderilecek veri
-    dataType:'Json',
+    dataType: "Json",
     success: function(response) {
-
+      alert(response.success);
       if (response.success=='true') {
         Swal.fire({
           icon: "success",
