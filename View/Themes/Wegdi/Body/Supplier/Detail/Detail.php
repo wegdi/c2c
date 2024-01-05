@@ -128,7 +128,7 @@ foreach ($databaseKeys as $item) {
   }
 
     $tableHtml .= "<tr>";
-    $tableHtml .= "<td>"  . $tag ."</td>";
+    $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar']  ."</td>";
     $tableHtml .= "<td>";
 
     // Değer bir dizi içeriyorsa satır satır yazdır
