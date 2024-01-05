@@ -239,7 +239,4 @@ $db=new General();
   <div class="page-content">
     <div class="container-fluid">
 
-      <div class="alert alert-success alert-top-border alert-dismissible fade d-none" role="alert">
-          <i class="ri-notification-off-line me-3 align-middle fs-16 text-success"></i><strong>Success</strong> - Top border alert
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
+      
