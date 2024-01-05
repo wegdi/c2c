@@ -42,9 +42,9 @@ $uniqid = uniqid();
             $finder = new DomXPath($dom);
             $classname = "filter-menu-category-content";
             $kategori2 = $finder->query("//*[contains(@class, '$classname')]//a");
-            echo '<pre>';
-            print_r($kategori2->length);
-            echo '</pre>';
+            foreach ($kategori2 as $kategori2_item) {
+                echo $kategori2_item->getAttribute('href')."<br>";
+            }
             $k = 0;
             /*
             while($k< count($kategori2[1])){
