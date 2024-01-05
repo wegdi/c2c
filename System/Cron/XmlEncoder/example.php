@@ -23,14 +23,14 @@ $db = new General();
     echo $domain;
     echo '<br>';
     preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents("$domain"), $kategori);
-    $r = 0;
+    $r = 1;
     echo count($kategori[1]);
     echo '<br>';
     $uniqid = uniqid();
     $data = array(
         'Uniqid' => $uniqid,
         'GroupId'=> '0',
-        'Url' => '/kategori/opel-yedek-parca',
+        'Url' => $kategori[1][$r],
         'Title' => $db->Guvenlik($kategori[2][$r])
     );
     //$db->Add("Category_Menu", $data);
