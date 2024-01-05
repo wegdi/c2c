@@ -139,11 +139,11 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
   <div class="input-group">
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
    <select class="form-select"  id="secler'.$say.'" name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent('.$say.');">
-        <option '.(($jsonUrl["product_name"] == $tag) ? "selected" : "").' value="-">- pas geç -</option>
+        <option value="-">- pas geç -</option>
         <option '.(($jsonUrl["product_name"] == "product_name") ? "selected" : "").' value="product_name">Ürün Adı</option>
-        <option '.(($jsonUrl["product_name"] == "product_description") ? "selected" : "").' value="product_description">Açıklama</option>
-        <option '.(($jsonUrl["product_name"] == "product_meta_description") ? "selected" : "").' value="product_meta_description">Meta description</option>
-        <option '.(($jsonUrl["product_name"] == "product_meta_keyword") ? "selected" : "").' value="product_meta_keyword">Meta keyword</option>
+        <option '.(($jsonUrl["product_description"] == "product_description") ? "selected" : "").' value="product_description">Açıklama</option>
+        <option '.(($jsonUrl["product_meta_description"] == "product_meta_description") ? "selected" : "").' value="product_meta_description">Meta description</option>
+        <option '.(($jsonUrl["product_meta_keyword"] == "product_meta_keyword") ? "selected" : "").' value="product_meta_keyword">Meta keyword</option>
         <option '.(($jsonUrl["product_name"] == "model") ? "selected" : "").' value="model">Ürün Kodu</option>
         <option '.(($jsonUrl["product_name"] == "sku") ? "selected" : "").' value="sku">SKU</option>
         <option '.(($jsonUrl["product_name"] == "quantity") ? "selected" : "").' value="quantity">Stok</option>
