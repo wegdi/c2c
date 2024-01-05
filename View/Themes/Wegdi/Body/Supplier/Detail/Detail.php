@@ -114,7 +114,12 @@ $tableHtml = '
           </div>
           <div class="card-body">
 <table class="display table table-bordered dt-responsive">';
-$tableHtml .= "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
+$tableHtml .= '<tr>
+    <th>Anahtar</th>
+    <th style="font-size: 80%;">Değer</th>
+    <th>Eşleştir</th>
+</tr>';
+
 
 // DataTable içeriğini oluştur
 $say=0;
@@ -166,7 +171,7 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
             <option '.(($jsonUrl["product_attribute_group"] == $tag) ? "selected" : "").' value="product_attribute_group">Özellik Grubu</option>
             <option '.(($jsonUrl["product_attribute_name"] == $tag) ? "selected" : "").' value="product_attribute_name">Özellik Adı</option>
             <option '.(($jsonUrl["product_attribute_value"] == $tag) ? "selected" : "").' value="product_attribute_value">Özellik Değer</option>
-      
+
    </select>
    <input type="hidden" name="tag" class="tag" id="taglar'.$say.'" value="'.$tag.'">
 
