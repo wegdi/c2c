@@ -55,8 +55,8 @@ $db = new General();
         //$db->Add("Category_Menu", $data2);
         //son kategori bilgileri
         $domain3 = $domain.$kategori2_item->getAttribute('href');
-        //echo $domain3;
-        //echo '<br>';
+        echo '--'.$domain3;
+        echo '<br>';
         $dom3 = new DOMDocument();
         $dom3->loadHTML(file_get_contents("$domain3"));
         $finder3 = new DomXPath($dom3);
@@ -64,7 +64,7 @@ $db = new General();
         $kategori3 = $finder3->query("//*[contains(@class, '$classname3')]//a");
         $t = 0;
         foreach ($kategori3 as $kategori3_item) {
-            echo $kategori3_item->getAttribute('href');
+            echo '++https://www.onlineyedekparca.com'.$kategori3_item->getAttribute('href');
             echo '<br>';
             $uniqid3 = uniqid();
             $data3 = array(
