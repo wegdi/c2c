@@ -380,7 +380,7 @@ function changeJsonContent(slc) {
     dataType: "Json",
     success: function(response) {
       alert(response.success);
-      if (response.success=='true') {
+      if (response.success==true) {
         Swal.fire({
           icon: "success",
           title: "İşleminiz Başarılı..",
