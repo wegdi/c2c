@@ -84,7 +84,7 @@ foreach ($databaseKeys as $item) {
     if (is_array($item['deger'])) {
       
     } else {
-
+        $tableHtml .= $item['deger'];
     }
 
     $tableHtml .= "</td>";
