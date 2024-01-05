@@ -343,3 +343,25 @@ $(document).ready(function() {
       return pattern.test(url);
     }
   });
+
+
+
+  function changeJsonContent() {
+          // Seçilen değeri al
+          var selectedValue = $(".form-select").val();
+
+          // AJAX kullanarak POST isteği gönder
+          $.ajax({
+              type: "POST",
+              url: "/Modal/Supplier/Detail/Detail.php",
+              data: { selectedValue: selectedValue }, // Gönderilecek veri
+              success: function(response) {
+                  // Başarılı bir şekilde gönderildiğinde yapılacak işlemler
+                  console.log(response);
+              },
+              error: function(error) {
+                  // Hata durumunda yapılacak işlemler
+                  console.error("Error:", error);
+              }
+          });
+      }
