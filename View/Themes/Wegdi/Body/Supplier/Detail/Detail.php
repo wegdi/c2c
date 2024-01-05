@@ -139,34 +139,34 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
   <div class="input-group">
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
    <select class="form-select"  id="secler'.$say.'" name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent('.$say.');">
-        <option value="-">- pas geç -</option>
-        <option '.(($jsonUrl["product_name"] == $tag) ? "selected" : "").' value="product_name">Ürün Adı</option>
-        <option '.(($jsonUrl["product_description"] == "product_description") ? "selected" : "").' value="product_description">Açıklama</option>
-        <option '.(($jsonUrl["product_meta_description"] == "product_meta_description") ? "selected" : "").' value="product_meta_description">Meta description</option>
-        <option '.(($jsonUrl["product_meta_keyword"] == "product_meta_keyword") ? "selected" : "").' value="product_meta_keyword">Meta keyword</option>
-        <option '.(($jsonUrl["product_name"] == "model") ? "selected" : "").' value="model">Ürün Kodu</option>
-        <option '.(($jsonUrl["product_name"] == "sku") ? "selected" : "").' value="sku">SKU</option>
-        <option '.(($jsonUrl["product_name"] == "quantity") ? "selected" : "").' value="quantity">Stok</option>
-        <option '.(($jsonUrl["product_name"] == "main_image") ? "selected" : "").' value="main_image">Ana Resim</option>
-        <option '.(($jsonUrl["product_name"] == "image_1") ? "selected" : "").' value="image_1">Ürün resmi 1</option>
-        <option '.(($jsonUrl["product_name"] == "image_2") ? "selected" : "").' value="image_2">Ürün resmi 2</option>
-        <option '.(($jsonUrl["product_name"] == "image_3") ? "selected" : "").' value="image_3">Ürün resmi 3</option>
-        <option '.(($jsonUrl["product_name"] == "image_4") ? "selected" : "").' value="image_4">Ürün resmi 4</option>
-        <option '.(($jsonUrl["product_name"] == "image_5") ? "selected" : "").' value="image_5">Ürün resmi 5</option>
-        <option '.(($jsonUrl["product_name"] == "image_6") ? "selected" : "").' value="image_6">Ürün resmi 6</option>
-        <option '.(($jsonUrl["product_name"] == "image_7") ? "selected" : "").' value="image_7">Ürün resmi 7</option>
-        <option '.(($jsonUrl["product_name"] == "image_8") ? "selected" : "").' value="image_8">Ürün resmi 8</option>
-        <option '.(($jsonUrl["product_name"] == "image_9") ? "selected" : "").' value="image_9">Ürün resmi 9</option>
-        <option '.(($jsonUrl["product_name"] == "image_10") ? "selected" : "").' value="image_10">Ürün resmi 10</option>
-        <option '.(($jsonUrl["product_name"] == "manufacturer_name") ? "selected" : "").' value="manufacturer_name">Marka</option>
-        <option '.(($jsonUrl["product_name"] == "price") ? "selected" : "").' value="price">Fiyat</option>
-        <option '.(($jsonUrl["product_name"] == "product_option_price") ? "selected" : "").' value="product_option_price">Seçenek Fiyatı</option>
-        <option '.(($jsonUrl["product_name"] == "product_option_quantity") ? "selected" : "").' value="product_option_quantity">Seçenek Stok</option>
-        <option '.(($jsonUrl["product_name"] == "product_option_name") ? "selected" : "").' value="product_option_name">Seçenek Adı</option>
-        <option '.(($jsonUrl["product_name"] == "product_option_value") ? "selected" : "").' value="product_option_value">Seçenek Değeri</option>
-        <option '.(($jsonUrl["product_name"] == "product_attribute_group") ? "selected" : "").' value="product_attribute_group">Özellik Grubu</option>
-        <option '.(($jsonUrl["product_name"] == "product_attribute_name") ? "selected" : "").' value="product_attribute_name">Özellik Adı</option>
-        <option '.(($jsonUrl["product_name"] == "product_attribute_value") ? "selected" : "").' value="product_attribute_value">Özellik Değer</option>
+   <option '.(($jsonUrl["product_name"] == $tag) ? "selected" : "").' value="product_name">Ürün Adı</option>
+            <option '.(($jsonUrl["product_description"] == $tag) ? "selected" : "").' value="product_description">Açıklama</option>
+            <option '.(($jsonUrl["product_meta_description"] == $tag) ? "selected" : "").' value="product_meta_description">Meta description</option>
+            <option '.(($jsonUrl["product_meta_keyword"] == $tag) ? "selected" : "").' value="product_meta_keyword">Meta keyword</option>
+            <option '.(($jsonUrl["model"] == $tag) ? "selected" : "").' value="model">Ürün Kodu</option>
+            <option '.(($jsonUrl["sku"] == $tag) ? "selected" : "").' value="sku">SKU</option>
+            <option '.(($jsonUrl["quantity"] == $tag) ? "selected" : "").' value="quantity">Stok</option>
+            <option '.(($jsonUrl["main_image"] == $tag) ? "selected" : "").' value="main_image">Ana Resim</option>
+            <option '.(($jsonUrl["image_1"] == $tag) ? "selected" : "").' value="image_1">Ürün resmi 1</option>
+            <option '.(($jsonUrl["image_2"] == $tag) ? "selected" : "").' value="image_2">Ürün resmi 2</option>
+            <option '.(($jsonUrl["image_3"] == $tag) ? "selected" : "").' value="image_3">Ürün resmi 3</option>
+            <option '.(($jsonUrl["image_4"] == $tag) ? "selected" : "").' value="image_4">Ürün resmi 4</option>
+            <option '.(($jsonUrl["image_5"] == $tag) ? "selected" : "").' value="image_5">Ürün resmi 5</option>
+            <option '.(($jsonUrl["image_6"] == $tag) ? "selected" : "").' value="image_6">Ürün resmi 6</option>
+            <option '.(($jsonUrl["image_7"] == $tag) ? "selected" : "").' value="image_7">Ürün resmi 7</option>
+            <option '.(($jsonUrl["image_8"] == $tag) ? "selected" : "").' value="image_8">Ürün resmi 8</option>
+            <option '.(($jsonUrl["image_9"] == $tag) ? "selected" : "").' value="image_9">Ürün resmi 9</option>
+            <option '.(($jsonUrl["image_10"] == $tag) ? "selected" : "").' value="image_10">Ürün resmi 10</option>
+            <option '.(($jsonUrl["manufacturer_name"] == $tag) ? "selected" : "").' value="manufacturer_name">Marka</option>
+            <option '.(($jsonUrl["price"] == $tag) ? "selected" : "").' value="price">Fiyat</option>
+            <option '.(($jsonUrl["product_option_price"] == $tag) ? "selected" : "").' value="product_option_price">Seçenek Fiyatı</option>
+            <option '.(($jsonUrl["product_option_quantity"] == $tag) ? "selected" : "").' value="product_option_quantity">Seçenek Stok</option>
+            <option '.(($jsonUrl["product_option_name"] == $tag) ? "selected" : "").' value="product_option_name">Seçenek Adı</option>
+            <option '.(($jsonUrl["product_option_value"] == $tag) ? "selected" : "").' value="product_option_value">Seçenek Değeri</option>
+            <option '.(($jsonUrl["product_attribute_group"] == $tag) ? "selected" : "").' value="product_attribute_group">Özellik Grubu</option>
+            <option '.(($jsonUrl["product_attribute_name"] == $tag) ? "selected" : "").' value="product_attribute_name">Özellik Adı</option>
+            <option '.(($jsonUrl["product_attribute_value"] == $tag) ? "selected" : "").' value="product_attribute_value">Özellik Değer</option>
+      
    </select>
    <input type="hidden" name="tag" class="tag" id="taglar'.$say.'" value="'.$tag.'">
 
