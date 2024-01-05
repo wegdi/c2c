@@ -367,3 +367,26 @@ $(document).ready(function() {
               }
           });
       }
+
+
+
+      $(document).ready(function() {
+          function updateOnizlemeget() {
+            // Make an AJAX request to fetch HTML content from the specified URL
+            $.ajax({
+              url: '/Modal/Supplier/Bar/BarGet.php',
+              method: 'GET',
+              dataType: 'html',
+              success: function(response) {
+                // Update the content inside the onizlemeget div with the fetched HTML
+                $('#onizlemeget').html(response);
+              },
+              error: function(error) {
+                console.error('Error fetching HTML:', error);
+              }
+            });
+          }
+
+          // Call the updateOnizlemeget function every 3 seconds
+          setInterval(updateOnizlemeget, 3000);
+        });
