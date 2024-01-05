@@ -278,7 +278,7 @@ $(document).ready(function() {
       // Her iki input da dolu mu kontrol etme
       if (tedarikciAdi.trim() !== '' && tedarikciLink.trim() !== '') {
         // Geçerli bir URL ise "Kaydet" simgesini gösterme
-        if (isValidUrl(tedarikciLink)) {
+        if (tedarikciLink) {
           $("#xmlstart").html("Kaydet <i class='fa fa-check'></i>");
         } else {
           $("#xmlstart").html("Geçerli bir URL değil");
