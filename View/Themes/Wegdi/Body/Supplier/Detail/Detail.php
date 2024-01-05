@@ -100,7 +100,7 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
 
   <div class="input-group">
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
-   <select class="form-select"  id="secler'.$say.'" name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent("secler'.$say.'");">
+   <select class="form-select"  id="secler'.$say.'" name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent("'.$say.'");">
        <option value="-">- pas geç -</option>
        <option value="product_name">Ürün Adı</option>
        <option value="product_description">Açıklama </option>
@@ -130,7 +130,7 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
        <option value="product_attribute_name[1]">Özellik Adı (tr-tr)</option>
        <option value="product_attribute_value[1]">Özellik Değer (tr-tr)</option>
    </select>
-   <input type="hidden" name="tag" class="tag" value="'.$tag.'">
+   <input type="hidden" name="tag" class="tag" id="seclerin'.$say.'" value="'.$tag.'">
 
 </div>
 
