@@ -75,8 +75,9 @@ $tableHtml .= "<tr><th>Anahtar</th><th>Değer</th><th>Eşleştir</th></tr>";
 
 // DataTable içeriğini oluştur
 foreach ($databaseKeys as $item) {
-    $tag=trim($ustAnahtarString.'->'.$item['anahtar']);
-    $tag = str_replace("->",";", $tag);
+  $tag = $ustAnahtarString . '->' . $item['anahtar'];
+$tag = str_replace(["->", ' '], [';', ''], $tag);
+
     $tableHtml .= "<tr>";
     $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . "</td>";
     $tableHtml .= "<td>";
