@@ -36,7 +36,7 @@ $db = new General();
     //$db->Add("Category_Menu", $data);
     //2. kategori bilgileri
     $domain2 = $domain.'/kategori/opel-yedek-parca';
-    echo ' '.$domain2;
+    echo '-'.$domain2;
     echo '<br>';
     $dom = new DOMDocument();
     $dom->loadHTML(file_get_contents("$domain2"));
@@ -64,7 +64,7 @@ $db = new General();
         $kategori3 = $finder3->query("//*[contains(@class, '$classname3')]//a");
         $t = 0;
         foreach ($kategori3 as $kategori3_item) {
-            echo '  https://www.onlineyedekparca.com'.$kategori3_item->getAttribute('href');
+            echo '++https://www.onlineyedekparca.com'.$kategori3_item->getAttribute('href');
             echo '<br>';
             $uniqid3 = uniqid();
             $data3 = array(
