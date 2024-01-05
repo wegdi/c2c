@@ -190,6 +190,7 @@ $options = [
             <?php foreach ($options as $key => $value): ?>
               <tr>
                 <th><?php echo $value; ?></th>
+                <th></th>
               </tr>
             <?php endforeach; ?>
 
