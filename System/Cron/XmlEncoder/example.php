@@ -32,7 +32,7 @@ $db = new General();
         'Url' => '/kategori/opel-yedek-parca',
         'Title' => $db->Guvenlik($kategori[2][$r])
     );
-    $db->Add("Category_Menu", $data);
+    //$db->Add("Category_Menu", $data);
     //2. kategori bilgileri
     $domain2 = $domain.'/kategori/opel-yedek-parca';
     echo $domain2;
@@ -51,7 +51,7 @@ $db = new General();
             'Url' => $kategori2_item->getAttribute('href'),
             'Title' => $db->Guvenlik($kategori2_item->getAttribute('title'))
         );
-        $db->Add("Category_Menu", $data2);
+        //$db->Add("Category_Menu", $data2);
         //son kategori bilgileri
         $domain3 = $domain.$kategori2_item->getAttribute('href');
         echo $domain3;
@@ -70,7 +70,7 @@ $db = new General();
                 'Url' => $kategori3_item->getAttribute('href'),
                 'Title' => $db->Guvenlik($kategori3_item->getAttribute('title'))
             );
-            $db->Add("Category_Menu", $data3);
+            //$db->Add("Category_Menu", $data3);
         }
         $k = $k+1;
     }
