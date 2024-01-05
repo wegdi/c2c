@@ -134,7 +134,13 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
     }
 
     foreach ($options as $keyc => $valuec) {
-        $option.='<option value="'.$keyc.'">'.$valuec.'</option>';
+
+        if (isset($jsonUrl["$keyc"])) {
+            if ($jsonUrl["$keyc"]==$tag) {
+              $selected='selected';
+            }
+        }
+        $option.='<option '.$selected.' value="'.$keyc.'">'.$valuec.'</option>';
     }
     $tableHtml .= "</td>";
     $tableHtml .= '<td>
