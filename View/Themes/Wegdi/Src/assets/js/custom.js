@@ -311,10 +311,10 @@ $(document).ready(function() {
           data: formData,
           dataType: "Json",
           success: function(response) {
-              alert(response.status);
             if (response.url) {
             window.location.href = response.url;
-          }else if (response.status=="false") {
+          }else if (response.status==false) {
+            alert(response.status);
 
           }
 
