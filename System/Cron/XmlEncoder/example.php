@@ -26,6 +26,10 @@ $db = new General();
     echo count($kategori[1]);
     echo '<br>';
     preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents("$domain"), $kategori);
+    echo '<pre>';
+    print_r($kategori);
+    echo '</pre>';
+    /*
     $r = 0;
     while($r< count($kategori[1])){
         if($r <= 2){
@@ -85,7 +89,7 @@ $db = new General();
             echo '<br>';
         }
         $r = $r+1;
-    }
+    }*/
     echo '<br>';
     echo 'bitti';
 
