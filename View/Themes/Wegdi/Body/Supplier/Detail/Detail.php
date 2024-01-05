@@ -124,11 +124,11 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
        <option value="price">Fiyat</option>
        <option value="product_option_price">Seçenek Fiyatı</option>
        <option value="product_option_quantity">Seçenek Stok</option>
-       <option value="product_option_name">Seçenek Adı (tr-tr)</option>
-       <option value="product_option_value">Seçenek Değeri (tr-tr)</option>
-       <option value="product_attribute_group">Özellik Grubu (tr-tr)</option>
-       <option value="product_attribute_name">Özellik Adı (tr-tr)</option>
-       <option value="product_attribute_value">Özellik Değer (tr-tr)</option>
+       <option value="product_option_name">Seçenek Adı </option>
+       <option value="product_option_value">Seçenek Değeri </option>
+       <option value="product_attribute_group">Özellik Grubu </option>
+       <option value="product_attribute_name">Özellik Adı </option>
+       <option value="product_attribute_value">Özellik Değer </option>
    </select>
    <input type="hidden" name="tag" class="tag" id="taglar'.$say.'" value="'.$tag.'">
 
@@ -171,11 +171,11 @@ $options = [
     "price" => "Fiyat",
     "product_option_price" => "Seçenek Fiyatı",
     "product_option_quantity" => "Seçenek Stok",
-    "product_option_name" => "Seçenek Adı (tr-tr)",
-    "product_option_value" => "Seçenek Değeri (tr-tr)",
-    "product_attribute_group" => "Özellik Grubu (tr-tr)",
-    "product_attribute_name" => "Özellik Adı (tr-tr)",
-    "product_attribute_value" => "Özellik Değer (tr-tr)"
+    "product_option_name" => "Seçenek Adı ",
+    "product_option_value" => "Seçenek Değeri ",
+    "product_attribute_group" => "Özellik Grubu ",
+    "product_attribute_name" => "Özellik Adı ",
+    "product_attribute_value" => "Özellik Değer "
 ];
 ?>
 
