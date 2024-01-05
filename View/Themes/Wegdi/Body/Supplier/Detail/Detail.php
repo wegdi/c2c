@@ -116,7 +116,7 @@ $tableHtml = '
 <table class="display table table-bordered dt-responsive">';
 $tableHtml .= '<tr>
     <th>Anahtar</th>
-    <th >Değer</th>
+    <th style="width: 20%;">Değer</th>
     <th>Eşleştir</th>
 </tr>';
 
