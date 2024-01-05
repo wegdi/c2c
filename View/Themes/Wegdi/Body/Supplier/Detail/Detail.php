@@ -101,10 +101,10 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
    <select class="form-select"  name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent();">
        <option value="-">- pas geç -</option>
-       <option value="product_name[1]">Ürün Adı</option>
-       <option value="product_description[1]">Açıklama </option>
-       <option value="product_meta_description[1]">Meta description </option>
-       <option value="product_meta_keyword[1]">Meta keyword </option>
+       <option value="product_name">Ürün Adı</option>
+       <option value="product_description">Açıklama </option>
+       <option value="product_meta_description">Meta description </option>
+       <option value="product_meta_keyword">Meta keyword </option>
        <option value="model">Ürün Kodu</option>
        <option value="sku">SKU</option>
        <option value="quantity">Stok</option>
