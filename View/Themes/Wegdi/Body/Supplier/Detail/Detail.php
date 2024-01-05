@@ -8,10 +8,10 @@ $jsonUrl = $db->Query('Supplier',["SupplierCode" => (string)$param2], [], 'TEK')
 // JSON dosyasının URL'si
 //$jsonUrl = 'https://c2c.wegdi.com/Json/65968becd3425.json';
 
-$url="https://c2c.wegdi.com".$jsonUr["SupplierFilePath"];
+$url="https://c2c.wegdi.com".$jsonUrl["SupplierFilePath"];
 echo $url;
 // JSON verisini alma
-$jsonData = file_get_contents("https://c2c.wegdi.com".$jsonUr["SupplierFilePath"]);
+$jsonData = file_get_contents("https://c2c.wegdi.com".$jsonUrl["SupplierFilePath"]);
 
 // JSON verisini PHP dizisine dönüştürme
 $data = json_decode($jsonData, true);
