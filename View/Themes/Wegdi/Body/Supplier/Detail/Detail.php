@@ -25,8 +25,6 @@ foreach ($data as $ustAnahtar => $altDizi) {
         if (!is_int($altAnahtar)) {
             // Alt anahtarı string olarak almak istiyorsak
             $altAnahtarString = is_string($altAnahtar) ? $altAnahtar : json_encode($altAnahtar);
-
-            echo "    Alt Anahtar: " . $altAnahtarString . "<br>";
             $donguler[] = $altAnahtarString;
         }
     }
