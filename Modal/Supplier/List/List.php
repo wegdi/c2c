@@ -27,7 +27,7 @@ foreach ($Supplier as $SupplierGet) {
         $SupplierGet["SupplierUrl"],
         '<div class="hstack gap-2"><button class="btn btn-sm btn-soft-danger remove-list" data-bs-toggle="modal" data-bs-target="#removeTaskItemModal" data-remove-id="'.$SupplierGet['_id'].'"><i class="ri-delete-bin-5-fill align-bottom"></i></button>
          <a href="/Supplier/Edit/'.$SupplierGet['_id'].'" class="btn btn-sm btn-soft-info edit-list"><i class="ri-pencil-fill align-bottom"></i></a>
-         <a href="/Supplier/Detail/'.$SupplierGet['SupplierCode'].'" class="btn btn-sm btn-soft-primary edit-list"><i class="ri-pencil-fill align-bottom"></i></a>
+         <a href="/Supplier/Detail/'.$SupplierGet['SupplierCode'].'/1" class="btn btn-sm btn-soft-primary edit-list"><i class="ri-pencil-fill align-bottom"></i></a>
          </div>'
     );
 }
