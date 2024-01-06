@@ -28,8 +28,8 @@ $security->LoginControl($guvenlik);
               <table id="MetaTable" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
                       <tr>
-                          <th><?php echo $Themes->Translate("TEXT_MENU_NAME_TR"); ?></th>
-                          <th><?php echo $Themes->Translate("TEXT_MENU_NAME_EN"); ?></th>
+                          <th><?php echo 'Tedarikçi'; ?></th>
+                          <th><?php echo 'Tedarikçi XML'; ?></th>
                           <th></th>
                       </tr>
                   </thead>
