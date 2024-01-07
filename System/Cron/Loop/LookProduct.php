@@ -1,6 +1,6 @@
 <?php
 
-for ($page = 0; $page <= 101; $page++) {
+for ($page = 0; $page <= 10; $page++) {
     $url = "https://c2c.wegdi.com/System/Cron/AddProduct/ProductDetail.php?page=" . $page;
 
     // Send a GET request to trigger the page
