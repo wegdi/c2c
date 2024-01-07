@@ -43,7 +43,7 @@ class ProductJsonDecoder {
               $start=0;
               $part= floor(count($decodedData[$one])/10);
             }else {
-              $start= floor(count($decodedData[$one])/10);
+              $start= floor(count($decodedData[$one])/10)*$gettotal;
 
               $part= $start*$gettotal;
             }
