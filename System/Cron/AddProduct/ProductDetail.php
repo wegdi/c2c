@@ -32,12 +32,13 @@ foreach ($Supplier as $key => $value) {
 
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
             // Ekrana sıralı bir şekilde yazdırma
-            echo 'model'.'-->'.$valuedecodedData[$Product->ProductJsonLoginEnd($value["model"])];
-            echo 'product_name'.'-->'.$valuedecodedData[$Product->ProductJsonLoginEnd($value["product_name"])];
+            $ProductData['model']=$valuedecodedData[$Product->ProductJsonLoginEnd($value["model"])];
+            $ProductData['product_name']=$valuedecodedData[$Product->ProductJsonLoginEnd($value["product_name"])];
 
 
             echo "<br>";
         }
+        print_R($ProductData);
     }elseif ($model == 3) {
       $explode=explode(';',$value["model"]);
       $one = $explode[0];
