@@ -52,14 +52,15 @@ class ProductJsonDecoder {
             $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
           }
 
+          return   $productValues;
+
         }
 
     }elseif ($model == 3) {
 
     }
-    print_R(  $productValues);
+  //  print_R(  $productValues);
 
-    //return   $ProductData;
   }
 
 
