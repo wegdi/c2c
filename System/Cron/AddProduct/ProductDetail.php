@@ -16,6 +16,8 @@ foreach ($Supplier as $key => $value) {
     if (isset($value["model"])) {
     echo "string";
     print_r(  $Product->ProductJsonLogin($value["model"],$value["SupplierFilePath"]));
+    print_r(  $Product->ProductJsonLogin($value["product_name"],$value["SupplierFilePath"]));
+
     }
 
 }
