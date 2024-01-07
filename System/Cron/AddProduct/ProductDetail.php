@@ -22,7 +22,7 @@ foreach ($Supplier as $key => $value) {
     'kdv'  => $value["kdv"]
   ];
 
-  $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi,$value["SupplierCode"]);
+  $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi,$value["SupplierCode"],$_GET["page"]);
   foreach ($Products as $keyc => $valuec) {
       //print_r($valuec);
 
