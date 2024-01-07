@@ -172,6 +172,7 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
             <option '.(($jsonUrl["product_attribute_group"] == $tag) ? "selected" : "").' value="product_attribute_group">Özellik Grubu</option>
             <option '.(($jsonUrl["product_attribute_name"] == $tag) ? "selected" : "").' value="product_attribute_name">Özellik Adı</option>
             <option '.(($jsonUrl["product_attribute_value"] == $tag) ? "selected" : "").' value="product_attribute_value">Özellik Değer</option>
+            <option '.(($jsonUrl["kdv"] == $tag) ? "selected" : "").' value="kdv">Kdv Değer</option>
 
    </select>
    <input type="hidden" name="tag" class="tag" id="taglar'.$say.'" value="'.$tag.'">
