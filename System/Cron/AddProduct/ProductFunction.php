@@ -43,14 +43,13 @@ class ProductJsonDecoder {
               $start = 0;
               $part = ceil(count($decodedData[$one]) / 10);
           } else {
-              $start = ($gettotal - 1) * ceil(count($decodedData[$one]) / 10);
+              $start = ceil(count($decodedData[$one]) / 10);
               $part = ceil(count($decodedData[$one]) / 10);
           }
 
 
             echo $start;
-            echo "<br>";
-            echo $part;
+          
             $bol = array_slice($decodedData[$one], 1, $part);
           //  print_r($bol);
             foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
