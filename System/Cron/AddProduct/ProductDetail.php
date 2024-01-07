@@ -23,6 +23,7 @@ foreach ($Supplier as $key => $value) {
   ];
 
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi,$value["SupplierCode"],$_GET["page"]);
+  echo count($Products);
   /*
   foreach ($Products as $keyc => $valuec) {
   $ProductIf = $db->Query('Products', ["model" => $valuec["model"]], [], 'COK');
