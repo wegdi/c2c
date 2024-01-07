@@ -16,29 +16,14 @@ $QuerList = array(
     "model"
 );
 
+
+
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
-    $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
-    $decodedData = json_decode($jsonData, true);
 
-    foreach ($QuerList as $keyQuerList) {
-        if (isset($value[$keyQuerList])) {
-            $explode = explode(';', $value[$keyQuerList]);
-            $count = count($explode);
+    $model=ProductJsonLoginCount($value["model"));
+    echo $model;
 
-            if ($count == 2) {
-                $one = $explode[0];
-                $two = $explode[1];
-                $ProductData = [];
-
-                foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
-                    // Ekrana sıralı bir şekilde yazdırma
-                    echo $keyQuerList.'-->'.$valuedecodedData[$two];
-                    echo "<br>";
-                }
-            }
-        }
-    }
 }
 ?>
