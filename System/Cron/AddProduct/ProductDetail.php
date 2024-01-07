@@ -17,37 +17,7 @@ foreach ($Supplier as $key => $value) {
 
 
 
-    $model=$Product->ProductJsonLoginCount($value["model"]);
-
-    if (isset($value["product_description"])) {
-      $product_description=$Product->ProductJsonLoginCount($value["product_description"]);
-    }
-    if (isset($value["product_meta_description"])) {
-      $product_meta_description=$Product->ProductJsonLoginCount($value["product_meta_description"]);
-    }
-
-    if (isset($value["product_meta_keyword"])) {
-    $product_meta_keyword=$Product->ProductJsonLoginCount($value["product_meta_keyword"]);
-    }
-    if (isset($value["sku"])) {
-      $sku=$Product->ProductJsonLoginCount($value["sku"]);
-    }
-    if (isset($value["quantity"])) {
-      $quantity=$Product->ProductJsonLoginCount($value["quantity"]);
-    }
-
-    if (isset($value["kdv"])) {
-    echo  $kdv=$Product->ProductJsonLoginCount($value["kdv"]);
-
-    }
-    if (isset($value["price"])) {
-      $price=$Product->ProductJsonLoginCount($value["price"]);
-
-    }
-
-
-
-
+   $model=$Product->ProductJsonLoginCount($value["model"]);
 
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
@@ -65,6 +35,19 @@ foreach ($Supplier as $key => $value) {
 
             echo "<br>";
         }
+    }elseif ($model == 3) {
+      $explode=explode(';',$value["model"]);
+      $one = $explode[0];
+      $two = $explode[1];
+      $tree = $explode[2];
+
+      $ProductData = [];
+
+      foreach ($decodedData[$one][$tree] as $keydecodedData => $valuedecodedData) {
+          // Ekrana sıralı bir şekilde yazdırma
+          echo 'model'.'-->'.$valuedecodedData["$tree"];
+
+      }
     }
 
 
