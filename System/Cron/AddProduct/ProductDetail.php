@@ -22,9 +22,8 @@ foreach ($Supplier as $key => $value) {
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
 
-    foreach ($QuerList as $keyQuerList) {
-        if (isset($value[$keyQuerList])) {
-            $explode = explode(';', $value[$keyQuerList]);
+        if (isset($value["product_name"])) {
+            $explode = explode(';', $value["product_name"]);
             $count = count($explode);
 
             if ($count == 2) {
@@ -39,6 +38,6 @@ foreach ($Supplier as $key => $value) {
                 }
             }
         }
-    }
+
 }
 ?>
