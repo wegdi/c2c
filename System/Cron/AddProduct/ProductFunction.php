@@ -2,72 +2,53 @@
 
 class ProductJsonDecoder {
 
+    public function ProductJsonLoginCount($value = '')
+    {
+        $explode = explode(';', $value);
+        if ($explode) {
+            $count = count($explode);
+            return $count;
+        } else {
+            return 0;
+        }
+    }
 
+    public function ProductJsonLoginEnd($value = '')
+    {
+        $explode = explode(';', $value);
+        if ($explode) {
+            $count = end($explode);
+            return $count;
+        } else {
+            return 0;
+        }
+    }
 
+    public function ReturnProduct($url = '', $modelv = '', $istek = '')
+    {
+        $model = $this->ProductJsonLoginCount($modelv);
 
-  public function ProductJsonLoginCount($value = '')
-  {
+        $jsonData = file_get_contents($url);
+        $decodedData = json_decode($jsonData, true);
 
-      $explode = explode(';', $value);
-      if ($explode) {
-        $count = count($explode);
-        return $count;
-      }else {
-      return 0;
-      }
+        $productValuesArray = [];
 
+        if ($model == 2) {
+            $explode = explode(';', $modelv);
+            $one = $explode[0];
+            $two = $explode[1];
 
-  }
-
-  public function ProductJsonLoginEnd($value = '')
-  {
-
-      $explode = explode(';', $value);
-      if ($explode) {
-        $count = end($explode);
-        return $count;
-      }else {
-      return 0;
-      }
-
-
-  }
-
-  public function ReturnProduct($url='',$modelv='',$istek='')
-  {
-    $model = $this->ProductJsonLoginCount($modelv);
-
-    $jsonData = file_get_contents($url);
-    $decodedData = json_decode($jsonData, true);
-
-    $ProductData = [];
-    if ($model == 2) {
-        $explode = explode(';', $modelv);
-        $one = $explode[0];
-        $two = $explode[1];
-
-        foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
-          $productValues = [];
-          foreach ($istek as $istekler => $exp) {
-            $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
-
-          }
-
-
-
+            foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
+                $productValues = [];
+                foreach ($istek as $istekler => $exp) {
+                    $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
+                }
+                $productValuesArray[] = $productValues;
+            }
+        } elseif ($model == 3) {
+            // Handle the case when $model is 3, if needed
         }
 
-        return   $productValues;
-
-    }elseif ($model == 3) {
-
+        return $productValuesArray;
     }
-  //  print_R(  $productValues);
-
-  }
-
-
 }
-
-
- ?>
