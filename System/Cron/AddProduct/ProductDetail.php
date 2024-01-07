@@ -29,9 +29,17 @@ foreach ($Supplier as $key => $value) {
     $decodedData = json_decode($jsonData, true);
 
 
-        if (isset($value["model"])) {
-          // code...
+    if ($model == 2) {
+        $one = $explode[0];
+        $two = $explode[1];
+        $ProductData = [];
+
+        foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
+            // Ekrana sıralı bir şekilde yazdırma
+            echo 'model'.'-->'.$valuedecodedData["model"];
+            echo "<br>";
         }
+    }
 
 
 
