@@ -40,9 +40,16 @@ class ProductJsonDecoder {
 
             foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
                 $productValues = [];
-                foreach ($istek as $istekler => $exp) {
+              /*  foreach ($istek as $istekler => $exp) {
                     $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
+                }*/
+                foreach ($istek as $istekler => $exp) {
+                    $valuevs = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
+
+                    // Check if the value is empty or null, then set it to "null"
+                    $productValues[$istekler] = !empty($valuevs) ? $valuevs : "null";
                 }
+
                 $SupplierAr = array('SupplierCode' => $SupplierId );
                 $productValuesArray[] =array_merge($SupplierAr,$productValues);
             }
