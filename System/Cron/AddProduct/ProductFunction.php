@@ -7,9 +7,15 @@ class ProductJsonDecoder {
 
   public function ProductJsonLoginCount($value = '')
   {
+
       $explode = explode(';', $value);
-      $count = count($explode);
-      return $count;
+      if ($explode) {
+        $count = count($explode);
+        return $count;
+      }else {
+      return 0
+      }
+
 
   }
 
