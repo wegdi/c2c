@@ -10,15 +10,18 @@ $Product = new ProductJsonDecoder();
 
 $Supplier = $db->Query('Supplier',["Status" =>1], [], 'COK');
 
-
+$ProductData=[];
 foreach ($Supplier as $key => $value) {
 
     if (isset($value["model"])) {
-    print_r(  $Product->ProductJsonLogin($value["model"],$value["SupplierFilePath"]));
-    print_r(  $Product->ProductJsonLogin($value["product_name"],$value["SupplierFilePath"]));
+      $ProductData = array(
+      'model' => $Product->ProductJsonLogin($value["model"],$value["SupplierFilePath"]),
+      'product_name' =>  $Product->ProductJsonLogin($value["product_name"],$value["SupplierFilePath"]),
 
+    );
     }
 
 }
+print_r($ProductData);
 
  ?>
