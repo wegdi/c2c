@@ -147,7 +147,6 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
   <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
    <select class="form-select"  id="secler'.$say.'" name="tag['.$tag.']"  data-name="stokkod" onchange="changeJsonContent('.$say.');">
             <option  value="-">- pas geç -</option>
-            <option '.(($jsonUrl["xml_login"] == $tag) ? "selected" : "").' value="xml_login">Xml Döngü</option>
 
             <option '.(($jsonUrl["product_name"] == $tag) ? "selected" : "").' value="product_name">Ürün Adı</option>
             <option '.(($jsonUrl["product_description"] == $tag) ? "selected" : "").' value="product_description">Açıklama</option>
