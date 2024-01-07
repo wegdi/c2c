@@ -11,8 +11,11 @@ $Product = new ProductJsonDecoder();
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
+
+  $Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value["product_name"],'omu');
+
+  /*
     $model = $Product->ProductJsonLoginCount($value["model"]);
-    $product_name = $Product->ProductJsonLoginCount($value["product_name"]);
 
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
@@ -46,8 +49,8 @@ foreach ($Supplier as $key => $value) {
             $ProductData[] = array('model' => $modelValue, 'product_name' => '');
         }
     }
+    */
 }
 
 // $ProductData dizisini ekrana yazdırma
-print_r($ProductData);
 ?>
