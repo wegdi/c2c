@@ -30,6 +30,7 @@ foreach ($Supplier as $key => $value) {
 
 
     if ($model == 2) {
+        $explode=explode(';',$value["mode"]);
         $one = $explode[0];
         $two = $explode[1];
         $ProductData = [];
