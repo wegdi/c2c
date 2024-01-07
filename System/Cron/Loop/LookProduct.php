@@ -6,8 +6,7 @@ for ($page = 0; $page <= 25; $page++) {
     // Send a GET request to trigger the page
     file_get_contents($url);
 
-    // Optionally, add a delay to avoid rate limiting (adjust as needed)
-    sleep(3); // You can adjust the sleep duration as needed
+
 }
 
  ?>
