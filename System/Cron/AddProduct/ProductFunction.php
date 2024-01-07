@@ -33,9 +33,9 @@ class ProductJsonDecoder {
 
   }
 
-  public function ReturnProduct($url='',$value='')
+  public function ReturnProduct($url='',$modelv='',$istek='')
   {
-    $model = $this->ProductJsonLoginCount($value["model"]);
+    $model = $this->ProductJsonLoginCount($modelv);
 
     $jsonData = file_get_contents($url);
     $decodedData = json_decode($jsonData, true);
@@ -43,14 +43,14 @@ class ProductJsonDecoder {
     $ProductData = [];
 
     if ($model == 2) {
-        $explode = explode(';', $value["model"]);
+        $explode = explode(';', $modelv);
         $one = $explode[0];
         $two = $explode[1];
 
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
             // Ekrana sıralı bir şekilde yazdırma
-            $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($value["model"])];
-            $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($value["product_name"])];
+            $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
+            $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($istek)];
 
             // $ProductData dizisine ekleme
             $ProductData[] = array('model' => $modelValue, 'product_name' => $product_nameValue);
