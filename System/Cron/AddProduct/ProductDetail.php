@@ -5,7 +5,7 @@ $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
 $db = new General();
 
-$Supplier = $db->Query('Supplier',["SupplierCode" => (string)$param2], [], 'TEK');
+$Supplier = $db->Query('Supplier',["Status" => 1], [], 'TEK');
 
 
  ?>
