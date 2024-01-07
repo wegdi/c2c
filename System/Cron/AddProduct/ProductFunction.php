@@ -33,7 +33,7 @@ class ProductJsonDecoder {
 
   }
 
-  public function ReturnProduct($url='',$modelv='',$istek='')
+  public function ReturnProduct($url='',$modelv='',$istek='',$tagname='')
   {
     $model = $this->ProductJsonLoginCount($modelv);
 
@@ -53,7 +53,7 @@ class ProductJsonDecoder {
             $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($istek)];
 
             // $ProductData dizisine ekleme
-            $ProductData[] = array('model' => $modelValue, 'product_name' => $product_nameValue);
+            $ProductData[] = array('model' => $modelValue, $tagname => $product_nameValue);
         }
     }
     return   $ProductData;
