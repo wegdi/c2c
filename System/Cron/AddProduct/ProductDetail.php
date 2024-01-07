@@ -15,7 +15,7 @@ $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 foreach ($Supplier as $key => $value) {
 
 
-  $ss=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value["product_name"],'omu');
+  $ss=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value["product_name"],'product_name');
   print_r($ss);
 
 }
