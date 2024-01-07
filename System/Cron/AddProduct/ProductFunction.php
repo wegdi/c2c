@@ -39,14 +39,13 @@ class ProductJsonDecoder {
             $two = $explode[1];
 
 
-            if ($gettotal==1) {
-              $start=0;
-              $part= floor(count($decodedData[$one])/10);
-            }else {
-              $start= floor(count($decodedData[$one])/10)*$gettotal;
-
-              $part= $start*$gettotal;
-            }
+            if ($gettotal == 1) {
+                  $start = 0;
+                  $part = floor(count($decodedData[$one]) / 10);
+              } else {
+                  $start = ($gettotal - 1) * floor(count($decodedData[$one]) / 10);
+                  $part = floor(count($decodedData[$one]) / 10);
+              }
             echo $start;
             echo "<br>";
             echo $part;
