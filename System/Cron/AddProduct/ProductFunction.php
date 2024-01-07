@@ -87,6 +87,7 @@ class ProductJsonDecoder {
           }
         } elseif ($model == 4) {
           $explode = explode(';', $modelv);
+          print_r($explode);
           $one = $explode[0];
           $two = $explode[1];
           $tree = $explode[2];
