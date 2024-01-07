@@ -12,8 +12,8 @@ $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
 
-  $Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value["product_name"],'omu');
-
+  $ss=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value["product_name"],'omu');
+  print_r($ss);
   /*
     $model = $Product->ProductJsonLoginCount($value["model"]);
 
