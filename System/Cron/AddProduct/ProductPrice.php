@@ -13,9 +13,10 @@ $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 foreach ($Supplier as $key => $value) {
 
 
-  $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value["product_description"],'product_description');
+  $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value["price"],'price');
   foreach ($Products as $keyc => $valuec) {
     print_r($valuec);
+
     $ProductIf = $db->Query('Products', ["model" => $valuec["model"]], [], 'COK');
 
     if ($ProductIf["_id"]=="") {
@@ -24,7 +25,7 @@ foreach ($Supplier as $key => $value) {
       $db->UpdateByObjectId("Products",(string)$ProductIf["_id"], $valuec);
 
     }
-    
+
 
   }
 
