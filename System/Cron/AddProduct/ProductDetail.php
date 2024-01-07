@@ -8,19 +8,28 @@ require_once('ProductFunction.php');
 $db = new General();
 $Product = new ProductJsonDecoder();
 
+$QuerList = array(
+  "product_name",
+  "product_description",
+  "product_meta_description",
+  "product_meta_keyword",
+  "model"
+);
+
 $Supplier = $db->Query('Supplier',["Status" =>1], [], 'COK');
 
-$ProductData=[];
 foreach ($Supplier as $key => $value) {
-    print_r($key);
 
-    if (isset($value["model"])) {
+    foreach ($QuerList as $keyQuerList) {
+      print_r($keyQuerList);
 
-    //  $explode = explode(';', $value);
-      //$count = count($explode);
+    /*  if (isset($value["model"])) {
 
-
+        $explode = explode(';', $value["model"]);
+        $count = count($explode);
+      } */
     }
+
 
 }
 
