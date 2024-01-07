@@ -18,6 +18,7 @@ foreach ($Supplier as $key => $value) {
 
 
     $model=$Product->ProductJsonLoginCount($value["model"]);
+
     if (isset($value["product_description"])) {
       $product_description=$Product->ProductJsonLoginCount($value["product_description"]);
     }
@@ -53,7 +54,7 @@ foreach ($Supplier as $key => $value) {
 
 
     if ($model == 2) {
-        $explode=explode(';',$value["mode"]);
+        $explode=explode(';',$value["model"]);
         $one = $explode[0];
         $two = $explode[1];
         $ProductData = [];
