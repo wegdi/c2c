@@ -24,9 +24,9 @@ foreach ($Supplier as $key => $value) {
 
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi,$value["SupplierCode"]);
   foreach ($Products as $keyc => $valuec) {
-
+      print_r($valuec);
     foreach ($valuec as $key => $value) {
-      print_r($value);
+
 
     }
 
