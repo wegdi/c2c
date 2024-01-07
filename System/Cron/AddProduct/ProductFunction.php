@@ -41,11 +41,11 @@ class ProductJsonDecoder {
 
             if ($gettotal == 1) {
               $start = 0;
-              $part = ceil(count($decodedData[$one]) / 40);
+              $part = ceil(count($decodedData[$one]) / 60);
             } else {
                 $carpan=$gettotal-1;
-                $start = ceil(count($decodedData[$one]) / 40)*$carpan;
-                $part = ceil(count($decodedData[$one]) / 40)*$gettotal;
+                $start = ceil(count($decodedData[$one]) / 60)*$carpan;
+                $part = ceil(count($decodedData[$one]) / 60)*$gettotal;
             }
 
             $decodedDataList = array_slice($decodedData[$one],$start, $part);
