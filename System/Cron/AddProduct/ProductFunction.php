@@ -55,6 +55,19 @@ class ProductJsonDecoder {
             // $ProductData dizisine ekleme
             $ProductData[] = array('model' => $modelValue, $tagname => $product_nameValue);
         }
+    }elseif ($model == 3) {
+      $explode = explode(';', $modelv);
+      $one = $explode[0];
+      $two = $explode[1];
+
+      foreach ($decodedData[$one][$two] as $keydecodedData => $valuedecodedData) {
+          // Ekrana sıralı bir şekilde yazdırma
+          $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
+          $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($istek)];
+
+          // $ProductData dizisine ekleme
+          $ProductData[] = array('model' => $modelValue, $tagname => $product_nameValue);
+      }
     }
     return   $ProductData;
   }
