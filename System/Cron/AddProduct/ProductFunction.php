@@ -56,6 +56,7 @@ class ProductJsonDecoder {
             $ProductData[] = array('model' => $modelValue, 'product_name' => $product_nameValue);
         }
     }
+    return   $ProductData;
   }
 
 
