@@ -26,7 +26,7 @@ foreach ($Supplier as $key => $value) {
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi,$value["SupplierCode"],$_GET["page"]);
 
   foreach ($Products as $keyc => $valuec) {
-
+    print_R($valuec);
   //$ProductIf = $db->Query('Products', ["model" => (string)$valuec["model"]], [], 'TEK');
 
   /* if ($ProductIf["_id"]=="") {
