@@ -11,8 +11,8 @@ $Product = new ProductJsonDecoder();
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
-   $model = $Product->ProductJsonLoginCount($value["model"]);
-   $product_name = $Product->ProductJsonLoginCount($value["product_name"]);
+    $model = $Product->ProductJsonLoginCount($value["model"]);
+    $product_name = $Product->ProductJsonLoginCount($value["product_name"]);
 
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
@@ -26,10 +26,14 @@ foreach ($Supplier as $key => $value) {
 
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
             // Ekrana sıralı bir şekilde yazdırma
-            $ProductData[] = $valuedecodedData[$Product->ProductJsonLoginEnd($value["model"])];
-            $ProductData[] = $valuedecodedData[$Product->ProductJsonLoginEnd($value["product_name"])];
+            $modelValue = $valuedecodedData[$Product->ProductJsonLoginEnd($value["model"])];
+            $product_nameValue = $valuedecodedData[$Product->ProductJsonLoginEnd($value["product_name"])];
 
-            echo "<br>";
+            echo 'model: '.$modelValue.'<br>';
+            echo 'product_name: '.$product_nameValue.'<br>';
+
+            // $ProductData dizisine ekleme
+            $ProductData[] = array('model' => $modelValue, 'product_name' => $product_nameValue);
         }
     } elseif ($model == 3) {
         $explode = explode(';', $value["model"]);
@@ -38,10 +42,15 @@ foreach ($Supplier as $key => $value) {
 
         foreach ($decodedData[$one][$tree] as $keydecodedData => $valuedecodedData) {
             // Ekrana sıralı bir şekilde yazdırma
-            echo 'model'.'-->'.$valuedecodedData["$tree"];
+            $modelValue = $valuedecodedData["$tree"];
+            echo 'model: '.$modelValue.'<br>';
+
+            // $ProductData dizisine ekleme
+            $ProductData[] = array('model' => $modelValue, 'product_name' => '');
         }
     }
-
-    print_r($ProductData); // Döngü içinde değil, döngü sonunda çağrılmalıdır.
 }
+
+// $ProductData dizisini ekrana yazdırma
+print_r($ProductData);
 ?>
