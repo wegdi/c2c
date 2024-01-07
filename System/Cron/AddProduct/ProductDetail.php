@@ -22,7 +22,7 @@ $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
 
-    $model=$Product->ProductJsonLoginCount($value["model");
+    $model=$Product->ProductJsonLoginCount($value["model"]);
     echo $model;
 
 }
