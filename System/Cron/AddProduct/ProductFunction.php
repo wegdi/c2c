@@ -43,6 +43,8 @@ class ProductJsonDecoder {
               $start = 0;
               $part = ceil(count($decodedData[$one]) / 10);
           } else {
+              $carpan=$gettotal-1;
+              echo $carpan;
               $start = ceil(count($decodedData[$one]) / 10)*$gettotal;
               $part = ceil(count($decodedData[$one]) / 10);
           }
