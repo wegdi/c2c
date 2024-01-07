@@ -35,6 +35,7 @@ foreach ($Supplier as $key => $value) {
             $ProductData=[];
             foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
                 echo $keyQuerList.'-->'.$ProductData=$valuedecodedData[$two];
+                echo "<br>";
             }
 
           }
