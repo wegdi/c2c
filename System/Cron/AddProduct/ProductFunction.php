@@ -38,6 +38,9 @@ class ProductJsonDecoder {
             $one = $explode[0];
             $two = $explode[1];
 
+
+            $bol = array_slice($decodedData[$one], 1, 3);
+            print_r($bol);
             foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
                 $productValues = [];
                 foreach ($istek as $istekler => $exp) {
