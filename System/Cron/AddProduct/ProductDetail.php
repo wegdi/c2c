@@ -23,9 +23,19 @@ foreach ($Supplier as $key => $value) {
     foreach ($QuerList as $keyQuerList) {
 
      if (isset($keyQuerList)) {
-       echo "string";
-          $explode = explode(';', $value["model"]);
+          $explode = explode(';', $keyQuerList);
           $count = count($explode);
+
+          if ($count == 2) {
+              $jsonData = file_get_contents("https://c2c.wegdi.com" . $SupplierFilePath);
+              $one = $explode[0];
+              $two = $explode[1];
+              $array = [];
+
+              $decodedData = json_decode($jsonData, true);
+          }
+
+
         }
       }
 
