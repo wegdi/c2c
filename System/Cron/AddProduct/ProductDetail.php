@@ -29,9 +29,6 @@ foreach ($Supplier as $key => $value) {
             $modelValue = $valuedecodedData[$Product->ProductJsonLoginEnd($value["model"])];
             $product_nameValue = $valuedecodedData[$Product->ProductJsonLoginEnd($value["product_name"])];
 
-            echo 'model: '.$modelValue.'<br>';
-            echo 'product_name: '.$product_nameValue.'<br>';
-
             // $ProductData dizisine ekleme
             $ProductData[] = array('model' => $modelValue, 'product_name' => $product_nameValue);
         }
