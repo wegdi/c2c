@@ -9,7 +9,9 @@ $Supplier = $db->Query('Supplier',["Status" =>1], [], 'COK');
 
 
 foreach ($Supplier as $key => $value) {
-  // code...
+
+    print_r($value);
+
 }
 
  ?>
