@@ -32,7 +32,7 @@ foreach ($Supplier as $key => $value) {
 
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
             // Ekrana sıralı bir şekilde yazdırma
-            echo 'model'.'-->'.$valuedecodedData["$two"];
+            echo 'model'.'-->'.$valuedecodedData[$Product->ProductJsonLoginEnd($value["model"])];
             echo 'product_name'.'-->'.$valuedecodedData[$Product->ProductJsonLoginEnd($value["product_name"])];
 
 
