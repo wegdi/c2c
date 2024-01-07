@@ -10,7 +10,9 @@ $Supplier = $db->Query('Supplier',["Status" =>1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
 
-    print_r($value);
+    if (isset($key["model"])) {
+    echo "string";
+    }
 
 }
 
