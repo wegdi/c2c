@@ -103,8 +103,8 @@ class ProductJsonDecoder {
               $part = ceil(count($decodedData[$one]) / 200)*$gettotal;
           }
 
-          $decodedDataList = array_slice($decodedData[$one],$start, $part);
-          print_r(  $decodedDataList);
+        //  $decodedDataList = array_slice($decodedData[$one],$start, $part);
+          print_r(  $decodedData);
           foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
             print_r($valuedecodedData);
               $productValues = [];
