@@ -1,7 +1,7 @@
 <?php
 
-class N11 {
-  
+class ProductJsonDecoder {
+
 }
 
 
