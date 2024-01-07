@@ -4,7 +4,8 @@ class ProductJsonDecoder {
 
   public function  ProductJsonLogin($value='')
   {
-    // code...
+    $explode= explode(';',$value);
+    return   $explode;
   }
 
 }
