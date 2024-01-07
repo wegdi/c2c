@@ -34,6 +34,7 @@ class ProductJsonDecoder {
         $productValuesArray = [];
 
         if ($model == 2) {
+          echo "string";
             $explode = explode(';', $modelv);
             $one = $explode[0];
             $two = $explode[1];
