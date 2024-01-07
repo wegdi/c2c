@@ -41,9 +41,10 @@ foreach ($Supplier as $key => $value) {
 
 
         }
+        print_R($ProductData);
+
       }
 
-      print_R($ProductData);
 
 }
 
