@@ -13,7 +13,7 @@ class ProductJsonDecoder {
         $count = count($explode);
         return $count;
       }else {
-      return 0
+      return 0;
       }
 
 
