@@ -24,9 +24,7 @@ foreach ($Supplier as $key => $value) {
 
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi,$value["SupplierCode"],$_GET["page"]);
   foreach ($Products as $keyc => $valuec) {
-      //print_r($valuec);
-
-  /*  $ProductIf = $db->Query('Products', ["model" => $valuec["model"]], [], 'COK');
+  $ProductIf = $db->Query('Products', ["model" => $valuec["model"]], [], 'COK');
 
    if ($ProductIf["_id"]=="") {
       $db->Add("Products", $valuec);
@@ -34,7 +32,6 @@ foreach ($Supplier as $key => $value) {
       $db->UpdateByObjectId("Products",(string)$ProductIf["_id"], $valuec);
 
     }
- */
   }
 
 
