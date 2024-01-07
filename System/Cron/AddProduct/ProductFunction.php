@@ -33,7 +33,7 @@ class ProductJsonDecoder {
 
   }
 
-  public function ReturnProduct($url='',$modelv='',$istek='')
+  public function ReturnProduct($url='',$istek='')
   {
     $model = $this->ProductJsonLoginCount($modelv);
 
