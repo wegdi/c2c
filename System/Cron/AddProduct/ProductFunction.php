@@ -52,22 +52,6 @@ class ProductJsonDecoder {
           foreach ($istek as $istekler => $exp) {
             $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
           }
-          print_R(  $productValues);
-
-          //print_r($istek);
-
-            // Ekrana sıralı bir şekilde yazdırma
-          //
-          //
-
-          /*  if ($product_nameValue=="") {
-              $deger=" ";
-            }else {
-              $deger=$product_nameValue;
-            }
-            // $ProductData dizisine ekleme
-            $ProductData[] = array('model' => $modelValue, $tagname => $deger);
-            */
 
         }
     }elseif ($model == 3) {
@@ -84,6 +68,8 @@ class ProductJsonDecoder {
           $ProductData[] = array('model' => $modelValue, $tagname => $product_nameValue);
       }
     }
+    print_R(  $productValues);
+
     //return   $ProductData;
   }
 
