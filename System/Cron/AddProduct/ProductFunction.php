@@ -49,7 +49,10 @@ class ProductJsonDecoder {
           }
 
 
-          //  echo $start;
+              echo $start;
+              echo "<br>";
+              echo $part;
+
 
             $bol = array_slice($decodedData[$one], 1, $part);
           //  print_r($bol);
