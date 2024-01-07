@@ -13,13 +13,13 @@ $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 foreach ($Supplier as $key => $value) {
 
   $dizi=[
-    'product_name',
-    'product_description',
-    'product_meta_description',
-    'product_meta_keyword',
-    'quantity',
-    'price',
-    'kdv'
+    'product_name' => $value["product_name"],
+    'product_description' => $value["product_description"],
+    'product_meta_description' => $value["product_meta_description"],
+    'product_meta_keyword'  => $value["product_meta_keyword"],
+    'quantity' => $value["quantity"],
+    'price' => $value["price"],
+    'kdv'  => $value["kdv"]
   ];
 
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi);
