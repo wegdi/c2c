@@ -24,7 +24,7 @@ class ProductJsonDecoder {
         }
     }
 
-    public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='')
+    public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='',$gettotal)
     {
         $model = $this->ProductJsonLoginCount($modelv);
 
@@ -38,10 +38,20 @@ class ProductJsonDecoder {
             $one = $explode[0];
             $two = $explode[1];
 
-            $part= floor(count($decodedData[$one])/10);
+
+            if ($gettotal==1) {
+              $start=0;
+              $part= floor(count($decodedData[$one])/10);
+            }else {
+              $partx= floor(count($decodedData[$one])/10);
+
+              $start=$partx-$gettotal;
+              echo   $start;
+              $partx= floor(count($decodedData[$one])/10);
+            }
 
             $bol = array_slice($decodedData[$one], 1, $part);
-            print_r($bol);
+          //  print_r($bol);
             foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
                 $productValues = [];
                 foreach ($istek as $istekler => $exp) {
