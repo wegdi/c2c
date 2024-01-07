@@ -92,7 +92,7 @@ class ProductJsonDecoder {
           $tree = $explode[2];
           $four = $explode[3];
 
-
+          echo "string";
 
           if ($gettotal == 1) {
             $start = 0;
