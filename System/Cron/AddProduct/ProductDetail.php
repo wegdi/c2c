@@ -34,7 +34,8 @@ foreach ($Supplier as $key => $value) {
               $two = $explode[1];
             $ProductData=[];
             foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
-                $ProductData=$valuedecodedData[$two];
+              print_r($valuedecodedData);
+                //$ProductData=$valuedecodedData[$two];
             }
 
           }
