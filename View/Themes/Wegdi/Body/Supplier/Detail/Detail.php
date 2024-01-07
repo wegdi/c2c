@@ -37,7 +37,9 @@ $options = [
     "product_option_value" => "Seçenek Değeri ",
     "product_attribute_group" => "Özellik Grubu ",
     "product_attribute_name" => "Özellik Adı ",
-    "product_attribute_value" => "Özellik Değer "
+    "product_attribute_value" => "Özellik Değer ",
+    "kdv" => "Kdv",
+
 ];
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
