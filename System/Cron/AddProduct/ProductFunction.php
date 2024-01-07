@@ -24,7 +24,7 @@ class ProductJsonDecoder {
         }
     }
 
-    public function ReturnProduct($url = '', $modelv = '', $istek = '')
+    public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='')
     {
         $model = $this->ProductJsonLoginCount($modelv);
 
@@ -43,7 +43,9 @@ class ProductJsonDecoder {
                 foreach ($istek as $istekler => $exp) {
                     $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
                 }
-                $productValuesArray[] = $productValues;
+                $SupplierAr = array('SupplierCode' => $SupplierId );
+
+                $productValuesArray[] =array_merge($SupplierAr,$productValues);
             }
         } elseif ($model == 3) {
             // Handle the case when $model is 3, if needed
