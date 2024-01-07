@@ -26,6 +26,8 @@ foreach ($Supplier as $key => $value) {
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi,$value["SupplierCode"],$_GET["page"]);
 
   foreach ($Products as $keyc => $valuec) {
+    print_r($valuec);
+    /*
   $ProductIf = $db->Query('Products', ["model" => $valuec["model"]], [], 'COK');
 
    if ($ProductIf["_id"]=="") {
@@ -35,6 +37,7 @@ foreach ($Supplier as $key => $value) {
 
     }
   }
+  */
 
 }
 
