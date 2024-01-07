@@ -21,14 +21,13 @@ $Supplier = $db->Query('Supplier',["Status" =>1], [], 'COK');
 foreach ($Supplier as $key => $value) {
 
     foreach ($QuerList as $keyQuerList) {
-      print_r($keyQuerList);
 
-    /*  if (isset($value["model"])) {
-
-        $explode = explode(';', $value["model"]);
-        $count = count($explode);
-      } */
-    }
+     if (isset($keyQuerList)) {
+       echo "string";
+          $explode = explode(';', $value["model"]);
+          $count = count($explode);
+        }
+      }
 
 
 }
