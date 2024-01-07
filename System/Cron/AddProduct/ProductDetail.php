@@ -8,48 +8,28 @@ require_once('ProductFunction.php');
 $db = new General();
 $Product = new ProductJsonDecoder();
 
+$QuerList = array(
+    "product_name",
+    "product_description",
+    "product_meta_description",
+    "product_meta_keyword",
+    "model"
+);
+
+
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
 
-  $ss=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value["product_name"],'omu');
-  print_r($ss);
-  /*
-    $model = $Product->ProductJsonLoginCount($value["model"]);
-
-    $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
-    $decodedData = json_decode($jsonData, true);
-
-    $ProductData = [];
-
-    if ($model == 2) {
-        $explode = explode(';', $value["model"]);
-        $one = $explode[0];
-        $two = $explode[1];
-
-        foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
-            // Ekrana sıralı bir şekilde yazdırma
-            $modelValue = $valuedecodedData[$Product->ProductJsonLoginEnd($value["model"])];
-            $product_nameValue = $valuedecodedData[$Product->ProductJsonLoginEnd($value["product_name"])];
-
-            // $ProductData dizisine ekleme
-            $ProductData[] = array('model' => $modelValue, 'product_name' => $product_nameValue);
-        }
-    } elseif ($model == 3) {
-        $explode = explode(';', $value["model"]);
-        $one = $explode[0];
-        $tree = $explode[2];
-
-        foreach ($decodedData[$one][$tree] as $keydecodedData => $valuedecodedData) {
-            // Ekrana sıralı bir şekilde yazdırma
-            $modelValue = $valuedecodedData["$tree"];
-            echo 'model: '.$modelValue.'<br>';
-
-            // $ProductData dizisine ekleme
-            $ProductData[] = array('model' => $modelValue, 'product_name' => '');
-        }
+  foreach ($QuerList as $keyx) {
+    if ($value[$keyx]) {
+      $ss=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value[$keyx],$keyx);
+      print_r($ss);
     }
-    */
+
+  }
+
+
 }
 
 // $ProductData dizisini ekrana yazdırma
