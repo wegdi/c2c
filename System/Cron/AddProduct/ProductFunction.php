@@ -43,7 +43,6 @@ class ProductJsonDecoder {
                 foreach ($istek as $istekler => $exp) {
                     $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
                 }
-    
 
                 $SupplierAr = array('SupplierCode' => $SupplierId );
                 $productValuesArray[] =array_merge($SupplierAr,$productValues);
