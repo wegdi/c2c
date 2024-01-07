@@ -22,28 +22,23 @@ foreach ($Supplier as $key => $value) {
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
 
-    // Tüm ürün bilgilerini sırala
-    foreach ($decodedData as $decodedKey => $decodedValue) {
-        echo $decodedKey . ":<br>";
+    foreach ($QuerList as $keyQuerList) {
+        if (isset($value[$keyQuerList])) {
+            $explode = explode(';', $value[$keyQuerList]);
+            $count = count($explode);
 
-        // $QuerList sırasına göre değerleri sırala
-        foreach ($QuerList as $keyQuerList) {
-            if (isset($value[$keyQuerList])) {
-                $explode = explode(';', $value[$keyQuerList]);
-                $count = count($explode);
+            if ($count == 2) {
+                $one = $explode[0];
+                $two = $explode[1];
+                $ProductData = [];
 
-                if ($count == 2) {
-                    $one = $explode[0];
-                    $two = $explode[1];
-
+                foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
                     // Ekrana sıralı bir şekilde yazdırma
-                    echo $keyQuerList.'-->'.$decodedValue[$one][$two];
+                    echo $keyQuerList.'-->'.$valuedecodedData[$two];
                     echo "<br>";
                 }
             }
         }
-
-        echo "<br>";
     }
 }
 ?>
