@@ -15,15 +15,38 @@ $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
 
+
+
     $model=$Product->ProductJsonLoginCount($value["model"]);
-    $product_description=$Product->ProductJsonLoginCount($value["product_description"]);
-    $product_meta_description=$Product->ProductJsonLoginCount($value["product_meta_description"]);
+    if (isset($value["product_description"])) {
+      $product_description=$Product->ProductJsonLoginCount($value["product_description"]);
+    }
+    if (isset($value["product_meta_description"])) {
+      $product_meta_description=$Product->ProductJsonLoginCount($value["product_meta_description"]);
+    }
+
+    if (isset($value["product_meta_keyword"])) {
     $product_meta_keyword=$Product->ProductJsonLoginCount($value["product_meta_keyword"]);
-    $product_meta_keyword=$Product->ProductJsonLoginCount($value["product_meta_keyword"]);
-    $sku=$Product->ProductJsonLoginCount($value["sku"]);
-    $quantity=$Product->ProductJsonLoginCount($value["quantity"]);
-    $kdv=$Product->ProductJsonLoginCount($value["kdv"]);
-    $price=$Product->ProductJsonLoginCount($value["price"]);
+    }
+    if (isset($value["sku"])) {
+      $sku=$Product->ProductJsonLoginCount($value["sku"]);
+    }
+    if (isset($value["quantity"])) {
+      $quantity=$Product->ProductJsonLoginCount($value["quantity"]);
+    }
+
+    if (isset($value["kdv"])) {
+      $kdv=$Product->ProductJsonLoginCount($value["kdv"]);
+
+    }
+    if (isset($value["price"])) {
+      $price=$Product->ProductJsonLoginCount($value["price"]);
+
+    }
+
+
+
+
 
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
