@@ -64,7 +64,6 @@ class ProductJsonDecoder {
           $one = $explode[0];
           $two = $explode[1];
           $tree = $explode[2];
-            echo "string";
 
 
           if ($gettotal == 1) {
@@ -77,6 +76,34 @@ class ProductJsonDecoder {
           }
 
           $decodedDataList = array_slice($decodedData[$one][$two],$start, $part);
+          foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
+              $productValues = [];
+              foreach ($istek as $istekler => $exp) {
+                  $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
+              }
+
+              $SupplierAr = array('SupplierCode' => $SupplierId );
+              $productValuesArray[] =array_merge($SupplierAr,$productValues);
+          }
+        } elseif ($model == 4) {
+          $explode = explode(';', $modelv);
+          $one = $explode[0];
+          $two = $explode[1];
+          $tree = $explode[2];
+          $four = $explode[3];
+
+
+
+          if ($gettotal == 1) {
+            $start = 0;
+            $part = ceil(count($decodedData[$one]) / 200);
+          } else {
+              $carpan=$gettotal-1;
+              $start = ceil(count($decodedData[$one]) / 200)*$carpan;
+              $part = ceil(count($decodedData[$one]) / 200)*$gettotal;
+          }
+
+          $decodedDataList = array_slice($decodedData[$one][$two][$tree],$start, $part);
           foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
               $productValues = [];
               foreach ($istek as $istekler => $exp) {
