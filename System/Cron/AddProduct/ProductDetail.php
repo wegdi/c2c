@@ -20,6 +20,8 @@ $Supplier = $db->Query('Supplier',["Status" =>1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
 
+  $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
+
     foreach ($QuerList as $keyQuerList) {
 
      if (isset($value["$keyQuerList"])) {
@@ -28,7 +30,6 @@ foreach ($Supplier as $key => $value) {
           echo   $count;
           echo "<br>";
           if ($count == 2) {
-              $jsonData = file_get_contents("https://c2c.wegdi.com" . $SupplierFilePath);
               $one = $explode[0];
               $two = $explode[1];
               $array = [];
