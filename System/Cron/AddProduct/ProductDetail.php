@@ -9,43 +9,36 @@ $db = new General();
 $Product = new ProductJsonDecoder();
 
 $QuerList = array(
-  "product_name",
-  "product_description",
-  "product_meta_description",
-  "product_meta_keyword",
-  "model"
+    "product_name",
+    "product_description",
+    "product_meta_description",
+    "product_meta_keyword",
+    "model"
 );
 
-$Supplier = $db->Query('Supplier',["Status" =>1], [], 'COK');
+$Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
-
-  $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
-  $decodedData = json_decode($jsonData, true);
+    $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
+    $decodedData = json_decode($jsonData, true);
 
     foreach ($QuerList as $keyQuerList) {
+        if (isset($value[$keyQuerList])) {
+            $explode = explode(';', $value[$keyQuerList]);
+            $count = count($explode);
 
-     if (isset($value["$keyQuerList"])) {
-          $explode = explode(';', $value["$keyQuerList"]);
-          $count = count($explode);
+            if ($count == 2) {
+                $one = $explode[0];
+                $two = $explode[1];
+                $ProductData = [];
 
-          if ($count == 2) {
-              $one = $explode[0];
-              $two = $explode[1];
-            $ProductData=[];
-            foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
-                $ProductData=$valuedecodedData[$two];
+                foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
+                    $ProductData[] = $valuedecodedData[$two];
+                }
+
+                print_r($ProductData);
             }
-            print_R($ProductData);
-
-          }
-
-
         }
-
-      }
-
-
+    }
 }
-
- ?>
+?>
