@@ -61,7 +61,9 @@ foreach ($Supplier as $key => $value) {
 
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
             // Ekrana sıralı bir şekilde yazdırma
+            echo 'model'.'-->'.$valuedecodedData["$two"];
             echo 'model'.'-->'.$valuedecodedData["model"];
+
             echo "<br>";
         }
     }
