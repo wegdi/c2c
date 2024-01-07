@@ -42,21 +42,14 @@ class ProductJsonDecoder {
             if ($gettotal == 1) {
               $start = 0;
               $part = ceil(count($decodedData[$one]) / 10);
-          } else {
-              $carpan=$gettotal-1;
-              $start = ceil(count($decodedData[$one]) / 10)*$carpan;
-              $part = ceil(count($decodedData[$one]) / 10)*$gettotal;
-          }
+            } else {
+                $carpan=$gettotal-1;
+                $start = ceil(count($decodedData[$one]) / 10)*$carpan;
+                $part = ceil(count($decodedData[$one]) / 10)*$gettotal;
+            }
 
-
-              echo $start;
-              echo "<br>";
-              echo $part;
-
-
-            $bol = array_slice($decodedData[$one], 1, $part);
-          //  print_r($bol);
-            foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
+            $decodedDataList = array_slice($decodedData[$one], 1, $part);
+            foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
                 $productValues = [];
                 foreach ($istek as $istekler => $exp) {
                     $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
