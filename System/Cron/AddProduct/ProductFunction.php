@@ -50,9 +50,10 @@ class ProductJsonDecoder {
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
           $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
           foreach ($istek as $istekler) {
-    $product_$istekler = $valuedecodedData[$this->ProductJsonLoginEnd($istekler)];
-    echo $product_$istekler;
-}
+      $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($istekler)];
+      echo $productValues[$istekler];
+  }
+
 
           //print_r($istek);
 
