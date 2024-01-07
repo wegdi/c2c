@@ -19,7 +19,8 @@ foreach ($Supplier as $key => $value) {
     'product_meta_keyword'  => $value["product_meta_keyword"],
     'quantity' => $value["quantity"],
     'price' => $value["price"],
-    'kdv'  => $value["kdv"]
+    'kdv'  => $value["kdv"],
+    'model' =>  $value["model"]
   ];
 
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi,$value["SupplierCode"],$_GET["page"]);
