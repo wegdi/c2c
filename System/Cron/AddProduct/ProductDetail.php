@@ -27,14 +27,14 @@ foreach ($Supplier as $key => $value) {
 
   foreach ($Products as $keyc => $valuec) {
 
-  $ProductIf = $db->Query('Products', ["model" => (string)$valuec["model"]], [], 'TEK');
+  //$ProductIf = $db->Query('Products', ["model" => (string)$valuec["model"]], [], 'TEK');
 
-   if ($ProductIf["_id"]=="") {
+  /* if ($ProductIf["_id"]=="") {
       $db->Add("Products", $valuec);
     }else {
       $db->UpdateByObjectId("Products",(string)$ProductIf["_id"], $valuec);
 
-    }
+    } */
 
   }
 
