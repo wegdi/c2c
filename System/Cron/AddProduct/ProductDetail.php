@@ -9,11 +9,7 @@ $db = new General();
 $Product = new ProductJsonDecoder();
 
 $QuerList = array(
-    "product_name",
-    "product_description",
-    "product_meta_description",
-    "product_meta_keyword",
-    "model"
+    ""
 );
 
 
@@ -21,11 +17,9 @@ $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
 
-  foreach ($QuerList as $keyx) {
-    if ($value[$keyx]) {
-      $ss=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value[$keyx],$keyx);
+
+      $ss=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$value["product_name"],$keyx);
       print_r($ss);
-    }
 
   }
 
