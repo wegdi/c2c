@@ -12,7 +12,7 @@ $Supplier = $db->Query('Supplier',["Status" =>1], [], 'COK');
 
 $ProductData=[];
 foreach ($Supplier as $key => $value) {
-    print_r($value);
+    print_r($key);
 
     if (isset($value["model"])) {
 
