@@ -22,7 +22,7 @@ foreach ($Supplier as $key => $value) {
 
     foreach ($QuerList as $keyQuerList) {
 
-     if (isset($keyQuerList)) {
+     if (isset($value["$keyQuerList"])) {
           $explode = explode(';', $value["$keyQuerList"]);
           $count = count($explode);
           echo   $count;
