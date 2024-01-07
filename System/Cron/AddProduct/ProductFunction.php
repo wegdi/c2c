@@ -48,7 +48,7 @@ class ProductJsonDecoder {
                 $part = ceil(count($decodedData[$one]) / 30)*$gettotal;
             }
 
-            $decodedDataList = array_slice($decodedData[$one], 1, $part);
+            $decodedDataList = array_slice($decodedData[$one],   $start, $part);
             foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
                 $productValues = [];
                 foreach ($istek as $istekler => $exp) {
