@@ -53,7 +53,7 @@ class ProductJsonDecoder {
             $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($istek)];
 
             if ($product_nameValue=="") {
-              $deger="";
+              $deger=" ";
             }else {
               $deger=$product_nameValue;
             }
