@@ -23,6 +23,7 @@ foreach ($Supplier as $key => $value) {
   ];
 
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi);
+  print_r($Products);
 /*   foreach ($Products as $keyc => $valuec) {
 
 
