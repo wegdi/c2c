@@ -41,34 +41,25 @@ class ProductJsonDecoder {
     $decodedData = json_decode($jsonData, true);
 
     $ProductData = [];
-      $productValues = [];
+    $productValues = [];
     if ($model == 2) {
         $explode = explode(';', $modelv);
         $one = $explode[0];
         $two = $explode[1];
 
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
+
           $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
           foreach ($istek as $istekler => $exp) {
             $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
           }
 
         }
+        print_R(  $productValues);
+
     }elseif ($model == 3) {
-      $explode = explode(';', $modelv);
-      $one = $explode[0];
-      $two = $explode[1];
 
-      foreach ($decodedData[$one][$two] as $keydecodedData => $valuedecodedData) {
-          // Ekrana sıralı bir şekilde yazdırma
-          $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
-          $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($istek)];
-
-          // $ProductData dizisine ekleme
-          $ProductData[] = array('model' => $modelValue, $tagname => $product_nameValue);
-      }
     }
-    print_R(  $productValues);
 
     //return   $ProductData;
   }
