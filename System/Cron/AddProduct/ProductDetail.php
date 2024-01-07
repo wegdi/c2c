@@ -36,8 +36,9 @@ foreach ($Supplier as $key => $value) {
       $db->UpdateByObjectId("Products",(string)$ProductIf["_id"], $valuec);
 
     }
+    */
   }
-  */
+
 
 }
 
