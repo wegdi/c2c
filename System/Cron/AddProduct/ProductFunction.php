@@ -9,7 +9,7 @@ class ProductJsonDecoder {
   {
       $explode = explode(';', $value);
       $count = count($explode);
-
+      return $count;
 
   }
 
