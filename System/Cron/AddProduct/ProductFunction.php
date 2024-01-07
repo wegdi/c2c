@@ -51,13 +51,13 @@ class ProductJsonDecoder {
           foreach ($istek as $istekler => $exp) {
             $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
           }
-          print_R(  $productValues);
 
         }
 
     }elseif ($model == 3) {
 
     }
+    print_R(  $productValues);
 
     //return   $ProductData;
   }
