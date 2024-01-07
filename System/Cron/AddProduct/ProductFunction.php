@@ -59,7 +59,31 @@ class ProductJsonDecoder {
                 $productValuesArray[] =array_merge($SupplierAr,$productValues);
             }
         } elseif ($model == 3) {
-            // Handle the case when $model is 3, if needed
+          $explode = explode(';', $modelv);
+          $one = $explode[0];
+          $two = $explode[1];
+          $tree = $explode[2];
+
+
+          if ($gettotal == 1) {
+            $start = 0;
+            $part = ceil(count($decodedData[$one]) / 10);
+          } else {
+              $carpan=$gettotal-1;
+              $start = ceil(count($decodedData[$one]) / 10)*$carpan;
+              $part = ceil(count($decodedData[$one]) / 10)*$gettotal;
+          }
+
+          $decodedDataList = array_slice($decodedData[$one][$two],$start, $part);
+          foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
+              $productValues = [];
+              foreach ($istek as $istekler => $exp) {
+                  $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
+              }
+
+              $SupplierAr = array('SupplierCode' => $SupplierId );
+              $productValuesArray[] =array_merge($SupplierAr,$productValues);
+          }
         }
 
         return $productValuesArray;
