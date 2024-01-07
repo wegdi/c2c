@@ -48,12 +48,16 @@ class ProductJsonDecoder {
         $two = $explode[1];
 
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
+          $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
           foreach ($istek as $istekler) {
-              print_r($istek);
+            $product_{$istekler} = $valuedecodedData[$this->ProductJsonLoginEnd($istekler)];
+            echo $product_{$istekler};
           }
+          //print_r($istek);
+
             // Ekrana sıralı bir şekilde yazdırma
-          //  $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
-          //  $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($istek)];
+          //
+          //
 
           /*  if ($product_nameValue=="") {
               $deger=" ";
