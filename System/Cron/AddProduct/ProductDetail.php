@@ -28,7 +28,7 @@ foreach ($Supplier as $key => $value) {
   foreach ($Products as $keyc => $valuec) {
     print_r($valuec);
 
-  $ProductIf = $db->Query('Products', ["model" => (string)$valuec["model"]], [], 'COK');
+  $ProductIf = $db->Query('Products', ["model" => (string)$valuec["model"]], [], 'TEK');
 
    if ($ProductIf["_id"]=="") {
       $db->Add("Products", $valuec);
