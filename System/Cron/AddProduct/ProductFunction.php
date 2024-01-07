@@ -52,8 +52,14 @@ class ProductJsonDecoder {
             $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
             $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($istek)];
 
+            if ($product_nameValue=="") {
+              $deger="";
+            }else {
+              $deger=$product_nameValue;
+            }
+
             // $ProductData dizisine ekleme
-            $ProductData[] = array('model' => $modelValue, $tagname => $product_nameValue);
+            $ProductData[] = array('model' => $modelValue, $tagname => $deger);
         }
     }elseif ($model == 3) {
       $explode = explode(';', $modelv);
