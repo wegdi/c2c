@@ -23,7 +23,7 @@ $ModalAdd = array(
     'Notifications' => array('Add', 'Edit', 'Query', 'Remove','List'),
     'Status' => array('Add', 'Edit', 'Query', 'Remove','List'),
     'Module' => array('Add', 'Edit', 'Query', 'Remove','List'),
-    'Supplier' => array('List','Add','Detail'),
+    'Supplier' => array('List','Add','Detail','Remove'),
     'Product' => array('List','Add'),
     'Categories' => array('List','Add'),
 
