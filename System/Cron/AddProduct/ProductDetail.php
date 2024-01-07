@@ -25,7 +25,8 @@ foreach ($Supplier as $key => $value) {
      if (isset($keyQuerList)) {
           $explode = explode(';', $keyQuerList);
           $count = count($explode);
-
+          echo   $count;
+          echo "<br>";
           if ($count == 2) {
               $jsonData = file_get_contents("https://c2c.wegdi.com" . $SupplierFilePath);
               $one = $explode[0];
