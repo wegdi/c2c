@@ -44,7 +44,7 @@ class ProductJsonDecoder {
                     $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
                 }
                 $SupplierAr = array('SupplierCode' => $SupplierId );
-                $productValuesArray =array_merge($SupplierAr,$productValues);
+                $productValuesArray[] =array_merge($SupplierAr,$productValues);
             }
         } elseif ($model == 3) {
             // Handle the case when $model is 3, if needed
