@@ -41,15 +41,13 @@ class ProductJsonDecoder {
     $decodedData = json_decode($jsonData, true);
 
     $ProductData = [];
-    $productValues = [];
     if ($model == 2) {
         $explode = explode(';', $modelv);
         $one = $explode[0];
         $two = $explode[1];
 
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
-
-          $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
+          $productValues = [];
           foreach ($istek as $istekler => $exp) {
             $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
           }
