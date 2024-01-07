@@ -17,27 +17,27 @@ foreach ($Supplier as $key => $value) {
     'product_description',
     'product_meta_description',
     'product_meta_keyword',
-    'model',
     'quantity',
     'price',
     'kdv'
   ];
 
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["model"],$dizi);
-  foreach ($Products as $keyc => $valuec) {
+/*   foreach ($Products as $keyc => $valuec) {
 
 
 
     $ProductIf = $db->Query('Products', ["model" => $valuec["model"]], [], 'COK');
 
-  /*  if ($ProductIf["_id"]=="") {
+   if ($ProductIf["_id"]=="") {
       $db->Add("Products", $valuec);
     }else {
       $db->UpdateByObjectId("Products",(string)$ProductIf["_id"], $valuec);
 
     }
- */
+
   }
+  */
 
 }
 
