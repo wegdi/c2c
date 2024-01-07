@@ -33,7 +33,7 @@ class ProductJsonDecoder {
 
   }
 
-  public function ReturnProduct($url='',$modelv='',$istek='',$tagname='')
+  public function ReturnProduct($url='',$modelv='',$istek='')
   {
     $model = $this->ProductJsonLoginCount($modelv);
 
@@ -48,18 +48,22 @@ class ProductJsonDecoder {
         $two = $explode[1];
 
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
+          foreach ($istek as $istekler) {
+              print_r($istek);
+          }
             // Ekrana sıralı bir şekilde yazdırma
-            $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
-            $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($istek)];
+          //  $modelValue = $valuedecodedData[$this->ProductJsonLoginEnd($modelv)];
+          //  $product_nameValue = $valuedecodedData[$this->ProductJsonLoginEnd($istek)];
 
-            if ($product_nameValue=="") {
+          /*  if ($product_nameValue=="") {
               $deger=" ";
             }else {
               $deger=$product_nameValue;
             }
-
             // $ProductData dizisine ekleme
             $ProductData[] = array('model' => $modelValue, $tagname => $deger);
+            */
+
         }
     }elseif ($model == 3) {
       $explode = explode(';', $modelv);
@@ -75,7 +79,7 @@ class ProductJsonDecoder {
           $ProductData[] = array('model' => $modelValue, $tagname => $product_nameValue);
       }
     }
-    return   $ProductData;
+    //return   $ProductData;
   }
 
 
