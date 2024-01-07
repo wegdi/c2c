@@ -12,16 +12,16 @@ $Supplier = $db->Query('Supplier',["Status" =>1], [], 'COK');
 
 $ProductData=[];
 foreach ($Supplier as $key => $value) {
+    print_r($key);
 
     if (isset($value["model"])) {
-      $ProductData = array(
-      'model' => $Product->ProductJsonLogin($value["model"],$value["SupplierFilePath"]),
-      'product_name' =>  $Product->ProductJsonLogin($value["product_name"],$value["SupplierFilePath"]),
 
-    );
+    //  $explode = explode(';', $value);
+      //$count = count($explode);
+
+
     }
 
 }
-print_r($ProductData);
 
  ?>
