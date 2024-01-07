@@ -37,7 +37,7 @@ foreach ($Supplier as $key => $value) {
     }
 
     if (isset($value["kdv"])) {
-      $kdv=$Product->ProductJsonLoginCount($value["kdv"]);
+    echo  $kdv=$Product->ProductJsonLoginCount($value["kdv"]);
 
     }
     if (isset($value["price"])) {
