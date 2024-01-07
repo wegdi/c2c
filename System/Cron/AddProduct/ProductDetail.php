@@ -18,6 +18,7 @@ foreach ($Supplier as $key => $value) {
 
 
    $model=$Product->ProductJsonLoginCount($value["model"]);
+   $product_name=$Product->ProductJsonLoginCount($value["product_name"]);
 
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
@@ -32,6 +33,8 @@ foreach ($Supplier as $key => $value) {
         foreach ($decodedData[$one] as $keydecodedData => $valuedecodedData) {
             // Ekrana sıralı bir şekilde yazdırma
             echo 'model'.'-->'.$valuedecodedData["$two"];
+            echo 'product_name'.'-->'.$valuedecodedData[$Product->ProductJsonLoginEnd($value["product_name"])];
+
 
             echo "<br>";
         }
