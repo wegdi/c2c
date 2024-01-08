@@ -27,7 +27,7 @@ class ProductJsonDecoder {
     public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='',$gettotal)
     {
         $model = $this->ProductJsonLoginCount($modelv);
-        echo $model;
+      
         $jsonData = file_get_contents($url);
         $decodedData = json_decode($jsonData, true);
 
