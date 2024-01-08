@@ -198,7 +198,7 @@ echo $tableHtml;
 $datax = array(
      'star'  => $tag
 );
-echo $db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
+$db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
 
 
 ?>
