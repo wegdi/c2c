@@ -122,12 +122,17 @@ $tableHtml .= '<tr>
     <th>Eşleştir</th>
 </tr>';
 
+$datax = array(
+     'star'  => $ustAnahtarString.';'.$altAnahtarString
+);
+$db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
+
 
 // DataTable içeriğini oluştur
 $say=0;
 foreach ($databaseKeys as $item) {
   $tag = $ustAnahtarString . '->' . $item['anahtar'];
-$tag = str_replace(["->", ' '], [';', ''], $tag);
+  $tag = str_replace(["->", ' '], [';', ''], $tag);
 
     $tableHtml .= "<tr>";
     $tableHtml .= "<td>" .$ustAnahtarString.' -> '. $item['anahtar'] . "</td>";
@@ -195,10 +200,6 @@ $tableHtml .= '</table>  </div>
 
 // Dışarıda kullanılacak HTML
 echo $tableHtml;
-$datax = array(
-     'star'  => $tag
-);
-$db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
 
 
 ?>
