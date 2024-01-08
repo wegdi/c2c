@@ -140,11 +140,6 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
         $tableHtml .= $item['deger'];
     }
 
-    $datax = array(
-         'star'  => $tag
-    );
-    echo $db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
-
 
     $tableHtml .= "</td>";
     $tableHtml .= '<td>
@@ -200,6 +195,11 @@ $tableHtml .= '</table>  </div>
 
 // Dışarıda kullanılacak HTML
 echo $tableHtml;
+$datax = array(
+     'star'  => $tag
+);
+echo $db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
+
 
 ?>
 
