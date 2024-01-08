@@ -23,7 +23,6 @@ foreach ($Supplier as $key => $value) {
     'model' =>  $value["model"]
   ];
 
-  echo $value["model"];
   $Products=$Product->ReturnProduct(URL.$value["SupplierFilePath"],$value["star"],$dizi,$value["SupplierCode"],$_GET["page"]);
 
   foreach ($Products as $keyc => $valuec) {
