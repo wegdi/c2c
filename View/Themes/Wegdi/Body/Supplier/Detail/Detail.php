@@ -140,6 +140,11 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
         $tableHtml .= $item['deger'];
     }
 
+    $datax = array(
+         'star'  => $tag
+    );
+    echo $db->UpdateByObjectId("Supplier",(string)$SupplierTag["_id"], $datax);
+
 
     $tableHtml .= "</td>";
     $tableHtml .= '<td>
