@@ -27,12 +27,19 @@ class ProductJsonDecoder {
     public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='',$gettotal)
     {
         $model = $this->ProductJsonLoginCount($modelv);
-      
+
         $jsonData = file_get_contents($url);
         $decodedData = json_decode($jsonData, true);
 
+
+
         $productValuesArray = [];
 
+        foreach ($istek as $istekler => $exp) {
+            $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
+        }
+
+        print_r($productValues);
         /*if ($model == 2) {
 
             $explode = explode(';', $modelv);
