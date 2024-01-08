@@ -143,7 +143,7 @@ $tag = str_replace(["->", ' '], [';', ''], $tag);
     $datax = array(
          'star'  => $tag
     );
-    echo $db->UpdateByObjectId("Supplier",(string)$param2, $datax);
+    echo $db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
 
 
     $tableHtml .= "</td>";
