@@ -27,13 +27,13 @@ class ProductJsonDecoder {
     public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='',$gettotal)
     {
         $model = $this->ProductJsonLoginCount($modelv);
-
+        echo $model;
         $jsonData = file_get_contents($url);
         $decodedData = json_decode($jsonData, true);
 
         $productValuesArray = [];
 
-        if ($model == 2) {
+        /*if ($model == 2) {
 
             $explode = explode(';', $modelv);
             $one = $explode[0];
@@ -117,6 +117,6 @@ class ProductJsonDecoder {
           }
         }
 
-        return $productValuesArray;
+        return $productValuesArray; */
     }
 }
