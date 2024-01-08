@@ -36,7 +36,7 @@ class ProductJsonDecoder {
         $productValuesArray = [];
 
         foreach ($istek as $istekler => $exp) {
-            $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
+            $productValues[$istekler] = $exp];
         }
 
         print_r($productValues);
