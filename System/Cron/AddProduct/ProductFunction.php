@@ -24,6 +24,13 @@ class ProductJsonDecoder {
         }
     }
 
+    public function firtDelete($value='')
+    {
+      $explode = explode(';', $value);
+      print_r($explode);
+
+    }
+
     public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='',$gettotal)
     {
         $model = $this->ProductJsonLoginCount($modelv);
@@ -36,7 +43,7 @@ class ProductJsonDecoder {
         $productValuesArray = [];
 
         foreach ($istek as $istekler => $exp) {
-            $productValues[$istekler] = $exp;
+            $productValues[$istekler] = $this->firtDelete($exp);
         }
 
         print_r($productValues);
