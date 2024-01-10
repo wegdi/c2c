@@ -58,7 +58,7 @@ class ProductJsonDecoder {
                     }
                 }
               }
-              print_r($productValuesArray);
+              print_r($productValues);
         }
 
 
