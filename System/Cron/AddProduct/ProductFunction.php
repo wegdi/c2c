@@ -52,7 +52,7 @@ class ProductJsonDecoder {
 
                 foreach ($istek as $istekler => $exp) {
                   $Toplam=count($this->firtDelete($exp));
-                      if ($Toplam==1)) {
+                      if ($Toplam==1) {
                       $productValues[$istekler] = $this->firtDelete($exp);
 
                     }
