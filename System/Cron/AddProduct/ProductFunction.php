@@ -43,21 +43,21 @@ class ProductJsonDecoder {
 
         $jsonData = file_get_contents($url);
         $decodedData = json_decode($jsonData, true);
-
         $explode = explode(';', $modelv);
-        print_r($explode);
-        $one = $explode[0];
-        $two = $explode[1];
 
-        $productValuesArray = [];
-        $decodedDataList = array_slice($decodedData[$explode[0]],0, 100);
-        print_r($decodedDataList);
-      /*  foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
-            foreach ($istek as $istekler => $exp) {
-                $productValues[$istekler] = $this->firtDelete($exp);
-            }
-          }
- */
+        if (count($explode)==2) {
+          $productValuesArray = [];
+          $decodedDataList = array_slice($decodedData[$explode[0]],0, 100);
+          foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
+              print_R($valuedecodedData);
+                foreach ($istek as $istekler => $exp) {
+
+                    $productValues[$istekler] = $this->firtDelete($exp);
+                }
+              }
+        }
+
+
       //  print_r($productValues);
         /*if ($model == 2) {
 
