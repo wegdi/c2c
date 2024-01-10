@@ -51,7 +51,7 @@ class ProductJsonDecoder {
           foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
 
                 foreach ($istek as $istekler => $exp) {
-                  echo count($this->firtDelete($exp);
+                  echo count($this->firtDelete($exp));
                       /*if (count($this->firtDelete($exp)==1)) {
                       $productValues[$istekler] = end($this->firtDelete($exp));
 
