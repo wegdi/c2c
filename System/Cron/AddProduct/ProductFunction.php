@@ -50,7 +50,7 @@ class ProductJsonDecoder {
         $two = $explode[1];
 
         $productValuesArray = [];
-        $decodedDataList = array_slice($decodedData[$one],1, 100);
+        $decodedDataList = array_slice($decodedData[$explode[0]],0, 100);
         print_r($decodedDataList);
       /*  foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
             foreach ($istek as $istekler => $exp) {
