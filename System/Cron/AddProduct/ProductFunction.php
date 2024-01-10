@@ -24,12 +24,18 @@ class ProductJsonDecoder {
         }
     }
 
-    public function firtDelete($value='')
-    {
+    public function firtDelete($value = '')
+  {
+      // Metni noktalı virgül karakterine göre bölen dizi
       $explode = explode(';', $value);
-      print_r($explode);
 
-    }
+      // İlk öğeyi sil
+      array_shift($explode);
+
+      // Sonuçları yazdır
+      print_r($explode);
+  }
+
 
     public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='',$gettotal)
     {
