@@ -53,11 +53,18 @@ class ProductJsonDecoder {
                 foreach ($istek as $istekler => $exp) {
                   $giris=$this->firtDelete($exp);
                   $Toplam=count($this->firtDelete($exp));
+
                       if ($Toplam==1) {
 
-                      $productValues[$istekler] = $valuedecodedData[$giris[0]];
+                        $productValues[$istekler] = $valuedecodedData[$giris[0]];
 
-                    }
+                      }
+
+                      if ($Toplam==2) {
+
+                        $productValues[$istekler] = $valuedecodedData[$giris[0]];
+
+                      }
                 }
               }
               print_r($productValues);
