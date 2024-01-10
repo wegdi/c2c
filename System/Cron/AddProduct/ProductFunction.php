@@ -54,7 +54,7 @@ class ProductJsonDecoder {
                   $Toplam=count($this->firtDelete($exp));
                       if ($Toplam==1) {
                         $giris=$this->firtDelete($exp);
-                      $productValues[$istekler] = $giris[0];
+                      $productValues[$istekler] = $valuedecodedData[$giris[0]];
 
                     }
                 }
