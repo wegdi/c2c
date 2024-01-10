@@ -52,9 +52,13 @@ class ProductJsonDecoder {
               print_R($valuedecodedData);
                 foreach ($istek as $istekler => $exp) {
 
-                    $productValues[$istekler] = $this->firtDelete($exp);
+                    if (count($this->firtDelete($exp)==1)) {
+                      $productValues[$istekler] = end($this->firtDelete($exp));
+
+                    }
                 }
               }
+              print_r($productValuesArray);
         }
 
 
