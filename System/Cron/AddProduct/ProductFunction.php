@@ -45,6 +45,7 @@ class ProductJsonDecoder {
         $decodedData = json_decode($jsonData, true);
 
         $explode = explode(';', $modelv);
+        print_r($explode);
         $one = $explode[0];
         $two = $explode[1];
 
