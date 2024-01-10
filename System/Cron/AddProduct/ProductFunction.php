@@ -44,7 +44,9 @@ class ProductJsonDecoder {
         $jsonData = file_get_contents($url);
         $decodedData = json_decode($jsonData, true);
 
-
+        $explode = explode(';', $modelv);
+        $one = $explode[0];
+        $two = $explode[1];
 
         $productValuesArray = [];
         $decodedDataList = array_slice($decodedData[$one],1, 100);
