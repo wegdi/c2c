@@ -47,12 +47,15 @@ class ProductJsonDecoder {
 
 
         $productValuesArray = [];
-
-        foreach ($istek as $istekler => $exp) {
-            $productValues[$istekler] = $this->firtDelete($exp);
-        }
-
-        print_r($productValues);
+        $decodedDataList = array_slice($decodedData[$one],$start, $part);
+        print_r($decodedDataList);
+      /*  foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
+            foreach ($istek as $istekler => $exp) {
+                $productValues[$istekler] = $this->firtDelete($exp);
+            }
+          }
+ */
+      //  print_r($productValues);
         /*if ($model == 2) {
 
             $explode = explode(';', $modelv);
