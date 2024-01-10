@@ -62,11 +62,11 @@ class ProductJsonDecoder {
                       }
 
                       if ($Toplam==2) {
-                        echo "string";
+                      //  echo "string";
                         //$productValues[$istekler] = $valuedecodedData[$giris[0]];
 
                       }
-                      
+
                       if ($Toplam==3) {
                         echo "string";
                         //$productValues[$istekler] = $valuedecodedData[$giris[0]];
