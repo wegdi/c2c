@@ -52,7 +52,7 @@ class ProductJsonDecoder {
 
                 foreach ($istek as $istekler => $exp) {
                   $giris=$this->firtDelete($exp);
-                  print_r($giris);
+
                   $Toplam=count($this->firtDelete($exp));
 
                       if ($Toplam==1) {
@@ -68,6 +68,10 @@ class ProductJsonDecoder {
                       }
 
                       if ($Toplam==3) {
+
+                          foreach ($valuedecodedData[$giris[0]] as $key => $value) {
+                            print_r($value);
+                          }
                         echo "string";
                         //$productValues[$istekler] = $valuedecodedData[$giris[0]];
 
