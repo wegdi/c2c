@@ -47,7 +47,7 @@ class ProductJsonDecoder {
 
         if (count($explode)==2) {
           $productValuesArray = [];
-          $decodedDataList = array_slice($decodedData[$explode[0]],0, 100);
+          $decodedDataList = array_slice($decodedData[$explode[0]],0, 10);
           foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
 
                 foreach ($istek as $istekler => $exp) {
