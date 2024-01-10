@@ -33,7 +33,7 @@ class ProductJsonDecoder {
       array_shift($explode);
 
       // Sonuçları yazdır
-      print_r($explode);
+      return $explode;
   }
 
 
