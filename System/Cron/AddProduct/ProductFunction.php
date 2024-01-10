@@ -49,7 +49,7 @@ class ProductJsonDecoder {
           $productValuesArray = [];
           $decodedDataList = array_slice($decodedData[$explode[0]],0, 100);
           foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
-              print_R($valuedecodedData);
+              
                 foreach ($istek as $istekler => $exp) {
 
                     if (count($this->firtDelete($exp)==1)) {
