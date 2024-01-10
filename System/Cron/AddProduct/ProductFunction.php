@@ -52,6 +52,7 @@ class ProductJsonDecoder {
 
                 foreach ($istek as $istekler => $exp) {
                   $giris=$this->firtDelete($exp);
+                  print_r($exp);
                   $Toplam=count($this->firtDelete($exp));
 
                       if ($Toplam==1) {
