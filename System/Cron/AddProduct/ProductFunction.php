@@ -51,9 +51,10 @@ class ProductJsonDecoder {
           foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
 
                 foreach ($istek as $istekler => $exp) {
+                  $giris=$this->firtDelete($exp);
                   $Toplam=count($this->firtDelete($exp));
                       if ($Toplam==1) {
-                        $giris=$this->firtDelete($exp);
+
                       $productValues[$istekler] = $valuedecodedData[$giris[0]];
 
                     }
