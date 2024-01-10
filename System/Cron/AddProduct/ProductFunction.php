@@ -24,17 +24,17 @@ class ProductJsonDecoder {
         }
     }
 
-    public function firtDelete($value = '')
-  {
-      // Metni noktalı virgül karakterine göre bölen dizi
-      $explode = explode(';', $value);
+      public function firtDelete($value = '')
+        {
+            // Metni noktalı virgül karakterine göre bölen dizi
+            $explode = explode(';', $value);
 
-      // İlk öğeyi sil
-      array_shift($explode);
+            // İlk öğeyi sil
+            array_shift($explode);
 
-      // Sonuçları yazdır
-      return $explode;
-  }
+            // Sonuçları yazdır
+            return $explode;
+        }
 
 
     public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='',$gettotal)
