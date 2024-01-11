@@ -47,6 +47,15 @@ foreach ($suppliers as $supplier) {
                 }
             }
 
+            // Convert $Urunler to JSON
+            $jsonUrunler = json_encode($Urunler, JSON_UNESCAPED_UNICODE);
+
+            // Generate a unique filename based on product_name and timestamp
+            $filename = SYSTEM . 'Product/Json/' . $Urunler['product_name'] . '_' . time() . '.json';
+
+            // Save JSON data to the file
+            file_put_contents($filename, $jsonUrunler);
+
             print_r($Urunler);
         }
     } elseif (count($explode) == 2 && isset($decodedData[$explode[0]])) {
@@ -66,15 +75,23 @@ foreach ($suppliers as $supplier) {
 
                 if (count($fieldArray) == 1) {
                     $Urunler[$field] = $valueUrunIC[$fieldArray[0]];
-                }elseif (count($fieldArray) == 2) {
-                    $Urunler[$field] = current($valueBirAlt[$fieldArray[0]]);
-                }
-                elseif (count($fieldArray) == 3) {
+                } elseif (count($fieldArray) == 2) {
+                    $Urunler[$field] = current($valueUrunIC[$fieldArray[0]]);
+                } elseif (count($fieldArray) == 3) {
                     foreach ($valueUrunIC[$fieldArray[0]] as $valueBirAlt) {
                         $Urunler[$field] = $valueBirAlt[end($fieldArray)];
                     }
                 }
             }
+
+            // Convert $Urunler to JSON
+            $jsonUrunler = json_encode($Urunler, JSON_UNESCAPED_UNICODE);
+
+            // Generate a unique filename based on product_name and timestamp
+            $filename = SYSTEM . 'Product/Json/' . $Urunler['product_name'] . '_' . time() . '.json';
+
+            // Save JSON data to the file
+            file_put_contents($filename, $jsonUrunler);
 
             print_r($Urunler);
         }
