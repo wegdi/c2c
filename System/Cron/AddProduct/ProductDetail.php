@@ -27,6 +27,10 @@ foreach ($Supplier as $key => $value) {
                   $Urunler[] = ["kdv" => $valueUrunIC[end($product_nexp)]];
               }elseif (count($product_nexp) == 3) {
                 // code...
+              }elseif (count($product_nexp) == 4) {
+                // code...
+              }elseif (count($product_nexp) == 5) {
+                // code...
               }
           }
 
