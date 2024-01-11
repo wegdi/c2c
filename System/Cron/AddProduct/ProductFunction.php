@@ -71,6 +71,7 @@ class ProductJsonDecoder {
 
                           foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
                               $productValues[$istekler] = $valueUc[$giris[1]];
+                              echo $valueUc[$giris[1]];
                           }
                         echo "string";
                         //$productValues[$istekler] = $valuedecodedData[$giris[0]];
