@@ -39,11 +39,12 @@ foreach ($Supplier as $key => $value) {
            $fieldArray = Parcala($value[$field]);
 
            if (count($fieldArray) == 1) {
+             echo "string";
                $Urunler[$field] = $valueUrun[$fieldArray[0]];
            } elseif (count($fieldArray) == 3) {
-               foreach ($valueUrun[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
+               /*foreach ($valueUrun[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
                    $Urunler[$field] = $valueBirAlt[end($fieldArray)];
-               }
+               } */
            }
        }
 
