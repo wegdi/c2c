@@ -18,7 +18,10 @@ foreach ($Supplier as $key => $value) {
     if (count($explode) == 2) {
         $Urunler = [];
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-          print_r($valueUrun);
+          foreach ($valueUrun as $key => $value) {
+              print_r($value);
+          }
+
 
             /*$product_nexp = explode(';', $value["product_name"]);
             $product_name=end($product_nexp);
