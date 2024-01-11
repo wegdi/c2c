@@ -64,13 +64,13 @@ foreach ($Supplier as $key => $value) {
                 }elseif (count($kdv) == 2) {
                   //echo "string";
                 }elseif (count($kdv) == 3) {
-                  foreach ($valueUrunIC[$product_name[0]] as $keyBirAlt => $valueBirAlt) {
-                    print_R($valueBirAlt);
+                  foreach ($valueUrunIC[$kdv[0]] as $keyBirAlt => $valueBirAlt) {
+                    //print_R($valueBirAlt);
                     $Urunler["kdv"] = $valueBirAlt[end($kdv)];
                   }
                 }
 
-                //print_R($Urunler);
+                print_R($Urunler);
 
             }
         }
