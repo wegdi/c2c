@@ -85,10 +85,8 @@ foreach ($suppliers as $supplier) {
 // Convert $allProducts to JSON
 $jsonAllProducts = json_encode($allProducts, JSON_UNESCAPED_UNICODE);
 
-// Generate a unique filename based on timestamp
-$filename = SYSTEM . 'Product/Json/all_products_' . time() . '.json';
-
-// Save JSON data to the file
+// Save JSON data to the file (overwrite the existing file)
+$filename = SYSTEM . 'Product/Json/all_products.json';
 file_put_contents($filename, $jsonAllProducts);
 
 // You can also print or do something else with $allProducts if needed
