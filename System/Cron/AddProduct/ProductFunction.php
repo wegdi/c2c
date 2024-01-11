@@ -68,8 +68,21 @@ class ProductJsonDecoder {
                       }
 
                       if ($Toplam==3) {
-                        echo $giris[0];
-        
+
+
+                        if ($giris[0]) {
+                          foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
+                                // $giris[1] dizinin bir öğesi olarak var mı kontrol et
+                                if (isset($valueUc[$giris[2]])) {
+                                    $productValues[$istekler] = $valueUc[$giris[2]];
+                                } else {
+                                    // Eğer belirtilen öğe bulunmuyorsa, varsayılan bir değer ata veya hata işleme yap
+                                    // Örneğin: $productValues[$istekler] = 'Varsayılan Değer';
+                                }
+                            }
+
+                        }
+
 
 
 
