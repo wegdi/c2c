@@ -27,8 +27,8 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $supplier["star"]);
 
-    echo count($explode);
-    if (isset($decodedData[$explode[0]])) {
+
+    if (count($explode)==1) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
             $Urunler = [];
 
@@ -57,6 +57,8 @@ foreach ($suppliers as $supplier) {
 
             $allProducts[] = $Urunler; // Ürünü diziye ekle
         }
+    }elseif (count($explode)==2) {
+      echo "string";
     }
 }
 
