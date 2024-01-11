@@ -18,16 +18,17 @@ foreach ($Supplier as $key => $value) {
     if (count($explode) == 2) {
         $Urunler = [];
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-          foreach ($valueUrun as $key => $value) {
-              print_r($value);
+          foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
+
+            $product_nexp = explode(';', $UrunIC["product_name"]);
+            $product_name=end($product_nexp);
+              if (count($product_nexp) == 2) {
+                  $Urunler[] = ["product_name" => $valueUrun[$product_name]];
+              }
           }
 
 
-            /*$product_nexp = explode(';', $value["product_name"]);
-            $product_name=end($product_nexp);
-            if (count($product_nexp) == 2) {
-                $Urunler[] = ["product_name" => $valueUrun[$product_name]];
-            }*/
+
         }
     }
 }
