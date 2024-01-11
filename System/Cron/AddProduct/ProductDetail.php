@@ -22,9 +22,6 @@ foreach ($Supplier as $key => $value) {
 
               $product_nexp = explode(';', $value["product_name"]);
               array_shift($product_nexp);
-              print_R(  $product_nexp);
-
-
               if (count($product_nexp) == 1) {
 
                   $Urunler[] = ["product_name" => $valueUrunIC[end($product_nexp)]];
