@@ -122,8 +122,14 @@ $tableHtml .= '<tr>
     <th>Eşleştir</th>
 </tr>';
 
+if ($altAnahtarString!="") {
+  $dizi=$ustAnahtarString.';'.$altAnahtarString;
+}else {
+  $dizi=$ustAnahtarString;
+}
+
 $datax = array(
-     'star'  => $ustAnahtarString.';'.$altAnahtarString
+     'star'  =>$dizi
 );
 $db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
 
