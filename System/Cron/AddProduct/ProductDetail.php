@@ -36,9 +36,11 @@ foreach ($Supplier as $key => $value) {
                 }elseif (count($product_name) == 2) {
                   echo "string";
                 }elseif (count($product_name) == 3) {
-                  // code...
+                  foreach ($valueUrunIC as $keyBirAlt => $valueBirAlt) {
+                      print_r($valueBirAlt);
+                  }
                 }
-                print_r($Urunler);
+
 
             }
         }
