@@ -44,7 +44,9 @@ foreach ($Supplier as $key => $value) {
 
                     if (count($fieldArray) == 1) {
                         $Urunler[$field] = $valueUrun[$fieldArray[0]];
-                    } 
+                    } elseif (count($fieldArray) == 2) {
+                      echo "string";
+                    }
                 }
 
                 print_r($Urunler);
