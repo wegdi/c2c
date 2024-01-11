@@ -61,7 +61,6 @@ foreach ($suppliers as $supplier) {
 
       foreach ($decodedData[$explode[0]] as $key => $value) {
         foreach ($value as $keyUrun => $valueUrun) {
-          print_R($valueUrun);
             $Urunler = [];
 
             $productFields = [
