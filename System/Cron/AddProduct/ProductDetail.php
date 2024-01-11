@@ -29,7 +29,7 @@ foreach ($Supplier as $key => $value) {
 
     if (count($explode) == 1) {
       foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-        print_r($valueUrun);
+
 
         $Urunler = [];
 
@@ -42,6 +42,7 @@ foreach ($Supplier as $key => $value) {
       ];
 
         foreach ($productFields as $field) {
+          echo $valueUrun[$field];
             $fieldArray = Parcala($valueUrun[$field]);
 
         }
