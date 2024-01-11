@@ -19,13 +19,15 @@ foreach ($Supplier as $key => $value) {
 
     //2li Giriş
     if (count($explode)==2) {
-
+      $Urunler=[];
       foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
 
         $product_nexp = explode(';',$value["product_name"]);
 
-        echo end($product_nexp);
-        echo "<br>";
+        if (count($product_nexp)==2) {
+          $Urunler["product_name"] = $valueUrun[end($product_nexp)];
+        }
+
 
 
 
