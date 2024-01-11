@@ -37,12 +37,13 @@ foreach ($Supplier as $key => $value) {
                   echo "string";
                 }elseif (count($product_name) == 3) {
                   foreach ($valueUrunIC[$product_name[0]] as $keyBirAlt => $valueBirAlt) {
-                    print_r( $valueBirAlt);
-                    echo $valueBirAlt["VaryasyonID"];
+
+                    $Urunler["product_name"] = $valueBirAlt[end($product_name)];
+
 
                   }
                 }
-
+                print_R($Urunler);
 
             }
         }
