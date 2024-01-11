@@ -12,12 +12,18 @@ $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
 
-  echo URL.$value["SupplierFilePath"];
 
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
-    $explode = explode(';', $value["star"]);
-    print_r($explode);
+    $explode = explode(';',$value["star"]);
+
+    //2li Giriş
+    if (count($explode)==2) {
+
+      foreach ($decodedData[$explode[0]] as $key => $value) {
+        print_R($value);
+      }
+    }
 
 
 
