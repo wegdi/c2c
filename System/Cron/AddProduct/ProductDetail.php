@@ -32,24 +32,25 @@ foreach ($Supplier as $key => $value) {
 
         $Urunler = [];
 
-        $productFields = [
-          "product_name", "product_description", "product_meta_description", "product_meta_keyword",
-          "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
-          "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
-          "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
-          "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
-       ];
+  $productFields = [
+      "product_name", "product_description", "product_meta_description", "product_meta_keyword",
+      "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
+      "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
+      "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
+      "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
+  ];
 
-       foreach ($productFields as $field) {
-         $fieldArray = Parcala($valueUrun[$field]);
-         if (count($fieldArray) == 0) {
-             $Urunler[$field] = $valueUrun[$fieldArray[0]];
-         } elseif (count($fieldArray) == 3) {
+  foreach ($productFields as $field) {
+      $fieldArray = Parcala($valueUrun[$field]);
+      if (count($fieldArray) == 1) {
+          $Urunler[$field] = $fieldArray[0];
+      } elseif (count($fieldArray) == 3) {
+          // Handle the case when count is 3
+      }
+  }
 
-         }
-     }
+  print_r($Urunler);
 
-     print_r($Urunler);
 
 
 
