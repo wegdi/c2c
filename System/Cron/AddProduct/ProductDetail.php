@@ -20,9 +20,11 @@ foreach ($Supplier as $key => $value) {
     $jsonData = file_get_contents(URL . $value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $value["star"]);
-    print_R($explode);
     // 2li Giriş
-    if (count($explode) == 2) {
+
+    if (count($explode) == 1) {
+        echo "string";
+    }elseif (count($explode) == 2) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
                 $Urunler = [];
