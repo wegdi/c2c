@@ -58,7 +58,40 @@ foreach ($suppliers as $supplier) {
             $allProducts[] = $Urunler; // Ürünü diziye ekle
         }
     }elseif (count($explode)==2) {
-      echo "string";
+
+      foreach ($decodedData[$explode[0]] as $key => $value) {
+        foreach ($value as $keyUrun => $valueUrun) {
+          print_R($valueUrun);
+            $Urunler = [];
+
+            $productFields = [
+                "product_name",
+            ];
+
+            foreach ($productFields as $field) {
+                $fieldArray = Parcala($supplier[$field]);
+
+                if (count($fieldArray) == 1 && isset($valueUrun[$fieldArray[0]])) {
+                    $Urunler[$field] = $valueUrun[$fieldArray[0]];
+                } elseif (count($fieldArray) == 2) {
+                    $fieldValue = isset($valueUrun[$fieldArray[0]]) ? $valueUrun[$fieldArray[0]] : '';
+
+                    if (is_array($fieldValue) && isset($fieldValue[0])) {
+                        $Urunler[$field] = current($fieldValue);
+                    } else {
+                        $Urunler[$field] = $fieldValue;
+                    }
+                } else {
+                    // Eğer anahtar dizide yoksa, varsayılan bir değer ata
+                    $Urunler[$field] = '';
+                }
+            }
+
+            $allProducts[] = $Urunler; // Ürünü diziye ekle
+        }
+      }
+
+
     }
 }
 
