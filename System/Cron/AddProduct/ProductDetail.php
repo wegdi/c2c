@@ -23,19 +23,21 @@ foreach ($Supplier as $key => $value) {
 
     // 2li Giriş
     if (count($explode) == 2) {
-        $Urunler = [];
+
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
+              $Urunler = [];
                 $product_name = Parcala($value["product_name"]);
 
                 if (count($product_name) == 1) {
                   // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
                   $Urunler["product_name"][] = $valueUrunIC[$product_name[0]];
                 }
+                print_r($Urunler);
+
             }
         }
 
-        print_r($Urunler);
     }
 }
 
