@@ -43,9 +43,10 @@ foreach ($Supplier as $key => $value) {
 
         foreach ($productFields as $field) {
             $fieldArray = Parcala($valueUrun[$field]);
-          
+
               //echo count($fieldArray);
               if (count($fieldArray) == 1) {
+                echo "string";
                   $Urunler[$field] = $valueUrun[$fieldArray[0]];
               }
 
