@@ -70,7 +70,7 @@ class ProductJsonDecoder {
                       if ($Toplam==3) {
 
 
-                        if (isset($valuedecodedData[$giris[0]]) && is_array($valuedecodedData[$giris[0]])) {
+                        if (is_array($valuedecodedData[$giris[0]])) {
     foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
         // Döngü içindeki işlemler
     }
