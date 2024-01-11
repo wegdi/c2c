@@ -20,11 +20,13 @@ foreach ($Supplier as $key => $value) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
           foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
 
-            $product_nexp = explode(';', $value["product_name"]);
+            $product_nexp = explode(';', $value["kdv"]);
 
 
               if (count($product_nexp) == 2) {
-                  $Urunler[] = ["product_name" => $valueUrunIC[end($product_nexp)]];
+                  $Urunler[] = ["kdv" => $valueUrunIC[end($product_nexp)]];
+              }elseif (count($product_nexp) == 3) {
+                // code...
               }
           }
 
