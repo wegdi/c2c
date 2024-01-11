@@ -60,6 +60,7 @@ class ProductJsonDecoder {
 
                 }
               }
+              print_R($productValuesArray);
 
         }
 
