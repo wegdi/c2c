@@ -66,7 +66,10 @@ foreach ($suppliers as $supplier) {
 
                 if (count($fieldArray) == 1) {
                     $Urunler[$field] = $valueUrunIC[$fieldArray[0]];
-                } elseif (count($fieldArray) == 3) {
+                }elseif (count($fieldArray) == 2) {
+                    $Urunler[$field] = current($valueBirAlt[$fieldArray[0]]);
+                }
+                elseif (count($fieldArray) == 3) {
                     foreach ($valueUrunIC[$fieldArray[0]] as $valueBirAlt) {
                         $Urunler[$field] = $valueBirAlt[end($fieldArray)];
                     }
