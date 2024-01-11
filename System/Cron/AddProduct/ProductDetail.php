@@ -31,8 +31,8 @@ foreach ($Supplier as $key => $value) {
               }elseif (count($product_nexp) == 4) {
                 array_shift($product_nexp);
 
-                foreach ($valueUrunIC[$product_nexp[0]] as $key => $value) {
-                  echo $value["StokKodu"];
+                foreach ($valueUrunIC[$product_nexp[0]] as $keyIcler => $valueIcler) {
+                $Urunler[] = ["kdv" => $valueIcler[end($product_nexp)]];
                 }
 
 
