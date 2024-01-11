@@ -21,13 +21,11 @@ foreach ($Supplier as $key => $value) {
     if (count($explode)==2) {
 
       foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-        print_R($value);
 
         $product_nexp = explode(';',$value["product_name"]);
-        if (end($product_nexp)==$keyUrun) {
-          echo "string";
-          // code...
-        }
+
+        echo end($product_nexp);
+        echo "<br>";
 
 
 
