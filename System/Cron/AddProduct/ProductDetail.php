@@ -38,7 +38,7 @@ foreach ($Supplier as $key => $value) {
        foreach ($productFields as $field) {
      $fieldArray = Parcala($valueUrun[$field]);
         echo count($fieldArray);
-         if (count($fieldArray) == 1) {
+         if (count($fieldArray) == 0) {
              $Urunler[$field] = $valueUrun[$fieldArray[0]];
          } elseif (count($fieldArray) == 3) {
 
