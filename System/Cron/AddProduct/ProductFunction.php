@@ -73,7 +73,7 @@ class ProductJsonDecoder {
                               $productValues[$istekler] = $valueUc[$giris[1]];
                               echo $valueUc[$giris[1]];
                           }
-                        echo "string";
+                        echo "<br>";
                         //$productValues[$istekler] = $valuedecodedData[$giris[0]];
 
                       }
