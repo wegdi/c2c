@@ -26,11 +26,11 @@ foreach ($Supplier as $key => $value) {
               if (count($product_nexp) == 2) {
                   $Urunler[] = ["kdv" => $valueUrunIC[end($product_nexp)]];
               }elseif (count($product_nexp) == 3) {
-                // code...
+                echo "3";
               }elseif (count($product_nexp) == 4) {
-                // code...
+                  echo "4";
               }elseif (count($product_nexp) == 5) {
-                // code...
+                echo "5";
               }
           }
 
