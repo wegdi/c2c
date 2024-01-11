@@ -28,11 +28,13 @@ foreach ($Supplier as $key => $value) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
 
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
-                $product_name = Parcala($value["product_name"]);
+                $product_name = Parcala($value["kdv"]);
 
                 if (count($product_name) == 1) {
                   // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
                   $Urunler["product_name"] = $valueUrunIC[$product_name[0]];
+                }elseif (count($product_name) == 2) {
+                echo "string";
                 }
                 print_r($Urunler);
 
