@@ -15,6 +15,7 @@ function Parcala($value = '')
 }
 
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
+$Urunler = [];
 
 foreach ($Supplier as $key => $value) {
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
@@ -23,7 +24,6 @@ foreach ($Supplier as $key => $value) {
 
     // 2li Giriş
     if (count($explode) == 2) {
-      $Urunler = [];
 
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
 
@@ -32,7 +32,7 @@ foreach ($Supplier as $key => $value) {
 
                 if (count($product_name) == 1) {
                   // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
-                  $Urunler["product_name"][] = $valueUrunIC[$product_name[0]];
+                  $Urunler["product_name"] = $valueUrunIC[$product_name[0]];
                 }
                 print_r($Urunler);
 
