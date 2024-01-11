@@ -32,7 +32,7 @@ foreach ($Supplier as $key => $value) {
                 array_shift($product_nexp);
 
                 foreach ($valueUrunIC[$product_nexp[0]] as $key => $value) {
-                  print_R($value);
+                  echo $value["StokKodu"];
                 }
 
 
