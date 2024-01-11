@@ -17,33 +17,28 @@ class ProductJsonDecoder {
 
 
 
-    public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='',$gettotal)
+    public function ReturnProduct($url = '', $modelv = '', $istek = '', $SupplierId = '', $gettotal)
     {
-
         $jsonData = file_get_contents($url);
         $decodedData = json_decode($jsonData, true);
         $explode = explode(';', $modelv);
 
-        if (count($explode)==2) {
-          $productValuesArray = [];
-          $decodedDataList = array_slice($decodedData[$explode[0]],0, 1);
-          foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
+        if (count($explode) == 2) {
+            $productValuesArray = [];
 
+            $decodedDataList = array_slice($decodedData[$explode[0]], 0, 1);
+
+            foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
                 foreach ($istek as $istekler => $exp) {
-
                     $explodebir = explode(';', $exp);
 
-                    if (count($explodebir)==2) {
-                      $productValuesArray[$istekler] = $valuedecodedData[end($explodebir)];
-                    }
-
-                    //
-
+                    // Tüm istekler için aynı işlemi gerçekleştir
+                    $productValuesArray[$istekler] = isset($valuedecodedData[end($explodebir)]) ? $valuedecodedData[end($explodebir)] : null;
                 }
-              }
-              print_R($productValuesArray);
+            }
 
+            print_r($productValuesArray);
         }
-
     }
+
 }
