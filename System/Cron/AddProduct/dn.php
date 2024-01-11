@@ -47,7 +47,7 @@ foreach ($suppliers as $supplier) {
                 } elseif (count($fieldArray) == 2) {
                     $fieldValue = isset($valueUrun[$fieldArray[0]]) ? $valueUrun[$fieldArray[0]] : '';
 
-                    if (is_array($fieldValue)) {
+                    if (is_array($fieldValue) && isset($fieldValue[0])) {
                         $Urunler[$field] = current($fieldValue);
                     } else {
                         $Urunler[$field] = $fieldValue;
