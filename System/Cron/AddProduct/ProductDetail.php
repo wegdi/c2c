@@ -10,7 +10,7 @@ echo rand();
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
-  print_R($key);
+  print_R($value);
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $value["star"]);
