@@ -25,19 +25,19 @@ class ProductJsonDecoder {
     }
 
     public function firtDelete($value = '')
-  {
-      $explode = [];
+    {
+        $explode = [];
 
-      if (isset($value)) {
-          $explode = explode(';', $value);
+        if (isset($value)) {
+            $explode = explode(';', $value);
 
-          if (count($explode) > 2) {
-              array_shift($explode);
-          }
-      }
+            if (count($explode) > 2) {
+                array_shift($explode);
+            }
+        }
 
-      return $explode;
-  }
+        return $explode;
+    }
 
 
 
@@ -55,31 +55,14 @@ class ProductJsonDecoder {
           foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
 
                 foreach ($istek as $istekler => $exp) {
-                  $giris=$this->firtDelete($exp);
-
-                  $Toplam=count($this->firtDelete($exp));
-
-                      if ($Toplam==1) {
-
-                        if (isset($valuedecodedData[$giris[0]])) {
-                        $productValues[$istekler] = $valuedecodedData[$giris[0]];
-                        }
+                  $explode = explode(';', $exp);
+                  print_R($explode);
 
 
 
-                      }
-
-                      if ($Toplam==2) {
-                      //  echo "string";
-                        //$productValues[$istekler] = $valuedecodedData[$giris[0]];
-
-                      }
-
-                      if ($Toplam==3) {
 
 
 
-                      }
                 }
               }
                 print_r($productValues);
