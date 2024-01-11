@@ -35,20 +35,20 @@ foreach ($Supplier as $key => $value) {
           "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
        ];
 
-       foreach ($fields as $field) {
-           $fieldArray = Parcala($value[$field]);
+       foreach ($productFields as $field) {
+     $fieldArray = Parcala($valueUrun[$field]);
 
-           if (count($fieldArray) == 1) {
-             echo "string";
-               $Urunler[$field] = $valueUrun[$fieldArray[0]];
-           } elseif (count($fieldArray) == 3) {
-               /*foreach ($valueUrun[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
-                   $Urunler[$field] = $valueBirAlt[end($fieldArray)];
-               } */
-           }
-       }
+     if (count($fieldArray) == 1) {
+         $Urunler[$field] = $valueUrun[$fieldArray[0]];
+     } elseif (count($fieldArray) == 3) {
+         foreach ($valueUrun[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
+             $Urunler[$field] = $valueBirAlt[end($fieldArray)];
+         }
+     }
+ }
 
-       print_r($Urunler);
+ print_r($Urunler);
+
 
 
 
