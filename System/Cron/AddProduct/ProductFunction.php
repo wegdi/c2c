@@ -24,54 +24,66 @@ class ProductJsonDecoder {
         }
     }
 
-      public function firtDelete($value = '')
-        {
-            // Metni noktalı virgül karakterine göre bölen dizi
-            $explode = explode(';', $value);
+    public function firtDelete($value = '')
+  {
+      $explode = [];
 
-            // İlk öğeyi sil
-            if (in_array($explode)) {
+      if (isset($value)) {
+          $explode = explode(';', $value);
+
+          if (count($explode) > 2) {
               array_shift($explode);
-                return $explode;
-            }
+          }
+      }
 
-            // Sonuçları yazdır
+      return $explode;
+  }
 
-        }
 
 
-        public function ReturnProduct($url = '', $modelv = '', $istek = '', $SupplierId = '', $gettotal)
-        {
-            $model = $this->ProductJsonLoginCount($modelv);
+    public function ReturnProduct($url = '', $modelv = '', $istek = '',$SupplierId='',$gettotal)
+    {
+        $model = $this->ProductJsonLoginCount($modelv);
 
-            $jsonData = file_get_contents($url);
-            $decodedData = json_decode($jsonData, true);
-            $explode = explode(';', $modelv);
+        $jsonData = file_get_contents($url);
+        $decodedData = json_decode($jsonData, true);
+        $explode = explode(';', $modelv);
 
-            if (count($explode) == 2) {
-                $productValuesArray = [];
-                $decodedDataList = isset($decodedData[$explode[0]]) ? array_slice($decodedData[$explode[0]], 0, 1) : [];
+        if (count($explode)==2) {
+          $productValuesArray = [];
+          $decodedDataList = array_slice($decodedData[$explode[0]],0, 1);
+          foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
 
-                if (!empty($decodedDataList) && is_array($decodedDataList)) {
-                    foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
-                        if (is_array($valuedecodedData) && !empty($valuedecodedData)) {
-                            foreach ($istek as $istekler => $exp) {
-                                $giris = $this->firtDelete($exp);
-                                $Toplam = count($this->firtDelete($exp));
+                foreach ($istek as $istekler => $exp) {
+                  $giris=$this->firtDelete($exp);
 
-                                if ($Toplam == 1) {
-                                    if (isset($valuedecodedData[$giris[0]])) {
-                                        $productValues[$istekler] = $valuedecodedData[$giris[0]];
-                                    }
-                                }
+                  $Toplam=count($this->firtDelete($exp));
 
-                                // Diğer durumlar için gerekli işlemleri ekleyebilirsiniz
-                            }
+                      if ($Toplam==1) {
+
+                        if (isset($valuedecodedData[$giris[0]])) {
+                        $productValues[$istekler] = $valuedecodedData[$giris[0]];
                         }
-                    }
-                    print_r($productValues);
+
+
+
+                      }
+
+                      if ($Toplam==2) {
+                      //  echo "string";
+                        //$productValues[$istekler] = $valuedecodedData[$giris[0]];
+
+                      }
+
+                      if ($Toplam==3) {
+
+
+
+                      }
                 }
-            }
+              }
+                print_r($productValues);
         }
 
+    }
 }
