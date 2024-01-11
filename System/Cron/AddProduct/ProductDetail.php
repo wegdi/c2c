@@ -46,8 +46,7 @@ foreach ($Supplier as $key => $value) {
 
               //echo count($fieldArray);
               if (count($fieldArray) == 1) {
-                echo "string";
-                  $Urunler[$field] = $valueUrun[$fieldArray[0]];
+                  $Urunler[$field] = $valueUrun[$fieldArray];
               }
 
 
