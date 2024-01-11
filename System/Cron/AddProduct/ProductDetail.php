@@ -53,7 +53,7 @@ foreach ($suppliers as $supplier) {
 
         foreach ($decodedData[$explode[0]] as $key => $valueXbir) {
           foreach ($valueXbir as $valueUrunIC) {
-            print_R($valueUrunIC);
+          
               $Urunler = [];
 
               $productFields = [
