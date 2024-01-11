@@ -51,6 +51,7 @@ foreach ($suppliers as $supplier) {
         }
     } elseif (count($explode) == 2 && isset($decodedData[$explode[0]])) {
         foreach ($decodedData[$explode[0]] as $valueUrunIC) {
+          print_R($valueUrunIC);
             $Urunler = [];
 
             $productFields = [
