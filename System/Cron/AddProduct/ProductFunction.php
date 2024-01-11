@@ -68,7 +68,9 @@ class ProductJsonDecoder {
                       }
 
                       if ($Toplam==3) {
-                        print_r($giris);
+
+                        $sonuc=$giris[0];
+                        print_r($sonuc);  
 
                           foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
                                 print_r($valueUc[$giris[2]]);
