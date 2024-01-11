@@ -23,7 +23,9 @@ foreach ($Supplier as $key => $value) {
     // 2li Giriş
 
     if (count($explode) == 1) {
-        echo "string";
+      foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
+        print_R($valueUrun);
+      }
     }elseif (count($explode) == 2) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
