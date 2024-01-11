@@ -42,8 +42,12 @@ foreach ($Supplier as $key => $value) {
       ];
 
         foreach ($productFields as $field) {
-          echo $valueUrun[$field];
             $fieldArray = Parcala($valueUrun[$field]);
+
+              echo count($fieldArray);
+
+
+
 
         }
 
