@@ -24,7 +24,7 @@ foreach ($Supplier as $key => $value) {
 
 
               if (count($product_nexp) == 2) {
-                  $Urunler[] = ["product_name" => $valueUrun[end($product_nexp)]];
+                  $Urunler[] = ["product_name" => $valueUrunIC[end($product_nexp)]];
               }
           }
 
