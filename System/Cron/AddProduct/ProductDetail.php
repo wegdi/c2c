@@ -43,8 +43,8 @@ foreach ($Supplier as $key => $value) {
 
         foreach ($productFields as $field) {
             $fieldArray = Parcala($valueUrun[$field]);
-
-              echo count($fieldArray);
+            print_R($fieldArray);
+              //echo count($fieldArray);
 
 
 
