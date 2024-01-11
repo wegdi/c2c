@@ -27,7 +27,7 @@ foreach ($Supplier as $key => $value) {
               }
           }
 
-
+          print_R($Urunler);
 
         }
     }
