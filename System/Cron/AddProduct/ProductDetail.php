@@ -28,21 +28,33 @@ foreach ($Supplier as $key => $value) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
 
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
-                $product_name = Parcala($value["kdv"]);
+
+                $product_name = Parcala($value["product_name"]);
+                $product_description = Parcala($value["product_description"]);
 
                 if (count($product_name) == 1) {
                   // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
                   $Urunler["product_name"] = $valueUrunIC[$product_name[0]];
                 }elseif (count($product_name) == 2) {
-                  echo "string";
+                  //echo "string";
                 }elseif (count($product_name) == 3) {
                   foreach ($valueUrunIC[$product_name[0]] as $keyBirAlt => $valueBirAlt) {
-
                     $Urunler["product_name"] = $valueBirAlt[end($product_name)];
-
-
                   }
                 }
+
+
+                if (count($product_description) == 1) {
+                  // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
+                  $Urunler["product_description"] = $valueUrunIC[$product_description[0]];
+                }elseif (count($product_description) == 2) {
+                  //echo "string";
+                }elseif (count($product_description) == 3) {
+                  foreach ($valueUrunIC[$product_name[0]] as $keyBirAlt => $valueBirAlt) {
+                    $Urunler["product_description"] = $valueBirAlt[end($product_description)];
+                  }
+                }
+
                 print_R($Urunler);
 
             }
