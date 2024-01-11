@@ -73,7 +73,7 @@ class ProductJsonDecoder {
 
 
                         if (is_array($valuedecodedData[$giris[0]])) {
-                          print_r($valuedecodedData[$giris[0]]);
+                          //print_r($valuedecodedData[$giris[0]]);
                             /*  foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
                                   // Döngü içindeki işlemler
                               } */
