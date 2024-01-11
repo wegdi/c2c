@@ -9,10 +9,15 @@ echo rand();
 
 function Parcala($value = '')
 {
-    $parcala = explode(';', $value);
-    array_shift($parcala);
-    return $parcala;
+    if (strpos($value, ';') !== false) {
+        $parcala = explode(';', $value);
+        array_shift($parcala);
+        return $parcala;
+    } else {
+        return [$value];
+    }
 }
+
 
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
@@ -40,13 +45,13 @@ foreach ($Supplier as $key => $value) {
          $fieldArray = Parcala($valueUrun[$field]);
         //echo count($fieldArray);
          if (count($fieldArray) == 0) {
-             $Urunler[$field] = $valueUrun["product_name"];
+             $Urunler[$field] = $valueUrun[$fieldArray[0]];
          } elseif (count($fieldArray) == 3) {
 
          }
      }
 
-     print_r($Urunler);
+     //print_r($Urunler);
 
 
 
