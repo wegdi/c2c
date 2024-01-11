@@ -32,11 +32,7 @@ foreach ($Supplier as $key => $value) {
 
                   $Urunler["product_name"] = $valueUrunIC[$product_name[0]];
 
-                } elseif (count($product_nexp) == 2 && count($product_description_exp) == 2) {
-                    echo "3";
-                } elseif (count($product_nexp) == 3 && count($product_description_exp) == 3) {
-
-                }
+                } 
             }
         }
 
