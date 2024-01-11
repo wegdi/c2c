@@ -12,6 +12,7 @@ $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
 
+  echo URL.$value["SupplierFilePath"];
 
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
