@@ -40,6 +40,39 @@ foreach ($Supplier as $key => $value) {
 
               }
 
+
+
+
+            //Urun Acıklaması
+
+
+            $product_description = explode(';', $value["product_description"]);
+            array_shift($product_description);
+            if (count($product_description) == 1) {
+
+                $Urunler[] = ["product_description" => $valueUrunIC[end($product_description)]];
+
+
+            }elseif (count($product_description) == 2) {
+              echo "3";
+            }elseif (count($product_description) == 3) {
+              array_shift($product_description);
+              foreach ($valueUrunIC[$product_description[0]] as $keyIcler => $valueIcler) {
+
+                $Urunler[] = ["product_description" => $valueIcler[end($product_description)]];
+
+              }
+
+
+            }
+
+
+
+
+
+
+
+
           }
 
           print_R($Urunler);
