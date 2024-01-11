@@ -89,6 +89,4 @@ $jsonAllProducts = json_encode($allProducts, JSON_UNESCAPED_UNICODE);
 $filename = SYSTEM . 'Product/Json/all_products.json';
 file_put_contents($filename, $jsonAllProducts);
 
-// You can also print or do something else with $allProducts if needed
-print_r($allProducts);
 ?>
