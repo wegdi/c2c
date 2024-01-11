@@ -24,15 +24,15 @@ foreach ($Supplier as $key => $value) {
               array_shift($product_nexp);
               print_R(  $product_nexp);
 
-              /*
-              if (count($product_nexp) == 2) {
+
+              if (count($product_nexp) == 1) {
 
                   $Urunler[] = ["product_name" => $valueUrunIC[end($product_nexp)]];
 
 
-              }elseif (count($product_nexp) == 3) {
+              }elseif (count($product_nexp) == 2) {
                 echo "3";
-              }elseif (count($product_nexp) == 4) {
+              }elseif (count($product_nexp) == 3) {
                 array_shift($product_nexp);
                 foreach ($valueUrunIC[$product_nexp[0]] as $keyIcler => $valueIcler) {
 
@@ -41,10 +41,8 @@ foreach ($Supplier as $key => $value) {
                 }
 
 
-              }elseif (count($product_nexp) == 5) {
-                echo "5";
               }
-              */
+
           }
 
           print_R($Urunler);
