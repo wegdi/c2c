@@ -33,6 +33,8 @@ foreach ($Supplier as $key => $value) {
                 $product_description = Parcala($value["product_description"]);
                 $kdv = Parcala($value["kdv"]);
                 $manufacturer_name = Parcala($value["manufacturer_name"]);
+                $model = Parcala($value["model"]);
+
 
 
 
@@ -83,6 +85,18 @@ foreach ($Supplier as $key => $value) {
                   foreach ($valueUrunIC[$manufacturer_name[0]] as $keyBirAlt => $valueBirAlt) {
                     //print_R($valueBirAlt);
                     $Urunler["manufacturer_name"] = $valueBirAlt[end($manufacturer_name)];
+                  }
+                }
+
+                if (count($model) == 1) {
+                  // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
+                  $Urunler["model"] = $valueUrunIC[$model[0]];
+                }elseif (count($model) == 2) {
+                  //echo "string";
+                }elseif (count($model) == 3) {
+                  foreach ($valueUrunIC[$model[0]] as $keyBirAlt => $valueBirAlt) {
+                    //print_R($valueBirAlt);
+                    $Urunler["model"] = $valueBirAlt[end($model)];
                   }
                 }
                 print_R($Urunler);
