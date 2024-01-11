@@ -18,66 +18,38 @@ foreach ($Supplier as $key => $value) {
     if (count($explode) == 2) {
         $Urunler = [];
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-          foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
+            foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
 
-              $product_nexp = explode(';', $value["product_name"]);
-              array_shift($product_nexp);
-              if (count($product_nexp) == 1) {
+                // product_name ve product_description kontrolü
+                $product_nexp = explode(';', $value["product_name"]);
+                $product_description_exp = explode(';', $value["product_description"]);
 
-                  $Urunler[] = ["product_name" => $valueUrunIC[end($product_nexp)]];
-
-
-              }elseif (count($product_nexp) == 2) {
-                echo "3";
-              }elseif (count($product_nexp) == 3) {
                 array_shift($product_nexp);
-                foreach ($valueUrunIC[$product_nexp[0]] as $keyIcler => $valueIcler) {
+                array_shift($product_description_exp);
 
-                  $Urunler[] = ["product_name" => $valueIcler[end($product_nexp)]];
+                $productKey = end($product_nexp) . '_' . end($product_description_exp);
 
+                if (count($product_nexp) == 1 && count($product_description_exp) == 1) {
+                    $Urunler[$productKey] = [
+                        "product_name" => $valueUrunIC[end($product_nexp)],
+                        "product_description" => $valueUrunIC[end($product_description_exp)]
+                    ];
+                } elseif (count($product_nexp) == 2 && count($product_description_exp) == 2) {
+                    echo "3";
+                } elseif (count($product_nexp) == 3 && count($product_description_exp) == 3) {
+                    array_shift($product_nexp);
+                    array_shift($product_description_exp);
+                    foreach ($valueUrunIC[$product_nexp[0]] as $keyIcler => $valueIcler) {
+                        $Urunler[$productKey] = [
+                            "product_name" => $valueIcler[end($product_nexp)],
+                            "product_description" => $valueIcler[end($product_description_exp)]
+                        ];
+                    }
                 }
-
-
-              }
-
-
-
-
-            //Urun Acıklaması
-
-
-            $product_description = explode(';', $value["product_description"]);
-            array_shift($product_description);
-            if (count($product_description) == 1) {
-
-                $Urunler[] = ["product_description" => $valueUrunIC[end($product_description)]];
-
-
-            }elseif (count($product_description) == 2) {
-              echo "3";
-            }elseif (count($product_description) == 3) {
-              array_shift($product_description);
-              foreach ($valueUrunIC[$product_description[0]] as $keyIcler => $valueIcler) {
-
-                $Urunler[] = ["product_description" => $valueIcler[end($product_description)]];
-
-              }
-
-
             }
-
-
-
-
-
-
-
-
-          }
-
-          print_R($Urunler);
-
         }
+
+        print_r($Urunler);
     }
 }
 
