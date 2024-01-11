@@ -29,12 +29,10 @@ class ProductJsonDecoder {
             $decodedDataList = array_slice($decodedData[$explode[0]], 0, 1);
 
             foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
-                foreach ($istek as $istekler => $exp) {
-                    $explodebir = explode(';', $exp);
 
                     // Tüm istekler için aynı işlemi gerçekleştir
-                    $productValuesArray[$istekler] = isset($valuedecodedData[end($explodebir)]) ? $valuedecodedData[end($explodebir)] : null;
-                }
+                    $productValuesArray[$istekler] = $valuedecodedData["UrunAdi"];
+
             }
 
             print_r($productValuesArray);
