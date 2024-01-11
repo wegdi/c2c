@@ -54,6 +54,8 @@ foreach ($suppliers as $supplier) {
     }
 }
 
+print_R($allProducts);
+/*
 // $allProducts'ı JSON'a dönüştür
 $jsonAllProducts = json_encode($allProducts, JSON_UNESCAPED_UNICODE);
 
@@ -65,4 +67,5 @@ file_put_contents($filename, $jsonAllProducts);
 
 // İhtiyaç duyarsanız $allProducts'ı yazdırabilir veya başka bir şey yapabilirsiniz
 print_r($allProducts);
+*/
 ?>
