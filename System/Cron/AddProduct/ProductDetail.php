@@ -18,6 +18,8 @@ function Parcala($value = '')
     }
 }
 
+$allProducts = []; // Array to store all products
+
 $suppliers = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($suppliers as $supplier) {
@@ -47,16 +49,7 @@ foreach ($suppliers as $supplier) {
                 }
             }
 
-            // Convert $Urunler to JSON
-            $jsonUrunler = json_encode($Urunler, JSON_UNESCAPED_UNICODE);
-
-            // Generate a unique filename based on product_name and timestamp
-            $filename = SYSTEM . 'Product/Json/' . $Urunler['product_name'] . '_' . time() . '.json';
-
-            // Save JSON data to the file
-            file_put_contents($filename, $jsonUrunler);
-
-          //  print_r($Urunler);
+            $allProducts[] = $Urunler; // Add product to the array
         }
     } elseif (count($explode) == 2 && isset($decodedData[$explode[0]])) {
         foreach ($decodedData[$explode[0]] as $valueUrunIC) {
@@ -84,17 +77,20 @@ foreach ($suppliers as $supplier) {
                 }
             }
 
-            // Convert $Urunler to JSON
-            $jsonUrunler = json_encode($Urunler, JSON_UNESCAPED_UNICODE);
-
-            // Generate a unique filename based on product_name and timestamp
-            $filename = SYSTEM . 'Product/Json/' . $Urunler['product_name'] . '_' . time() . '.json';
-
-            // Save JSON data to the file
-            file_put_contents($filename, $jsonUrunler);
-
-          //  print_r($Urunler);
+            $allProducts[] = $Urunler; // Add product to the array
         }
     }
 }
+
+// Convert $allProducts to JSON
+$jsonAllProducts = json_encode($allProducts, JSON_UNESCAPED_UNICODE);
+
+// Generate a unique filename based on timestamp
+$filename = SYSTEM . 'Product/Json/all_products_' . time() . '.json';
+
+// Save JSON data to the file
+file_put_contents($filename, $jsonAllProducts);
+
+// You can also print or do something else with $allProducts if needed
+print_r($allProducts);
 ?>
