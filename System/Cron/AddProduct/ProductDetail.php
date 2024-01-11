@@ -44,11 +44,6 @@ foreach ($Supplier as $key => $value) {
         foreach ($productFields as $field) {
             $fieldArray = Parcala($valueUrun[$field]);
 
-            if (count($fieldArray) == 1) {
-                $Urunler[$field] = $fieldArray[0];
-            } elseif (count($fieldArray) == 3) {
-                // Handle the case when count is 3
-            }
         }
 
 
