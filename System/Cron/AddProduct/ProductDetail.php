@@ -51,7 +51,7 @@ foreach ($Supplier as $key => $value) {
                 }elseif (count($product_description) == 2) {
                   //echo "string";
                 }elseif (count($product_description) == 3) {
-                  foreach ($valueUrunIC[$product_name[0]] as $keyBirAlt => $valueBirAlt) {
+                  foreach ($valueUrunIC[$product_description[0]] as $keyBirAlt => $valueBirAlt) {
                     $Urunler["product_description"] = $valueBirAlt[end($product_description)];
                   }
                 }
