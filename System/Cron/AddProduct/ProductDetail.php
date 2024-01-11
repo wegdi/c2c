@@ -43,15 +43,18 @@ foreach ($Supplier as $key => $value) {
 
         foreach ($productFields as $field) {
             $fieldArray = Parcala($value[$field]);
-            print_R($fieldArray);
-              //echo count($fieldArray);
-            /*  if (count($fieldArray) == 1) {
-                  $Urunler[$field] = $valueUrun[$fieldArray[0]];
-              } */
 
+            if (count($fieldArray) == 1) {
+                $Urunler[$field] = $valueUrun[$fieldArray[0]];
+            } elseif (count($fieldArray) == 3) {
+                foreach ($valueUrunIC[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
+                    $Urunler[$field] = $valueBirAlt[end($fieldArray)];
+                }
+            }
 
 
         }
+          print_R($Urunler);
 
 
 
