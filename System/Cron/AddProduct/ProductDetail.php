@@ -7,14 +7,13 @@ $db = new General();
 $Product = new ProductJsonDecoder();
 echo rand();
 
-
-function Parcala($value='')
+function Parcala($value = '')
 {
   $parcala = explode(';', $value);
   array_shift($parcala);
   return $parcala;
-
 }
+
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
@@ -27,17 +26,16 @@ foreach ($Supplier as $key => $value) {
         $Urunler = [];
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
-                $product_name=Parcala($value["product_name"]);
-                if (count($product_name)==1) {
+                $product_name = Parcala($value["product_name"]);
 
-                  $Urunler["product_name"] = $valueUrunIC[$product_name[0]];
-
+                if (count($product_name) == 1) {
+                  // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
+                  $Urunler["product_name"][] = $valueUrunIC[$product_name[0]];
                 }
             }
-            print_r($Urunler);
-
         }
 
+        print_r($Urunler);
     }
 }
 
