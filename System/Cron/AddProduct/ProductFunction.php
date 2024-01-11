@@ -72,9 +72,7 @@ class ProductJsonDecoder {
                         $sonuc=$giris[0];
 
                           foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
-                            foreach ($valueUc as $key => $value) {
-                              print_r($value);
-                            }
+                              print_r($valueUc);
 
                                   //print_r($valueUc);
                                 //$productValues[$istekler] = $valueUc[$giris[2]];
