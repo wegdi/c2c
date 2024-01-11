@@ -10,6 +10,7 @@ echo rand();
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
+  print_R($key);
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $value["star"]);
@@ -25,6 +26,8 @@ foreach ($Supplier as $key => $value) {
               if (count($product_nexp) == 2) {
 
                   $Urunler[] = ["kdv" => $valueUrunIC[end($product_nexp)]];
+                  $Urunler[] = ["product_name" => $valueUrunIC[end($product_nexp)]];
+
 
               }elseif (count($product_nexp) == 3) {
                 echo "3";
@@ -32,7 +35,9 @@ foreach ($Supplier as $key => $value) {
                 array_shift($product_nexp);
 
                 foreach ($valueUrunIC[$product_nexp[0]] as $keyIcler => $valueIcler) {
-                $Urunler[] = ["kdv" => $valueIcler[end($product_nexp)]];
+
+                  $Urunler[] = ["kdv" => $valueIcler[end($product_nexp)]];
+
                 }
 
 
