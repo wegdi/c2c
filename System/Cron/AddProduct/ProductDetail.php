@@ -31,7 +31,7 @@ foreach ($Supplier as $key => $value) {
               }elseif (count($product_nexp) == 4) {
                 array_shift($product_nexp);
 
-                foreach ($valueUrunIC[$product_nexp[1]] as $key => $value) {
+                foreach ($valueUrunIC[$product_nexp[0]] as $key => $value) {
                   print_R($value);
                 }
 
