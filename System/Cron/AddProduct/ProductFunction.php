@@ -71,13 +71,14 @@ class ProductJsonDecoder {
 
 
                         if (is_array($valuedecodedData[$giris[0]])) {
-    foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
-        // Döngü içindeki işlemler
-    }
-} else {
-    // Dizinin belirtilen anahtarına sahip değeri bulunmuyor veya değer bir dizi değil.
-    // Bu duruma uygun bir işlem yapılabilir.
-}
+                          print_r($valuedecodedData[$giris[0]]);
+                            /*  foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
+                                  // Döngü içindeki işlemler
+                              } */
+                          } else {
+                              // Dizinin belirtilen anahtarına sahip değeri bulunmuyor veya değer bir dizi değil.
+                              // Bu duruma uygun bir işlem yapılabilir.
+                          }
 
 
 
