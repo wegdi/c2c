@@ -18,7 +18,6 @@ function Parcala($value = '')
     }
 }
 
-
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
@@ -28,69 +27,61 @@ foreach ($Supplier as $key => $value) {
     // 2li Giriş
 
     if (count($explode) == 1) {
-      foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-
-
-        $Urunler = [];
-
-      $productFields = [
-          "product_name", "product_description", "product_meta_description", "product_meta_keyword",
-          "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
-          "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
-          "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
-          "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
-      ];
-
-        foreach ($productFields as $field) {
-            $fieldArray = Parcala($value[$field]);
-
-            if (count($fieldArray) == 1) {
-                $Urunler[$field] = $valueUrun[$fieldArray[0]];
-            }elseif (count($fieldArray) == 2) {
-                foreach ($valueUrun[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
-                    $Urunler[$field] = $valueBirAlt[end($fieldArray)];
-                }
-            }
-
-
-        }
-          print_R($Urunler);
-
-
-
-
-
-
-
-
-      }
-    }elseif (count($explode) == 2) {
-        foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-            foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
+        if (isset($decodedData[$explode[0]])) {
+            foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
                 $Urunler = [];
 
                 $productFields = [
-                  "product_name", "product_description", "product_meta_description", "product_meta_keyword",
-                  "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
-                  "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
-                  "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
-                  "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
-                  ];
+                    "product_name", "product_description", "product_meta_description", "product_meta_keyword",
+                    "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
+                    "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
+                    "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
+                    "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
+                ];
 
-
-                foreach ($fields as $field) {
+                foreach ($productFields as $field) {
                     $fieldArray = Parcala($value[$field]);
 
                     if (count($fieldArray) == 1) {
-                        $Urunler[$field] = $valueUrunIC[$fieldArray[0]];
-                    } elseif (count($fieldArray) == 3) {
-                        foreach ($valueUrunIC[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
+                        $Urunler[$field] = $valueUrun[$fieldArray[0]];
+                    } elseif (count($fieldArray) == 2) {
+                        foreach ($valueUrun[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
                             $Urunler[$field] = $valueBirAlt[end($fieldArray)];
                         }
                     }
                 }
 
                 print_r($Urunler);
+            }
+        }
+    } elseif (count($explode) == 2) {
+        if (isset($decodedData[$explode[0]])) {
+            foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
+                foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
+                    $Urunler = [];
+
+                    $productFields = [
+                        "product_name", "product_description", "product_meta_description", "product_meta_keyword",
+                        "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
+                        "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
+                        "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
+                        "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
+                    ];
+
+                    foreach ($productFields as $field) {
+                        $fieldArray = Parcala($value[$field]);
+
+                        if (count($fieldArray) == 1) {
+                            $Urunler[$field] = $valueUrunIC[$fieldArray[0]];
+                        } elseif (count($fieldArray) == 3) {
+                            foreach ($valueUrunIC[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
+                                $Urunler[$field] = $valueBirAlt[end($fieldArray)];
+                            }
+                        }
+                    }
+
+                    print_r($Urunler);
+                }
             }
         }
     }
