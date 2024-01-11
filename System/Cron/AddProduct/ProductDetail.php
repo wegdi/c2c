@@ -30,7 +30,10 @@ foreach ($Supplier as $key => $value) {
                 echo "3";
               }elseif (count($product_nexp) == 4) {
                 array_shift($product_nexp);
-                print_R($product_nexp);
+
+                foreach ($valueUrunIC[$product_nexp[1]] as $key => $value) {
+                  print_R($value);
+                }
 
 
               }elseif (count($product_nexp) == 5) {
