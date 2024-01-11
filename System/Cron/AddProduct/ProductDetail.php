@@ -56,7 +56,7 @@ foreach ($suppliers as $supplier) {
             // Save JSON data to the file
             file_put_contents($filename, $jsonUrunler);
 
-            print_r($Urunler);
+          //  print_r($Urunler);
         }
     } elseif (count($explode) == 2 && isset($decodedData[$explode[0]])) {
         foreach ($decodedData[$explode[0]] as $valueUrunIC) {
@@ -93,7 +93,7 @@ foreach ($suppliers as $supplier) {
             // Save JSON data to the file
             file_put_contents($filename, $jsonUrunler);
 
-            print_r($Urunler);
+          //  print_r($Urunler);
         }
     }
 }
