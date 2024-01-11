@@ -48,12 +48,11 @@ class ProductJsonDecoder {
         $jsonData = file_get_contents($url);
         $decodedData = json_decode($jsonData, true);
         $explode = explode(';', $modelv);
-        print_R($explode);
         if (count($explode)==2) {
           $productValuesArray = [];
           $decodedDataList = array_slice($decodedData[$explode[0]],0, 1);
           foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
-
+                  print_r($valuedecodedData);
                 foreach ($istek as $istekler => $exp) {
 
                 }
