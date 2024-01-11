@@ -25,8 +25,9 @@ foreach ($Supplier as $key => $value) {
     if (count($explode) == 2) {
 
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
+          $Urunler = [];
+
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
-              $Urunler = [];
                 $product_name = Parcala($value["product_name"]);
 
                 if (count($product_name) == 1) {
