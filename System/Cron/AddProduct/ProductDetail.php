@@ -29,6 +29,7 @@ foreach ($Supplier as $key => $value) {
 
     if (count($explode) == 1) {
       foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
+        print_r($valueUrun);
 
         $Urunler = [];
 
@@ -49,7 +50,6 @@ foreach ($Supplier as $key => $value) {
       }
   }
 
-  print_r($Urunler);
 
 
 
