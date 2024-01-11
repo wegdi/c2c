@@ -29,6 +29,7 @@ foreach ($suppliers as $supplier) {
 
     if (isset($decodedData[$explode[0]])) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
+          print_R($valueUrun);
             $Urunler = [];
 
             $productFields = [
