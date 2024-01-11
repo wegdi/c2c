@@ -70,10 +70,10 @@ class ProductJsonDecoder {
                       if ($Toplam==3) {
 
                           foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
-
+                              echo $giris[1];
                               $productValues[$istekler] = $valueUc[$giris[1]];
-                              echo $valueUc[$giris[1]];
-                                  print_R($exp);
+                              //echo $valueUc[$giris[1]];
+                                  //print_R($valueUc);
                           }
 
                         echo "<br>";
