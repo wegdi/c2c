@@ -42,7 +42,7 @@ foreach ($Supplier as $key => $value) {
       ];
 
         foreach ($productFields as $field) {
-            $fieldArray = Parcala($valueUrun[$field]);
+            $fieldArray = Parcala($value[$field]);
             print_R($fieldArray);
               //echo count($fieldArray);
             /*  if (count($fieldArray) == 1) {
@@ -53,7 +53,7 @@ foreach ($Supplier as $key => $value) {
 
         }
 
-        
+
 
 
 
