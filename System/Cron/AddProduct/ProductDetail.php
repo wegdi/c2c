@@ -36,7 +36,7 @@ foreach ($Supplier as $key => $value) {
                 }elseif (count($product_name) == 2) {
                   echo "string";
                 }elseif (count($product_name) == 3) {
-                  foreach ($valueUrunIC as $keyBirAlt => $valueBirAlt) {
+                  foreach ($valueUrunIC[$product_name[0]] as $keyBirAlt => $valueBirAlt) {
                       print_r($valueBirAlt);
                   }
                 }
