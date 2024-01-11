@@ -29,7 +29,7 @@ foreach ($Supplier as $key => $value) {
 
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
                 $product_name = Parcala($value["kdv"]);
-
+                echo $product_name;
                 if (count($product_name) == 1) {
                   // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
                   $Urunler["product_name"] = $valueUrunIC[$product_name[0]];
