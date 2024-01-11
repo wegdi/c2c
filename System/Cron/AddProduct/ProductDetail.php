@@ -32,12 +32,12 @@ foreach ($Supplier as $key => $value) {
 
                 if (count($product_name)==1) {
 
-                  $Urunler["product_name"] => $valueIcler[end($product_name)],
+                  $Urunler["product_name"] = $valueIcler[end($product_name)];
 
                 } elseif (count($product_nexp) == 2 && count($product_description_exp) == 2) {
                     echo "3";
                 } elseif (count($product_nexp) == 3 && count($product_description_exp) == 3) {
-                    
+
                 }
             }
         }
