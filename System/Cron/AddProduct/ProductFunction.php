@@ -57,9 +57,9 @@ class ProductJsonDecoder {
 
                       if ($Toplam==1) {
                         print_R($giris[0]);
-                        /*if (is_array($valuedecodedData[$giris[0]])) {
+                        if (in_array($valuedecodedData[$giris[0]],$istekler)) {
                           $productValues[$istekler] = $valuedecodedData[$giris[0]];
-                        } */
+                        }
 
 
                       }
