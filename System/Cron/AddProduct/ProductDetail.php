@@ -23,9 +23,9 @@ foreach ($Supplier as $key => $value) {
 
     // 2li Giriş
     if (count($explode) == 2) {
+      $Urunler = [];
 
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-          $Urunler = [];
 
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
                 $product_name = Parcala($value["product_name"]);
