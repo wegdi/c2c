@@ -33,6 +33,7 @@ foreach ($Supplier as $key => $value) {
 
 
       }
+      print_r($Urunler);
     }
 
 
