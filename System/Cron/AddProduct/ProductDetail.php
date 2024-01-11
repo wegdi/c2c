@@ -28,7 +28,6 @@ foreach ($Supplier as $key => $value) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
                 $product_name=Parcala($value["product_name"]);
-                print_R($product_name);
                 if (count($product_name)==1) {
 
                   $Urunler["product_name"] = $valueIcler[$product_name[0]];
