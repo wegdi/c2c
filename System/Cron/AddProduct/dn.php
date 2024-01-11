@@ -27,78 +27,42 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $supplier["star"]);
 
+    $keys = [
+        "product_name", "product_description", "product_meta_description", "product_meta_keyword",
+        "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
+        "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
+        "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
+        "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
+    ];
 
-    if (count($explode)==1) {
-        foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-            $Urunler = [];
+    if (isset($decodedData[$explode[0]])) {
+        $dataToIterate = count($explode) == 1 ? [$decodedData[$explode[0]]] : $decodedData[$explode[0]];
 
-            $productFields = [
-                "product_name", "product_description", "product_meta_description", "product_meta_keyword",
-                "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
-                "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
-                "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
-                "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
-            ];
+        foreach ($dataToIterate as $value) {
+            foreach ($value as $keyUrun => $valueUrun) {
+                $Urunler = [];
 
-            foreach ($productFields as $field) {
-                $fieldArray = Parcala($supplier[$field]);
+                foreach ($keys as $field) {
+                    $fieldArray = Parcala($supplier[$field]);
 
-                if (count($fieldArray) == 1 && isset($valueUrun[$fieldArray[0]])) {
-                    $Urunler[$field] = $valueUrun[$fieldArray[0]];
-                } elseif (count($fieldArray) == 2) {
-                    $fieldValue = isset($valueUrun[$fieldArray[0]]) ? $valueUrun[$fieldArray[0]] : '';
+                    if (count($fieldArray) == 1 && isset($valueUrun[$fieldArray[0]])) {
+                        $Urunler[$field] = $valueUrun[$fieldArray[0]];
+                    } elseif (count($fieldArray) == 2) {
+                        $fieldValue = isset($valueUrun[$fieldArray[0]]) ? $valueUrun[$fieldArray[0]] : '';
 
-                    if (is_array($fieldValue) && isset($fieldValue[0])) {
-                        $Urunler[$field] = current($fieldValue);
+                        if (is_array($fieldValue) && isset($fieldValue[0])) {
+                            $Urunler[$field] = current($fieldValue);
+                        } else {
+                            $Urunler[$field] = $fieldValue;
+                        }
                     } else {
-                        $Urunler[$field] = $fieldValue;
+                        $Urunler[$field] = '';
                     }
-                } else {
-                    // Eğer anahtar dizide yoksa, varsayılan bir değer ata
-                    $Urunler[$field] = '';
                 }
+
+                $allProducts[] = $Urunler; // Ürünü diziye ekle
             }
-
-            $allProducts[] = $Urunler; // Ürünü diziye ekle
         }
-    }elseif (count($explode)==2) {
-
-      foreach ($decodedData[$explode[0]] as $key => $value) {
-        foreach ($value as $keyUrun => $valueUrun) {
-            $Urunler = [];
-
-            $productFields = [
-                "product_name", "product_description", "product_meta_description", "product_meta_keyword",
-                "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
-                "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
-                "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
-                "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
-            ];
-
-            foreach ($productFields as $field) {
-                $fieldArray = Parcala($supplier[$field]);
-
-                if (count($fieldArray) == 1 && isset($valueUrun[$fieldArray[0]])) {
-                    $Urunler[$field] = $valueUrun[$fieldArray[0]];
-                } elseif (count($fieldArray) == 2) {
-                    $fieldValue = isset($valueUrun[$fieldArray[0]]) ? $valueUrun[$fieldArray[0]] : '';
-
-                    if (is_array($fieldValue) && isset($fieldValue[0])) {
-                        $Urunler[$field] = current($fieldValue);
-                    } else {
-                        $Urunler[$field] = $fieldValue;
-                    }
-                } else {
-                    // Eğer anahtar dizide yoksa, varsayılan bir değer ata
-                    $Urunler[$field] = '';
-                }
-            }
-
-            $allProducts[] = $Urunler; // Ürünü diziye ekle
-        }
-      }
-
-
     }
 }
 
