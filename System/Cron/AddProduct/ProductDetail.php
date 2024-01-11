@@ -27,7 +27,7 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $supplier["star"]);
 
-    if (count($explode) == 1 && isset($decodedData[$explode[0]])) {
+    if (count($explode) == 1) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
             $Urunler = [];
 
@@ -51,7 +51,7 @@ foreach ($suppliers as $supplier) {
 
             $allProducts[] = $Urunler; // Add product to the array
         }
-    } elseif (count($explode) == 2 && isset($decodedData[$explode[0]])) {
+    } elseif (count($explode) == 2) {
         foreach ($decodedData[$explode[0]] as $valueUrunIC) {
             $Urunler = [];
 
