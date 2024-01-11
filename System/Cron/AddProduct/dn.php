@@ -40,14 +40,21 @@ foreach ($suppliers as $supplier) {
             ];
 
             foreach ($productFields as $field) {
-                $fieldArray = Parcala($supplier[$field]);
+        $fieldArray = Parcala($supplier[$field]);
 
-                if (count($fieldArray) == 1) {
-                    $Urunler[$field] = $valueUrun[$fieldArray[0]];
-                } elseif (count($fieldArray) == 2) {
-                    $Urunler[$field] = is_array(current($valueUrun[$fieldArray[0]])) ? current($valueUrun[$fieldArray[0]]) : $valueUrun[$fieldArray[0]];
-                }
+        if (count($fieldArray) == 1 && isset($valueUrun[$fieldArray[0]])) {
+            $Urunler[$field] = $valueUrun[$fieldArray[0]];
+        } elseif (count($fieldArray) == 2) {
+            $fieldValue = isset($valueUrun[$fieldArray[0]]) ? $valueUrun[$fieldArray[0]] : '';
+
+            if (is_array($fieldValue)) {
+                $Urunler[$field] = current($fieldValue);
+            } else {
+                $Urunler[$field] = $fieldValue;
             }
+        }
+    }
+
 
             $allProducts[] = $Urunler; // Ürünü diziye ekle
         }
