@@ -17,7 +17,7 @@ foreach ($Supplier as $key => $value) {
     // 2li Giriş
     if (count($explode) == 2) {
         $Urunler = [];
-        foreach ($decodedData["Urunler"] as $keyUrun => $valueUrun) {
+        foreach ($decodedData["Urun"] as $keyUrun => $valueUrun) {
           print_r($valueUrun);
 
             /*$product_nexp = explode(';', $value["product_name"]);
