@@ -21,7 +21,6 @@ foreach ($Supplier as $key => $value) {
           foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
 
               $product_nexp = explode(';', $value["kdv"]);
-              print_R($product_nexp);
 
               if (count($product_nexp) == 2) {
 
@@ -30,6 +29,8 @@ foreach ($Supplier as $key => $value) {
               }elseif (count($product_nexp) == 3) {
                 echo "3";
               }elseif (count($product_nexp) == 4) {
+                array_shift($product_nexp);
+                print_R($product_nexp);
 
 
               }elseif (count($product_nexp) == 5) {
