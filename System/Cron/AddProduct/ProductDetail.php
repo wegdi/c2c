@@ -46,12 +46,13 @@ foreach ($Supplier as $key => $value) {
                         $Urunler[$field] = $valueUrun[$fieldArray[0]];
                     } elseif (count($fieldArray) == 2) {
                       foreach ($valueUrun[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
-                          print_r($valueBirAlt);
+                        $Urunler[$field] = $valueBirAlt;
+
                       }
                     }
                 }
 
-                //print_r($Urunler);
+                print_r($Urunler);
             }
         }
     } elseif (count($explode) == 2) {
