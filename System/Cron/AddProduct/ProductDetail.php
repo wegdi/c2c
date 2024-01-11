@@ -40,7 +40,7 @@ foreach ($Supplier as $key => $value) {
          $fieldArray = Parcala($valueUrun[$field]);
         //echo count($fieldArray);
          if (count($fieldArray) == 0) {
-             $Urunler[$field] = $valueUrun[$field];
+             $Urunler[$field] = $valueUrun["product_name"];
          } elseif (count($fieldArray) == 3) {
 
          }
