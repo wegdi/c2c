@@ -32,6 +32,9 @@ foreach ($Supplier as $key => $value) {
                 $product_name = Parcala($value["product_name"]);
                 $product_description = Parcala($value["product_description"]);
                 $kdv = Parcala($value["kdv"]);
+                $manufacturer_name = Parcala($value["manufacturer_name"]);
+
+
 
                 if (count($product_name) == 1) {
                   // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
@@ -70,6 +73,18 @@ foreach ($Supplier as $key => $value) {
                   }
                 }
 
+
+                if (count($manufacturer_name) == 1) {
+                  // Her ürün adını ayrı bir dizi elemanı olarak ekleyin
+                  $Urunler["manufacturer_name"] = $valueUrunIC[$manufacturer_name[0]];
+                }elseif (count($manufacturer_name) == 2) {
+                  //echo "string";
+                }elseif (count($manufacturer_name) == 3) {
+                  foreach ($valueUrunIC[$manufacturer_name[0]] as $keyBirAlt => $valueBirAlt) {
+                    //print_R($valueBirAlt);
+                    $Urunler["manufacturer_name"] = $valueBirAlt[end($manufacturer_name)];
+                  }
+                }
                 print_R($Urunler);
 
             }
