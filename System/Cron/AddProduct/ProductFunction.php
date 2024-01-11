@@ -32,9 +32,12 @@ class ProductJsonDecoder {
                 foreach ($istek as $istekler => $exp) {
 
                     $explodebir = explode(';', $exp);
-                    print_r($explodebir);
 
-                    //$productValuesArray[$istekler] = $valuedecodedData[$exp];
+                    if (count($explodebir)==2) {
+                      $productValuesArray[$istekler] = $valuedecodedData[end($explodebir)];
+                    }
+
+                    //
 
                 }
               }
