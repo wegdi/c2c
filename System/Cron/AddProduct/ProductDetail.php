@@ -77,6 +77,8 @@ foreach ($suppliers as $supplier) {
                 }
             }
 
+            print_R($Urunler);
+
             $allProducts[] = $Urunler; // Add product to the array
         }
     }
