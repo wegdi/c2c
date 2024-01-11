@@ -20,7 +20,7 @@ foreach ($Supplier as $key => $value) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
           foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
 
-            $product_nexp = explode(';', $UrunIC["product_name"]);
+            $product_nexp = explode(';', $value["product_name"]);
             print_R($product_nexp);
 
               if (count($product_nexp) == 2) {
