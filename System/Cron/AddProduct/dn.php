@@ -27,9 +27,9 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $supplier["star"]);
 
+    echo count($explode);
     if (isset($decodedData[$explode[0]])) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
-          print_R($valueUrun);
             $Urunler = [];
 
             $productFields = [
