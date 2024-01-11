@@ -17,14 +17,15 @@ foreach ($Supplier as $key => $value) {
     // 2li Giriş
     if (count($explode) == 2) {
         $Urunler = [];
-        foreach ($decodedData[$explode[0]$explode[1]] as $keyUrun => $valueUrun) {
-            $product_nexp = explode(';', $value["product_name"]);
+        foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
+          print_r($valueUrun);
+
+            /*$product_nexp = explode(';', $value["product_name"]);
             $product_name=end($product_nexp);
             if (count($product_nexp) == 2) {
                 $Urunler[] = ["product_name" => $valueUrun[$product_name]];
-            }
+            }*/
         }
-        print_r($Urunler);
     }
 }
 
