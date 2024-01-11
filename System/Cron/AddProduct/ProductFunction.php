@@ -30,10 +30,13 @@ class ProductJsonDecoder {
             $explode = explode(';', $value);
 
             // İlk öğeyi sil
-            array_shift($explode);
+            if (in_array($explode)) {
+              array_shift($explode);
+                return $explode;
+            }
 
             // Sonuçları yazdır
-            return $explode;
+
         }
 
 
