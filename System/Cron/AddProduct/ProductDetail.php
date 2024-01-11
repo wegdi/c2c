@@ -11,7 +11,6 @@ echo rand();
 function Parcala($value='')
 {
   $parcala = explode(';', $value);
-
   array_shift($parcala);
   return $parcala;
 
@@ -29,7 +28,7 @@ foreach ($Supplier as $key => $value) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
             foreach ($valueUrun as $keyUrunIC => $valueUrunIC) {
                 $product_name=Parcala($value["product_name"]);
-
+                print_R($product_name);
                 if (count($product_name)==1) {
 
                   $Urunler["product_name"] = $valueIcler[end($product_name)];
