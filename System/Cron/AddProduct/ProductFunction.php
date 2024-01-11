@@ -70,13 +70,15 @@ class ProductJsonDecoder {
                       if ($Toplam==3) {
 
                         $sonuc=$giris[0];
-                          foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
-
-                                  //print_r($valueUc);
-                              $productValues[$istekler] = $valueUc[end($giris)];
-                              //echo $valueUc[$giris[1]];
-                                  //print_R($valueUc);
-                          }
+                        foreach ($valuedecodedData[$giris[0]] as $keyUc => $valueUc) {
+  // $giris[1] dizinin bir öğesi olarak var mı kontrol et
+  if (isset($valueUc[$giris[1]])) {
+      $productValues[$istekler] = $valueUc[$giris[1]];
+  } else {
+      // Eğer belirtilen öğe bulunmuyorsa, varsayılan bir değer ata veya hata işleme yap
+      // Örneğin: $productValues[$istekler] = 'Varsayılan Değer';
+  }
+}
 
 
                         echo "<br>";
@@ -88,92 +90,5 @@ class ProductJsonDecoder {
                 print_r($productValues);
         }
 
-
-      //  print_r($productValues);
-        /*if ($model == 2) {
-
-            $explode = explode(';', $modelv);
-            $one = $explode[0];
-            $two = $explode[1];
-
-
-            if ($gettotal == 1) {
-              $start = 0;
-              $part = ceil(count($decodedData[$one]) / 100);
-            } else {
-                $carpan=$gettotal-1;
-                $start = ceil(count($decodedData[$one]) / 100)*$carpan;
-                $part = ceil(count($decodedData[$one]) / 100)*$gettotal;
-            }
-
-            $decodedDataList = array_slice($decodedData[$one],$start, $part);
-            foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
-                $productValues = [];
-                foreach ($istek as $istekler => $exp) {
-                    $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
-                }
-
-                $SupplierAr = array('SupplierCode' => $SupplierId );
-                $productValuesArray[] =array_merge($SupplierAr,$productValues);
-            }
-        } elseif ($model == 3) {
-          $explode = explode(';', $modelv);
-          $one = $explode[0];
-          $two = $explode[1];
-          $tree = $explode[2];
-
-
-          if ($gettotal == 1) {
-            $start = 0;
-            $part = ceil(count($decodedData[$one]) / 200);
-          } else {
-              $carpan=$gettotal-1;
-              $start = ceil(count($decodedData[$one]) / 200)*$carpan;
-              $part = ceil(count($decodedData[$one]) / 200)*$gettotal;
-          }
-
-          $decodedDataList = array_slice($decodedData[$one][$two],$start, $part);
-          foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
-              $productValues = [];
-              foreach ($istek as $istekler => $exp) {
-                  $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
-              }
-
-              $SupplierAr = array('SupplierCode' => $SupplierId );
-              $productValuesArray[] =array_merge($SupplierAr,$productValues);
-          }
-        } elseif ($model == 4) {
-          $explode = explode(';', $modelv);
-          $one = $explode[0];
-          $two = $explode[1];
-          $tree = $explode[2];
-          $four = $explode[3];
-
-          echo "string";
-
-          if ($gettotal == 1) {
-            $start = 0;
-            $part = ceil(count($decodedData[$one]) / 200);
-          } else {
-              $carpan=$gettotal-1;
-              $start = ceil(count($decodedData[$one]) / 200)*$carpan;
-              $part = ceil(count($decodedData[$one]) / 200)*$gettotal;
-          }
-
-        //  $decodedDataList = array_slice($decodedData[$one],$start, $part);
-          print_r(  $decodedData);
-          foreach ($decodedDataList as $keydecodedData => $valuedecodedData) {
-            print_r($valuedecodedData);
-              $productValues = [];
-              foreach ($istek as $istekler => $exp) {
-                  $productValues[$istekler] = $valuedecodedData[$this->ProductJsonLoginEnd($exp)];
-              }
-
-              $SupplierAr = array('SupplierCode' => $SupplierId );
-              $productValuesArray[] =array_merge($SupplierAr,$productValues);
-          }
-        }
-
-        return $productValuesArray; */
     }
 }
