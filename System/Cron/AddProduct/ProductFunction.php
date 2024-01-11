@@ -57,14 +57,21 @@ class ProductJsonDecoder {
 
                       if ($Toplam==1) {
 
+                        if (isset($valuedecodedData[$giris[0]])) {
                         $productValues[$istekler] = $valuedecodedData[$giris[0]];
+                        }
 
 
-                      }elseif ($Toplam==2) {
+
+                      }
+
+                      if ($Toplam==2) {
                       //  echo "string";
                         //$productValues[$istekler] = $valuedecodedData[$giris[0]];
 
-                      }elseif ($Toplam==3) {
+                      }
+
+                      if ($Toplam==3) {
 
 
                         if (is_array($valuedecodedData[$giris[0]])) {
