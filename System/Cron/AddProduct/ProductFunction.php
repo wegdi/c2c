@@ -30,7 +30,9 @@ class ProductJsonDecoder {
           foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
 
                 foreach ($istek as $istekler => $exp) {
-                  print_r($exp);
+
+                    $explodebir = explode(';', $exp);
+                    print_r($explodebir);
 
                     //$productValuesArray[$istekler] = $valuedecodedData[$exp];
 
