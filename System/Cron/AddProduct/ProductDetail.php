@@ -46,7 +46,7 @@ foreach ($Supplier as $key => $value) {
                         $Urunler[$field] = $valueUrun[$fieldArray[0]];
                     } elseif (count($fieldArray) == 2) {
                       foreach ($valueUrun[$fieldArray[0]] as $keyBirAlt => $valueBirAlt) {
-                          print_r($valueBirAlt);
+                          print_r($valueBirAlt);sd
                       }
                     }
                 }
