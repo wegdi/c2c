@@ -16,7 +16,7 @@ foreach ($Supplier as $key => $value) {
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $value["star"]);
-    PRİNT_R($explode);
+    print_r($explode);
 
 
 
