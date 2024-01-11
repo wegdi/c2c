@@ -32,11 +32,12 @@ foreach ($Supplier as $key => $value) {
 
                   $Urunler["product_name"] = $valueUrunIC[$product_name[0]];
 
-                } 
+                }
             }
+            print_r($Urunler);
+
         }
 
-        print_r($Urunler);
     }
 }
 
