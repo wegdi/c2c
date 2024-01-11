@@ -31,11 +31,11 @@ class ProductJsonDecoder {
             foreach ($decodedDataList[$explode[1]] as $keydecodedData => $valuedecodedData) {
 
                     // Tüm istekler için aynı işlemi gerçekleştir
-                    $productValuesArray[$istekler] = $valuedecodedData["UrunAdi"];
+                    $productValuesArray["UrunAdi"] = $valuedecodedData["UrunAdi"];
 
             }
+            print_R($productValuesArray);
 
-            print_r($productValuesArray);
         }
     }
 
