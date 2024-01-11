@@ -30,7 +30,7 @@ foreach ($Supplier as $key => $value) {
                 $product_name=Parcala($value["product_name"]);
                 echo $product_name[0];
                 if (count($product_name)==1) {
-
+                  echo "string";
                   $Urunler["product_name"] = $valueIcler[$product_name[0]];
 
                 } elseif (count($product_nexp) == 2 && count($product_description_exp) == 2) {
