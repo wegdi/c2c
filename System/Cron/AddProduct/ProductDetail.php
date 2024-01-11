@@ -7,39 +7,25 @@ $db = new General();
 $Product = new ProductJsonDecoder();
 echo rand();
 
-
 $Supplier = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($Supplier as $key => $value) {
-
-
     $jsonData = file_get_contents(URL.$value["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
-    $explode = explode(';',$value["star"]);
+    $explode = explode(';', $value["star"]);
 
-    //2li Giriş
-    if (count($explode)==2) {
-      $Urunler=[];
-      foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
+    // 2li Giriş
+    if (count($explode) == 2) {
+        $Urunler = [];
+        foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
+            $product_nexp = explode(';', $value["product_name"]);
 
-        $product_nexp = explode(';',$value["product_name"]);
-
-        if (count($product_nexp)==2) {
-          $Urunler["product_name"] = $valueUrun[end($product_nexp)];
+            if (count($product_nexp) == 2) {
+                $Urunler[] = ["product_name" => $valueUrun[end($product_nexp)]];
+            }
         }
-
-
-
-
-
-      }
-      print_r($Urunler);
+        print_r($Urunler);
     }
-
-
-
-
-
 }
 
 // $ProductData dizisini ekrana yazdırma
