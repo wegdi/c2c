@@ -47,6 +47,9 @@ foreach ($Supplier as $key => $value) {
            }
        }
 
+       print_r($Urunler);
+
+
 
       }
     }elseif (count($explode) == 2) {
