@@ -18,8 +18,6 @@ function Parcala($value = '')
     }
 }
 
-$allProducts = []; // Array to store all products
-
 $suppliers = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($suppliers as $supplier) {
@@ -27,7 +25,7 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $supplier["star"]);
 
-    if (count($explode) == 1) {
+    if (count($explode) == 1 && isset($decodedData[$explode[0]])) {
         foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
             $Urunler = [];
 
@@ -49,9 +47,9 @@ foreach ($suppliers as $supplier) {
                 }
             }
 
-            $allProducts[] = $Urunler; // Add product to the array
+            print_r($Urunler);
         }
-    } elseif (count($explode) == 2) {
+    } elseif (count($explode) == 2 && isset($decodedData[$explode[0]])) {
         foreach ($decodedData[$explode[0]] as $valueUrunIC) {
             $Urunler = [];
 
@@ -68,27 +66,18 @@ foreach ($suppliers as $supplier) {
 
                 if (count($fieldArray) == 1) {
                     $Urunler[$field] = $valueUrunIC[$fieldArray[0]];
-                } elseif (count($fieldArray) == 2) {
-                    $Urunler[$field] = current($valueUrunIC[$fieldArray[0]]);
-                } elseif (count($fieldArray) == 3) {
+                }elseif (count($fieldArray) == 2) {
+                    $Urunler[$field] = current($valueBirAlt[$fieldArray[0]]);
+                }
+                elseif (count($fieldArray) == 3) {
                     foreach ($valueUrunIC[$fieldArray[0]] as $valueBirAlt) {
                         $Urunler[$field] = $valueBirAlt[end($fieldArray)];
                     }
                 }
             }
 
-            print_R($Urunler);
-
-            $allProducts[] = $Urunler; // Add product to the array
+            print_r($Urunler);
         }
     }
 }
-
-// Convert $allProducts to JSON
-$jsonAllProducts = json_encode($allProducts, JSON_UNESCAPED_UNICODE);
-
-// Save JSON data to the file (overwrite the existing file)
-$filename = SYSTEM . 'Product/Json/all_products.json';
-file_put_contents($filename, $jsonAllProducts);
-
 ?>
