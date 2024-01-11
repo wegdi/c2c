@@ -52,6 +52,9 @@ foreach ($suppliers as $supplier) {
                     } else {
                         $Urunler[$field] = $fieldValue;
                     }
+                } else {
+                    // Eğer anahtar dizide yoksa, varsayılan bir değer ata
+                    $Urunler[$field] = '';
                 }
             }
 
@@ -60,7 +63,7 @@ foreach ($suppliers as $supplier) {
     }
 }
 
-print_R($allProducts);
+print_r($allProducts);
 /*
 // $allProducts'ı JSON'a dönüştür
 $jsonAllProducts = json_encode($allProducts, JSON_UNESCAPED_UNICODE);
