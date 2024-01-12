@@ -1,15 +1,4 @@
 <?php
-function convertCDATAtoText($node) {
-    foreach ($node->childNodes as $child) {
-        if ($child instanceof \DOMCdataSection) {
-            $textNode = $node->ownerDocument->createTextNode($child->nodeValue);
-            $node->replaceChild($textNode, $child);
-        } elseif ($child->hasChildNodes()) {
-            convertCDATAtoText($child);
-        }
-    }
-}
-
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
