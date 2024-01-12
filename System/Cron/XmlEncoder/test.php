@@ -8,6 +8,8 @@
 
     $x = $db->Query('Category_Menu', [], [], 'COK', '', '');
 
+    print_r($x);
+
     foreach ($x as $a) {
         echo 'aaa';
     }
