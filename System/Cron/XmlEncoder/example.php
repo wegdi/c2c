@@ -21,7 +21,7 @@ $db = new General();
     //1. kategori bilgileri
     $domain = 'https://www.onlineyedekparca.com';
     preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents($domain), $kategori);
-    $r = 2;
+    $r = 3;
     $uniqid = uniqid();
     $data = array(
         'Uniqid' => $uniqid,
