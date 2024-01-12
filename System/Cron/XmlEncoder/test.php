@@ -4,11 +4,6 @@
     $security->LoginControl($guvenlik);
     require_once(SYSTEM.'General/General.php');
     $db = new General();
-    echo 'tests';
-
-    $xxxxxx = $db->Query('Category_Menu', [], [], 'COK', '', '');
-
-    print_r($xxxxxx);
 
 
 
