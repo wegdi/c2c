@@ -6,10 +6,9 @@
     $db = new General();
     echo 'test';
 
-    $Supplier = $db->Query('Category_Menu', [], [], 'COK', '', '');
+    $x = $db->Query('Category_Menu', [], [], 'COK', '', '');
 
-    foreach ($Supplier as $SupplierGet) {
-        // Initialize an empty string to store the authority names
+    foreach ($x as $a) {
         echo 'aaa';
     }
 
