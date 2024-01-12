@@ -20,17 +20,17 @@ $db = new General();
     //1. kategori bilgileri
     $domain = 'https://www.onlineyedekparca.com';
     preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents($domain), $kategori);
-    $r = 0;
+    $r = 1;
     $uniqid = uniqid();
     $data = array(
         'Uniqid' => $uniqid,
         'GroupId'=> '0',
-        'Url' => '/kategori/opel-yedek-parca',
+        'Url' => $kategori[1][$r],
         'Title' => $db->Guvenlik($kategori[2][$r])
     );
     $db->Add("Category_Menu", $data);
     //2. kategori bilgileri
-    $domain2 = $domain.'/kategori/opel-yedek-parca';
+    $domain2 = $domain.$kategori[1][$r];
     $dom = new DOMDocument();
     $dom->loadHTML(file_get_contents("$domain2"));
     $finder = new DomXPath($dom);
