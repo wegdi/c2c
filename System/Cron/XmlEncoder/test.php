@@ -6,12 +6,12 @@
     $db = new General();
     echo 'test';
 
-    $Menus = $db->Query('Category_Menu', $filter, [], 'COK', '', '');
-    echo '<ul>';
-    foreach ($Menus as $value) {
-        echo '<li>'.$value["Title"].'</li>';
+    $Supplier = $db->Query('Category_Menu', $filter, [], 'COK', $start, $length);
+
+    foreach ($Supplier as $SupplierGet) {
+        // Initialize an empty string to store the authority names
+        echo 'aaa';
     }
-    echo '</ul>';
 
 
 ?>
