@@ -16,7 +16,8 @@ $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
 $db = new General();
 
-
+    /*
+    //4 u tekrar ekle time out düştü
     $total = 0;
     //1. kategori bilgileri
     $domain = 'https://www.onlineyedekparca.com';
@@ -71,5 +72,5 @@ $db = new General();
     }
     echo $total;
     echo ' bitti ';
-    echo $r;
+    echo $r;*/
 ?>
