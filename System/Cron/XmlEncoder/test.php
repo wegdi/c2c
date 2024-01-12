@@ -6,13 +6,11 @@
     $db = new General();
     echo 'tests';
 
-    $x = $db->Query('Category_Menu', [], [], 'COK', '', '');
+    $xxxxxx = $db->Query('Category_Menu', [], [], 'COK', '', '');
 
-    print_r($x);
+    print_r($xxxxxx);
 
-    foreach ($x as $a) {
-        echo 'aaa';
-    }
+
 
 
 ?>
