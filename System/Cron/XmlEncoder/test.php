@@ -5,4 +5,13 @@
     require_once(SYSTEM.'General/General.php');
     $db = new General();
     echo 'test';
+
+    $Menus = $db->Query('Category_Menu', $filter, [], 'COK', '', '');
+    echo '<ul>';
+    foreach ($Menus as $value) {
+        echo '<li>'.$value["Title"].'</li>';
+    }
+    echo '</ul>';
+
+
 ?>
