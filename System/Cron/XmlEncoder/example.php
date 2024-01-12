@@ -17,6 +17,7 @@ require_once(SYSTEM.'General/General.php');
 $db = new General();
 
 
+    $total = 0;
     //1. kategori bilgileri
     $domain = 'https://www.onlineyedekparca.com';
     preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents($domain), $kategori);
@@ -29,6 +30,7 @@ $db = new General();
         'Title' => $db->Guvenlik($kategori[2][$r])
     );
     $db->Add("Category_Menu", $data);
+    $total = $total +1;
     //2. kategori bilgileri
     $domain2 = $domain.$kategori[1][$r];
     $dom = new DOMDocument();
@@ -45,6 +47,7 @@ $db = new General();
             'Title' => $db->Guvenlik($kategori2_item->getAttribute('title'))
         );
         $db->Add("Category_Menu", $data2);
+        $total = $total +1;
         //son kategori bilgileri
         $domain3 = $domain.$kategori2_item->getAttribute('href');
         $dom3 = new DOMDocument();
@@ -62,8 +65,10 @@ $db = new General();
                     'Title' => $db->Guvenlik($kategori3_item->getAttribute('title'))
                 );
                 $db->Add("Category_Menu", $data3);
+                $total = $total +1;
             }
         }
     }
-    echo 'bitti';
+    echo $total;
+    echo ' bitti';
 ?>
