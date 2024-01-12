@@ -19,7 +19,7 @@ $db = new General();
         );
         $db->Add("Category_Menu", $data);
         //2. kategori bilgileri
-        $domain2 = $domain.$kategori[2][$r];
+        $domain2 = $domain.$kategori[1][$r];
         $dom = new DOMDocument();
         $dom->loadHTML(file_get_contents("$domain2"));
         $finder = new DomXPath($dom);
