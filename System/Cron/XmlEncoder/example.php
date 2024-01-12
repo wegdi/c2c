@@ -52,15 +52,17 @@ $db = new General();
         $finder3 = new DomXPath($dom3);
         $classname = "filter-menu-category-content";
         $kategori3 = $finder3->query("//*[contains(@class, '$classname')]//a");
-        foreach ($kategori3 as $kategori3_item) {
-            $uniqid3 = uniqid();
-            $data3 = array(
-                'Uniqid' => $uniqid3,
-                'GroupId'=> $uniqid2,
-                'Url' => $kategori3_item->getAttribute('href'),
-                'Title' => $db->Guvenlik($kategori3_item->getAttribute('title'))
-            );
-            $db->Add("Category_Menu", $data3);
+        if($kategori3->length > 0){
+            foreach ($kategori3 as $kategori3_item) {
+                $uniqid3 = uniqid();
+                $data3 = array(
+                    'Uniqid' => $uniqid3,
+                    'GroupId'=> $uniqid2,
+                    'Url' => $kategori3_item->getAttribute('href'),
+                    'Title' => $db->Guvenlik($kategori3_item->getAttribute('title'))
+                );
+                $db->Add("Category_Menu", $data3);
+            }
         }
     }
     echo 'bitti';
