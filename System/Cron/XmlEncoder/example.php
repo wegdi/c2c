@@ -4,7 +4,7 @@ require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
 $db = new General();
-    
+    /*
     //1. kategori bilgileri
     $domain = 'https://www.onlineyedekparca.com';
     preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents($domain), $kategori);
@@ -58,5 +58,5 @@ $db = new General();
     }
     echo $r;
     echo ' bitti ';
-    
+    */
 ?>
