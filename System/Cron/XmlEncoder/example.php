@@ -70,5 +70,6 @@ $db = new General();
         }
     }
     echo $total;
-    echo ' bitti';
+    echo ' bitti ';
+    echo $r;
 ?>
