@@ -47,7 +47,7 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["product_name"].' '.$metaDescriptionWarning,
         $ProductsGet["manufacturer_name"],
         $ProductsGet["model"],
-        $ProductsGet["C2Cmodel"],
+        empty($ProductsGet["C2Cmodel"]) ? '' : $ProductsGet["C2Cmodel"],
         $ProductsGet["quantity"],
         $status,
         $ProductsGet["Category"],
