@@ -31,7 +31,7 @@ foreach ($Products as $ProductsGet) {
     }
     $metaDescriptionWarning = '';
     if (empty($ProductsGet["product_meta_description"]) || is_null($ProductsGet["product_meta_description"])) {
-        $metaDescriptionWarning = '<span class="badge bg-warning"><i class="ri-error-warning-fill"></i> Uyarı</span>';
+        $metaDescriptionWarning = '<span class="badge bg-warning"><i class="ri-error-warning-fill"></i></span>';
     }
 
     $Supplier = $db->Query('Supplier',['SupplierCode' => $ProductsGet["SupplierCode"]], [], 'TEK',);
