@@ -29,7 +29,7 @@ $security->LoginControl($guvenlik);
                   <thead>
                       <tr>
                           <th style="width:10px;">Ürün Resmi</th>
-                          <th style="width:10%;">Ürün Adı</th>
+                          <th style="width:30%;">Ürün Adı</th>
                           <th>Model Kodu</th>
                           <th>Adet</th>
                       </tr>
