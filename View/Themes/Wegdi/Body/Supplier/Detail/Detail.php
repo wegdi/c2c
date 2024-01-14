@@ -129,7 +129,8 @@ if ($altAnahtarString!="") {
 }
 
 $datax = array(
-     'star'  =>$dizi
+     'star'  =>$dizi,
+     'Total' => count($donguler)
 );
 $db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
 
