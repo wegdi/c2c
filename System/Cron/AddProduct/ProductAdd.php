@@ -5,19 +5,14 @@ require_once(SYSTEM . 'General/General.php');
 $db = new General();
 
 $SupplierCode=$_GET["SupplierCode"];
+$Pages=$_GET["Page"];
 
 
-$Supplier = $db->Query('Supplier', ["Status" => 1,"SupplierCode" => $SupplierCode], [], 'TEK');
+$jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/'.$SupplierCode.'_product_'.$Pages.'.json';
+
+echo $jsonFilePath;
 
 
-
-for ($page = 1; $page <= (int)$Supplier["Loop"]; $page++) {
-
-    $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/'.$SupplierCode.'_product_'.$page.'.json';
-    echo $jsonFilePath;
-    //file_get_contents($url);
-
-}
 
 
 ?>
