@@ -17,16 +17,19 @@ if (file_exists($jsonFilePath)) {
 
     foreach ($decodedData as $key => $value) {
 
+        // quantity değerini kontrol et
+        if (isset($value['quantity']) && is_string($value['quantity'])) {
+            // String ifadeyi integera çevir
+            $value['quantity'] = (int)$value['quantity'];
+        }
 
-      $Products = $db->Query('Products', ["SupplierCode" => $SupplierCode, "model" => $value["model"] ], [], 'TEK');
+        $Products = $db->Query('Products', ["SupplierCode" => $SupplierCode, "model" => $value["model"]], [], 'TEK');
 
-
-      if ($Products["_id"]=="") {
-        $db->Add("Products", $value);
-
-      }else {
-        $db->UpdateByObjectId("Products",(string)$Products["_id"], $value);
-      }
+        if ($Products["_id"] == "") {
+            $db->Add("Products", $value);
+        } else {
+            $db->UpdateByObjectId("Products", (string)$Products["_id"], $value);
+        }
 
     }
 } else {
