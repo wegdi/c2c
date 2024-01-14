@@ -54,10 +54,8 @@ foreach ($suppliers as $supplier) {
 
 
             $UrunlerSonuc[] =$Urunler;
-            $UrunlerSonucJson = json_encode($UrunlerSonuc);
-            $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/'.$supplier["SupplierCode"].'.json';
-            file_put_contents($jsonFilePath, $UrunlerSonucJson);
-            
+
+
         }
     } elseif (count($explode) == 2 and isset($decodedData[$explode[0]])) {
 
@@ -95,16 +93,15 @@ foreach ($suppliers as $supplier) {
 
               }
                 $UrunlerSonuc[] =$Urunler;
-                $UrunlerSonucJson = json_encode($UrunlerSonuc);
 
-                $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/'.$supplier["SupplierCode"].'.json';
-
-                file_put_contents($jsonFilePath, $UrunlerSonucJson);
 
           }
         }
 
 
     }
+    $UrunlerSonucJson = json_encode($UrunlerSonuc);
+    $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/om.json';
+    file_put_contents($jsonFilePath, $UrunlerSonucJson);
 }
 ?>
