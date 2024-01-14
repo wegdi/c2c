@@ -20,13 +20,15 @@ function Parcala($value = '')
 $suppliers = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($suppliers as $supplier) {
-      $filePath = $_SERVER['DOCUMENT_ROOT'] . $supplier["SupplierFilePath"];
+    $filePath = $_SERVER['DOCUMENT_ROOT'] . $supplier["SupplierFilePath"];
     $jsonData = file_get_contents($filePath);
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $supplier["star"]);
 
     if (count($explode) == 1 and isset($decodedData[$explode[0]])) {
-        foreach ($decodedData[$explode[0]] as $keyUrun => $valueUrun) {
+        $output = array_slice($decodedData[$explode[0]],1, 2);
+
+        foreach ($output as $keyUrun => $valueUrun) {
             $Urunler = [];
 
             $productFields = [
