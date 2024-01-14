@@ -7,6 +7,7 @@ require_once(SYSTEM.'General/General.php');
 $db = new General();
 
 
+
 // DataTables sends filter parameters in the request
 $draw = $_POST['draw'];
 $start = $_POST['start'];
@@ -38,7 +39,7 @@ foreach ($Products as $ProductsGet) {
         ',
         $ProductsGet["product_name"],
         $ProductsGet["model"],
-        base64_encode($ProductsGet["model"]),
+        $db->customShortHash($ProductsGet["model"]),
         $ProductsGet["quantity"],
         $status,
         $ProductsGet["Category"],
