@@ -20,7 +20,8 @@ function Parcala($value = '')
 $suppliers = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($suppliers as $supplier) {
-    $jsonData = file_get_contents(URL . $supplier["SupplierFilePath"]);
+      $filePath = $_SERVER['DOCUMENT_ROOT'] . $supplier["SupplierFilePath"];
+    $jsonData = file_get_contents($filePath);
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $supplier["star"]);
 
