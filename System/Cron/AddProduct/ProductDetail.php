@@ -28,7 +28,13 @@ foreach ($suppliers as $supplier) {
     if (count($explode) == 1 and isset($decodedData[$explode[0]])) {
 
       $Total=count($decodedData[$explode[0]]);
-      echo $Total;
+      $Total=count($decodedData[$explode[0]]);
+
+      $datax = array(
+        'Total' =>  $Total
+        );
+      $db->UpdateByObjectId("Supplier",(string)$supplier["_id"], $datax);
+
       $itemsPerPage = 500; // Her sayfada kaç öğe gösterileceğini belirtin
       $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
 
@@ -68,6 +74,9 @@ foreach ($suppliers as $supplier) {
     } elseif (count($explode) == 2 and isset($decodedData[$explode[0]])) {
 
         foreach ($decodedData[$explode[0]] as $key => $valueXbir) {
+
+
+
           $itemsPerPage = 500; // Her sayfada kaç öğe gösterileceğini belirtin
           $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
 
@@ -109,6 +118,12 @@ foreach ($suppliers as $supplier) {
 
           }
         }
+        $Total=count($decodedData[$explode[0]]);
+
+        $datax = array(
+          'Total' =>  $Total
+          );
+        $db->UpdateByObjectId("Supplier",(string)$supplier["_id"], $datax);
 
 
     }
