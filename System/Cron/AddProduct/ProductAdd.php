@@ -23,7 +23,7 @@ if (file_exists($jsonFilePath)) {
             $value['quantity'] = (int)$value['quantity'];
         }
 
-        $value['C2Cmodel'] =   $db->customShortHash($ProductsGet["model"]);
+        $value['C2Cmodel'] =   $db->customShortHash($value["model"]);
 
 
 
