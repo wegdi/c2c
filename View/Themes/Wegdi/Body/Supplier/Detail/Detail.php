@@ -60,6 +60,7 @@ $data = json_decode($jsonData, true);
 $donguler = [];
 $final = [];
 // Üst anahtarları yazdırma
+$Toplam=count($data);
 foreach ($data as $ustAnahtar => $altDizi) {
     // Üst anahtarı string olarak almak istiyorsak
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
@@ -76,8 +77,7 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
     echo "<br>";
 }
-print_r($donguler);
-$Toplam=count($donguler);
+
 
 if (count($donguler) == 1) {
     $ilkDizi = reset($data["$donguler[0]"]);
