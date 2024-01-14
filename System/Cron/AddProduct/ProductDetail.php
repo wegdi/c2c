@@ -126,7 +126,7 @@ foreach ($suppliers as $supplier) {
 
     }
     $UrunlerSonucJson = json_encode($UrunlerSonuc);
-    $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/product_'.$_GET['page'].'.json';
+    $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/'.$supplier["SupplierCode"].'_product_'.$_GET['page'].'.json';
     file_put_contents($jsonFilePath, $UrunlerSonucJson);
 }
 ?>
