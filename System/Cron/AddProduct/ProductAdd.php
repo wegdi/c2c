@@ -11,7 +11,7 @@ $Supplier = $db->Query('Supplier', ["Status" => 1,"SupplierCode" => $SupplierCod
 
 
 
-for ($page = 1; $page <= $Supplier["Loop"]; $page++) {
+for ($page = 1; $page <= (int)$Supplier["Loop"]; $page++) {
 
     $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/'.$SupplierCode.'_product_'.$_page.'.json';
     echo $jsonFilePath;
