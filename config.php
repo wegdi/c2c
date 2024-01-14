@@ -10,6 +10,9 @@ define('HTTPS_SERVER', 'https://'.$host.'/');
 $dir = dirname(__FILE__);
 //Firma Bilgileri
 
+
+define('TOTAL', '600');
+
 define('URL', 'https://c2c.wegdi.com');
 
 

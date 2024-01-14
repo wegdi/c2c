@@ -34,7 +34,7 @@ foreach ($suppliers as $supplier) {
         );
       $db->UpdateByObjectId("Supplier",(string)$supplier["_id"], $datax);
 
-      $itemsPerPage = 500; // Her sayfada kaç öğe gösterileceğini belirtin
+      $itemsPerPage = TOTAL; // Her sayfada kaç öğe gösterileceğini belirtin
       $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
 
       $startIndex = ($page - 1) * $itemsPerPage;
@@ -76,7 +76,7 @@ foreach ($suppliers as $supplier) {
 
           $Total=count($valueXbir);
 
-          $itemsPerPage = 500; // Her sayfada kaç öğe gösterileceğini belirtin
+          $itemsPerPage = TOTAL; // Her sayfada kaç öğe gösterileceğini belirtin
           $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
 
           $startIndex = ($page - 1) * $itemsPerPage;
