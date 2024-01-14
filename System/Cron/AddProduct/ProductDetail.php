@@ -30,7 +30,9 @@ foreach ($suppliers as $supplier) {
       $Total=count($decodedData[$explode[0]]);
 
       $datax = array(
-        'Total' =>  $Total
+        'Total' =>  $Total,
+        'Loop' =>  ceil($Total/TOTAL)
+
         );
       $db->UpdateByObjectId("Supplier",(string)$supplier["_id"], $datax);
 
