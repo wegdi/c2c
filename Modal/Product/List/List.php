@@ -32,6 +32,7 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["product_name"],
         $ProductsGet["model"],
         $ProductsGet["quantity"],
+        ''
 
     );
 }
