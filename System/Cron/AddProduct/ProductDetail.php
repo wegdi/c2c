@@ -27,7 +27,7 @@ foreach ($suppliers as $supplier) {
 
     if (count($explode) == 1 and isset($decodedData[$explode[0]])) {
 
-      $itemsPerPage = 100; // Her sayfada kaç öğe gösterileceğini belirtin
+      $itemsPerPage = 500; // Her sayfada kaç öğe gösterileceğini belirtin
       $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
 
       $startIndex = ($page - 1) * $itemsPerPage;
@@ -65,7 +65,7 @@ foreach ($suppliers as $supplier) {
     } elseif (count($explode) == 2 and isset($decodedData[$explode[0]])) {
 
         foreach ($decodedData[$explode[0]] as $key => $valueXbir) {
-          $itemsPerPage = 100; // Her sayfada kaç öğe gösterileceğini belirtin
+          $itemsPerPage = 500; // Her sayfada kaç öğe gösterileceğini belirtin
           $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
 
           $startIndex = ($page - 1) * $itemsPerPage;
