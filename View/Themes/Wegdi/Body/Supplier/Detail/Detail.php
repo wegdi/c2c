@@ -76,7 +76,9 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
     echo "<br>";
 }
+print_r($donguler);
 $Toplam=count($donguler);
+
 if (count($donguler) == 1) {
     $ilkDizi = reset($data["$donguler[0]"]);
 } elseif (count($donguler) == 2) {
