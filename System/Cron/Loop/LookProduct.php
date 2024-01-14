@@ -9,7 +9,7 @@ foreach ($suppliers as $key => $value) {
   $Total=ceil($value["Total"]/500);
 
   for ($page = 0; $page <= $Total; $page++) {
-      $url = "https://c2c.wegdi.com/System/Cron/AddProduct/ProductDetail.php?page=" . $page;
+      $url = "https://c2c.wegdi.com/System/Cron/AddProduct/ProductDetail.php?page=" . $page.'?SupplierCode='.$value["SupplierCode"];
       file_get_contents($url);
 
   }
