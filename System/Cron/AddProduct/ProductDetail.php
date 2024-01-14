@@ -119,7 +119,9 @@ foreach ($suppliers as $supplier) {
         }
 
         $datax = array(
-          'Total' =>  $Total
+          'Total' =>  $Total,
+          'Loop' =>  ceil($Total/TOTAL)
+
           );
         $db->UpdateByObjectId("Supplier",(string)$supplier["_id"], $datax);
 
