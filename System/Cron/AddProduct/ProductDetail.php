@@ -47,6 +47,8 @@ foreach ($suppliers as $supplier) {
                 }
             }
             $Urunler["SupplierCode"] = $supplier["SupplierCode"];
+            $Urunler["UpdateDate"] = time();
+
 
 
             $UrunlerSonuc[] =$Urunler;
@@ -86,6 +88,7 @@ foreach ($suppliers as $supplier) {
                       }
                   }
                   $Urunler["SupplierCode"] = $supplier["SupplierCode"];
+                  $Urunler["UpdateDate"] = time();
 
               }
                 $UrunlerSonuc[] =$Urunler;
