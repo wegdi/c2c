@@ -20,7 +20,8 @@ function Parcala($value = '')
 $suppliers = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($suppliers as $supplier) {
-    $jsonData = file_get_contents(URL . $supplier["SupplierFilePath"]);
+      //$jsonData = file_get_contents(URL . $supplier["SupplierFilePath"]);
+      $jsonData =file($_SERVER['DOCUMENT_ROOT'].$supplier["SupplierFilePath"]);
     $decodedData = json_decode($jsonData, true);
     $explode = explode(';', $supplier["star"]);
 
@@ -53,7 +54,7 @@ foreach ($suppliers as $supplier) {
             $UrunlerSonuc[] =$Urunler;
             $UrunlerSonucJson = json_encode($UrunlerSonuc);
 
-        $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/urunler_sonuc.json';
+        //$jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/urunler_sonuc.json';
 
         //file_put_contents($jsonFilePath, $UrunlerSonucJson);
         }
@@ -93,7 +94,7 @@ foreach ($suppliers as $supplier) {
                 $UrunlerSonuc[] =$Urunler;
                 $UrunlerSonucJson = json_encode($UrunlerSonuc);
 
-                $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/urunler_sonuc.json';
+                //$jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/urunler_sonuc.json';
 
               //  file_put_contents($jsonFilePath, $UrunlerSonucJson);
 
