@@ -33,6 +33,8 @@ $security->LoginControl($guvenlik);
                           <th style="width:10%;">Model Kodu</th>
                           <th style="width:10%;">Adet</th>
                           <th>İdeaSoft</th>
+                          <th>Kategori</th>
+
                       </tr>
                   </thead>
 
