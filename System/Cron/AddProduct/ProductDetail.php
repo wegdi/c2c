@@ -47,7 +47,7 @@ foreach ($suppliers as $supplier) {
                 }
             }
 
-            print_r($Urunler);
+          $UrunlerSonuc[] =$Urunler;
         }
     } elseif (count($explode) == 2 and isset($decodedData[$explode[0]])) {
 
@@ -78,10 +78,12 @@ foreach ($suppliers as $supplier) {
                       }
                   }
               }
+                $UrunlerSonuc[] =$Urunler;
 
-              print_r($Urunler);
           }
         }
+
+        print_R($UrunlerSonuc);
 
     }
 }
