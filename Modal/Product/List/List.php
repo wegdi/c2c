@@ -28,6 +28,7 @@ foreach ($Products as $ProductsGet) {
       $status='<span class="badge bg-danger">Mevcut Değil</span>';
 
     }
+
     $Log[] = array(
         '<div class="flex-shrink-0 me-3">
         <div class="avatar-sm bg-light rounded p-1">
@@ -38,7 +39,8 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["product_name"],
         $ProductsGet["model"],
         $ProductsGet["quantity"],
-        $status
+        $status,
+        $ProductsGet["Category"],
 
     );
 }
