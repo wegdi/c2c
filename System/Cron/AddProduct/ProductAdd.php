@@ -23,6 +23,10 @@ if (file_exists($jsonFilePath)) {
             $value['quantity'] = (int)$value['quantity'];
         }
 
+        $value['C2Cmodel'] =   $db->customShortHash($ProductsGet["model"]);
+
+
+
         $Products = $db->Query('Products', ["SupplierCode" => $SupplierCode, "model" => $value["model"]], [], 'TEK');
 
         if ($Products["_id"] == "") {
