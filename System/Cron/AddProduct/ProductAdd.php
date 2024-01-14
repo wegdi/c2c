@@ -16,7 +16,19 @@ if (file_exists($jsonFilePath)) {
     $decodedData = json_decode($jsonData, true);
 
     foreach ($decodedData as $key => $value) {
-      print_r($value);
+
+
+      $Products = $db->Query('Products', ["SupplierCode" => $SupplierCode, "model" => $value["model"] ], [], 'TEK');
+
+
+      if ($Products["_id"]=="") {
+        $db->Add("Products", $value);
+
+      }else {
+        $db->UpdateByObjectId("Products",(string)$Products["_id"], $value);
+
+      }
+
     }
 } else {
     // Dosya yoksa hata mesajını yazdır
