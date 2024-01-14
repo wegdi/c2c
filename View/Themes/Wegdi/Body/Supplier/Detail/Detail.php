@@ -76,7 +76,7 @@ foreach ($data as $ustAnahtar => $altDizi) {
 
     echo "<br>";
 }
-
+$Toplam=count($donguler);
 if (count($donguler) == 1) {
     $ilkDizi = reset($data["$donguler[0]"]);
 } elseif (count($donguler) == 2) {
@@ -130,7 +130,7 @@ if ($altAnahtarString!="") {
 
 $datax = array(
      'star'  =>$dizi,
-     'Total' => count($donguler)
+     'Total' => $Toplam
 );
 $db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
 
