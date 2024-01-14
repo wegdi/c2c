@@ -17,7 +17,7 @@ function Parcala($value = '')
     }
 }
 
-$suppliers = $db->Query('Supplier', ["Status" => 1 ,'SupplierCode' => $_GET["SupplierCode"]], [], 'COK');
+$suppliers = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($suppliers as $supplier) {
     $filePath = $_SERVER['DOCUMENT_ROOT'] . $supplier["SupplierFilePath"];
