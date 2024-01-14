@@ -30,6 +30,9 @@ foreach ($Products as $ProductsGet) {
 
     }
 
+    $Supplier = $db->Query('Supplier',['SupplierCode' => $ProductsGet["SupplierCode"]], [], 'TEK',);
+
+
     $Log[] = array(
         '<div class="flex-shrink-0 me-3">
         <div class="avatar-sm bg-light rounded p-1">
@@ -43,6 +46,8 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["quantity"],
         $status,
         $ProductsGet["Category"],
+        $Supplier["SupplierName"]
+
     );
 }
 
