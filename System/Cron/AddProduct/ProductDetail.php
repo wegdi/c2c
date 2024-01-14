@@ -23,7 +23,7 @@ foreach ($suppliers as $supplier) {
       //$jsonData = file_get_contents(URL . $supplier["SupplierFilePath"]);
       echo $_SERVER['DOCUMENT_ROOT'].$supplier["SupplierFilePath"];
       $jsonData =file($_SERVER['DOCUMENT_ROOT'].$supplier["SupplierFilePath"]);
-      $decodedData = json_decode($jsonData, true);
+      $decodedData = json_decode([], true);
       $explode = explode(';', $supplier["star"]);
 
     if (count($explode) == 1 and isset($decodedData[$explode[0]])) {
