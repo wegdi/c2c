@@ -26,7 +26,7 @@ foreach ($suppliers as $supplier) {
     $explode = explode(';', $supplier["star"]);
 
     if (count($explode) == 1 and isset($decodedData[$explode[0]])) {
-        $output = array_slice($decodedData[$explode[0]],1, 2);
+        $output = array_slice($decodedData[$explode[0]],1, 100);
 
         foreach ($output as $keyUrun => $valueUrun) {
             $Urunler = [];
@@ -63,7 +63,9 @@ foreach ($suppliers as $supplier) {
     } elseif (count($explode) == 2 and isset($decodedData[$explode[0]])) {
 
         foreach ($decodedData[$explode[0]] as $key => $valueXbir) {
-          foreach ($valueXbir as $valueUrunIC) {
+          $output = array_slice($valueXbir,1, 100);
+
+          foreach ($output as $valueUrunIC) {
 
               $Urunler = [];
 
