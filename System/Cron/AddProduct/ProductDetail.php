@@ -55,7 +55,7 @@ foreach ($suppliers as $supplier) {
 
         $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/urunler_sonuc.json';
 
-        file_put_contents($jsonFilePath, $UrunlerSonucJson);
+        //file_put_contents($jsonFilePath, $UrunlerSonucJson);
         }
     } elseif (count($explode) == 2 and isset($decodedData[$explode[0]])) {
 
@@ -95,7 +95,7 @@ foreach ($suppliers as $supplier) {
 
                 $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/urunler_sonuc.json';
 
-                file_put_contents($jsonFilePath, $UrunlerSonucJson);
+              //  file_put_contents($jsonFilePath, $UrunlerSonucJson);
 
           }
         }
