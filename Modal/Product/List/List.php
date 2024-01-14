@@ -38,6 +38,7 @@ foreach ($Products as $ProductsGet) {
         ',
         $ProductsGet["product_name"],
         $ProductsGet["model"],
+        md5($ProductsGet["model"]),
         $ProductsGet["quantity"],
         $status,
         $ProductsGet["Category"],
