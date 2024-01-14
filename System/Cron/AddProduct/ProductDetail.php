@@ -5,7 +5,6 @@ require_once('ProductFunction.php');
 
 $db = new General();
 $Product = new ProductJsonDecoder();
-echo rand();
 
 function Parcala($value = '')
 {
