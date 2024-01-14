@@ -46,6 +46,8 @@ foreach ($suppliers as $supplier) {
                     $Urunler[$field] = current($valueUrun[$fieldArray[0]]);
                 }
             }
+            $Urunler["SupplierCode"] = $supplier["SupplierCode"];
+
 
             $UrunlerSonuc[] =$Urunler;
             $UrunlerSonucJson = json_encode($UrunlerSonuc);
@@ -80,10 +82,11 @@ foreach ($suppliers as $supplier) {
                   elseif (count($fieldArray) == 3) {
                       foreach ($valueUrunIC[$fieldArray[0]] as $valueBirAlt) {
                           $Urunler[$field] = $valueBirAlt[end($fieldArray)];
-                          $Urunler["SupplierCode"] = $supplier["SupplierCode"];
 
                       }
                   }
+                  $Urunler["SupplierCode"] = $supplier["SupplierCode"];
+
               }
                 $UrunlerSonuc[] =$Urunler;
                 $UrunlerSonucJson = json_encode($UrunlerSonuc);
