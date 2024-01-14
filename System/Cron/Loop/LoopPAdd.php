@@ -17,7 +17,7 @@ $value = $db->Query('Supplier', ["Status" => 1,],["sort" => ["Total" => -1]], 'T
   }
 
 */
-
+asd
 
 
 
