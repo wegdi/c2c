@@ -26,7 +26,12 @@ foreach ($suppliers as $supplier) {
     $explode = explode(';', $supplier["star"]);
 
     if (count($explode) == 1 and isset($decodedData[$explode[0]])) {
-        $output = array_slice($decodedData[$explode[0]],1, 100);
+
+        $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
+
+        $startIndex = ($page - 1) * $itemsPerPage;
+        $output = array_slice($decodedData[$explode[0]], $startIndex, $itemsPerPage);
+
 
         foreach ($output as $keyUrun => $valueUrun) {
             $Urunler = [];
