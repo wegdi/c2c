@@ -18,7 +18,7 @@ function Parcala($value = '')
     }
 }
 
-$suppliers = $db->Query('Supplier', ["Status" => 1], [], 'COK',1,1);
+$suppliers = $db->Query('Supplier', ["Status" => 1], [], 'COK');
 
 foreach ($suppliers as $supplier) {
     $jsonData = file_get_contents(URL . $supplier["SupplierFilePath"]);
