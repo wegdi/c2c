@@ -26,7 +26,6 @@ if (file_exists($jsonFilePath)) {
 
       }else {
         $db->UpdateByObjectId("Products",(string)$Products["_id"], $value);
-
       }
 
     }
