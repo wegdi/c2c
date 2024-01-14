@@ -13,7 +13,7 @@ $Supplier = $db->Query('Supplier', ["Status" => 1,"SupplierCode" => $SupplierCod
 
 for ($page = 1; $page <= (int)$Supplier["Loop"]; $page++) {
 
-    $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/'.$SupplierCode.'_product_'.$_page.'.json';
+    $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/'.$SupplierCode.'_product_'.$page.'.json';
     echo $jsonFilePath;
     //file_get_contents($url);
 
