@@ -60,7 +60,6 @@ $data = json_decode($jsonData, true);
 $donguler = [];
 $final = [];
 // Üst anahtarları yazdırma
-$Toplam=count($data);
 foreach ($data as $ustAnahtar => $altDizi) {
     // Üst anahtarı string olarak almak istiyorsak
     $ustAnahtarString = is_string($ustAnahtar) ? $ustAnahtar : json_encode($ustAnahtar);
@@ -131,9 +130,8 @@ if ($altAnahtarString!="") {
 }
 
 $datax = array(
-     'star'  =>$dizi,
-     'Total' => $Toplam
-);
+     'star'  =>$dizi
+   );
 $db->UpdateByObjectId("Supplier",(string)$jsonUrl["_id"], $datax);
 
 
