@@ -48,7 +48,7 @@ foreach ($suppliers as $supplier) {
             }
 
             $UrunlerSonuc[] =$Urunler;
-            $UrunlerSonucJson = json_encode($UrunlerSonuc);.
+            $UrunlerSonucJson = json_encode($UrunlerSonuc);
 
         $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/urunler_sonuc.json';
 
