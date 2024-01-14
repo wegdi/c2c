@@ -28,7 +28,6 @@ foreach ($suppliers as $supplier) {
     if (count($explode) == 1 and isset($decodedData[$explode[0]])) {
 
       $Total=count($decodedData[$explode[0]]);
-      $Total=count($decodedData[$explode[0]]);
 
       $datax = array(
         'Total' =>  $Total
@@ -75,7 +74,7 @@ foreach ($suppliers as $supplier) {
 
         foreach ($decodedData[$explode[0]] as $key => $valueXbir) {
 
-
+          print_R($valueXbir);
 
           $itemsPerPage = 500; // Her sayfada kaç öğe gösterileceğini belirtin
           $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
