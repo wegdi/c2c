@@ -38,11 +38,10 @@ foreach ($Products as $ProductsGet) {
         ',
         $ProductsGet["product_name"],
         $ProductsGet["model"],
-        md5($ProductsGet["model"]),
+        base64_encode($ProductsGet["model"]),
         $ProductsGet["quantity"],
         $status,
         $ProductsGet["Category"],
-
     );
 }
 
