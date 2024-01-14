@@ -28,7 +28,7 @@ $security->LoginControl($guvenlik);
               <table id="MetaTable" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
                       <tr>
-                          <th>Ürün Resmi</th>
+                          <th style="width:10px;">Ürün Resmi</th>
                           <th>Ürün Adı</th>
                           <th>Model Kodu</th>
                           <th>Adet</th>
