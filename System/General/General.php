@@ -679,6 +679,15 @@ class General
   }
 
 
+public  function customShortHash($input, $length = 10) {
+    $hash = md5($input);
+    return substr($hash, 0, $length);
+}
+
+
+
+
+
   public function resimleriBase64eCevir($dosyaIsim) {
       if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES[$dosyaIsim])) {
           $dosyalar = $_FILES[$dosyaIsim];
