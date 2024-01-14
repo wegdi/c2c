@@ -29,6 +29,10 @@ foreach ($Products as $ProductsGet) {
       $status='<span class="badge bg-danger">Mevcut Değil</span>';
 
     }
+    $metaDescriptionWarning = '';
+   if (empty($ProductsGet["product_meta_description"]) || is_null($ProductsGet["product_meta_description"])) {
+       $metaDescriptionWarning = '<span class="badge bg-warning">Uyarı</span>';
+   }
 
     $Supplier = $db->Query('Supplier',['SupplierCode' => $ProductsGet["SupplierCode"]], [], 'TEK',);
 
@@ -40,7 +44,7 @@ foreach ($Products as $ProductsGet) {
         </div>
         </div>
         ',
-        $ProductsGet["product_name"],
+        $ProductsGet["product_name"].' '.$metaDescriptionWarning,
         $ProductsGet["model"],
         $db->customShortHash($ProductsGet["model"]),
         $ProductsGet["quantity"],
