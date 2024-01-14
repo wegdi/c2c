@@ -10,9 +10,9 @@ $Pages=$_GET["page"];
 
 $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/'.$SupplierCode.'_product_'.$Pages.'.json';
 
-echo $jsonFilePath;
-
-
+$jsonData = file_get_contents($jsonFilePath);
+$decodedData = json_decode($jsonData, true);
+print_r($decodedData);
 
 
 ?>
