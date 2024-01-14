@@ -47,8 +47,8 @@ foreach ($suppliers as $supplier) {
                 }
             }
 
-          $UrunlerSonuc[] =$Urunler;
-          $UrunlerSonucJson = json_encode($UrunlerSonuc);
+            $UrunlerSonuc[] =$Urunler;
+            $UrunlerSonucJson = json_encode($UrunlerSonuc);
 
         $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Product/Json/urunler_sonuc.json';
 
@@ -80,6 +80,8 @@ foreach ($suppliers as $supplier) {
                   elseif (count($fieldArray) == 3) {
                       foreach ($valueUrunIC[$fieldArray[0]] as $valueBirAlt) {
                           $Urunler[$field] = $valueBirAlt[end($fieldArray)];
+                          $Urunler["SupplierCode"] = $supplier["SupplierCode"];
+
                       }
                   }
               }
