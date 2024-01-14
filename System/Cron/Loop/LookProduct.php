@@ -6,7 +6,6 @@ $value = $db->Query('Supplier', ["Status" => 1,],["sort" => ["Total" => -1]], 'T
 
   $Total=ceil($value["Total"]/TOTAL);
 
-  $Loop=ceil($value["Loop"]/5);
 
 
   for ($page = 1; $page <= $Total; $page++) {
@@ -16,12 +15,6 @@ $value = $db->Query('Supplier', ["Status" => 1,],["sort" => ["Total" => -1]], 'T
   }
 
 
-
-  /*for ($page = 1; $page <= $Total; $page++) {
-      $url = "https://c2c.wegdi.com/System/Cron/AddProduct/ProductDetail.php?page=" . $page;
-      file_get_contents($url);
-
-  } */
 
 
 
