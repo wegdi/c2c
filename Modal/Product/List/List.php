@@ -22,6 +22,12 @@ $Log = array();
 foreach ($Products as $ProductsGet) {
 
 
+    if (isset($ProductsGet["IdeaSoft"]) or $ProductsGet["IdeaSoft"]==1) {
+      $status='<span class="badge bg-primary">Mevcut</span>';
+    }else {
+      $status='<span class="badge bg-danger">Mevcut Değil</span>';
+
+    }
     $Log[] = array(
         '<div class="flex-shrink-0 me-3">
         <div class="avatar-sm bg-light rounded p-1">
@@ -32,7 +38,7 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["product_name"],
         $ProductsGet["model"],
         $ProductsGet["quantity"],
-        ''
+        $status
 
     );
 }
