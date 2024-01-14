@@ -4,8 +4,7 @@ require_once(SYSTEM . 'General/General.php');
 $db = new General();
 $value = $db->Query('Supplier', ["Status" => 1,],["sort" => ["Total" => -1]], 'TEK');
 
-  echo $value["Total"];
-  $Total=ceil($value["Total"]/500);
+  $Total=ceil($value["Total"]/TOTAL);
 
   for ($page = 0; $page <= $Total; $page++) {
       $url = "https://c2c.wegdi.com/System/Cron/AddProduct/ProductDetail.php?page=" . $page;
