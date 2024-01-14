@@ -45,6 +45,7 @@ foreach ($Products as $ProductsGet) {
         </div>
         ',
         $ProductsGet["product_name"].' '.$metaDescriptionWarning,
+        $ProductsGet["manufacturer_name"],
         $ProductsGet["model"],
         $db->customShortHash($ProductsGet["model"]),
         $ProductsGet["quantity"],
