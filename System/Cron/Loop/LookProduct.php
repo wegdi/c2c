@@ -6,7 +6,7 @@ $value = $db->Query('Supplier', ["Status" => 1,],["sort" => ["Total" => -1]], 'T
 
   $Total=ceil($value["Total"]/TOTAL);
 
-  for ($page = 0; $page <= $Total; $page++) {
+  for ($page = 1; $page <= $Total; $page++) {
       $url = "https://c2c.wegdi.com/System/Cron/AddProduct/ProductDetail.php?page=" . $page;
       file_get_contents($url);
 
