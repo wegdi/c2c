@@ -31,7 +31,7 @@ $security->LoginControl($guvenlik);
                           <th style="width:10px;">Ürün Resmi</th>
                           <th style="width:30%;">Ürün Adı</th>
                           <th style="width:10%;">Model Kodu</th>
-                          <th style="width:10%;">C2c  Kodu</th>
+                          <th style="width:10%;">C2C  Kodu</th>
                           <th style="width:10%;">Adet</th>
                           <th>İdeaSoft</th>
                           <th>Kategori</th>
