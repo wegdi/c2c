@@ -28,7 +28,7 @@ foreach ($Products as $ProductsGet) {
         <img src="'.$ProductsGet["main_image"].'" alt="" class="img-fluid d-block">
         </div>
         </div>
-        '
+        ',
         $ProductsGet["product_name"],
         $ProductsGet["model"],
         $ProductsGet["quantity"],
