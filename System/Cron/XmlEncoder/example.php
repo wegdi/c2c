@@ -55,13 +55,16 @@ $classname = "category-level-1";
 $elements = $xpath->query("//*[contains(@class, '$classname')]//ul/li/a");
 // Değerleri alma ve yazdırma
 foreach ($elements as $element) {
-    $uniqid = uniqid();
+    echo '<pre>';
+    print_r($element);
+    echo '</pre>';
+    /* $uniqid = uniqid();
     $data = array(
         'Uniqid' => $uniqid,
         'GroupId'=> '0',
         'Title' => $element->getAttribute('title')
     );
-    $db->Add("Category_Menu", $data);
+    $db->Add("Category_Menu", $data);*/
     //2. kategori bilgileri
     /*
     $domain2 = $domain.'/'.$element->getAttribute('href');
