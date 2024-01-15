@@ -50,9 +50,7 @@ $data = array(
     'GroupId'=> '0',
     'Title' => $kategori[2][$r]
 );
-//$db->Add("Category_Menu", $data);
-echo "*".$kategori[2][$r];
-echo "<br>";
+$db->Add("Category_Menu", $data);
 //2. kategori bilgileri
 $domain2 = $domain.$kategori[1][$r];
 $dom = new DOMDocument();
@@ -67,9 +65,7 @@ foreach ($kategori2 as $kategori2_item) {
         'GroupId'=> $uniqid,
         'Title' => $db->Guvenlik($kategori2_item->getAttribute('title'))
     );
-    //$db->Add("Category_Menu", $data2);
-    echo "--".$kategori2_item->getAttribute('title');
-    echo "<br>";
+    $db->Add("Category_Menu", $data2);
     //son kategori bilgileri
     $domain3 = $domain.$kategori2_item->getAttribute('href');
     $dom3 = new DOMDocument();
@@ -85,9 +81,7 @@ foreach ($kategori2 as $kategori2_item) {
                 'GroupId'=> $uniqid2,
                 'Title' => $db->Guvenlik($kategori3_item->getAttribute('title'))
             );
-            //$db->Add("Category_Menu", $data3);
-            echo "---".$kategori3_item->getAttribute('title');
-            echo "<br>";
+            $db->Add("Category_Menu", $data3);
         }
     }
 }
