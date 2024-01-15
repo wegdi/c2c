@@ -5,6 +5,7 @@ $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
 $db = new General();
 
+echo $_SERVER["REMOTE_ADDR"];
 
 $curl_handle = curl_init();
 $url = 'https://www.onlineyedekparca.com';
@@ -29,13 +30,14 @@ curl_setopt($curl_handle, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
 
 $response = curl_exec($curl_handle);
-$http_code = curl_getinfo($curl_handle, CURLINFO_HTTP_CODE);
 
 if ($response === false) {
     // Hata durumunda işlemler
     die('Error occurred while fetching data: ' . curl_error($curl_handle));
+}else{
+    echo 'truee';
 }
-
+/*
 //1. kategori bilgileri
 $domain = 'https://www.onlineyedekparca.com';
 preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents($domain), $kategori);
@@ -82,8 +84,7 @@ foreach ($kategori2 as $kategori2_item) {
     }
 }
 echo ' bitti ';
-
+*/
 
 curl_close($curl_handle);
-exit;
 ?>
