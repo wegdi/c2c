@@ -15,8 +15,6 @@ echo '</pre>';
 
 // Veritabanına kaydetme işlemi
 foreach ($data as $kategori) {
-    echo $kategori["title"];
-    /*
     $kategori_title = $kategori['title'];
     $uniqid = uniqid();
     $data = array(
@@ -25,7 +23,7 @@ foreach ($data as $kategori) {
         'Title' => $kategori_title
     );
     $db->Add("Category_Menu", $data);
-
+    /*
     //
     foreach ($kategori['alt_kategoriler'] as $alt_kategori) {
         $alt_kategori_title = $alt_kategori['title'];
@@ -52,6 +50,7 @@ foreach ($data as $kategori) {
         }
     }
     */
+    
 }
 echo 'bittiii';
 
