@@ -85,5 +85,4 @@ echo ' bitti ';
 
 
 curl_close($curl_handle);
-exit;
 ?>
