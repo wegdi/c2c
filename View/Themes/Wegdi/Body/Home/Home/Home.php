@@ -140,14 +140,14 @@ $security->LoginControl($guvenlik);
                 </div>
                 <div class="flex-shrink-0">
                   <h5 class="text-muted fs-14 mb-0">
-                    +0.00 %
+
                   </h5>
                 </div>
               </div>
               <div class="d-flex align-items-end justify-content-between mt-4">
                 <div>
                   <h4 class="fs-22 fw-semibold ff-secondary mb-4">$<span class="counter-value" data-target="<?php echo $db->Quantity('Products',["IdeaSoft" => 0]); ?>"><?php echo $db->Quantity('Products',["IdeaSoft" => 0]); ?></span> </h4>
-                  <a href="" class="text-decoration-underline">Withdraw money</a>
+                  <a href="/Product/List" class="text-decoration-underline">Ürünleri Görüntüle</a>
                 </div>
                 <div class="avatar-sm flex-shrink-0">
                   <span class="avatar-title bg-primary-subtle rounded fs-3">
