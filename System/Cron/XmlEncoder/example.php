@@ -53,9 +53,8 @@ $classname = "has-sub-category";
 $elements = $xpath->query("//*[contains(@class, '$classname')]/a");
 // Değerleri alma ve yazdırma
 foreach ($elements as $element) {
-    echo '<pre>';
-    print_r($element);
-    echo '</pre>';
+    echo $element->getAttribute('title');
+    echo '<br>';
     /* $uniqid = uniqid();
     $data = array(
         'Uniqid' => $uniqid,
