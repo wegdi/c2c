@@ -4,7 +4,7 @@ require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
 $db = new General();
-
+/*
 //header('Content-Type: application/json; charset=utf-8');
 $curl_handle = curl_init();
 $url = 'https://www.onlineyedekparca.com';
@@ -88,4 +88,5 @@ foreach ($kategori2 as $kategori2_item) {
 curl_close($curl_handle);
 echo ' bitti ';
 echo $r;
+*/
 ?>
