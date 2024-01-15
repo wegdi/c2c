@@ -9,7 +9,9 @@ $db = new General();
 $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Cron/XmlEncoder/kategoriler.json';
 $jsonData = file_get_contents($jsonFilePath);
 $data = json_decode($jsonData, true);
+echo '<pre>';
 print_r($data);
+echo '</pre>';
 /*
 // Veritabanına kaydetme işlemi
 foreach ($data['kategoriler'] as $kategori) {
