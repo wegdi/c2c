@@ -9,9 +9,7 @@ $db = new General();
 $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Cron/XmlEncoder/kategoriler.json';
 $jsonData = file_get_contents($jsonFilePath);
 $data = json_decode($jsonData, true);
-echo '<pre>';
-print_r($data);
-echo '</pre>';
+
 
 // Veritabanına kaydetme işlemi
 foreach ($data as $kategori) {
@@ -23,7 +21,7 @@ foreach ($data as $kategori) {
         'Title' => $kategori_title
     );
     $db->Add("Category_Menu", $data);
-    /*
+    
     //
     foreach ($kategori['alt_kategoriler'] as $alt_kategori) {
         $alt_kategori_title = $alt_kategori['title'];
@@ -49,7 +47,7 @@ foreach ($data as $kategori) {
             }
         }
     }
-    */
+    
     
 }
 echo 'bittiii';
