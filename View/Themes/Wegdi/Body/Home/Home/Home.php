@@ -146,7 +146,7 @@ $security->LoginControl($guvenlik);
               </div>
               <div class="d-flex align-items-end justify-content-between mt-4">
                 <div>
-                  <h4 class="fs-22 fw-semibold ff-secondary mb-4">$<span class="counter-value" data-target="<?php echo $db->Quantity('Products',["IdeaSoft" => 0]); ?>"><?php echo $db->Quantity('Products',["IdeaSoft" => 0]); ?></span> </h4>
+                  <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="<?php echo $db->Quantity('Products',["IdeaSoft" => 0]); ?>"><?php echo $db->Quantity('Products',["IdeaSoft" => 0]); ?></span> </h4>
                   <a href="/Product/List" class="text-decoration-underline">Ürünleri Görüntüle</a>
                 </div>
                 <div class="avatar-sm flex-shrink-0">
