@@ -13,7 +13,7 @@ $security->LoginControl($guvenlik);
           <div class="d-flex align-items-lg-center flex-lg-row flex-column">
             <div class="flex-grow-1">
               <h4 class="fs-16 mb-1">Merhaba  <?php echo $db->GetUser("NameSurname"); ?></h4>
-              <p class="text-muted mb-0">Here's what's happening with your store today.</p>
+              <p class="text-muted mb-0">Keyifli satışlar dileriz.</p>
             </div>
             <div class="mt-3 mt-lg-0">
               <form action="javascript:void(0);">
@@ -52,7 +52,7 @@ $security->LoginControl($guvenlik);
             <div class="card-body">
               <div class="d-flex align-items-center">
                 <div class="flex-grow-1 overflow-hidden">
-                  <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> Total Earnings</p>
+                  <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> Tedarikçi Toplam Ürün Sayısı</p>
                 </div>
                 <div class="flex-shrink-0">
                   <h5 class="text-success fs-14 mb-0">
@@ -62,7 +62,7 @@ $security->LoginControl($guvenlik);
               </div>
               <div class="d-flex align-items-end justify-content-between mt-4">
                 <div>
-                  <h4 class="fs-22 fw-semibold ff-secondary mb-4">$<span class="counter-value" data-target="559.25">559.25</span>k </h4>
+                  <h4 class="fs-22 fw-semibold ff-secondary mb-4">$<span class="counter-value" data-target="559.25"><?php echo $db->Quantity('Products'); ?></span>k </h4>
                   <a href="" class="text-decoration-underline">View net earnings</a>
                 </div>
                 <div class="avatar-sm flex-shrink-0">
