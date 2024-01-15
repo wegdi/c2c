@@ -9,9 +9,7 @@ $db = new General();
 $jsonFilePath = $_SERVER['DOCUMENT_ROOT'] . '/System/Cron/XmlEncoder/kategoriler.json';
 $jsonData = file_get_contents($jsonFilePath);
 $data = json_decode($jsonData, true);
-
-
-// Veritabanına kaydetme işlemi
+/*
 foreach ($data as $kategori) {
     $kategori_title = $kategori['title'];
     $uniqid = uniqid();
@@ -50,6 +48,5 @@ foreach ($data as $kategori) {
     
     
 }
-echo 'bittiii';
-
+*/
 ?>
