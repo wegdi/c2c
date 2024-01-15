@@ -34,8 +34,6 @@ $response = curl_exec($curl_handle);
 if ($response === false) {
     // Hata durumunda işlemler
     die('Error occurred while fetching data: ' . curl_error($curl_handle));
-}else{
-    echo 'truee';
 }
 /*
 //1. kategori bilgileri
