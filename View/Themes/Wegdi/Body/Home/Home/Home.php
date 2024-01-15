@@ -117,7 +117,7 @@ $security->LoginControl($guvenlik);
               </div>
               <div class="d-flex align-items-end justify-content-between mt-4">
                 <div>
-                  <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="<?php echo $db->Quantity('Supplier',["IdeaSoft" => 1]); ?>"><?php echo $db->Quantity('Supplier',["IdeaSoft" => 1]); ?></span> </h4>
+                  <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="<?php echo $db->Quantity('Products',["IdeaSoft" => 1]); ?>"><?php echo $db->Quantity('Products',["IdeaSoft" => 1]); ?></span> </h4>
                   <a href="/Product/List" class="text-decoration-underline">Ürünleri Görüntüle</a>
                 </div>
                 <div class="avatar-sm flex-shrink-0">
@@ -136,7 +136,7 @@ $security->LoginControl($guvenlik);
             <div class="card-body">
               <div class="d-flex align-items-center">
                 <div class="flex-grow-1 overflow-hidden">
-                  <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> My Balance</p>
+                  <p class="text-uppercase fw-medium text-muted text-truncate mb-0">İdeaSoft Gönderilmeyi Bekleyen Ürünler</p>
                 </div>
                 <div class="flex-shrink-0">
                   <h5 class="text-muted fs-14 mb-0">
@@ -146,7 +146,7 @@ $security->LoginControl($guvenlik);
               </div>
               <div class="d-flex align-items-end justify-content-between mt-4">
                 <div>
-                  <h4 class="fs-22 fw-semibold ff-secondary mb-4">$<span class="counter-value" data-target="165.89">165.89</span>k </h4>
+                  <h4 class="fs-22 fw-semibold ff-secondary mb-4">$<span class="counter-value" data-target="<?php echo $db->Quantity('Products',["IdeaSoft" => 0]); ?>"><?php echo $db->Quantity('Products',["IdeaSoft" => 0]); ?></span> </h4>
                   <a href="" class="text-decoration-underline">Withdraw money</a>
                 </div>
                 <div class="avatar-sm flex-shrink-0">
