@@ -30,6 +30,8 @@ if (file_exists($jsonFilePath)) {
         $Products = $db->Query('Products', ["SupplierCode" => $SupplierCode, "model" => $value["model"]], [], 'TEK');
 
         if ($Products["_id"] == "") {
+              $value['IdeaSoft'] = 0;
+
             $db->Add("Products", $value);
         } else {
             $db->UpdateByObjectId("Products", (string)$Products["_id"], $value);
