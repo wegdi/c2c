@@ -5,7 +5,7 @@ $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
 $db = new General();
 
-echo $_SERVER["REMOTE_ADDR"];
+//echo $_SERVER["REMOTE_ADDR"];
 
 $curl_handle = curl_init();
 $url = 'https://www.onlineyedekparca.com';
