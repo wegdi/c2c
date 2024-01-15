@@ -29,8 +29,10 @@ curl_setopt($curl_handle, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
 
 $response = curl_exec($curl_handle);
-echo $response;
 $http_code = curl_getinfo($curl_handle, CURLINFO_HTTP_CODE);
+
+print_r($response);
+
 
 if ($response === false) {
     // Hata durumunda işlemler
