@@ -43,7 +43,7 @@ if ($response === false) {
 //1. kategori bilgileri
 $domain = 'https://www.onlineyedekparca.com';
 preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents($domain), $kategori);
-$r = 4;
+$r = 5;
 $uniqid = uniqid();
 $data = array(
     'Uniqid' => $uniqid,
