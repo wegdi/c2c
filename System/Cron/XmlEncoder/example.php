@@ -35,7 +35,7 @@ if ($response === false) {
     // Hata durumunda işlemler
     die('Error occurred while fetching data: ' . curl_error($curl_handle));
 }
-/*
+
 //1. kategori bilgileri
 $domain = 'https://www.onlineyedekparca.com';
 preg_match_all('/data-selector="first-level-navigation".*?<a\s+href="(.*?)".*?title="(.*?)"/s', file_get_contents($domain), $kategori);
@@ -82,7 +82,8 @@ foreach ($kategori2 as $kategori2_item) {
     }
 }
 echo ' bitti ';
-*/
+
 
 curl_close($curl_handle);
+exit;
 ?>
