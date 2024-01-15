@@ -44,15 +44,13 @@ if ($response === false) {
 $domain = 'https://www.onlineyedekparca.com';
 $html = file_get_contents($domain);
 $dom = new DOMDocument();
-libxml_use_internal_errors(true); // Hataları yakalamak için
 // HTML içeriğini DOMDocument'e yükle
 $dom->loadHTML($html);
-libxml_clear_errors();
 // XPath nesnesini oluştur
 $xpath = new DomXPath($dom);
 // "category-level-1" sınıfını içeren <a> etiketlerini seç
-$classname = "category-level-1";
-$elements = $xpath->query("//*[contains(@class, '$classname')]//ul/li/a");
+$classname = "has-sub-category";
+$elements = $xpath->query("//*[contains(@class, '$classname')]/a");
 // Değerleri alma ve yazdırma
 foreach ($elements as $element) {
     echo '<pre>';
