@@ -23,9 +23,9 @@ $Log = array();
 foreach ($Products as $ProductsGet) {
 
 
-    if (isset($ProductsGet["IdeaSoft"]) or $ProductsGet["IdeaSoft"]==1) {
+    if ($ProductsGet["IdeaSoft"]==1) {
       $status='<span class="badge bg-primary">Mevcut</span>';
-    }else {
+    }elseif($ProductsGet["IdeaSoft"]==0) {
       $status='<span class="badge bg-danger">Mevcut Değil</span>';
 
     }
