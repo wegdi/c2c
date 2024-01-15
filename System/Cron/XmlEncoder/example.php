@@ -14,7 +14,9 @@ print_r($data);
 echo '</pre>';
 
 // Veritabanına kaydetme işlemi
-foreach ($data[0] as $kategori) {
+foreach ($data as $kategori) {
+    echo $kategori["title"];
+    /*
     $kategori_title = $kategori['title'];
     $uniqid = uniqid();
     $data = array(
@@ -49,6 +51,7 @@ foreach ($data[0] as $kategori) {
             }
         }
     }
+    */
 }
 echo 'bittiii';
 
