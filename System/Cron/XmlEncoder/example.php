@@ -12,9 +12,9 @@ $data = json_decode($jsonData, true);
 echo '<pre>';
 print_r($data);
 echo '</pre>';
-/*
+
 // Veritabanına kaydetme işlemi
-foreach ($data['kategoriler'] as $kategori) {
+foreach ($data[0] as $kategori) {
     $kategori_title = $kategori['title'];
     $uniqid = uniqid();
     $data = array(
@@ -49,7 +49,7 @@ foreach ($data['kategoriler'] as $kategori) {
             }
         }
     }
-}*/
+}
 echo 'bittiii';
 
 ?>
