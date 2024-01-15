@@ -52,7 +52,6 @@ $data = array(
 );
 $db->Add("Category_Menu", $data);
 //2. kategori bilgileri
-/*
 $domain2 = $domain.$kategori[1][$r];
 $dom = new DOMDocument();
 $dom->loadHTML(file_get_contents("$domain2"));
@@ -86,7 +85,7 @@ foreach ($kategori2 as $kategori2_item) {
         }
     }
 }
-*/
 curl_close($curl_handle);
 echo ' bitti ';
+echo $r;
 ?>
