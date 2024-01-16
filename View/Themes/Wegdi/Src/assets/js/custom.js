@@ -238,12 +238,12 @@ $(document).ready(function () {
       "processing": true,
       "serverSide": true,
       "ajax": {
-        "url": "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+param3,
+        "url": "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+param2,
         "type": "POST",
       }
     });
   }
-  console.log("url:", "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+param3);
+  console.log("url:", "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+(param2 || param3));
 });
 
 
