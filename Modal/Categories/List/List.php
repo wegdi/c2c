@@ -19,7 +19,7 @@ $searchValue = $_POST['search']['value'];
 if($_POST["Uniqid"]){
     $filter = ['GroupId' => (string)$_POST["Uniqid"]];
 }else{
-    $filter = ['GroupId' => '0'];
+    $filter = ['GroupId' => '65a52a946d557'];
 }
 
 
