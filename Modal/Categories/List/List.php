@@ -14,7 +14,7 @@ $start = $_POST['start'];
 $length = $_POST['length'];
 $searchValue = $_POST['search']['value'];
 
-$filter = ['GroupId' => 0];
+$filter = ['GroupId' => '0'];
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
 $Products = $db->Query('Category_Menu', $filter, [], 'COK', $start, $length);
