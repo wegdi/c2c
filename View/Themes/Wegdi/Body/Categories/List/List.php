@@ -27,6 +27,7 @@ $security->LoginControl($guvenlik);
                   <thead>
                       <tr>
                           <th>Kategori Adı</th>
+                          <th></th>
                       </tr>
                   </thead>
 
