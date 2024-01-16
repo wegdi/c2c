@@ -14,10 +14,12 @@ $start = $_POST['start'];
 $length = $_POST['length'];
 $searchValue = $_POST['search']['value'];
 
-$filter = ['GroupId' => '0'];
+
 
 if($_POST["Uniqid"]){
-    $filter = ['GroupId' => $_POST["Uniqid"]];
+    $filter = ['GroupId' => (string)$_POST["Uniqid"]];
+}else{
+    $filter = ['GroupId' => '0'];
 }
 
 
