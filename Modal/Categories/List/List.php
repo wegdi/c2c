@@ -17,14 +17,14 @@ $searchValue = $_POST['search']['value'];
 $filter = ['GroupId' => '0'];
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
-$Products = $db->Query('Category_Menu', $filter, [], 'COK', $start, $length);
+$Category_Menu = $db->Query('Category_Menu', $filter, [], 'COK', $start, $length);
 
 $Log = array();
-foreach ($Products as $ProductsGet) {
+foreach ($Category_Menu as $Category_Menu_Item) {
 
 
     $Log[] = array(
-        $ProductsGet["Title"]
+        $Category_Menu_Item["Title"]
     );
 }
 
