@@ -15,6 +15,12 @@ $length = $_POST['length'];
 $searchValue = $_POST['search']['value'];
 
 $filter = ['GroupId' => '0'];
+
+if($_POST["Uniqid"]){
+    $filter = ['GroupId' => $_POST["Uniqid"]];
+}
+
+
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
 $Category_Menu = $db->Query('Category_Menu', $filter, [], 'COK', $start, $length);
@@ -25,8 +31,8 @@ foreach ($Category_Menu as $Category_Menu_Item) {
 
     $Log[] = array(
         $Category_Menu_Item["Title"],
-        '<div class="hstack gap-2"><button class="btn btn-sm btn-soft-danger remove-list" data-bs-toggle="modal" data-bs-target="#removeTaskItemModal" data-remove-id="'.$MenuGet['_id'].'"><i class="ri-delete-bin-5-fill align-bottom"></i></button>
-         <a href="/Menu/Edit/'.$Category_Menu_Item['_id'].'" class="btn btn-sm btn-soft-info edit-list"><i class="ri-pencil-fill align-bottom"></i></a>
+        '<div class="hstack gap-2">
+            <a href="/Categories/List/'.$Category_Menu_Item['Uniqid'].'" class="btn btn-sm btn-soft-info edit-list"><i class="ri-pencil-fill align-bottom"></i></a>
          </div>'
     );
 }
