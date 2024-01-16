@@ -17,7 +17,7 @@ $searchValue = $_POST['search']['value'];
 
 
 if(isset($_POST["Params"])){
-    $filter = ['GroupId' => '65a52a946d557'];
+    $filter = ['GroupId' => (string)'65a52a946d557'];
 }else{
     $filter = ['GroupId' => '0'];
 }
