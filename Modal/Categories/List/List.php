@@ -24,7 +24,10 @@ foreach ($Category_Menu as $Category_Menu_Item) {
 
 
     $Log[] = array(
-        $Category_Menu_Item["Title"]
+        $Category_Menu_Item["Title"],
+        '<div class="hstack gap-2"><button class="btn btn-sm btn-soft-danger remove-list" data-bs-toggle="modal" data-bs-target="#removeTaskItemModal" data-remove-id="'.$MenuGet['_id'].'"><i class="ri-delete-bin-5-fill align-bottom"></i></button>
+         <a href="/Menu/Edit/'.$MenuGet['_id'].'" class="btn btn-sm btn-soft-info edit-list"><i class="ri-pencil-fill align-bottom"></i></a>
+         </div>'
     );
 }
 
