@@ -243,6 +243,7 @@ $(document).ready(function () {
       }
     });
   }
+  console.log("url:", "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+param2);
 });
 
 
