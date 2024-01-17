@@ -16,23 +16,43 @@
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => json_encode([
-        'name' => 'Menu2',
+        'id' => 123,
+        'name' => 'Kırtasiye',
+        'slug' => 'kirtasiye',
         'sortOrder' => 999,
-        'status' => 1,
+        'status' => 0,
         'distributor' => '',
         'percent' => 1,
+        'imageFile' => 'kalem.jpg',
         'displayShowcaseContent' => 0,
-        'showcaseContent' => '',
+        'showcaseContent' => 'Üst içerik metni.',
         'showcaseContentDisplayType' => 1,
         'displayShowcaseFooterContent' => 0,
         'showcaseFooterContent' => 'string',
         'showcaseFooterContentDisplayType' => 1,
         'hasChildren' => 0,
+        'pageTitle' => 'string',
+        'metaDescription' => 'Kaliteli kırtasiye ürünleri.',
+        'metaKeywords' => 'kırmızı, kalem, kırtasiye',
+        'canonicalUrl' => 'kategoriler/idea-kalem',
+        'attachment' => 'string',
         'parent' => [
-            'id' => [
-                '50587'
+            'property1' => [
+                    'category'
+            ],
+            'property2' => [
+                    'category'
             ]
         ],
+        'isCombine' => 0,
+        'seoSetting' => [
+            'property1' => [
+                    'category'
+            ],
+            'property2' => [
+                    'category'
+            ]
+        ]
     ]),
     CURLOPT_HTTPHEADER => [
         "Accept: application/json",
