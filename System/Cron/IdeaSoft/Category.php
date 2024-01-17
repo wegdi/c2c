@@ -29,7 +29,7 @@
         'showcaseFooterContentDisplayType' => 1,
         'hasChildren' => 0,
         'parent' => [
-            'property1' => [
+            'id' => [
                 '50587'
             ]
         ],
