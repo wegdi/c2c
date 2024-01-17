@@ -24,7 +24,6 @@
         'status' => 0,
         'distributor' => '',
         'percent' => 1,
-        'imageFile' => 'kalem.jpg',
         'displayShowcaseContent' => 0,
         'showcaseContent' => 'Üst içerik metni.',
         'showcaseContentDisplayType' => 1,
