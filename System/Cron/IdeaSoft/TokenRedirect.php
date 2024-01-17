@@ -30,7 +30,6 @@ $responseJson = file_get_contents($targetUrl);
 
 // JSON verilerini diziye çevir
 $responseArray = json_decode($responseJson, true);
-print_r($responseArray);
 $Response = array(
     'state' => $state,
     'code' => $code,
@@ -41,4 +40,4 @@ $Response = array(
     'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
 );
 
-$db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$Response);
+$db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",array_merge($Response,$responseArray));
