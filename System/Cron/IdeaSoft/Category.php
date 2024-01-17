@@ -24,7 +24,7 @@
         'status' => 0,
         'distributor' => '',
         'percent' => 1,
-        'imageFile' => '//ideacdn.net/idea/ng/71/myassets/products/380/org-638327290753807461_min.jpg?revision=1704460290',
+        'imageFile' => 'kalem.jpg',
         'displayShowcaseContent' => 0,
         'showcaseContent' => 'Üst içerik metni.',
         'showcaseContentDisplayType' => 1,
