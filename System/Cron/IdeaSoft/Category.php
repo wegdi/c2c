@@ -31,7 +31,7 @@
         'pageTitle' => 'Menu3',
         'attachment' => 'string',
         'parent' => [
-            'property1' => [
+            'id' => [
                     'category'
             ],
             'property2' => [
