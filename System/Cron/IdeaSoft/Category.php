@@ -3,7 +3,6 @@
     require_once(SYSTEM.'General/General.php');
     $db = new General();
     echo $db->IdeaSoftToken();
-    echo 'a';
 
     /*
     $filter = ['GroupId' => '0'];
