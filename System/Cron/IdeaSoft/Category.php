@@ -138,7 +138,7 @@
                 echo "cURL Error #:" . $err;
                 } else {
                     $menu = json_decode($response,true);
-                    $menuid = $menu["id"];
+                    $menuid2 = $menu["id"];
                 }
             }
         }
