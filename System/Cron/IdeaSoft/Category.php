@@ -39,9 +39,11 @@
         'attachment' => 'string',
         'parent' => [
             'property1' => [
+                    'id',
                     'category'
             ],
             'property2' => [
+                    'id',
                     'category'
             ]
         ],
