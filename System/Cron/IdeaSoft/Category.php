@@ -16,7 +16,7 @@
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => json_encode([
-        'name' => 'Menu1',
+        'name' => 'Menu2',
         'sortOrder' => 999,
         'status' => 1,
         'distributor' => '',
@@ -27,7 +27,12 @@
         'displayShowcaseFooterContent' => 0,
         'showcaseFooterContent' => 'string',
         'showcaseFooterContentDisplayType' => 1,
-        'hasChildren' => 0
+        'hasChildren' => 0,
+        'parent' => [
+            'property1' => [
+                '50587'
+            ]
+        ],
     ]),
     CURLOPT_HTTPHEADER => [
         "Accept: application/json",
