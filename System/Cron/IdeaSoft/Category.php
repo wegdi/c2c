@@ -37,14 +37,6 @@
         'metaKeywords' => 'kırmızı, kalem, kırtasiye',
         'canonicalUrl' => 'kategoriler/idea-kalem',
         'attachment' => 'string',
-        'parent' => [
-            'property1' => [
-                    'category'
-            ],
-            'property2' => [
-                    'category'
-            ]
-        ],
         'isCombine' => 0,
         'seoSetting' => [
             'property1' => [
