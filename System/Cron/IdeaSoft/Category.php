@@ -27,7 +27,7 @@
         'displayShowcaseFooterContent' => 0,
         'showcaseFooterContent' => 'string',
         'showcaseFooterContentDisplayType' => 1,
-        'hasChildren' => 1,
+        'hasChildren' => 0,
         'pageTitle' => 'Menu3',
         'attachment' => 'string',
         'parent' => [
