@@ -30,7 +30,7 @@ $responseJson = file_get_contents($targetUrl);
 
 // JSON verilerini diziye çevir
 $responseArray = json_decode($responseJson, true);
-
+print_r($responseArray);
 $Response = array(
     'state' => $state,
     'code' => $code,
@@ -42,7 +42,3 @@ $Response = array(
 );
 
 $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$Response);
-
-
-$birlestir=array_merge($Response,$responseArray);
-print_r($responseArray);
