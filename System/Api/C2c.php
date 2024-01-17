@@ -2,7 +2,7 @@
     require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
     require_once(SYSTEM.'General/General.php');
     $db = new General();
-    $filter = ['_id' => '65a784f66b188048239f446c'];
+    $filter = ['_id' => (int)'65a784f66b188048239f446c'];
     $IdeaSoft = $db->Query('IdeaSoft', $filter, [], 'TEK', '', '');
     print_r($IdeaSoft);
 
