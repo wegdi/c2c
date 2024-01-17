@@ -275,6 +275,15 @@ class General
     }
 
 
+    public function IdeaSoftToken()
+    {
+      $IdeaSoft = $this->Query('IdeaSoft',['_id' => $this->ObjectId("65a784f66b188048239f446c")], [], 'TEK');
+
+      $token='bearer '.$IdeaSoft["access_token"];
+      return $token;
+    }
+
+
     public function GoogleRemainingBudget()
     {
       date_default_timezone_set('Europe/London');
