@@ -43,6 +43,15 @@
                     'categoryb'
             ]
         ],
+        'isCombine' => 0,
+        'seoSetting' => [
+            'property1' => [
+                    'categorya'
+            ],
+            'property2' => [
+                    'categoryb'
+            ]
+        ]
     ]),
     CURLOPT_HTTPHEADER => [
         "Accept: application/json",
