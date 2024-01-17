@@ -195,7 +195,7 @@
                     if ($err) {
                     echo "cURL Error #:" . $err;
                     } else {
-                        $seflink =$db->Seflink($Category_Menu_Item["Title"]).'-'.$db->Seflink($Category_Menu_Item2["Title"]);
+                        $seflink =$db->Seflink($Category_Menu_Item["Title"]);
                         $say = $say+1;
                         //$menu = json_decode($response,true);
                         //$menuid3 = $menu["id"];
