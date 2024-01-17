@@ -46,7 +46,7 @@
         $menu = json_decode($response,true);
     }
     */
-    /*
+    
     $i=1;
     $filter = ['GroupId' => '0'];
     $Category_Menu = $db->Query('Category_Menu', $filter, [], 'COK');
@@ -94,5 +94,5 @@
             }
         }
         $i = $i+1;
-    }*/
+    }
 ?>
