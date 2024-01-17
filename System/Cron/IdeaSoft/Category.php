@@ -39,23 +39,15 @@
         'attachment' => 'string',
         'parent' => [
             'property1' => [
-                    'id',
-                    'category'
+                    'id'    =>'111',
+                    'category'  =>  'aaaa'
             ],
             'property2' => [
-                    'id',
-                    'category'
+                    'id'   =>  '222',
+                    'category'  =>  'bbbb'
             ]
         ],
-        'isCombine' => 0,
-        'seoSetting' => [
-            'property1' => [
-                    'category'
-            ],
-            'property2' => [
-                    'category'
-            ]
-        ]
+        'isCombine' => 0
     ]),
     CURLOPT_HTTPHEADER => [
         "Accept: application/json",
