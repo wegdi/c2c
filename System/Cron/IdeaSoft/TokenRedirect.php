@@ -18,6 +18,7 @@ $params = array(
     'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
 );
 
+
 // Parametreleri URL'ye çevir
 $queryString = http_build_query($params);
 
@@ -40,7 +41,8 @@ $Response = array(
     'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
 );
 
+$db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$Response);
+
+
 $birlestir=array_merge($Response,$responseArray);
 print_r($responseArray);
-
-$db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$birlestir);
