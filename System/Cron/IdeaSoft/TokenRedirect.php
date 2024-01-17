@@ -9,4 +9,10 @@ $code=$_GET["code"];
 $domain=$_GET["domain"];
 
 
-echo $code;
+
+$Response = array(
+  'state' => $state,
+  'code' => $code,
+  'domain' => $domain,
+
+);
