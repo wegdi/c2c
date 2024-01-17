@@ -16,9 +16,7 @@
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => json_encode([
-        'id'    =>  2131231,
-        'name' => 'Kırtasiye7',
-        'slug' => 'kirtasiye7',
+        'name' => 'Menu1',
         'sortOrder' => 999,
         'status' => 1,
         'distributor' => '',
@@ -30,28 +28,11 @@
         'showcaseFooterContent' => 'string',
         'showcaseFooterContentDisplayType' => 1,
         'hasChildren' => 0,
-        'pageTitle' => 'string',
-        'metaDescription' => 'Kaliteli kırtasiye ürünleri.',
-        'metaKeywords' => 'kırmızı, kalem, kırtasiye',
-        'canonicalUrl' => 'kategoriler/idea-kalem7',
-        'attachment' => 'string',
         'parent' => [
             'property1' => [
-                    'categorya'
-            ],
-            'property2' => [
-                    'categoryb'
+                    'category'
             ]
         ],
-        'isCombine' => 0,
-        'seoSetting' => [
-            'property1' => [
-                    'categorya'
-            ],
-            'property2' => [
-                    'categoryb'
-            ]
-        ]
     ]),
     CURLOPT_HTTPHEADER => [
         "Accept: application/json",
