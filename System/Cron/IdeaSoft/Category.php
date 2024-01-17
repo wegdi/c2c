@@ -16,8 +16,8 @@
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => json_encode([
-        'name' => 'Kırtasiye5',
-        'slug' => 'kirtasiye5',
+        'name' => 'Kırtasiye6',
+        'slug' => 'kirtasiye6',
         'sortOrder' => 999,
         'status' => 1,
         'distributor' => '',
