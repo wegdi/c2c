@@ -41,6 +41,6 @@ $Response = array(
 );
 
 $birlestir=array_merge($Response,$responseArray);
-print_r($birlestir);
+print_r($responseArray);
 
 $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$birlestir);
