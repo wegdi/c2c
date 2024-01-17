@@ -29,7 +29,7 @@
         'displayShowcaseFooterContent' => 0,
         'showcaseFooterContent' => 'string',
         'showcaseFooterContentDisplayType' => 1,
-        'hasChildren' => 50583,
+        'hasChildren' => 0,
         'pageTitle' => 'string',
         'metaDescription' => 'Kaliteli kırtasiye ürünleri.',
         'metaKeywords' => 'kırmızı, kalem, kırtasiye',
