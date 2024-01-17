@@ -27,12 +27,7 @@
         'displayShowcaseFooterContent' => 0,
         'showcaseFooterContent' => 'string',
         'showcaseFooterContentDisplayType' => 1,
-        'hasChildren' => 0,
-        'parent' => [
-            'property1' => [
-                    'category'
-            ]
-        ],
+        'hasChildren' => 0
     ]),
     CURLOPT_HTTPHEADER => [
         "Accept: application/json",
