@@ -33,7 +33,15 @@
         'metaDescription' => 'Kaliteli kırtasiye ürünleri.',
         'metaKeywords' => 'kırmızı, kalem, kırtasiye',
         'canonicalUrl' => 'kategoriler/idea-kalem3',
-        'attachment' => 'string'
+        'attachment' => 'string',
+        'parent' => [
+            'property1' => [
+                    'category'
+            ],
+            'property2' => [
+                    'category'
+            ]
+        ],
     ]),
     CURLOPT_HTTPHEADER => [
         "Accept: application/json",
