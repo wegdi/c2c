@@ -24,7 +24,7 @@
         'status' => 0,
         'distributor' => '',
         'percent' => 1,
-        'imageFile' => '',
+        'imageFile' => null,
         'displayShowcaseContent' => 0,
         'showcaseContent' => 'Üst içerik metni.',
         'showcaseContentDisplayType' => 1,
