@@ -146,6 +146,7 @@
                 } else {
                     $menu = json_decode($response,true);
                     $menuid2 = $menu["id"];
+                    $seflink =$seflink.'-';
                     $say = $say+1;
                 }
                 //kategori3
