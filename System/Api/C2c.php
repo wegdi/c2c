@@ -2,25 +2,28 @@
     require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
     require_once(SYSTEM.'General/General.php');
     $db = new General();
+    $filter = ['_id' => (string)'65a784f66b188048239f446c'];
+    $IdeaSoft = $db->Query('IdeaSoft', $filter, [], 'TEK', 0, 10);
+    print_r($IdeaSoft);
 
+    /*
+    $filter = ['GroupId' => '0'];
+    $Category_Menu = $db->Query('Category_Menu', $filter, [], 'COK');
+    foreach ($Category_Menu as $Category_Menu_Item) {
+        //$Category_Menu_Item["Title"];
 
+        //2.kategori
+        $filter = ['GroupId' => (string)$Category_Menu_Item["Uniqid"]];
+        $Category_Menu2 = $db->Query('Category_Menu', $filter, [], 'COK');
+        foreach ($Category_Menu2 as $Category_Menu_Item2) {
+            //$Category_Menu_Item2["Title"];
+            //3.kategori
+            $filter = ['GroupId' => (string)$Category_Menu_Item2["Uniqid"]];
+            $Category_Menu3 = $db->Query('Category_Menu', $filter, [], 'COK');
+            foreach ($Category_Menu3 as $Category_Menu_Item3) {
+                //$Category_Menu_Item3["Title"];
 
-        // Parametreleri tanımla
-        $params = array(
-            'client_id' => '1iydisrb33pc88ccog88wgw8gwkwkc8k4woo4s8goss44koog8',
-            'response_type' => 'code',
-            'state' => '3lhhwkqmlc6cow88wgwwkwcc8k00gwsw8k8osg00084ossc4wo',
-            'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
-        );
-
-        // Parametreleri URL'ye çevir
-        $queryString = http_build_query($params);
-
-        // Tam URL'yi oluştur
-        $url = 'https://mfkoto.myideasoft.com/panel/auth?' . $queryString;
-
-        // Yönlendir
-        header('Location: ' . $url);
-        exit;
-
+            }
+        }
+    }*/
 ?>
