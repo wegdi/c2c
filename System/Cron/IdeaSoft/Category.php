@@ -17,13 +17,14 @@
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => json_encode([
+        'id' => 123,
         'name' => 'Kırtasiye',
         'slug' => 'kirtasiye',
         'sortOrder' => 999,
         'status' => 0,
         'distributor' => '',
         'percent' => 1,
-        'imageFile' => null,
+        'imageFile' => 'kalem.jpg',
         'displayShowcaseContent' => 0,
         'showcaseContent' => 'Üst içerik metni.',
         'showcaseContentDisplayType' => 1,
@@ -36,6 +37,14 @@
         'metaKeywords' => 'kırmızı, kalem, kırtasiye',
         'canonicalUrl' => 'kategoriler/idea-kalem',
         'attachment' => 'string',
+        'parent' => [
+            'property1' => [
+                    'category'
+            ],
+            'property2' => [
+                    'category'
+            ]
+        ],
         'isCombine' => 0,
         'seoSetting' => [
             'property1' => [
