@@ -52,7 +52,6 @@ $responseJsonx = file_get_contents($targetUrlx);
 // JSON verilerini diziye çevir
 $responseArrayx = json_decode($responseJsonx, true);
 
-print_r($responseArrayx);
 
 $Response = array(
     'state' => $state,
