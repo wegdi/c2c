@@ -1,5 +1,4 @@
 <?php
-    set_time_limit(200);
     require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
     require_once(SYSTEM.'General/General.php');
     $db = new General();
@@ -53,8 +52,9 @@
     $filter = ['GroupId' => '0'];
     $Category_Menu = $db->Query('Category_Menu', $filter, [], 'COK');
     foreach ($Category_Menu as $Category_Menu_Item) {
-        if($i == 2){
+        if($i == 7){
             //$Category_Menu_Item["Title"];
+            $seflink = $db->Seflink($Category_Menu_Item["Title"]);
             $curl = curl_init();
             curl_setopt_array($curl, [
             CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories",
@@ -66,6 +66,7 @@
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => json_encode([
                 'name' => $Category_Menu_Item["Title"],
+                'slug'  => $seflink,
                 'sortOrder' => 999,
                 'status' => 1,
                 'distributor' => '',
@@ -100,6 +101,7 @@
             $filter = ['GroupId' => (string)$Category_Menu_Item["Uniqid"]];
             $Category_Menu2 = $db->Query('Category_Menu', $filter, [], 'COK');
             foreach ($Category_Menu2 as $Category_Menu_Item2) {
+                $seflink =$seflink.'-'.$db->Seflink($Category_Menu_Item2["Title"]);
                 $curl = curl_init();
                 curl_setopt_array($curl, [
                 CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories",
@@ -111,6 +113,7 @@
                 CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_POSTFIELDS => json_encode([
                     'name' => $Category_Menu_Item2["Title"],
+                    'slug'  =>  $seflink,
                     'sortOrder' => 999,
                     'status' => 1,
                     'distributor' => '',
@@ -148,6 +151,7 @@
                 $filter = ['GroupId' => (string)$Category_Menu_Item2["Uniqid"]];
                 $Category_Menu3 = $db->Query('Category_Menu', $filter, [], 'COK');
                 foreach ($Category_Menu3 as $Category_Menu_Item3) {
+                    $seflink =$seflink.'-'.$db->Seflink($Category_Menu_Item3["Title"]);
                     $curl = curl_init();
                     curl_setopt_array($curl, [
                     CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories",
@@ -159,6 +163,7 @@
                     CURLOPT_CUSTOMREQUEST => "POST",
                     CURLOPT_POSTFIELDS => json_encode([
                         'name' => $Category_Menu_Item3["Title"],
+                        'slug'  =>  $seflink,
                         'sortOrder' => 999,
                         'status' => 1,
                         'distributor' => '',
@@ -198,5 +203,4 @@
         $i = $i+1;
     }
     echo "toplam : ".$say." adet eklendi!";
-    echo exit;
 ?>
