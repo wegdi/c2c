@@ -16,8 +16,8 @@
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => json_encode([
-        'name' => 'Kırtasiye2',
-        'slug' => 'kirtasiye2',
+        'name' => 'Kırtasiye3',
+        'slug' => 'kirtasiye3',
         'sortOrder' => 999,
         'status' => 1,
         'distributor' => '',
@@ -28,11 +28,11 @@
         'displayShowcaseFooterContent' => 0,
         'showcaseFooterContent' => 'string',
         'showcaseFooterContentDisplayType' => 1,
-        'hasChildren' => 0,
+        'hasChildren' => 50584,
         'pageTitle' => 'string',
         'metaDescription' => 'Kaliteli kırtasiye ürünleri.',
         'metaKeywords' => 'kırmızı, kalem, kırtasiye',
-        'canonicalUrl' => 'kategoriler/idea-kalem2',
+        'canonicalUrl' => 'kategoriler/idea-kalem3',
         'attachment' => 'string'
     ]),
     CURLOPT_HTTPHEADER => [
