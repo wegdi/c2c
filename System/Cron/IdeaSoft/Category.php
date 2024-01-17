@@ -16,7 +16,7 @@
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => json_encode([
-        'name' => 'Menu2',
+        'name' => 'Menu3',
         'sortOrder' => 999,
         'status' => 0,
         'distributor' => '',
@@ -28,8 +28,16 @@
         'showcaseFooterContent' => 'string',
         'showcaseFooterContentDisplayType' => 1,
         'hasChildren' => 1,
-        'pageTitle' => 'Menu2',
-        'attachment' => 'string'
+        'pageTitle' => 'Menu3',
+        'attachment' => 'string',
+        'parent' => [
+            'property1' => [
+                    'category'
+            ],
+            'property2' => [
+                    'category'
+            ]
+        ],
     ]),
     CURLOPT_HTTPHEADER => [
         "Accept: application/json",
