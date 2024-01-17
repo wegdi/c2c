@@ -5,22 +5,72 @@
 
 
 
-        // Parametreleri tanımla
-        $params = array(
-            'client_id' => '1iydisrb33pc88ccog88wgw8gwkwkc8k4woo4s8goss44koog8',
-            'response_type' => 'code',
-            'state' => '3lhhwkqmlc6cow88wgwwkwcc8k00gwsw8k8osg00084ossc4wo',
-            'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
-        );
 
-        // Parametreleri URL'ye çevir
-        $queryString = http_build_query($params);
+$curl = curl_init();
 
-        // Tam URL'yi oluştur
-        $url = 'https://mfkoto.myideasoft.com/panel/auth?' . $queryString;
+curl_setopt_array($curl, [
+  CURLOPT_URL => "https://mfkoto.myideasoft.com/admin-api/categories",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => json_encode([
+    'id' => 123,
+    'name' => 'Kırtasiye',
+    'slug' => 'kirtasiye',
+    'sortOrder' => 999,
+    'status' => 0,
+    'distributor' => '',
+    'percent' => 1,
+    'imageFile' => 'kalem.jpg',
+    'displayShowcaseContent' => 0,
+    'showcaseContent' => 'Üst içerik metni.',
+    'showcaseContentDisplayType' => 1,
+    'displayShowcaseFooterContent' => 0,
+    'showcaseFooterContent' => 'string',
+    'showcaseFooterContentDisplayType' => 1,
+    'hasChildren' => 0,
+    'pageTitle' => 'string',
+    'metaDescription' => 'Kaliteli kırtasiye ürünleri.',
+    'metaKeywords' => 'kırmızı, kalem, kırtasiye',
+    'canonicalUrl' => 'kategoriler/idea-kalem',
+    'attachment' => 'string',
+    'parent' => [
+        'property1' => [
+                'category'
+        ],
+        'property2' => [
+                'category'
+        ]
+    ],
+    'isCombine' => 0,
+    'seoSetting' => [
+        'property1' => [
+                'category'
+        ],
+        'property2' => [
+                'category'
+        ]
+    ]
+  ]),
+  CURLOPT_HTTPHEADER => [
+    "Accept: application/json",
+    "Authorization: Bearer NDhmMDdjMTU0NDc5NWIwNzA2OTA1ZGNhZjAyZjU3YWZlNmUwNmYzNjNlNzBiYTExMzZkNTAzNGYwMTA3NzljMA",
+    "Content-Type: application/json"
+  ],
+]);
 
-        // Yönlendir
-        header('Location: ' . $url);
-        exit;
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
 
 ?>
