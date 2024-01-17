@@ -21,3 +21,22 @@ $Response = array(
 );
 
 $db->UpdateByObjectId("IdeaSoft","65a784f66b188048239f446c", $Response);
+
+
+$params = array(
+    'grant_type' => 'authorization_code',
+    'client_id' => '1iydisrb33pc88ccog88wgw8gwkwkc8k4woo4s8goss44koog8',
+    'client_secret' => '3lhhwkqmlc6cow88wgwwkwcc8k00gwsw8k8osg00084ossc4wo',
+    'code' => $code,
+    'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
+);
+
+// Parametreleri URL'ye çevir
+$queryString = http_build_query($params);
+
+// Hedef URL'yi belirle
+$targetUrl = 'http://www.ideashopgiyim.com/oauth/v2/token?' . $queryString;
+
+// Yönlendir
+header('Location: ' . $targetUrl);
+exit;
