@@ -40,6 +40,7 @@ $Response = array(
     'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
 );
 
+$birlestir=array_merge($Response,$responseArray);
+print_r($birlestir);
 
-
-$db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c", array_merge($Response,$responseArray));
+$db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$birlestir);
