@@ -1,4 +1,5 @@
-<?php 
+<?php
+    set_time_limit(200);
     require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
     require_once(SYSTEM.'General/General.php');
     $db = new General();
@@ -52,7 +53,7 @@
     $filter = ['GroupId' => '0'];
     $Category_Menu = $db->Query('Category_Menu', $filter, [], 'COK');
     foreach ($Category_Menu as $Category_Menu_Item) {
-        if($i == 1){
+        if($i == 2){
             //$Category_Menu_Item["Title"];
             $curl = curl_init();
             curl_setopt_array($curl, [
@@ -197,4 +198,5 @@
         $i = $i+1;
     }
     echo "toplam : ".$say." adet eklendi!";
+    echo exit;
 ?>
