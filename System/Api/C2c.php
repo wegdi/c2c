@@ -3,7 +3,7 @@
     require_once(SYSTEM.'General/General.php');
     $db = new General();
     $filter = ['_id' => (string)'65a784f66b188048239f446c'];
-    $IdeaSoft = $db->Query('IdeaSoft', $filter, [], 'TEK', '', '');
+    $IdeaSoft = $db->Query('IdeaSoft', $filter, [], 'TEK', 0, 10);
     print_r($IdeaSoft);
 
     /*
