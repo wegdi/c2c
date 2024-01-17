@@ -35,7 +35,7 @@ $params = array(
 $queryString = http_build_query($params);
 
 // Hedef URL'yi belirle
-$targetUrl = 'http://www.ideashopgiyim.com/oauth/v2/token?' . $queryString;
+$targetUrl = 'https://www.katfarlaryedekparca.com/oauth/v2/token?' . $queryString;
 
 // Yönlendir
 header('Location: ' . $targetUrl);
