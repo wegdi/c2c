@@ -5,7 +5,7 @@
     //echo $db->IdeaSoftToken();
     $magaza = 'mfkoto';
     $token = $db->IdeaSoftToken();
-
+    /*
     $curl = curl_init();
     curl_setopt_array($curl, [
     CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories",
@@ -44,20 +44,15 @@
     echo "cURL Error #:" . $err;
     } else {
         $menu = json_decode($response,true);
-        /*
-        $menu = json_decode($response,true);
-        echo "<pre>";
-        print_r($menu);
-        echo "</pre>";
-        echo $menu["id"];*/
+        
 
     }
-    
+    */
+    /*
     $filter = ['GroupId' => '0'];
     $Category_Menu = $db->Query('Category_Menu', $filter, [], 'COK');
     foreach ($Category_Menu as $Category_Menu_Item) {
         //$Category_Menu_Item["Title"];
         
-        
-    }
+    }*/
 ?>
