@@ -32,10 +32,7 @@
         'attachment' => 'string',
         'parent' => [
             'id' => [
-                    'category'
-            ],
-            'property2' => [
-                    'category'
+                    '50589'
             ]
         ],
     ]),
