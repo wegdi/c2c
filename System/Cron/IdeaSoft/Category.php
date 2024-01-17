@@ -152,7 +152,7 @@
                 $filter = ['GroupId' => (string)$Category_Menu_Item2["Uniqid"]];
                 $Category_Menu3 = $db->Query('Category_Menu', $filter, [], 'COK');
                 foreach ($Category_Menu3 as $Category_Menu_Item3) {
-                    $seflink ='-'.$db->Seflink($Category_Menu_Item3["Title"]);
+                    $seflink = $seflink.'-'.$db->Seflink($Category_Menu_Item3["Title"]);
                     $curl = curl_init();
                     curl_setopt_array($curl, [
                     CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories",
