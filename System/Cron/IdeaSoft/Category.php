@@ -52,7 +52,9 @@
     if ($err) {
     echo "cURL Error #:" . $err;
     } else {
-    echo $response;
+        echo '<pre>';
+        print_r($response);
+        echo '</pre>';
     }
 
     /*
