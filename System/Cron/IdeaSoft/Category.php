@@ -16,7 +16,7 @@
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => json_encode([
-        'name' => 'Menu3',
+        'name' => 'Menu3-3',
         'sortOrder' => 999,
         'status' => 1,
         'distributor' => '',
@@ -31,7 +31,7 @@
         'pageTitle' => 'Menu3',
         'attachment' => 'string',
         'parent' => [
-            'id' => 50589
+            'id' => 50590
         ],
     ]),
     CURLOPT_HTTPHEADER => [
