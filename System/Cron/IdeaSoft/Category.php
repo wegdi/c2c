@@ -16,7 +16,6 @@
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => json_encode([
-        'id' =>50585,
         'name' => 'Kırtasiye5',
         'slug' => 'kirtasiye5',
         'sortOrder' => 999,
@@ -34,7 +33,15 @@
         'metaDescription' => 'Kaliteli kırtasiye ürünleri.',
         'metaKeywords' => 'kırmızı, kalem, kırtasiye',
         'canonicalUrl' => 'kategoriler/idea-kalem3',
-        'attachment' => 'string'
+        'attachment' => 'string',
+        'parent' => [
+            'property1' => [
+                    'category a'
+            ],
+            'property2' => [
+                    'category b'
+            ]
+        ],
     ]),
     CURLOPT_HTTPHEADER => [
         "Accept: application/json",
