@@ -52,8 +52,8 @@
     if ($err) {
     echo "cURL Error #:" . $err;
     } else {
-        echo "a".$response["id"];
-        echo "b".$response->id;
+        $menu = json_decode($response);
+        echo $menu["id"];
 
     }
 
