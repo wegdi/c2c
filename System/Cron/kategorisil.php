@@ -6,7 +6,7 @@ $token = 'NDhmMDdjMTU0NDc5NWIwNzA2OTA1ZGNhZjAyZjU3YWZlNmUwNmYzNjNlNzBiYTExMzZkNT
 
 $curl = curl_init();
 
-for ($id = 669; $id <= 25183; $id++) {
+for ($id = 3948; $id <= 4948; $id++) {
     $url = $base_url . $id;
 
     curl_setopt_array($curl, array(
