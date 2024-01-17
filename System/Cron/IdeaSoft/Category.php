@@ -52,7 +52,7 @@
     if ($err) {
     echo "cURL Error #:" . $err;
     } else {
-        $menu = json_decode($response);
+        $menu = json_decode($response,true);
         echo $menu["id"];
 
     }
