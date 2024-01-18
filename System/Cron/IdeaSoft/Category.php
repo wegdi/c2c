@@ -196,7 +196,7 @@
                     } else {
                         $seflink = $db->Seflink($Category_Menu_Item["Title"]).'-'.$db->Seflink($Category_Menu_Item2["Title"]);
                         $say = $say+1;
-                        //$menu = json_decode($response,true);
+                        $menuson = json_decode($response,true);
                         //$menuid3 = $menu["id"];
                     }
                 }
@@ -206,4 +206,7 @@
         $i = $i+1;
     }
     echo "toplam : ".$say." adet eklendi!";
+    echo '<pre>';
+    print_r($menuson);
+    echo '</pre>';
 ?>
