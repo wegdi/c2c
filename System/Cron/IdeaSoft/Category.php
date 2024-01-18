@@ -99,6 +99,7 @@
                 $say = $say+1;
             }
             //kategori2
+            /*
             $filter = ['GroupId' => (string)$Category_Menu_Item["Uniqid"]];
             $Category_Menu2 = $db->Query('Category_Menu', $filter, [], 'COK');
             foreach ($Category_Menu2 as $Category_Menu_Item2) {
@@ -196,17 +197,17 @@
                     } else {
                         $seflink = $db->Seflink($Category_Menu_Item["Title"]).'-'.$db->Seflink($Category_Menu_Item2["Title"]);
                         $say = $say+1;
-                        $menuson = json_decode($response,true);
+                        //$menu = json_decode($response,true);
                         //$menuid3 = $menu["id"];
                     }
                 }
                 $seflink = $db->Seflink($Category_Menu_Item["Title"]);
-            }
+            }*/
         }
         $i = $i+1;
     }
     echo "toplam : ".$say." adet eklendi!";
     echo '<pre>';
-    print_r($menuson);
+    print_r($menu);
     echo '</pre>';
 ?>
