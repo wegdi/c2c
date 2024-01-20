@@ -283,6 +283,14 @@ class General
       return $token;
     }
 
+    public function IdeaSoftRefreshToken()
+    {
+      $IdeaSoft = $this->Query('IdeaSoft',['_id' => $this->ObjectId("65a784f66b188048239f446c")], [], 'TEK');
+
+      $token=$IdeaSoft["refresh_token"];
+      return $token;
+    }
+
 
     public function GoogleRemainingBudget()
     {

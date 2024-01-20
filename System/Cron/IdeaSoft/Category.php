@@ -5,6 +5,7 @@
     //echo $db->IdeaSoftToken();
     $magaza = 'mfkoto';
     $token = $db->IdeaSoftToken();
+    echo $db->IdeaSoftRefreshToken();
     /*
     $curl = curl_init();
     curl_setopt_array($curl, [
@@ -46,7 +47,7 @@
         $menu = json_decode($response,true);
     }
     */
-    
+    /*
     $i=1;
     $say = 0;
     $filter = ['GroupId' => '0'];
@@ -210,4 +211,5 @@
     echo '<pre>';
     print_r($menu);
     echo '</pre>';
+    */
 ?>
