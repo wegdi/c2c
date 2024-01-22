@@ -9,7 +9,7 @@ $parameters = array(
 );
 
 // Parametreleri URL'ye eklemek için http_build_query kullan
-$url = 'https://www.katfarlaryedekparca.com/panel/auth?' . http_build_query($parameters);
+$url = 'https://mfkoto.myideasoft.com/panel/auth?' . http_build_query($parameters);
 
 // Yönlendirme
 header('Location: ' . $url);
