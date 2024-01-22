@@ -5,6 +5,8 @@ $db = new General();
 
 $api_url = 'http://www.katfarlaryedekparca.com/oauth/v2/token';
 
+echo $db->IdeaSoftRefreshToken();
+/*
 $data = array(
     'grant_type' => 'refresh_token',
     'client_id' => '1iydisrb33pc88ccog88wgw8gwkwkc8k4woo4s8goss44koog8',
@@ -28,5 +30,5 @@ curl_close($ch);
 
 // Cevabı kullanabilirsiniz
 echo $response;
-
+*/
 ?>
