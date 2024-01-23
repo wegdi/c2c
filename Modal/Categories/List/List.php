@@ -25,7 +25,7 @@ if($_GET["Params"]){
 
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
-$Category_Menu = $db->Query('IdeaSoftCategory', $filter, [], 'COK', $start, $length);
+$Category_Menu = $db->Query('IdeaSoftCategory', $filter, ['sort' => ['_id' => -1]], 'COK', $start, $length);
 
 $Log = array();
 foreach ($Category_Menu as $Category_Menu_Item) {
