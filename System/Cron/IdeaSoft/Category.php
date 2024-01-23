@@ -5,6 +5,10 @@
     $magaza = 'mfkoto';
     $token = $db->IdeaSoftToken();
 
+    $id_box = array('57220','57643','57776','58814','60041','60629','61002','61229','61485','62285','63003','63509','63902','64071','64223');
+    $ids = implode($id_box,',');
+    echo $ids;
+    /*
     $curl = curl_init();
     curl_setopt_array($curl, [
     CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories?ids=57220,57643,57776",
@@ -33,4 +37,5 @@
         print_r($men);
         echo '</pre>';
     }
+    */
 ?>
