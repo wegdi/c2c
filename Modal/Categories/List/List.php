@@ -17,7 +17,7 @@ $searchValue = $_POST['search']['value'];
 
 
 if($_GET["Params"]){
-    $filter = ['GroupId' => $_GET["Params"]];
+    $filter = ['GroupId' => (int)$_GET["Params"]];
 }else{
     $filter = ['GroupId' => '0'];
 }
