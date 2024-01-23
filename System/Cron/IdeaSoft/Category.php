@@ -35,6 +35,18 @@
         echo '<pre>';
         print_r($men);
         echo '</pre>';
+        $i = 0;
+        while($i < count($men)){
+            echo $men[$i]["id"];
+
+
+
+            $i = $i+1;
+        }
+
+
+
+
     }
     
 ?>
