@@ -128,9 +128,7 @@
                     echo categories_add($ideasoftid,$magaza,$token);
                 }
             }
-            
         }
         $i = $i+1;
     }
-    
 ?>
