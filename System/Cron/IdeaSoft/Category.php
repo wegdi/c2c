@@ -37,8 +37,18 @@
         echo '</pre>';
         $i = 0;
         while($i < count($men)){
-            echo $men[$i]["id"];
-
+            $Data = array(
+                "name" => $men[$i]["name"],
+                "slug" => $men[$i]["slug"],
+                "IdeaSoftId" => (int)$men[$i]["id"],
+                "GroupId" => (int)"0",
+                "sortOrder" => (int)$men[$i]["sortOrder"],
+                "status" => (int)$men[$i]["status"],
+                "distributorCode" =>  $men[$i]["distributorCode"],
+                "IdeaSoftDate" =>  $men[$i]["createdAt"],
+                "Date" => strtotime($value["Date"])
+              );
+            $db->Add("IdeaSoftCategory", $Data);
 
 
             $i = $i+1;
