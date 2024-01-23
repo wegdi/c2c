@@ -43,7 +43,7 @@
                 "Name" => $men[$i]["name"],
                 "Slug" => $men[$i]["slug"],
                 "IdeaSoftId" => (int)$men[$i]["id"],
-                "GroupId" => (int)"0",
+                "GroupId" => "0",
                 "SortOrder" => (int)$men[$i]["sortOrder"],
                 "Status" => (int)$men[$i]["status"],
                 "DistributorCode" =>  $men[$i]["distributorCode"],
