@@ -25,7 +25,7 @@ if($_GET["Params"]){
 
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
-$Category_Menu = $db->Query('Category_Menu', $filter, [], 'COK', $start, $length);
+$Category_Menu = $db->Query('IdeaSoftCategory', $filter, [], 'COK', $start, $length);
 
 $Log = array();
 foreach ($Category_Menu as $Category_Menu_Item) {
@@ -42,8 +42,8 @@ foreach ($Category_Menu as $Category_Menu_Item) {
 
 $getir = array(
     "draw" => (int) $draw,
-    "recordsTotal" => $db->Quantity('Category_Menu'),
-    "recordsFiltered" => $db->Quantity('Category_Menu', $filter), // Here, we use the filtered data count
+    "recordsTotal" => $db->Quantity('IdeaSoftCategory'),
+    "recordsFiltered" => $db->Quantity('IdeaSoftCategory', $filter), // Here, we use the filtered data count
     "data" => $Log
 );
 

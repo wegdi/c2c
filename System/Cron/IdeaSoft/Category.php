@@ -37,7 +37,9 @@
         echo '</pre>';
         $i = 0;
         while($i < count($men)){
+            $uniqid = uniqid();
             $Data = array(
+                "Uniqid"    =>  $uniqid,
                 "name" => $men[$i]["name"],
                 "slug" => $men[$i]["slug"],
                 "IdeaSoftId" => (int)$men[$i]["id"],
@@ -45,8 +47,7 @@
                 "sortOrder" => (int)$men[$i]["sortOrder"],
                 "status" => (int)$men[$i]["status"],
                 "distributorCode" =>  $men[$i]["distributorCode"],
-                "IdeaSoftDate" =>  $men[$i]["createdAt"],
-                "Date" => strtotime($value["Date"])
+                "IdeaSoftDate" =>  $men[$i]["createdAt"]
               );
             $db->Add("IdeaSoftCategory", $Data);
 
