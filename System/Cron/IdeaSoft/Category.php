@@ -28,6 +28,9 @@
     if ($err) {
     echo "cURL Error #:" . $err;
     } else {
-    echo $response;
+        $men = json_decode($response, true);
+        echo '<pre>';
+        print_r($men);
+        echo '</pre>';
     }
 ?>
