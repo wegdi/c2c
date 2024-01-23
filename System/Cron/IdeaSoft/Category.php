@@ -54,7 +54,7 @@
     
     $i = 1;
     $filter = ['GroupId' => '0'];
-    $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK', '0', '');
+    $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK');
     foreach ($IdeaSoftCategory as $value) {
         echo $value["Name"];
         $uniqid = uniqid();
