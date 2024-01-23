@@ -71,6 +71,12 @@
             foreach ($IdeaSoftCategory as $value) {
                 $ideasoftid = $value["IdeaSoftId"];
                 echo categories_add($ideasoftid,$magaza,$token);
+                $filter = ['GroupId' => $ideasoftid];
+                $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK');
+                foreach ($IdeaSoftCategory as $value) {
+                    $ideasoftid = $value["IdeaSoftId"];
+                    echo categories_add($ideasoftid,$magaza,$token);
+                }
             }
             
         }
