@@ -40,13 +40,13 @@
             $uniqid = uniqid();
             $Data = array(
                 "Uniqid"    =>  $uniqid,
-                "name" => $men[$i]["name"],
-                "slug" => $men[$i]["slug"],
+                "Name" => $men[$i]["name"],
+                "Slug" => $men[$i]["slug"],
                 "IdeaSoftId" => (int)$men[$i]["id"],
                 "GroupId" => (int)"0",
-                "sortOrder" => (int)$men[$i]["sortOrder"],
-                "status" => (int)$men[$i]["status"],
-                "distributorCode" =>  $men[$i]["distributorCode"],
+                "SortOrder" => (int)$men[$i]["sortOrder"],
+                "Status" => (int)$men[$i]["status"],
+                "DistributorCode" =>  $men[$i]["distributorCode"],
                 "IdeaSoftDate" =>  $men[$i]["createdAt"]
               );
             $db->Add("IdeaSoftCategory", $Data);

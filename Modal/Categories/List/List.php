@@ -32,7 +32,7 @@ foreach ($Category_Menu as $Category_Menu_Item) {
 
 
     $Log[] = array(
-        $Category_Menu_Item["Title"],
+        $Category_Menu_Item["Name"],
         '<div class="hstack gap-2">
             <a href="/Categories/List/'.$Category_Menu_Item['Uniqid'].'" class="btn btn-sm btn-soft-info edit-list"><i class="ri-eye-2-line align-bottom"></i></a>
          </div>'
