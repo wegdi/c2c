@@ -113,23 +113,22 @@
     $filter = ['GroupId' => '0'];
     $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK');
     foreach ($IdeaSoftCategory as $value) {
-        if($i > 1){
+        if($i == 1){
             $ideasoftid = $value["IdeaSoftId"];
-            echo categories_add($ideasoftid,$magaza,$token);
-            
-            /*$filter = ['GroupId' => $ideasoftid];
+            //echo categories_add($ideasoftid,$magaza,$token);
+            $filter = ['GroupId' => $ideasoftid];
             $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK');
             foreach ($IdeaSoftCategory as $value) {
                 $ideasoftid = $value["IdeaSoftId"];
                 echo categories_add($ideasoftid,$magaza,$token);
+                /*
                 $filter = ['GroupId' => $ideasoftid];
                 $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK');
                 foreach ($IdeaSoftCategory as $value) {
                     $ideasoftid = $value["IdeaSoftId"];
                     echo categories_add($ideasoftid,$magaza,$token);
-                }
+                }*/
             }
-            */
         }
         $i = $i+1;
     }
