@@ -5,9 +5,12 @@
     $magaza = 'mfkoto';
     $token = $db->IdeaSoftToken();
 
-    function categories_add(){
-        /*$r = 0;
-        $ids = $value["IdeaSoftId"];
+    function categories_add($ideasoftid,$magaza,$token){
+        $uniqid = uniqid();
+        $db = new General();
+        $r = 0;
+        $son = '';
+        $ids = $ideasoftid;
         $curl = curl_init();
         curl_setopt_array($curl, [
         CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories?parent=$ids&limit=100",
@@ -47,17 +50,23 @@
                     );
                     $db->Add("IdeaSoftCategory", $Data);
                     $r = $r+1;
+                    $son = $men[$r]["id"].' - '.$men[$r]["name"];
                 }
+                return $son;
+            }else{
+                return 'parent id ile değer bulunamadı!';
             }
-        }*/
+        }
     }
     
     $i = 1;
     $filter = ['GroupId' => '0'];
     $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK');
     foreach ($IdeaSoftCategory as $value) {
-        echo $value["Name"];
-        $uniqid = uniqid();
+        if($i == 1){
+            $ideasoftid = $value["IdeaSoftId"];
+            echo categories_add($ideasoftid,$magaza,$token);
+        }
         $i = $i+1;
     }
 ?>
