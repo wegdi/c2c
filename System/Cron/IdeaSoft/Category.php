@@ -87,18 +87,23 @@
             //echo '</pre>';
             if(count($men) > 0){
                 while($r < count($men)){
-                    $Data = array(
-                        "Uniqid"    =>  $uniqid,
-                        "Name" => $men[$r]["name"],
-                        "Slug" => $men[$r]["slug"],
-                        "IdeaSoftId" => $men[$r]["id"],
-                        "GroupId" => $ids,
-                        "SortOrder" => (int)$men[$r]["sortOrder"],
-                        "Status" => (int)$men[$r]["status"],
-                        "DistributorCode" =>  $men[$r]["distributorCode"],
-                        "IdeaSoftDate" =>  $men[$r]["createdAt"]
-                    );
-                    $db->Add("IdeaSoftCategory", $Data);
+                    $CategoryTek = $db->Query('IdeaSoftCategory',["Slug" => (string)$men[$r]["slug"]], [], 'TEK');
+                    if ($CategoryTek["_id"]=="") {
+                        $Data = array(
+                            "Uniqid"    =>  $uniqid,
+                            "Name" => $men[$r]["name"],
+                            "Slug" => $men[$r]["slug"],
+                            "IdeaSoftId" => $men[$r]["id"],
+                            "GroupId" => $ids,
+                            "SortOrder" => (int)$men[$r]["sortOrder"],
+                            "Status" => (int)$men[$r]["status"],
+                            "DistributorCode" =>  $men[$r]["distributorCode"],
+                            "IdeaSoftDate" =>  $men[$r]["createdAt"]
+                        );
+                        $db->Add("IdeaSoftCategory", $Data);
+                    }else{
+                        echo 'daha önce kaydedilmiş';
+                    }
                     $r = $r+1;
                     $son = 'ekledi';
                 }
