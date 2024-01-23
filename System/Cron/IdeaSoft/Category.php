@@ -100,7 +100,7 @@
                     );
                     $db->Add("IdeaSoftCategory", $Data);
                     $r = $r+1;
-                    $son = $men[$r]["id"].' - '.$men[$r]["name"];
+                    $son = 'ekledi';
                 }
                 return $son;
             }else{
