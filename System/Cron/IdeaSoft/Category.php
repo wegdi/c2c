@@ -90,7 +90,7 @@
                         "Uniqid"    =>  $uniqid,
                         "Name" => $men[$r]["name"],
                         "Slug" => $men[$r]["slug"],
-                        "IdeaSoftId" => (int)$men[$r]["id"],
+                        "IdeaSoftId" => $men[$r]["id"],
                         "GroupId" => $ids,
                         "SortOrder" => (int)$men[$r]["sortOrder"],
                         "Status" => (int)$men[$r]["status"],
