@@ -6,6 +6,7 @@
     $token = $db->IdeaSoftToken();
 
 
+    $filter = ['GroupId' => '0'];
     $i = 1;
     $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK', $start, $length);
     foreach ($IdeaSoftCategory as $value) {
