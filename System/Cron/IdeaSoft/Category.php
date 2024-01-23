@@ -5,8 +5,8 @@
     $magaza = 'mfkoto';
     $token = $db->IdeaSoftToken();
 
-    /*
-    ana kategori ekleme
+    
+    //ana kategori ekleme
     $id_box = array('57220','57643','57776','58814','60041','60629','61002','61229','61485','62285','63003','63509','63902','64071','64223');
     $ids = implode(",",$id_box);
     $curl = curl_init();
@@ -51,9 +51,9 @@
             $i = $i+1;
         }
     }
-    */
+    
 
-
+    /*
     function categories_add($ideasoftid,$magaza,$token){
         $uniqid = uniqid();
         $db = new General();
@@ -131,4 +131,5 @@
         }
         $i = $i+1;
     }
+    */
 ?>
