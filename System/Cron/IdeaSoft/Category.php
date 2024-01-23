@@ -4,9 +4,9 @@
     $db = new General();
     $magaza = 'mfkoto';
     $token = $db->IdeaSoftToken();
+echo 'test';
 
-
-    $filter = ['GroupId' => (string)'0'];
+    $filter = ['GroupId' => '0'];
     $i = 1;
     $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK', '', '');
     foreach ($IdeaSoftCategory as $value) {
