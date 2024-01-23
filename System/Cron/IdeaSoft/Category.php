@@ -5,9 +5,10 @@
     $magaza = 'mfkoto';
     $token = $db->IdeaSoftToken();
 
+
     $id_box = array('57220','57643','57776','58814','60041','60629','61002','61229','61485','62285','63003','63509','63902','64071','64223');
+    /*
     $ids = implode(",",$id_box);
-    
     $curl = curl_init();
     curl_setopt_array($curl, [
     CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories?ids=$ids&limit=100",
@@ -35,9 +36,21 @@
         echo '<pre>';
         print_r($men);
         echo '</pre>';
-        $i = 0;
-        while($i < count($men)){
-            $uniqid = uniqid();
+        
+
+
+
+
+    }
+    */
+
+
+    $i = 0;
+    while($i < count($id_box)){
+        $uniqid = uniqid();
+        if($i == 0){
+            echo $id_box[$i];
+            /*
             $Data = array(
                 "Uniqid"    =>  $uniqid,
                 "Name" => $men[$i]["name"],
@@ -48,16 +61,11 @@
                 "Status" => (int)$men[$i]["status"],
                 "DistributorCode" =>  $men[$i]["distributorCode"],
                 "IdeaSoftDate" =>  $men[$i]["createdAt"]
-              );
-            $db->Add("IdeaSoftCategory", $Data);
-
-
-            $i = $i+1;
+            );
+            $db->Add("IdeaSoftCategory", $Data);*/
         }
 
-
-
-
+        $i = $i+1;
     }
     
 ?>
