@@ -4,7 +4,6 @@
     $db = new General();
     $magaza = 'mfkoto';
     $token = $db->IdeaSoftToken();
-    echo 'test';
 
     function categories_add(){
         /*$r = 0;
@@ -55,7 +54,7 @@
     
     $i = 1;
     $filter = ['GroupId' => '0'];
-    $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK', '', '');
+    $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK', '0', '');
     foreach ($IdeaSoftCategory as $value) {
         echo $value["Name"];
         $uniqid = uniqid();
