@@ -63,9 +63,7 @@ foreach ($Products as $ProductsGet) {
         $status,
         '<div class="input-group">
         <input type="hidden" name="ProductId" value="'.(string)$ProductsGet["_id"].'">
-        <select class="form-select listle">
-        
-        </select>
+        <select class="form-select listle" id="select1" data-url="/System/Cron/IdeaSoft/CategoryJson.php"></select>
         </div>',
         $Supplier["SupplierName"]
 
