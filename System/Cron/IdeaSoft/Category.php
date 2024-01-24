@@ -35,6 +35,12 @@
       $IdeaSoftCategory=json_decode($response,1);
       foreach ($IdeaSoftCategory as $key => $value) {
         print_r( $value);
+
+        if (is_array($value["parent"])) {
+        echo "var";
+        }
+
+
       }
     }
 
