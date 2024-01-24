@@ -172,11 +172,31 @@ var deletetitle = "<?php echo $Themes->Translate("TEXT_DELETE_ERROR"); ?>";
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
-       $(document).ready(function() {
-           // select2 eklentisini etkinleştirin
-            $('.listle').select2();
-       });
-   </script>
+        $(document).ready(function() {
+            // .listle sınıfına sahip tüm select elementlerine select2 eklentisini uygula
+            $('.listle').select2({
+                placeholder: 'Arama yapın...',
+                ajax: {
+                    url: function () {
+                        return $(this).data('url');
+                    },
+                    dataType: 'json',
+                    delay: 250,
+                    processResults: function (data) {
+                        return {
+                            results: $.map(data, function (item) {
+                                return {
+                                    text: item.Name,
+                                    id: item.IdeaSoftId
+                                };
+                            })
+                        };
+                    },
+                    cache: true
+                }
+            });
+        });
+    </script>
 
 </body>
 
