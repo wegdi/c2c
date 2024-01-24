@@ -5,6 +5,7 @@
     $IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], [], 'COK');
     foreach ($IdeaSoftCategory as $key => $value) {
         print_r($value);
+        s
     }
 
 ?>
