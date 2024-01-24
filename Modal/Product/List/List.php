@@ -20,9 +20,13 @@ $filter = [];
 $Products = $db->Query('Products', $filter, ['sort' => ['product_meta_description' => -1]], 'COK', $start, $length);
 
 
+$url = 'https://c2c.wegdi.com/System/Cron/IdeaSoft/CategoryJson.php';
+
+// JSON verilerini çekin
+$jsonData = file_get_contents($url);
+$jsonData= json_decode($jsonData,1);
 $ideaSoftCategoryItem = '';
-$IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], [], 'COK');
-foreach ($IdeaSoftCategory as $value) {
+foreach ($jsonData as $value) {
   $ideaSoftCategoryItem .= '<option value="'.$value["IdeaSoftId"].'">'.$value["Name"].'</option>';
 }
 
