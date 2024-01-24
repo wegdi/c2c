@@ -142,7 +142,6 @@ $security->LoginControl($guvenlik);
 <!--select2 cdn-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.2.6/jquery.inputmask.bundle.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
- <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/pages/select2.init.js"></script>
 
 <script>
 var param0 = "<?php echo $param0; ?>";
