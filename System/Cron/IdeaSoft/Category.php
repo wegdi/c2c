@@ -130,7 +130,8 @@
                 $IdeaSoftCategory = $db->Query('IdeaSoftCategory', $filter, [], 'COK');
                 foreach ($IdeaSoftCategory as $value) {
                     $ideasoftid = $value["IdeaSoftId"];
-                    echo categories_add($ideasoftid,$magaza,$token);
+                    echo $ideasoftid.'<br>';
+                    //echo categories_add($ideasoftid,$magaza,$token);
                 }
             }
         }
