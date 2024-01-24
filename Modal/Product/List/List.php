@@ -63,7 +63,7 @@ foreach ($Products as $ProductsGet) {
         $status,
         '<div class="input-group">
         <input type="hidden" name="ProductId" value="'.(string)$ProductsGet["_id"].'">
-        <select class="form-select" id="list">
+        <select class="form-select" id="listle">
           '.$ideaSoftCategoryItem.'
         </select>
         </div>',
