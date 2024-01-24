@@ -17,6 +17,18 @@ $security->LoginControl($guvenlik);
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
+
+    <!-- Layout config Js -->
+   <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/layout.js"></script>
+   <!-- Bootstrap Css -->
+   <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+   <!-- Icons Css -->
+   <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+   <!-- App Css-->
+   <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+   <!-- custom Css-->
+   <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
       <!--datatable css-->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
     <!--datatable responsive css-->
