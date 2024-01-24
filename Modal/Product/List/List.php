@@ -50,7 +50,7 @@ foreach ($Products as $ProductsGet) {
         empty($ProductsGet["C2Cmodel"]) ? '' : $ProductsGet["C2Cmodel"],
         $ProductsGet["quantity"],
         $status,
-        $ProductsGet["Category"],
+        'test',
         $Supplier["SupplierName"]
 
     );
