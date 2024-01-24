@@ -19,7 +19,7 @@
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_HTTPHEADER => [
         "Accept: application/json",
-        "Authorization: Bearer $token"
+        "Authorization:  $token"
       ],
     ]);
 
