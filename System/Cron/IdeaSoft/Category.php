@@ -53,7 +53,7 @@
     }
     */
     
-
+    /*
     
     function categories_add($ideasoftid,$magaza,$token){
         $uniqid = uniqid();
@@ -137,4 +137,5 @@
         }
         $i = $i+1;
     }
+    */
 ?>
