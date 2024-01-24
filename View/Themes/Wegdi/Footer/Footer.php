@@ -30,10 +30,22 @@ $security->LoginControl($guvenlik);
 <!-- JAVASCRIPT -->
 
 <script>var Url = "<?php echo $Themes->ThemeUrl(); ?>/";</script>
+<!-- JAVASCRIPT -->
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/node-waves/waves.min.js"></script>
+<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/feather-icons/feather.min.js"></script>
+<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/plugins.js"></script>
+
+<!-- prismjs plugin -->
+<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/prismjs/prism.js"></script>
+
+<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/app.js"></script>
+
 
 <!--select2 cdn-->
 
