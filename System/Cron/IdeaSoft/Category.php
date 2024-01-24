@@ -17,7 +17,7 @@
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => [
             "Accept: application/json",
-            "Authorization:  $token"
+            "Authorization:  Bearer $token"
         ],
         ]);
         $response = curl_exec($curl);
