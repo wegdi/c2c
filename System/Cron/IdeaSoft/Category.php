@@ -43,7 +43,10 @@
         if (is_array($value["parent"])) {
         $data["ParentId"] = (int)$value["parent"]["id"];
 
-        }
+      }else {
+        $data["ParentId"] = 0;
+
+      }
 
         $IdeaSoftCategory = $db->Query('IdeaSoftCategory', ["IdeaSoftId" => (int)$value["id"]], [], 'TEK');
 
@@ -54,7 +57,7 @@
           $db->UpdateByObjectId("IdeaSoftCategory", (string)$IdeaSoftCategory["_id"], $data);
 
         }
-      
+
 
       }
     }
