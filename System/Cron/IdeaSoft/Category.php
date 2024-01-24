@@ -27,9 +27,9 @@
         if ($err) {
         echo "cURL Error #:" . $err;
         } else {
-
-            $IdeaSoftCategory=json_decode($response,1);
-            print_r($IdeaSoftCategory);
+          echo $response;
+          //  $IdeaSoftCategory=json_decode($response,1);
+            //print_r($IdeaSoftCategory);
 
             }
         }
