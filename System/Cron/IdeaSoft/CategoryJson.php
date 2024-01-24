@@ -4,8 +4,9 @@
     $db = new General();
     $IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], [], 'COK');
     foreach ($IdeaSoftCategory as $key => $value) {
+        unset($value["_id"]);
         print_r($value);
-        
+
     }
 
 ?>
