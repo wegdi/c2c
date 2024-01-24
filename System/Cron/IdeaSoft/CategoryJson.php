@@ -31,7 +31,11 @@ function buildCategoryTree($categories, $parentId = 0)
 
     foreach ($categories as $category) {
         if ($category['ParentId'] == $parentId) {
-            $branch[] = $category['Name'];
+            $branch[] = [
+                'Name' => $category['Name'],
+                'Slug' => $category['Slug'],
+                'IdeaSoftId' => $category['IdeaSoftId'],
+            ];
 
             // Alt kategorileri ekleyin
             $subcategories = buildCategoryTree($categories, $category['IdeaSoftId']);
