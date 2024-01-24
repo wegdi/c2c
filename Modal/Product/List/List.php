@@ -62,6 +62,7 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["quantity"],
         $status,
         '<div class="input-group">
+        <input type="hidden" name="ProductId" value="'.(string)$ProductsGet["_id"].'">
         <select class="form-select" id="list">
           '.$ideaSoftCategoryItem.'
         </select>
