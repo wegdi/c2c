@@ -41,13 +41,20 @@
         $data["IdeaSoftId"] = (int)$value["id"];
         $data["Status"] = $value["status"];
         if (is_array($value["parent"])) {
-          $data["ParentId"] = (int)$value["parent"]["id"];
+        $data["ParentId"] = (int)$value["parent"]["id"];
 
         }
 
-        $Products = $db->Query('IdeaSoftCategory', ["IdeaSoftId" => (int)$value["id"]], [], 'TEK');
+        $IdeaSoftCategory = $db->Query('IdeaSoftCategory', ["IdeaSoftId" => (int)$value["id"]], [], 'TEK');
 
-        print_R($data);
+        if ($IdeaSoftCategory["_id"]=="") {
+          $db->Add("IdeaSoftCategory", $data);
+
+        }else {
+          $db->UpdateByObjectId("IdeaSoftCategory", (string)$IdeaSoftCategory["_id"], $data);
+
+        }
+      
 
       }
     }
