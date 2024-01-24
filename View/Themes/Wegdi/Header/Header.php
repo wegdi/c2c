@@ -16,38 +16,6 @@ $security->LoginControl($guvenlik);
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
-    <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/dropzone/dropzone.css" rel="stylesheet" type="text/css" />
-
-    <!-- jQuery ve select2 kütüphanelerini ekleyin -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-
-<!-- select2 konfigürasyonu ve diğer scriptler buraya -->
-
-
-
-
-    <!--Swiper slider css-->
-    <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Layout config Js -->
-    <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/layout.js"></script>
-    <!-- Bootstrap Css -->
-    <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Icons Css -->
-    <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
-    <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/css/app.min.css" rel="stylesheet" type="text/css" />
-    <!-- custom Css-->
-    <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
-
-    <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-
-        <!-- multi.js css -->
-     <link rel="stylesheet" type="text/css" href="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/multi.js/multi.min.css" />
-     <!-- autocomplete css -->
-     <link rel="stylesheet" href="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/@tarekraafat/autocomplete.js/css/autoComplete.css">
 
       <!--datatable css-->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
