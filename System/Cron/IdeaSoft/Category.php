@@ -31,9 +31,11 @@
     if ($err) {
       echo "cURL Error #:" . $err;
     } else {
-      echo $response;
+
       $IdeaSoftCategory=json_decode($response,1);
-      print_r($IdeaSoftCategory);
+      foreach ($IdeaSoftCategory as $key => $value) {
+        print_r( $value);
+      }
     }
 
 
