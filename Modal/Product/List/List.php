@@ -59,13 +59,40 @@ foreach ($Products as $ProductsGet) {
         $status,
         ' <div class="col-lg-4 col-md-6">
                                                     <div class="mb-3">
-                                                        <label for="choices-single-default" class="form-label text-muted">Default</label>
-                                                        <p class="text-muted">Set <code>data-choices</code> attribute to set a default single select.</p>
-                                                        <select class="form-control" data-choices name="choices-single-default" id="choices-single-default">
-                                                            <option value="">This is a placeholder</option>
-                                                            <option value="Choice 1">Choice 1</option>
-                                                            <option value="Choice 2">Choice 2</option>
-                                                            <option value="Choice 3">Choice 3</option>
+                                                        <label for="choices-single-groups" class="form-label text-muted">Option Groups</label>
+                                                        <p class="text-muted">Set <code>data-choices data-choices-groups</code> attribute to set option group</p>
+                                                        <select class="form-control" id="choices-single-groups" data-choices data-choices-groups data-placeholder="Select City" name="choices-single-groups">
+                                                            <option value="">Choose a city</option>
+                                                            <optgroup label="UK">
+                                                                <option value="London">London</option>
+                                                                <option value="Manchester">Manchester</option>
+                                                                <option value="Liverpool">Liverpool</option>
+                                                            </optgroup>
+                                                            <optgroup label="FR">
+                                                                <option value="Paris">Paris</option>
+                                                                <option value="Lyon">Lyon</option>
+                                                                <option value="Marseille">Marseille</option>
+                                                            </optgroup>
+                                                            <optgroup label="DE" disabled>
+                                                                <option value="Hamburg">Hamburg</option>
+                                                                <option value="Munich">Munich</option>
+                                                                <option value="Berlin">Berlin</option>
+                                                            </optgroup>
+                                                            <optgroup label="US">
+                                                                <option value="New York">New York</option>
+                                                                <option value="Washington" disabled>Washington</option>
+                                                                <option value="Michigan">Michigan</option>
+                                                            </optgroup>
+                                                            <optgroup label="SP">
+                                                                <option value="Madrid">Madrid</option>
+                                                                <option value="Barcelona">Barcelona</option>
+                                                                <option value="Malaga">Malaga</option>
+                                                            </optgroup>
+                                                            <optgroup label="CA">
+                                                                <option value="Montreal">Montreal</option>
+                                                                <option value="Toronto">Toronto</option>
+                                                                <option value="Vancouver">Vancouver</option>
+                                                            </optgroup>
                                                         </select>
                                                     </div>
                                                 </div>',
