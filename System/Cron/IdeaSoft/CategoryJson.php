@@ -10,10 +10,9 @@ $categories = [];
 // Ana kategorileri bul
 foreach ($IdeaSoftCategory as $key => $value) {
     if ($value['GroupId'] == 0) {
-        $categories[$value['IdeaSoftId']] = [
+        $categories[] = [
             'Name' => $value['Name'],
             'Slug' => $value['Slug'],
-            'Subcategories' => getSubcategories($value['IdeaSoftId'], $IdeaSoftCategory)
         ];
     }
 }
@@ -21,22 +20,5 @@ foreach ($IdeaSoftCategory as $key => $value) {
 // JSON çıktısını ekrana yazdır
 echo json_encode($categories, JSON_PRETTY_PRINT);
 
-// Alt kategorileri özyinelemeli olarak bulan fonksiyon
-function getSubcategories($categoryId, $categories)
-{
-    $subcategories = [];
-
-    foreach ($categories as $category) {
-        if ($category['GroupId'] == $categoryId) {
-            $subcategories[$category['IdeaSoftId']] = [
-                'Name' => $category['Name'],
-                'Slug' => $category['Slug'],
-                'Subcategories' => getSubcategories($category['IdeaSoftId'], $categories)
-            ];
-        }
-    }
-
-    return $subcategories;
-}
 
 ?>
