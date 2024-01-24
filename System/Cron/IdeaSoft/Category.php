@@ -32,14 +32,23 @@
       echo "cURL Error #:" . $err;
     } else {
 
+
+      $data=[];
       $IdeaSoftCategory=json_decode($response,1);
       foreach ($IdeaSoftCategory as $key => $value) {
         print_r( $value);
 
-        if (is_array($value["parent"])) {
-        echo "var";
-        }
+        $data["Name"] = $value["Name"];
+        $data["Slug"] = $value["Slug"];
+        $data["IdeaSoftId"] = $value["IdeaSoftId"];
+        $data["Status"] = $value["Status"];
+        $data["Status"] = $value["Status"];
 
+        if (is_array($value["parent"])) {
+          $data["ParentId"] = $value["parent"]["id"];
+
+        }
+        print_R($data);
 
       }
     }
