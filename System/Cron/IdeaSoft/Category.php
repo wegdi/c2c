@@ -6,10 +6,9 @@
     $token = $db->IdeaSoftToken();
 
 
-    for ($page = 1; $page <= 66; $page++) {
         $curl = curl_init();
         curl_setopt_array($curl, [
-        CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories?page=$page&limit=100",
+        CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories?page=1&limit=100",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -31,7 +30,7 @@
               print_r($IdeaSoftCategory);
 
             }
-        }
+
 
 
 
