@@ -18,7 +18,7 @@ $security->LoginControl($guvenlik);
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/dropzone/dropzone.css" rel="stylesheet" type="text/css" />
 
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
     <!-- jsvectormap css -->
 
 
