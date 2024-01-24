@@ -38,12 +38,10 @@
       foreach ($IdeaSoftCategory as $key => $value) {
         print_r( $value);
 
-        $data["Name"] = $value["Name"];
-        $data["Slug"] = $value["Slug"];
-        $data["IdeaSoftId"] = $value["IdeaSoftId"];
+        $data["Name"] = $value["name"];
+        $data["Slug"] = $value["slug"];
+        $data["IdeaSoftId"] = $value["id"];
         $data["Status"] = $value["Status"];
-        $data["Status"] = $value["Status"];
-
         if (is_array($value["parent"])) {
           $data["ParentId"] = $value["parent"]["id"];
 
