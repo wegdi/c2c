@@ -13,6 +13,9 @@ foreach ($IdeaSoftCategory as $key => $value) {
         $categories[] = [
             'Name' => $value['Name'],
             'Slug' => $value['Slug'],
+            'IdeaSoftId'  =>  $value['IdeaSoftId'],
+            'ParentId'  =>  $value['ParentId'],
+
         ];
     }
 }
