@@ -19,6 +19,13 @@ $filter = [];
 
 $Products = $db->Query('Products', $filter, ['sort' => ['product_meta_description' => -1]], 'COK', $start, $length);
 
+
+$ideaSoftCategoryItem = '';
+$IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], [], 'COK');
+foreach ($IdeaSoftCategory as $value) {
+  $ideaSoftCategoryItem .= '<option value="'.$value["IdeaSoftId"].'">'.$value["Name"].'</option>';
+}
+
 $Log = array();
 foreach ($Products as $ProductsGet) {
 
@@ -50,7 +57,12 @@ foreach ($Products as $ProductsGet) {
         empty($ProductsGet["C2Cmodel"]) ? '' : $ProductsGet["C2Cmodel"],
         $ProductsGet["quantity"],
         $status,
-        $ProductsGet["Category"],
+        '<div class="input-group">
+        <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
+        <select class="form-select">
+          '.$ideaSoftCategoryItem.'
+        </select>
+        </div>',
         $Supplier["SupplierName"]
 
     );
