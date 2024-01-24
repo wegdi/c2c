@@ -23,7 +23,7 @@ $Products = $db->Query('Products', $filter, ['sort' => ['product_meta_descriptio
 $ideaSoftCategoryItem = '';
 $IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], [], 'COK');
 foreach ($IdeaSoftCategory as $value) {
-  $ideaSoftCategoryItem .= '<option>'.$value["Name"].'</option>';
+  $ideaSoftCategoryItem .= '<option value="'.$value["IdeaSoftId"].'">'.$value["Name"].'</option>';
 }
 
 $Log = array();
