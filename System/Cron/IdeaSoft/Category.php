@@ -32,7 +32,7 @@
       echo "cURL Error #:" . $err;
     } else {
 
-
+      echo $response;
       $data=[];
       $IdeaSoftCategory=json_decode($response,1);
       foreach ($IdeaSoftCategory as $key => $value) {
