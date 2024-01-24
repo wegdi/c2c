@@ -8,7 +8,7 @@
 
     $curl = curl_init();
     curl_setopt_array($curl, [
-    CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories?page=1&limit=5",
+    CURLOPT_URL => "https://$magaza.myideasoft.com/admin-api/categories?page=1&limit=2",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
