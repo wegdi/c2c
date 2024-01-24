@@ -31,65 +31,11 @@ $security->LoginControl($guvenlik);
 
 <script>var Url = "<?php echo $Themes->ThemeUrl(); ?>/";</script>
 
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/simplebar/simplebar.min.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/node-waves/waves.min.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/feather-icons/feather.min.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/plugins.js?rn=221"></script>
-
-
-
-<!--Swiper slider js-->
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/swiper/swiper-bundle.min.js"></script>
-
-
-
-
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/prismjs/prism.js"></script>
-
-
-<!-- ckeditor -->
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-
-<!-- dropzone js -->
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/dropzone/dropzone-min.js"></script>
-
-
-<!-- Vector map-->
-
-
-
-
-
-
-
-<!-- App js -->
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/app.js"></script>
-
-
-<!-- multi.js -->
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/multi.js/multi.min.js"></script>
-<!-- autocomplete js -->
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/@tarekraafat/autocomplete.js/autoComplete.min.js"></script>
-<!-- init js -->
- <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/pages/form-advanced.init.js?rn=22"></script>
- <!-- input spin init -->
-
-
-
-<!-- Sweet Alerts js -->
- <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/sweetalert2/sweetalert2.min.js"></script>
-
- <!-- Sweet alert init js-->
- <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/pages/sweetalerts.init.js"></script>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
 <!--select2 cdn-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.2.6/jquery.inputmask.bundle.min.js"></script>
 
 <script>
 var param0 = "<?php echo $param0; ?>";

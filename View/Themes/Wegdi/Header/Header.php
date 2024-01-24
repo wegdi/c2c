@@ -18,8 +18,13 @@ $security->LoginControl($guvenlik);
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link href="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/dropzone/dropzone.css" rel="stylesheet" type="text/css" />
 
+    <!-- jQuery ve select2 kütüphanelerini ekleyin -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
-    <!-- jsvectormap css -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<!-- select2 konfigürasyonu ve diğer scriptler buraya -->
+
 
 
 
