@@ -41,7 +41,7 @@
         $data["Name"] = $value["name"];
         $data["Slug"] = $value["slug"];
         $data["IdeaSoftId"] = $value["id"];
-        $data["Status"] = $value["Status"];
+        $data["Status"] = $value["status"];
         if (is_array($value["parent"])) {
           $data["ParentId"] = $value["parent"]["id"];
 
