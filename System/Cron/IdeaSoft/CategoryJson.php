@@ -25,20 +25,22 @@ $tree = buildCategoryTree($categories);
 echo json_encode($tree, JSON_PRETTY_PRINT);
 
 // Kategori ağacını oluşturan özyinelemeli fonksiyon
-function buildCategoryTree($categories, $parentId = 0)
+function buildCategoryTree($categories, $parentId = 0, $parentNames = [])
 {
     $branch = [];
 
     foreach ($categories as $category) {
         if ($category['ParentId'] == $parentId) {
-            $branch[] = [
-                'Name' => $category['Name'],
+            $currentCategory = [
+                'Name' => implode(' -> ', array_merge($parentNames, [$category['Name']])),
                 'Slug' => $category['Slug'],
                 'IdeaSoftId' => $category['IdeaSoftId'],
             ];
 
+            $branch[] = $currentCategory;
+
             // Alt kategorileri ekleyin
-            $subcategories = buildCategoryTree($categories, $category['IdeaSoftId']);
+            $subcategories = buildCategoryTree($categories, $category['IdeaSoftId'], array_merge($parentNames, [$category['Name']]));
             $branch = array_merge($branch, $subcategories);
         }
     }
