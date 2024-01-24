@@ -38,12 +38,15 @@
       foreach ($IdeaSoftCategory as $key => $value) {
         $data["Name"] = $value["name"];
         $data["Slug"] = $value["slug"];
-        $data["IdeaSoftId"] = $value["id"];
+        $data["IdeaSoftId"] = (int)$value["id"];
         $data["Status"] = $value["status"];
         if (is_array($value["parent"])) {
-          $data["ParentId"] = $value["parent"]["id"];
+          $data["ParentId"] = (int)$value["parent"]["id"];
 
         }
+
+        $Products = $db->Query('IdeaSoftCategory', ["IdeaSoftId" => (int)$value["id"]], [], 'TEK');
+
         print_R($data);
 
       }
