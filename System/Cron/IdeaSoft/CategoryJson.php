@@ -31,13 +31,11 @@ function buildCategoryTree($categories, $parentId = 0)
 
     foreach ($categories as $category) {
         if ($category['ParentId'] == $parentId) {
+            $branch[] = $category['Name'];
+
+            // Alt kategorileri ekleyin
             $subcategories = buildCategoryTree($categories, $category['IdeaSoftId']);
-
-            if (!empty($subcategories)) {
-                $category['Subcategories'] = $subcategories;
-            }
-
-            $branch[] = $category;
+            $branch = array_merge($branch, $subcategories);
         }
     }
 
