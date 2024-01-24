@@ -64,7 +64,7 @@ foreach ($Products as $ProductsGet) {
         '<div class="input-group">
         <input type="hidden" name="ProductId" value="'.(string)$ProductsGet["_id"].'">
         <select class="form-select listle">
-          '.$ideaSoftCategoryItem.'
+        
         </select>
         </div>',
         $Supplier["SupplierName"]
