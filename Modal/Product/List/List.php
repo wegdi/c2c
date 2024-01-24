@@ -57,12 +57,18 @@ foreach ($Products as $ProductsGet) {
         empty($ProductsGet["C2Cmodel"]) ? '' : $ProductsGet["C2Cmodel"],
         $ProductsGet["quantity"],
         $status,
-        '<div class="input-group">
-        <label class="input-group-text" for="inputGroupSelect01">Eşleştir</label>
-        <select class="form-select">
-          '.$ideaSoftCategoryItem.'
-        </select>
-        </div>',
+        ' <div class="col-lg-4 col-md-6">
+                                                    <div class="mb-3">
+                                                        <label for="choices-single-default" class="form-label text-muted">Default</label>
+                                                        <p class="text-muted">Set <code>data-choices</code> attribute to set a default single select.</p>
+                                                        <select class="form-control" data-choices name="choices-single-default" id="choices-single-default">
+                                                            <option value="">This is a placeholder</option>
+                                                            <option value="Choice 1">Choice 1</option>
+                                                            <option value="Choice 2">Choice 2</option>
+                                                            <option value="Choice 3">Choice 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>',
         $Supplier["SupplierName"]
 
     );
