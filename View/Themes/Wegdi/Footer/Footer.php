@@ -175,7 +175,7 @@ var deletetitle = "<?php echo $Themes->Translate("TEXT_DELETE_ERROR"); ?>";
 <script>
        $(document).ready(function() {
            // select2 eklentisini etkinleştirin
-           $('#listle').select2();
+           $('.listle').select2();
            alert("sds");
        });
    </script>
