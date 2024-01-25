@@ -263,19 +263,32 @@ $(document).ready(function () {
   }
 
   table.on('draw.dt', function () {
-   $('.js-example-basic-single').select2({
-     placeholder: 'Seçin',
-     ajax: {
-       url: '/System/Cron/IdeaSoft/CategoryJson.php',
-       data: function (params) {
-         var query = {
-           search: params.term,
-           type: 'public'
-         }
-         return query;
-       }
-     }
-   });
+    $('.js-example-basic-single').select2({
+      placeholder: 'Seçin',
+      ajax: {
+        url: '/System/Cron/IdeaSoft/CategoryJson.php',
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+          return query;
+        },
+        processResults: function (data) {
+          // Map the retrieved data to the format expected by Select2
+          var mappedData = data.map(function (item) {
+            return {
+              id: item.IdeaSoftId,
+              text: item.Name
+            };
+          });
+
+          return {
+            results: mappedData
+          };
+        }
+      }
+    });
   });
 
 });
