@@ -30,24 +30,7 @@ $security->LoginControl($guvenlik);
 <!-- JAVASCRIPT -->
 
 <script>var Url = "<?php echo $Themes->ThemeUrl(); ?>/";</script>
-<!-- JAVASCRIPT -->
 
-
-
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/simplebar/simplebar.min.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/node-waves/waves.min.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/feather-icons/feather.min.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/plugins.js"></script>
-
-<!-- prismjs plugin -->
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/prismjs/prism.js"></script>
-
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/app.js"></script>
-
-
-<!--select2 cdn-->
 
 <script>
 var param0 = "<?php echo $param0; ?>";
@@ -66,13 +49,33 @@ var deletetitle = "<?php echo $Themes->Translate("TEXT_DELETE_ERROR"); ?>";
 
 
 
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/pages/datatables.init.js"></script>
+<!-- JAVASCRIPT -->
+   <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/libs/simplebar/simplebar.min.js"></script>
+   <script src="assets/libs/node-waves/waves.min.js"></script>
+   <script src="assets/libs/feather-icons/feather.min.js"></script>
+   <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+   <script src="assets/js/plugins.js"></script>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+   <!--datatable js-->
+   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+   <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+   <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+   <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+   <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+   <script src="assets/js/pages/datatables.init.js"></script>
+   <!-- App js -->
+   <script src="assets/js/app.js"></script>
+
+
+
 <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/custom.js?rn=<?php echo rand(2222,22222222222); ?>"></script>
 <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/core.js?rn=<?php echo rand(2222,22222222222); ?>"></script>
 
