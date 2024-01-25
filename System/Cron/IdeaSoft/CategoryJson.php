@@ -15,7 +15,7 @@ if ($Search!="") {
   $query =[];
 }
 
-$IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], [], 'COK');
+$IdeaSoftCategory = $db->Query('IdeaSoftCategory',$query, [], 'COK');
 
 // Tüm kategorileri depolamak için bir dizi oluşturun
 $categories = [];
