@@ -252,7 +252,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   // Check if an element with ID "MetaTable" exists on the page
   if ($("#UrunList").length > 0) {
-    $('#UrunList').DataTable({
+    var table = $('#UrunList').DataTable({
       "processing": true,
       "serverSide": true,
       "ajax": {
