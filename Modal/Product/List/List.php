@@ -61,10 +61,7 @@ foreach ($Products as $ProductsGet) {
         empty($ProductsGet["C2Cmodel"]) ? '' : $ProductsGet["C2Cmodel"],
         $ProductsGet["quantity"],
         $status,
-        '<div class="input-group">
-        <input type="hidden" name="ProductId" value="'.(string)$ProductsGet["_id"].'">
-        <select class="form-select listle" id="select1" data-url="/System/Cron/IdeaSoft/CategoryJson.php"></select>
-        </div>',
+        '<select class="js-example-basic-single" data-company-id=""></select>',
         $Supplier["SupplierName"]
 
     );
