@@ -60,6 +60,7 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["model"],
         empty($ProductsGet["C2Cmodel"]) ? '' : $ProductsGet["C2Cmodel"],
         $ProductsGet["quantity"],
+        $ProductsGet["price"],
         $status,
         '<select class="js-example-basic-single" data-company-id=""></select>',
         $Supplier["SupplierName"]
