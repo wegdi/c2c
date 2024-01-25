@@ -4,8 +4,18 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SYSTEM.'General/General.php');
 
 $db = new General();
+
+$Search=$_GET["search"];
+
+if ($Search!="") {
+  $query = [
+      'Name' => new MongoDB\BSON\Regex($Search, 'i'), // 'i' for case-insensitive
+  ];
+}else {
+  $query =[];
+}
+
 $IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], [], 'COK');
-$Search = isset($_GET["search"]) ? $_GET["search"] : '';
 
 // Tüm kategorileri depolamak için bir dizi oluşturun
 $categories = [];
@@ -21,19 +31,18 @@ foreach ($IdeaSoftCategory as $key => $value) {
 }
 
 // JSON çıktısı oluşturmak için ağaç yapısını oluşturun
-$tree = buildCategoryTree($categories, $Search);
+$tree = buildCategoryTree($categories);
 
 // JSON çıktısını ekrana yazdır
 echo json_encode($tree, JSON_PRETTY_PRINT);
 
 // Kategori ağacını oluşturan özyinelemeli fonksiyon
-function buildCategoryTree($categories, $searchTerm, $parentId = 0, $parentNames = [])
+function buildCategoryTree($categories, $parentId = 0, $parentNames = [])
 {
     $branch = [];
 
     foreach ($categories as $category) {
-        // Check if the category name contains the search term
-        if (stripos($category['Name'], $searchTerm) !== false) {
+        if ($category['ParentId'] == $parentId) {
             $currentCategory = [
                 'Name' => implode(' -> ', array_merge($parentNames, [$category['Name']])),
                 'Slug' => $category['Slug'],
@@ -43,7 +52,7 @@ function buildCategoryTree($categories, $searchTerm, $parentId = 0, $parentNames
             $branch[] = $currentCategory;
 
             // Alt kategorileri ekleyin
-            $subcategories = buildCategoryTree($categories, $searchTerm, $category['IdeaSoftId'], array_merge($parentNames, [$category['Name']]));
+            $subcategories = buildCategoryTree($categories, $category['IdeaSoftId'], array_merge($parentNames, [$category['Name']]));
             $branch = array_merge($branch, $subcategories);
         }
     }
