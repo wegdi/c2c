@@ -9,7 +9,7 @@ $Search=$_GET["search"];
 
 if ($Search!="") {
   $query = [
-      'Name' => new MongoDB\BSON\Regex($Search, 'i'), // 'i' for case-insensitive
+      'Slug' => new MongoDB\BSON\Regex($Search, 'i'), // 'i' for case-insensitive
   ];
 }else {
   $query =[];
