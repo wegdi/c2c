@@ -20,7 +20,11 @@ if (file_exists($jsonFilePath)) {
         // quantity değerini kontrol et
         if (isset($value['quantity']) && is_string($value['quantity'])) {
             // String ifadeyi integera çevir
+          if ($value['quantity']=="Var") {
+              $value['quantity'] = 1;
+          }else {
             $value['quantity'] = (int)$value['quantity'];
+          }
         }
 
         $value['C2Cmodel'] =   $db->customShortHash($value["model"]);
