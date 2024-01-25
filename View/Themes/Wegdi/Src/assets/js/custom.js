@@ -261,6 +261,23 @@ $(document).ready(function () {
       }
     });
   }
+
+  table.on('draw.dt', function () {
+   $('.js-example-basic-single').select2({
+     placeholder: 'Seçin',
+     ajax: {
+       url: '/System/Cron/IdeaSoft/CategoryJson.php',
+       data: function (params) {
+         var query = {
+           search: params.term,
+           type: 'public'
+         }
+         return query;
+       }
+     }
+   });
+  });
+
 });
 
 
