@@ -247,6 +247,23 @@ $(document).ready(function () {
 });
 
 
+
+
+$(document).ready(function () {
+  // Check if an element with ID "MetaTable" exists on the page
+  if ($("#UrunList").length > 0) {
+    $('#UrunList').DataTable({
+      "processing": true,
+      "serverSide": true,
+      "ajax": {
+        "url": "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+(param2 || param3),
+        "type": "POST",
+      }
+    });
+  }
+});
+
+
 $(document).ready(function() {
   // When the "Remove" button is clicked, set the value of the input field
   $(document).on('click', '.remove-list', function() {
