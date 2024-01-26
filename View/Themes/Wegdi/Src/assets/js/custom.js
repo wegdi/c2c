@@ -396,6 +396,7 @@ function handleKeyUp(value) {
       success: function(response) {
 
         console.log(response);
+        $('#UrunList').DataTable().ajax.reload();
         // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
       },
       error: function(error) {
