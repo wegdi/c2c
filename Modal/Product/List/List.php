@@ -28,6 +28,12 @@ if ($_POST["Model"]) {
 }
 
 
+if ($_POST["C2cCode"]) {
+  $filter["C2Cmodel"] = new MongoDB\BSON\Regex($_POST["C2cCode"], 'i');
+}
+
+
+
 $sortOptions = ['quantity' => -1]; // Sort by "quantity" in descending order
 
 $Products = $db->Query('Products', $filter, ['sort' => $sortOptions], 'COK', $start, $length);

@@ -261,6 +261,9 @@ $(document).ready(function () {
         "data": function (d) {
           d.ProductName = $('#ProductName').val();
           d.Model = $('#Model').val();
+          d.C2cCode = $('#C2cCode').val();
+
+
 
 
         }
@@ -274,9 +277,15 @@ $(document).ready(function () {
     $('#ProductName').on('keyup', function () {
      table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
    });
-   $('#Model').on('keyup', function () {
-    table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
-  });
+
+    $('#Model').on('keyup', function () {
+       table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
+    });
+
+    $('#C2cCode').on('keyup', function () {
+       table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
+    });
+
 
   }
 
