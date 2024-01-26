@@ -259,24 +259,7 @@ $(document).ready(function () {
         "url": "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+(param2 || param3),
         "type": "POST",
       },
-      "columns": [
-        null, // İlk sütun, burada gerekirse değiştirilebilir
-        {
-            "data": "columnName1", // 2. sütunun veri adı
-            "render": function (data, type, row) {
-                // Bu alana özel renderleme ekleyebilirsiniz, eğer gerekirse
-                return data;
-            }
-        },
-        {
-            "data": "columnName2", // 3. sütunun veri adı
-            "render": function (data, type, row) {
-                // Bu alana özel renderleme ekleyebilirsiniz, eğer gerekirse
-                return data;
-            }
-        },
-        // Diğer sütunlar buraya eklenebilir
-    ]
+      
     });
   }
 
