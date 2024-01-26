@@ -383,11 +383,10 @@ $(document).ready(function() {
 });
 
 function handleKeyUp(value) {
-  // Bu fonksiyon, her tuşa basıldığında tetiklenecek.
-  // "value" parametresi, inputa girilen değeri temsil eder.
-
-  // Örneğin, girilen değeri bir paragrafa yazdıralım:
-  document.getElementById("remove-id-input").value = value;
+  if(value.length > 0){
+    console.log("a");
+  }
+  
 }
 
 
