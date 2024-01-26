@@ -36,7 +36,7 @@ $security->LoginControl($guvenlik);
                           <th style="width:10%;">Adet</th>
                           <th style="width:10%;">Fiyat</th>
                           <th>İdeaSoft</th>
-                          <th style="width:30%;">Gönderilecek Fiyat</th>
+                          <th style="width:10%;">Gönderilecek Fiyat</th>
                           <th style="width:30%;">Kategori</th>
                           <th>Tedarikçi</th>
 
