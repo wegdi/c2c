@@ -42,7 +42,18 @@ $security->LoginControl($guvenlik);
 
                       </tr>
                       <tr>
-                        <th colspan="11"><select class="js-example-basic-single-marka"></select></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+
                       </tr>
                   </thead>
 
