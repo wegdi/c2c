@@ -34,7 +34,6 @@ $security->LoginControl($guvenlik);
               <th><input type="checkbox" onclick="if (!window.__cfRLUnblockHandlers) return false; $('input[name*=\'selected\']').prop('checked', this.checked);"></th>
 
               <th></th>
-              <th></th>
               <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
               <th style="width:10%;">
                 <select class="form-select" id="inputGroupSelect01" name="Brand" required>
