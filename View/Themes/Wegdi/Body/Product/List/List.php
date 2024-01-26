@@ -28,7 +28,6 @@ $security->LoginControl($guvenlik);
               <table id="UrunList" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
                       <tr>
-                          <th style="width:10px;"><select class="js-example-basic-single-marka"></select></th>
                           <th style="width:10px;">Ürün Resmi</th>
                           <th style="width:30%;">Ürün Adı</th>
                           <th>Marka</th>
@@ -41,6 +40,9 @@ $security->LoginControl($guvenlik);
                           <th style="width:30%;">Kategori</th>
                           <th>Tedarikçi</th>
 
+                      </tr>
+                      <tr>
+                        <th style="width:10px;"><select class="js-example-basic-single-marka"></select></th>
                       </tr>
                   </thead>
 
