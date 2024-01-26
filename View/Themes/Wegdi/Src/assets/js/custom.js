@@ -262,7 +262,7 @@ $(document).ready(function () {
           d.ProductName = $('#ProductName').val();
           d.Model = $('#Model').val();
           d.C2cCode = $('#C2cCode').val();
-
+          d.IdeaSoftSatatus = $('#IdeaSoftSatatus').val();
 
 
 
@@ -285,6 +285,11 @@ $(document).ready(function () {
     $('#C2cCode').on('keyup', function () {
        table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
     });
+
+
+    $('#IdeaSoftSatatus').on('change', function () {
+     table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
+   });
 
 
   }

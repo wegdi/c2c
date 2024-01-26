@@ -32,6 +32,10 @@ if ($_POST["C2cCode"]) {
   $filter["C2Cmodel"] = new MongoDB\BSON\Regex($_POST["C2cCode"], 'i');
 }
 
+if ($_POST["IdeaSoftSatatus"]) {
+  $filter["IdeaSoft"] = (int)$_POST["IdeaSoftSatatus"];
+}
+
 
 
 $sortOptions = ['quantity' => -1]; // Sort by "quantity" in descending order
