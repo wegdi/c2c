@@ -383,8 +383,10 @@ $(document).ready(function() {
 });
 
 function handleKeyUp(value) {
+  var comission;
   if(value.length > 0){
-    console.log("a");
+    comission = value;
+    
   }
   
 }
