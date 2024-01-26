@@ -292,7 +292,29 @@ $(document).ready(function () {
 
     $('.js-example-basic-single-marka').select2({
       placeholder: 'Marka Filtrele',
-      
+      ajax: {
+        url: '/System/Cron/IdeaSoft/BrandJson.php',
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+          return query;
+        },
+        processResults: function (data) {
+          // Map the retrieved data to the format expected by Select2
+          var mappedData = data.map(function (item) {
+            return {
+              id: item._id,
+              text: item.manufacturer_name
+            };
+          });
+
+          return {
+            results: mappedData
+          };
+        }
+      }
     });
 
 
