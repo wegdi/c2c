@@ -387,7 +387,7 @@ function handleKeyUp(value) {
   // "value" parametresi, inputa girilen değeri temsil eder.
 
   // Örneğin, girilen değeri bir paragrafa yazdıralım:
-  document.getElementById("remove-id-input").innerText = value;
+  document.getElementById("remove-id-input").value = value;
 }
 
 
