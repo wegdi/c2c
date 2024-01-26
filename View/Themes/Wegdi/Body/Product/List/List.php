@@ -33,7 +33,13 @@ $security->LoginControl($guvenlik);
                     <tr>
                       <th></th>
                       <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
-                      <th></th>
+                      <th style="width:10%;">
+                        <select class="form-select" id="inputGroupSelect01" name="Brand" required>
+                          <option selected value="1">Mevcut</option>
+                          <option  value="0">Mevcut Değil</option>
+
+                        </select>
+                      </th>
                       <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
                       <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
                       <th></th>
