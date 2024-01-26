@@ -38,7 +38,7 @@ $security->LoginControl($guvenlik);
                       <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
                       <th></th>
                       <th></th>
-                      <th style="width:6%;">
+                      <th style="width:10%;">
                         <select class="form-select" id="inputGroupSelect01" name="IdeaSoftSatatus" required>
                           <option selected value="1">Mevcut</option>
                           <option  value="0">Mevcut Değil</option>
@@ -58,7 +58,7 @@ $security->LoginControl($guvenlik);
                           <th style="width:10%;">C2C  Kodu</th>
                           <th style="width:10%;">Adet</th>
                           <th style="width:10%;">Fiyat</th>
-                          <th style="width:6%;">İdeaSoft</th>
+                          <th style="width:10%;">İdeaSoft</th>
                           <th style="width:10%;">Gönderilecek Fiyat</th>
                           <th style="width:30%;">Kategori</th>
                           <th>Tedarikçi</th>
