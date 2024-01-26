@@ -32,6 +32,7 @@ $security->LoginControl($guvenlik);
             </tr>
             <tr style="background: #f3f3f9;">
               <th></th>
+              <th></th>
               <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
               <th style="width:10%;">
                 <select class="form-select" id="inputGroupSelect01" name="Brand" required>
@@ -56,6 +57,7 @@ $security->LoginControl($guvenlik);
 
             </tr>
             <tr>
+              <th><input type="checkbox" onclick="if (!window.__cfRLUnblockHandlers) return false; $('input[name*=\'selected\']').prop('checked', this.checked);"></th>
               <th style="width:10px;">Ürün Resmi</th>
               <th style="width:30%;">Ürün Adı</th>
               <th>Marka</th>
