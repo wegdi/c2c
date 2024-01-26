@@ -307,7 +307,7 @@ $(document).ready(function () {
   var commission = $(this).val();
   if(commission.length > 0){
     var formData = {
-      det: commission
+      commission: commission
     };
     $.ajax({
       type: "POST",
