@@ -27,6 +27,20 @@ $security->LoginControl($guvenlik);
           <div class="card-body">
               <table id="UrunList" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
+                    <tr>
+                      <th></th>
+                      <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+
+                    </tr>
                       <tr>
                           <th style="width:10px;">Ürün Resmi</th>
                           <th style="width:30%;">Ürün Adı</th>
@@ -41,20 +55,7 @@ $security->LoginControl($guvenlik);
                           <th>Tedarikçi</th>
 
                       </tr>
-                      <tr>
-                        <th></th>
-                        <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
 
-                      </tr>
                   </thead>
 
               </table>
