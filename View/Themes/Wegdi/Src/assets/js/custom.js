@@ -258,12 +258,22 @@ $(document).ready(function () {
       "ajax": {
         "url": "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+(param2 || param3),
         "type": "POST",
+        "data": function (d) {
+          d.ProductName = $('#ProductName').val();
+
+
+        }
       },
       "ordering": false,  // Disable sorting
       "searching": false, // Disable searching
       "lengthChange": false,
-      "pageLength": 25 
+      "pageLength": 25
     });
+
+    $('#ProductName').on('keyup', function () {
+     table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
+   });
+
   }
 
   table.on('draw.dt', function () {
