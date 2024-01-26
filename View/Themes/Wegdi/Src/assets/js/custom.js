@@ -383,8 +383,7 @@ $(document).ready(function() {
 });
 
 function handleKeyUp(value) {
-  var comission;
-  if(commission.length > 0){
+  if(value.length > 0){
     commission = value;
     var formData = {
       commission: commission
