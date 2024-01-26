@@ -304,7 +304,27 @@ $(document).ready(function () {
 
 
  $('#comission').on('keyup', function () {
-  console.log($(this).val());
+  commission = $(this).val();
+  if(commission.length > 0){
+    var formData = {
+      commission: commission
+    };
+    $.ajax({
+      type: "POST",
+      url: "/Modal/Product/Commission/Commission.php",
+      data: formData,
+      dataType: "Json",
+      success: function(response) {
+
+        console.log(response);
+        // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
+      },
+      error: function(error) {
+        console.error(error);
+        // Hata durumunda gerekli işlemleri yapabilirsiniz.
+      }
+    });
+  }
 });
 
 
