@@ -261,6 +261,7 @@ $(document).ready(function () {
       },
       "ordering": false,  // Disable sorting
       "searching": false, // Disable searching
+      "lengthChange": false,
     });
   }
 
