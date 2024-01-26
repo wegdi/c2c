@@ -27,7 +27,7 @@ $security->LoginControl($guvenlik);
           <div class="card-body">
               <table id="UrunList" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
-                    <tr>
+                    <tr style="background: #f3f3f9;">
                       <th colspan="11" class="text-center">Filtreleme</th>
                     </tr>
                     <tr style="background: #f3f3f9;">
