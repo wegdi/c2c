@@ -42,17 +42,17 @@ $security->LoginControl($guvenlik);
 
                       </tr>
                       <tr>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
-                        <th ></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
 
                       </tr>
                   </thead>
@@ -80,7 +80,7 @@ $security->LoginControl($guvenlik);
                             <p class="text-muted mx-4 mb-0"><?php echo $Themes->Translate("TEXT_MODAL_REMOVE_META"); ?></p>
                             <form id="silform">
                               <input type="hidden" id="remove-id-input" class="form-control" readonly name="oid">
-                            <form >
+                            <form>
 
                         </div>
                     </div>
