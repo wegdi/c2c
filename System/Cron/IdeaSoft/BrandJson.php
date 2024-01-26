@@ -25,6 +25,10 @@ echo '<pre>';
 print_r($categories);
 echo '</pre>';
 
+foreach ($categories as $key => $value2) {
+    echo $value2["manufacturer_name"];
+}
+
 // JSON çıktısını ekrana yazdır
 //echo json_encode($categories, JSON_PRETTY_PRINT);
 ?>
