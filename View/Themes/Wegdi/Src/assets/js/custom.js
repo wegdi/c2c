@@ -258,7 +258,9 @@ $(document).ready(function () {
       "ajax": {
         "url": "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+(param2 || param3),
         "type": "POST",
-      }
+      },
+      "ordering": false,  // Disable sorting
+      "searching": false, // Disable searching
     });
   }
 
