@@ -14,7 +14,7 @@ $categories = [];
 
 // Ana kategorileri bulun
 foreach ($Products as $key => $value) {
-    if(!in_array(['manufacturer_name' => $value['manufacturer_name']], $categories, true)){
+    if(!in_array(['manufacturer_name' => $manufacturerName, 'brand_id' => $brandId], $categories, true)){
         $categories[] = [
             'manufacturer_name' => $value['manufacturer_name'],
             'brand_id' => $value['_id']
