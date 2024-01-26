@@ -21,12 +21,12 @@ foreach ($Products as $key => $value) {
     }
 }
 
-echo '<pre>';
-print_r($categories);
-echo '</pre>';
-
 foreach ($categories as $key => $value2) {
-    echo $value2["manufacturer_name"];
+    $data = array(
+        'UniqId' => uniqid(),
+        'Name' => $value2["manufacturer_name"]
+    );
+    $db->Add("Brand", $data);
 }
 
 // JSON çıktısını ekrana yazdır
