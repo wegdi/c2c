@@ -31,8 +31,7 @@ $security->LoginControl($guvenlik);
               <th colspan="12" class="text-center">Filtreleme</th>
             </tr>
             <tr style="background: #f3f3f9;">
-              <th><input type="checkbox" onclick="if (!window.__cfRLUnblockHandlers) return false; $('input[name*=\'selected\']').prop('checked', this.checked);"></th>
-
+              <th></th>
               <th></th>
               <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
               <th style="width:10%;">
@@ -58,7 +57,8 @@ $security->LoginControl($guvenlik);
 
             </tr>
             <tr>
-              <th></th>
+              <th><input type="checkbox" onclick="if (!window.__cfRLUnblockHandlers) return false; $('input[name*=\'selected\']').prop('checked', this.checked);"></th>
+
               <th style="width:10px;">Ürün Resmi</th>
               <th style="width:30%;">Ürün Adı</th>
               <th>Marka</th>
