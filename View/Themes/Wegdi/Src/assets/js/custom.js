@@ -305,7 +305,7 @@ $(document).ready(function () {
 
  $('#comission').on('keyup', function () {
   var commission = $(this).val();
-  if(commission.length > 0){
+  if(commission.length > 1){
     var formData = {
       commission: commission
     };
