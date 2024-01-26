@@ -58,7 +58,15 @@ $security->LoginControl($guvenlik);
 
                 </select>
               </th>
-              <th><input type="text" id="comission" class="form-control" name="comission"></th>
+              <th>
+              <select id="comission" class="form-control">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+              </select>
+                <input type="text"   name="comission">
+              </th>
               <th style="width:10%;"> <select id="Category" class="js-example-basic-single"></select></th>
               <th></th>
 
