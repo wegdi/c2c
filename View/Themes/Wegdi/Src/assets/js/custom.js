@@ -260,6 +260,7 @@ $(document).ready(function () {
         "type": "POST",
         "data": function (d) {
           d.ProductName = $('#ProductName').val();
+          d.Model = $('#Model').val();
 
 
         }
@@ -273,6 +274,9 @@ $(document).ready(function () {
     $('#ProductName').on('keyup', function () {
      table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
    });
+   $('#Model').on('keyup', function () {
+    table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
+  });
 
   }
 
