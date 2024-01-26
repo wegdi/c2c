@@ -30,7 +30,7 @@ $security->LoginControl($guvenlik);
                     <tr>
                       <th colspan="11" class="text-center">Filtreleme</th>
                     </tr>
-                    <tr>
+                    <tr style="background: #f3f3f9;">
                       <th></th>
                       <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
                       <th style="width:10%;">
