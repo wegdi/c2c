@@ -43,6 +43,16 @@ $security->LoginControl($guvenlik);
                       </tr>
                       <tr>
                         <th style="width:10px;"><select class="js-example-basic-single-marka"></select></th>
+                        <th style="width:30%;">Ürün Adı</th>
+                          <th>Marka</th>
+                          <th style="width:10%;">Model Kodu</th>
+                          <th style="width:10%;">C2C  Kodu</th>
+                          <th style="width:10%;">Adet</th>
+                          <th style="width:10%;">Fiyat</th>
+                          <th>İdeaSoft</th>
+                          <th style="width:10%;">Gönderilecek Fiyat</th>
+                          <th style="width:30%;">Kategori</th>
+                          <th>Tedarikçi</th>
                       </tr>
                   </thead>
 
