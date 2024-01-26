@@ -42,17 +42,17 @@ $security->LoginControl($guvenlik);
 
                       </tr>
                       <tr>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
-                        <th colspan="2"></th>
+                        <th ></th>
+                        <th ></th>
+                        <th ></th>
+                        <th ></th>
+                        <th ></th>
+                        <th ></th>
+                        <th ></th>
+                        <th ></th>
+                        <th ></th>
+                        <th ></th>
+                        <th ></th>
 
                       </tr>
                   </thead>
