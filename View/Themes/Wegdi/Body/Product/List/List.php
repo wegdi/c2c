@@ -38,7 +38,12 @@ $security->LoginControl($guvenlik);
                       <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
                       <th></th>
                       <th></th>
-                      <th></th>
+                      <th>
+                        <select class="form-select" id="inputGroupSelect01" name="IdeaSoftSatatus" required>
+                          <option selected value="0"></option>
+
+                        </select>
+                      </th>
                       <th></th>
                       <th></th>
                       <th></th>
