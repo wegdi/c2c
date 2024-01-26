@@ -5,15 +5,7 @@ require_once(SYSTEM.'General/General.php');
 
 $db = new General();
 
-$Search=$_GET["search"];
-
-if ($Search!="") {
-  $query = [
-      'Slug' => new MongoDB\BSON\Regex($Search, 'i'), // 'i' for case-insensitive
-  ];
-}else {
-  $query =[];
-}
+$query =[];
 
 $Products = $db->Query('Products',$query, [], 'COK');
 
