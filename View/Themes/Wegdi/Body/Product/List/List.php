@@ -31,8 +31,8 @@ $security->LoginControl($guvenlik);
                       <th></th>
                       <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
                       <th></th>
-                      <th></th>
-                      <th></th>
+                      <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
+                      <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
                       <th></th>
                       <th></th>
                       <th></th>
