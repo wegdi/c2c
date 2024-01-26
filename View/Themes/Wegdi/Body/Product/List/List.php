@@ -28,6 +28,9 @@ $security->LoginControl($guvenlik);
               <table id="UrunList" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
                     <tr>
+                      <th colspan="11">Filtreleme</th>
+                    </tr>
+                    <tr>
                       <th></th>
                       <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
                       <th></th>
