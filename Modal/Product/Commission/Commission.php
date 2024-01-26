@@ -12,7 +12,7 @@ $filter = [];
 if($commission > 0){
     $Products = $db->Query('Products', $filter, [], 'COK');
     foreach ($Products as $ProductsGet) {
-        $commissionTotal = $ProductsGet["price"] + ($ProductsGet["price"] * $commission);
+        $commissionTotal = $ProductsGet["price"] + ($ProductsGet["price"] * ("0.".$commission));
         $data = array(
             'TotalPrice'  => (string)$commissionTotal
         );
