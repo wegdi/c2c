@@ -6,7 +6,7 @@ $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
 $db = new General();
 
-$commission = $_POST['commission'];
+$commission = $_POST['det'];
 $filter = [];
 
 if($commission > 0){
