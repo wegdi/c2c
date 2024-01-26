@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
+//header('Content-Type: application/json; charset=utf-8');
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SYSTEM.'General/General.php');
 
@@ -21,7 +21,8 @@ foreach ($Products as $key => $value) {
     }
 }
 
+print_r($categories);
 
 // JSON çıktısını ekrana yazdır
-echo json_encode($categories, JSON_PRETTY_PRINT);
+//echo json_encode($categories, JSON_PRETTY_PRINT);
 ?>
