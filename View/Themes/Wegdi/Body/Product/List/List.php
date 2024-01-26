@@ -28,7 +28,7 @@ $security->LoginControl($guvenlik);
               <table id="UrunList" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
                     <tr>
-                      <th colspan="11">Filtreleme</th>
+                      <th colspan="11" class="text-center">Filtreleme</th>
                     </tr>
                     <tr>
                       <th></th>
