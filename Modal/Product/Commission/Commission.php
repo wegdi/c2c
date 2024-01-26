@@ -12,9 +12,9 @@ $filter = [];
 if($commission > 0){
     $Products = $db->Query('Products', $filter, [], 'COK');
     foreach ($Products as $ProductsGet) {
-        $commissionTotal = $ProductsGet["price"] + ($ProductsGet["price"] * $commission);
+       // $commissionTotal = $ProductsGet["price"] + ($ProductsGet["price"] * $commission);
         $data = array(
-            'TotalPrice'  => (string)$commissionTotal
+            'TotalPrice'  => $commission
         );
        $db->UpdateByObjectId("Products",(string)$ProductsGet["_id"], $data);
     }
