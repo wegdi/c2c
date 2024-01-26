@@ -379,8 +379,16 @@ $(document).ready(function() {
   $('#removeTaskItemModal').on('show.bs.modal', function() {
     $('#remove-id-input').val('');
   });
+  
 });
 
+function handleKeyUp(value) {
+  // Bu fonksiyon, her tuşa basıldığında tetiklenecek.
+  // "value" parametresi, inputa girilen değeri temsil eder.
+
+  // Örneğin, girilen değeri bir paragrafa yazdıralım:
+  document.getElementById("remove-id-input").innerText = value;
+}
 
 
 $(document).ready(function() {
