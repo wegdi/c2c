@@ -289,6 +289,14 @@ $(document).ready(function () {
         }
       }
     });
+
+    $('.js-example-basic-single-marka').select2({
+      placeholder: 'Seçin',
+      
+    });
+
+
+
   });
 
 });
