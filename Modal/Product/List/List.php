@@ -19,7 +19,14 @@ $filter = [];
 
 
 
-$filter["product_name"] = new MongoDB\BSON\Regex($_POST["ProductName"], 'i');
+if ($_POST["ProductName"]) {
+  $filter["product_name"] = new MongoDB\BSON\Regex($_POST["ProductName"], 'i');
+}
+
+if ($_POST["Model"]) {
+  $filter["model"] = new MongoDB\BSON\Regex($_POST["Model"], 'i');
+}
+
 
 $sortOptions = ['quantity' => -1]; // Sort by "quantity" in descending order
 
