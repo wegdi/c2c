@@ -317,6 +317,7 @@ $(document).ready(function () {
       success: function(response) {
 
         console.log(response);
+        table.draw();
         // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
       },
       error: function(error) {
