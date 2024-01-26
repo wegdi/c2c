@@ -43,8 +43,8 @@ $security->LoginControl($guvenlik);
                   <?php endforeach; ?>
                 </select>
               </th>
-              <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
-              <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
+              <th><input type="text" class="form-control" id="Model" name="Model"></th>
+              <th><input type="text" class="form-control" id="C2cCode" name="C2cCode"></th>
               <th></th>
               <th></th>
               <th style="width:10%;">
