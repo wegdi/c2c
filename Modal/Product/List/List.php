@@ -62,7 +62,9 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["quantity"],
         $ProductsGet["price"],
         $status,
-        '<select class="js-example-basic-single" data-company-id=""></select>',
+        '<input type="text" id="remove-id-input" class="form-control" readonly name="price_one">',
+        '
+        <select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'"></select>',
         $Supplier["SupplierName"]
 
     );
