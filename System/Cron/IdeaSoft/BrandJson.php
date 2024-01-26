@@ -17,7 +17,7 @@ foreach ($Products as $key => $value) {
     if(!in_array(['manufacturer_name' => $value['manufacturer_name']], $categories, true)){
         $categories[] = [
             'manufacturer_name' => $value['manufacturer_name'],
-            'marka_id' => '100'
+            'marka_id' => $value['_id']
         ];
     }
 }
