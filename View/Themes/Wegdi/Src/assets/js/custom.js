@@ -303,6 +303,10 @@ $(document).ready(function () {
  });
 
 
+ $('#comission').on('keyup', function () {
+  console.log(this.val)
+});
+
 
   }
 
@@ -382,31 +386,7 @@ $(document).ready(function() {
   
 });
 
-function handleKeyUp(value) {
-  if(value.length > 0){
-    commission = value;
-    var formData = {
-      commission: commission
-    };
-    $.ajax({
-      type: "POST",
-      url: "/Modal/Product/Commission/Commission.php",
-      data: formData,
-      dataType: "Json",
-      success: function(response) {
 
-        console.log(response);
-        $('#UrunList').DataTable().ajax.reload();
-        // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
-      },
-      error: function(error) {
-        console.error(error);
-        // Hata durumunda gerekli işlemleri yapabilirsiniz.
-      }
-    });
-  }
-  
-}
 
 
 $(document).ready(function() {
