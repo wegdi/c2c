@@ -40,7 +40,8 @@ $security->LoginControl($guvenlik);
                       <th></th>
                       <th style="width:6%;">
                         <select class="form-select" id="inputGroupSelect01" name="IdeaSoftSatatus" required>
-                          <option selected value="0"></option>
+                          <option selected value="1">Mevcut</option>
+                          <option  value="0">Mevcut Değil</option>
 
                         </select>
                       </th>
