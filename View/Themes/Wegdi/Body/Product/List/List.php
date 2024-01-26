@@ -58,7 +58,6 @@ $security->LoginControl($guvenlik);
             </tr>
             <tr>
               <th><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></th>
-
               <th style="width:10px;">Ürün Resmi</th>
               <th style="width:30%;">Ürün Adı</th>
               <th>Marka</th>
