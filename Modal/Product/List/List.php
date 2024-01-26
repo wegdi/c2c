@@ -17,7 +17,13 @@ $searchValue = $_POST['search']['value'];
 $filter = [];
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
-$Products = $db->Query('Products', $filter, ['sort' => ['quantity' => -1]], 'COK', $start, $length);
+
+
+$filter["product_name"] = new MongoDB\BSON\Regex($_POST["ProductName"], 'i');
+
+$sortOptions = ['quantity' => -1]; // Sort by "quantity" in descending order
+
+$Products = $db->Query('Products', $filter, ['sort' => $sortOptions], 'COK', $start, $length);
 
 
 $url = 'https://c2c.wegdi.com/System/Cron/IdeaSoft/CategoryJson.php';
