@@ -51,7 +51,7 @@ $security->LoginControl($guvenlik);
                         </select>
                       </th>
                       <th></th>
-                      <th> <select class="js-example-basic-single"></select></th>
+                      <th style="width:30%;"> <select class="js-example-basic-single"></select></th>
                       <th></th>
 
                     </tr>
