@@ -21,7 +21,9 @@ foreach ($Products as $key => $value) {
     }
 }
 
+echo '<pre>';
 print_r($categories);
+echo '</pre>';
 
 // JSON çıktısını ekrana yazdır
 //echo json_encode($categories, JSON_PRETTY_PRINT);
