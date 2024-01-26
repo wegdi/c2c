@@ -305,7 +305,7 @@ $(document).ready(function () {
           // Map the retrieved data to the format expected by Select2
           var mappedData = data.map(function (item) {
             return {
-              id: item._id,
+              //id: item._id,
               text: item.manufacturer_name
             };
           });
