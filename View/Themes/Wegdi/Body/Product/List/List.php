@@ -36,7 +36,7 @@ $security->LoginControl($guvenlik);
                       <th style="width:10%;">
                         <select class="form-select" id="inputGroupSelect01" name="Brand" required>
                           <option selected value="1">Mevcut</option>
-                          
+
                         </select>
                       </th>
                       <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
@@ -51,7 +51,7 @@ $security->LoginControl($guvenlik);
                         </select>
                       </th>
                       <th></th>
-                      <th></th>
+                      <th> <select class="js-example-basic-single"></select></th>
                       <th></th>
 
                     </tr>
