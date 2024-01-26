@@ -28,6 +28,7 @@ $security->LoginControl($guvenlik);
               <table id="UrunList" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
                       <tr>
+                          <th style="width:10px;">Model Filtre</th>
                           <th style="width:10px;">Ürün Resmi</th>
                           <th style="width:30%;">Ürün Adı</th>
                           <th>Marka</th>

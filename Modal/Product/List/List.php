@@ -49,6 +49,7 @@ foreach ($Products as $ProductsGet) {
 
 
     $Log[] = array(
+        '<select class="form-control"></select>',
         '<div class="flex-shrink-0 me-3">
         <div class="avatar-sm bg-light rounded p-1">
         <img src="'.$ProductsGet["main_image"].'" alt="" class="img-fluid d-block">
