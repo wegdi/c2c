@@ -36,7 +36,7 @@ $security->LoginControl($guvenlik);
               <th><input type="text" class="form-control" id="ProductName" name="ProductName"></th>
               <th style="width:10%;">
                 <select class="form-select" id="inputGroupSelect01" name="Brand" required>
-                  <?php  $Brand = $db->Query('Brand',[], [], 'TEK',); ?>
+                  <?php  $Brand = $db->Query('Brand',[], [], 'COK'); ?>
                   <?php foreach ($Brand as $key => $value): ?>
                     <option  value="<?php echo $value["Name"]; ?>"><?php echo $value["Name"]; ?></option>
 
