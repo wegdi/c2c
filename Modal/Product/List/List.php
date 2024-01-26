@@ -42,6 +42,12 @@ if ($_POST["IdeaSoftSatatus"]) {
 }
 
 
+if ($_POST["IdeaSoftCategory"]) {
+  $filter["IdeaSoftCategory"] = (int)$_POST["IdeaSoftCategory"];
+}
+
+
+
 
 $sortOptions = ['quantity' => -1]; // Sort by "quantity" in descending order
 
