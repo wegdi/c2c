@@ -16,6 +16,7 @@ foreach ($pricelist as $key => $value) {
 
       $commissionTotal = $value + ($value * ($commission / 100));
       echo $commissionTotal;
+      echo "<br>";
 
 }
 
