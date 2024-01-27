@@ -74,7 +74,7 @@ $security->LoginControl($guvenlik);
                         <input type="number" class="form-control" id="comission" name="Model" placeholder="Fiyat artış oranı % olarak">
                     </div>
                     <div class="col-6 ml-3">
-                        <button class="btn btn-primary" type="button">Güncelle</button>
+                        <button class="btn btn-primary" type="button" onclick="FromSave('#transfer')">Güncelle</button>
                     </div>
                 </div>
             </th>
