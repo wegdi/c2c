@@ -71,10 +71,10 @@ $security->LoginControl($guvenlik);
               <th colspan="4">
                 <div class="row">
                     <div class="col-6 ml-3">
-                        <input type="number" class="form-control"  name="Model" placeholder="Fiyat artış oranı % olarak">
+                        <input type="number" class="form-control"  name="Oran" placeholder="Fiyat artış oranı % olarak">
                     </div>
                     <div class="col-6 ml-3">
-                        <button class="btn btn-primary" type="button" onclick="FromSave('#transfer')">Güncelle</button>
+                        <button class="btn btn-primary" type="button" onclick="FromSaveGlobal('#transfer','Modal/Product/Commission/Rate.php','1')">Güncelle</button>
                     </div>
                 </div>
             </th>
