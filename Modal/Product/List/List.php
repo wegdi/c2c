@@ -97,7 +97,9 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["quantity"],
         $ProductsGet["price"],
         $status,
-        '<input type="text" id="remove-id-input" class="form-control" name="price_one[]" value="'.$ProductsGet["TotalPrice"].'">',
+        '<input type="text" id="remove-id-input" class="form-control" name="price_one[]" value="'.$ProductsGet["TotalPrice"].'">
+        <input type="hidden" id="remove-id-input" class="form-control" name="pricelist['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["TotalPrice"].'">
+        ',
         '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]"></select>',
         $Supplier["SupplierName"]
 
