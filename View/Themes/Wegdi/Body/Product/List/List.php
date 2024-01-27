@@ -66,21 +66,6 @@ $security->LoginControl($guvenlik);
 
             </tr>
             <tr>
-              <th><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></th>
-              <th style="width:10px;">Ürün Resmi</th>
-              <th style="width:30%;">Ürün Adı</th>
-              <th>Marka</th>
-              <th style="width:10%;">Model Kodu</th>
-              <th style="width:10%;">C2C  Kodu</th>
-              <th style="width:10%;">Adet</th>
-              <th style="width:10%;">Fiyat</th>
-              <th style="width:10%;">İdeaSoft</th>
-              <th style="width:10%;">Gönderilecek Fiyat</th>
-              <th style="width:10%;">Kategori</th>
-              <th>Tedarikçi</th>
-
-            </tr>
-            <tr>
               <th></th>
               <th></th>
               <th></th>
@@ -95,6 +80,22 @@ $security->LoginControl($guvenlik);
               <th></th>
 
             </tr>
+            <tr>
+              <th><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></th>
+              <th style="width:10px;">Ürün Resmi</th>
+              <th style="width:30%;">Ürün Adı</th>
+              <th>Marka</th>
+              <th style="width:10%;">Model Kodu</th>
+              <th style="width:10%;">C2C  Kodu</th>
+              <th style="width:10%;">Adet</th>
+              <th style="width:10%;">Fiyat</th>
+              <th style="width:10%;">İdeaSoft</th>
+              <th style="width:10%;">Gönderilecek Fiyat</th>
+              <th style="width:10%;">Kategori</th>
+              <th>Tedarikçi</th>
+
+            </tr>
+
 
           </thead>
 
