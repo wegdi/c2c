@@ -109,10 +109,7 @@ function FromSaveGlobal(form, url, refresh = 0) {
             if (refresh == 0) {
               window.location.reload();
             } else {
-              if (url == "/Modal/Leads/Add/NoteAdd.php") {
-                var musteriID = $("#CustomerIDPostGET").val();
-                CustomerGet(musteriID);
-              }
+    
             }
           });
 
@@ -404,7 +401,7 @@ $(document).ready(function() {
   $('#removeTaskItemModal').on('show.bs.modal', function() {
     $('#remove-id-input').val('');
   });
-  
+
 });
 
 
