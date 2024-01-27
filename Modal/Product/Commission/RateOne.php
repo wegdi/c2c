@@ -17,9 +17,8 @@ foreach ($pricelist as $key => $value) {
       $tutar=$value+$commission;
 
       $data = array('price_one' => $tutar );
-      print_r($data);
-      //$Sonuc= $db->UpdateByObjectId("Products",(string)$key, $data);
+      $Sonuc= $db->UpdateByObjectId("Products",(string)$key, $data);
 
 }
-//echo $Sonuc;
+echo $Sonuc;
  ?>
