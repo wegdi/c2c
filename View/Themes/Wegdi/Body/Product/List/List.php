@@ -66,11 +66,17 @@ $security->LoginControl($guvenlik);
 
             </tr>
             <tr>
-              <th colspan="2" class="text-center">Toplu Ürün Fiyat Artışı <br> Güncelleme</th>
-              <th colspan="2"><input type="number" class="form-control" id="comission" name="Model" placeholder="Fiyat artış oranı % olarak "></th>
-              <th colspan="2" class="text-center"></th>
-              <th colspan="2" class="text-center">Sabit Fiyat<br> Artışı</th>
-              <th colspan="4"></th>
+              <th colspan="3" class="text-center">Toplu Ürün Fiyat Artışı  Güncelleme</th>
+              <th colspan="3" class="text-center"></th>
+              <th colspan="3" class="text-center">Sabit Fiyat<br> Artışı</th>
+              <th colspan="3" class="text-center"></th>
+
+            </tr>
+            <tr>
+              <th colspan="3"><input type="number" class="form-control" id="comission" name="Model" placeholder="Fiyat artış oranı % olarak "></th>
+              <th colspan="3"></th>
+              <th colspan="3"><input type="number" class="form-control" id="comission" name="Model" placeholder="Sabit Fiyat Artışı "></th>
+              <th colspan="3"></th>
 
             </tr>
             <tr>
