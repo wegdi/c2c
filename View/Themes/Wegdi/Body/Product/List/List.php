@@ -68,7 +68,8 @@ $security->LoginControl($guvenlik);
             <tr>
               <th colspan="2" class="text-center">Toplu Ürün Fiyat Artışı <br> Güncelleme</th>
               <th colspan="2"><input type="number" class="form-control" id="comission" name="Model" placeholder="Fiyat artış oranı % olarak "></th>
-              <th colspan="8"></th>
+              <th colspan="2" class="text-center">Sabit Fiyat Artışı</th>
+              <th colspan="6"></th>
 
             </tr>
             <tr>
