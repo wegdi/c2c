@@ -67,6 +67,7 @@ $security->LoginControl($guvenlik);
             </tr>
             <tr>
               <th colspan="6"><input type="number" class="form-control" id="comission" name="Model"></th>
+              <th colspan="6"></th>
 
 
             </tr>
