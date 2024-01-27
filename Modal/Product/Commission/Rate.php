@@ -18,8 +18,8 @@ foreach ($pricelist as $key => $value) {
 
       $data = array('price_one' => $commissionTotal );
 
-     echo $db->UpdateByObjectId("Products",(string)$key, $data);
+      $Sonuc= $db->UpdateByObjectId("Products",(string)$key, $data);
 
 }
-
+echo $Sonuc;
  ?>
