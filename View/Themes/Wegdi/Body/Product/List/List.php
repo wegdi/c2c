@@ -31,7 +31,7 @@ $security->LoginControl($guvenlik);
             <tr style="background: #f3f3f9;">
               <th colspan="12" class="text-center">Filtreleme</th>
             </tr>
-            <tr style="background: #f3f3f9;">
+            <tr >
               <th></th>
               <th></th>
               <th><input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Ürün Adı Giriniz"></th>
@@ -66,7 +66,7 @@ $security->LoginControl($guvenlik);
               <th></th>
 
             </tr>
-            <tr>
+            <tr style="background: #f3f3f9;">
               <th colspan="4" class="text-center">Toplu Ürün Fiyat Artışı  Güncelleme</th>
               <th colspan="4" class="text-center">Sabit Fiyat Artışı</th>
               <th colspan="4" class="text-center">İdeaSoft'a Gönder</th>
@@ -122,5 +122,5 @@ $security->LoginControl($guvenlik);
     </div>
   </div><!--end col-->
 </div><!--end row-->
-  
+
 </form>
