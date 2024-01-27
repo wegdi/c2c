@@ -35,7 +35,7 @@ $security->LoginControl($guvenlik);
 
               <th colspan="2"><input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Ürün Adı Giriniz"></th>
               <th colspan="2">
-                <select class="form-select" id="Brand" name="Brand" required>
+                <select class="form-select" id="Brand" name="Brand" >
                     <option selected value="">Marka Seçiniz</option>
 
                   <?php  $Brand = $db->Query('Brand',[], [], 'COK'); ?>
@@ -50,7 +50,7 @@ $security->LoginControl($guvenlik);
               <th colspan="2"><input type="text" class="form-control" id="C2cCode" name="C2cCode" placeholder="C2c Kodu Giriniz"></th>
 
               <th colspan="2">
-                <select class="form-select" id="IdeaSoftSatatus" name="IdeaSoftSatatus" required>
+                <select class="form-select" id="IdeaSoftSatatus" name="IdeaSoftSatatus" >
                   <option selected value="">İdeaSoft Durum Seçiniz</option>
                   <option  value="1">Mevcut</option>
                   <option  value="0">Mevcut Değil</option>
