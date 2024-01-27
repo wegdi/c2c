@@ -83,7 +83,7 @@ foreach ($Products as $ProductsGet) {
 
 
     $Log[] = array(
-        '<input type="checkbox" name="selected['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["quantity"].'">',
+        '<input type="checkbox" name="selected['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["price"].'">',
         '<div class="flex-shrink-0 me-3">
         <div class="avatar-sm bg-light rounded p-1">
         <img src="'.$ProductsGet["main_image"].'" alt="" class="img-fluid d-block">
