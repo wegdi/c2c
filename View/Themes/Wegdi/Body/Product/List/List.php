@@ -66,18 +66,8 @@ $security->LoginControl($guvenlik);
 
             </tr>
             <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th><input type="number" class="form-control" id="comission" name="Model"></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th colspan="6"><input type="number" class="form-control" id="comission" name="Model"></th>
+
 
             </tr>
             <tr>
