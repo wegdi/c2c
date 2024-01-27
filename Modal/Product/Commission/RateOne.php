@@ -8,18 +8,18 @@ $db = new General();
 
 
 $pricelist=$_POST["pricelist"];
-$commission=$_POST["Oran"];
+$commission=$_POST["artis"];
 
 
 foreach ($pricelist as $key => $value) {
 
 
-      $commissionTotal = $value + ($value * ($commission / 100));
+      $tutar=$value+$commission;
 
-      $data = array('price_one' => $commissionTotal );
-
-      $Sonuc= $db->UpdateByObjectId("Products",(string)$key, $data);
+      $data = array('price_one' => $tutar );
+      print_r($data);
+      //$Sonuc= $db->UpdateByObjectId("Products",(string)$key, $data);
 
 }
-echo $Sonuc;
+//echo $Sonuc;
  ?>
