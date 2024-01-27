@@ -32,10 +32,9 @@ $security->LoginControl($guvenlik);
               <th colspan="12" class="text-center">Filtreleme</th>
             </tr>
             <tr >
-              <th></th>
-              <th></th>
-              <th><input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Ürün Adı Giriniz"></th>
-              <th style="width:10%;">
+
+              <th colspan="2"><input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Ürün Adı Giriniz"></th>
+              <th colspan="2">
                 <select class="form-select" id="Brand" name="Brand" required>
                     <option selected value="">Marka Seçiniz</option>
 
@@ -47,11 +46,10 @@ $security->LoginControl($guvenlik);
                   <?php endforeach; ?>
                 </select>
               </th>
-              <th><input type="text" class="form-control" id="Model" name="Model" placeholder="Model Kodu Giriniz"></th>
-              <th><input type="text" class="form-control" id="C2cCode" name="C2cCode" placeholder="C2c Kodu Giriniz"></th>
-              <th></th>
-              <th></th>
-              <th style="width:10%;">
+              <th colspan="2"><input type="text" class="form-control" id="Model" name="Model" placeholder="Model Kodu Giriniz"></th>
+              <th colspan="2"><input type="text" class="form-control" id="C2cCode" name="C2cCode" placeholder="C2c Kodu Giriniz"></th>
+
+              <th colspan="2">
                 <select class="form-select" id="IdeaSoftSatatus" name="IdeaSoftSatatus" required>
                   <option selected value="">İdeaSoft Durum Seçiniz</option>
                   <option  value="1">Mevcut</option>
@@ -59,11 +57,8 @@ $security->LoginControl($guvenlik);
 
                 </select>
               </th>
-              <th>
 
-              </th>
-              <th style="width:10%;"> <select id="Category" class="js-example-basic-single"></select></th>
-              <th></th>
+              <th colspan="2"> <select id="Category" class="js-example-basic-single"></select></th>
 
             </tr>
             <tr style="background: #f3f3f9;">
