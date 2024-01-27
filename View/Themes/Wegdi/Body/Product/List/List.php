@@ -59,7 +59,7 @@ $security->LoginControl($guvenlik);
                 </select>
               </th>
               <th>
-              <input type="number" class="form-control" id="comission" name="Model">
+
               </th>
               <th style="width:10%;"> <select id="Category" class="js-example-basic-single"></select></th>
               <th></th>
@@ -78,6 +78,21 @@ $security->LoginControl($guvenlik);
               <th style="width:10%;">Gönderilecek Fiyat</th>
               <th style="width:10%;">Kategori</th>
               <th>Tedarikçi</th>
+
+            </tr>
+            <tr>
+              <th><input type="number" class="form-control" id="comission" name="Model"></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
 
             </tr>
 
