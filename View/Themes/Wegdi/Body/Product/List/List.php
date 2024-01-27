@@ -66,7 +66,7 @@ $security->LoginControl($guvenlik);
 
             </tr>
             <tr>
-              <th colspan="3">Toplu Ürün Güncelleme</th>
+              <th colspan="3" class="text-center">Toplu Ürün<br> Güncelleme</th>
               <th colspan="3"><input type="number" class="form-control" id="comission" name="Model" ></th>
               <th colspan="6"></th>
 
