@@ -71,8 +71,25 @@ $security->LoginControl($guvenlik);
 
             </tr>
             <tr>
-              <th colspan="6"><input type="number" class="form-control" id="comission" name="Model" placeholder="Fiyat artış oranı % olarak "></th>
-              <th colspan="6"><input type="number" class="form-control" id="comission" name="Model" placeholder="Sabit Fiyat Artışı "></th>
+              <!-- İlk input alanı ve buton -->
+  <th colspan="6">
+      <div class="input-group">
+          <input type="number" class="form-control" id="comission" name="Model" placeholder="Fiyat artış oranı % olarak">
+          <div class="input-group-append">
+              <button class="btn btn-primary" type="button">Buton 1</button>
+          </div>
+      </div>
+  </th>
+
+  <!-- İkinci input alanı ve buton -->
+  <th colspan="6">
+      <div class="input-group">
+          <input type="number" class="form-control" id="comission" name="Model" placeholder="Sabit Fiyat Artışı">
+          <div class="input-group-append">
+              <button class="btn btn-primary" type="button">Buton 2</button>
+          </div>
+      </div>
+  </th>
 
             </tr>
             <tr>
