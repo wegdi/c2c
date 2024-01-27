@@ -67,6 +67,11 @@ $security->LoginControl($guvenlik);
             </tr>
             <tr>
               <th colspan="2" class="text-center">Toplu Ürün<br> Güncelleme</th>
+              <th colspan="2">
+                <select id="Category" class="js-example-basic-single">
+                  <option selected value="">Kategori Seçin</option>
+              </select>
+            </th>
               <th colspan="2"><input type="number" class="form-control" id="comission" name="Model" placeholder="Komisyon oranı"></th>
               <th colspan="8"></th>
 
