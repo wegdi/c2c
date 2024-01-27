@@ -82,10 +82,11 @@ $security->LoginControl($guvenlik);
             <th colspan="4">
               <div class="row">
                   <div class="col-6 ml-3">
-                      <input type="number" class="form-control"  name="Model" placeholder="Sabit Fiyat Artışı">
+                      <input type="number" class="form-control"  name="artis" placeholder="Sabit Fiyat Artışı">
                   </div>
                   <div class="col-6 ml-3">
-                      <button class="btn btn-primary" type="button">Güncelle</button>
+                    <button class="btn btn-primary" type="button" onclick="FromSaveGlobal('#transfer','/Modal/Product/Commission/RateOne.php','1')">Güncelle</button>
+
                   </div>
               </div>
           </th>
