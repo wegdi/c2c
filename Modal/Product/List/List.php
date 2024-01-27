@@ -83,7 +83,7 @@ foreach ($Products as $ProductsGet) {
 
 
     $Log[] = array(
-        '<input type="checkbox" name="selected[]" value="'.(string)$ProductsGet["_id"].'">',
+        '<input type="checkbox" name="selected['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["quantity"].'">',
         '<div class="flex-shrink-0 me-3">
         <div class="avatar-sm bg-light rounded p-1">
         <img src="'.$ProductsGet["main_image"].'" alt="" class="img-fluid d-block">
@@ -97,7 +97,7 @@ foreach ($Products as $ProductsGet) {
         $ProductsGet["quantity"],
         $ProductsGet["price"],
         $status,
-        '<input type="text" id="remove-id-input" class="form-control" name="price_one['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["TotalPrice"].'">',
+        '<input type="text" id="remove-id-input" class="form-control" name="price_one[]" value="'.$ProductsGet["TotalPrice"].'">',
         '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'"></select>',
         $Supplier["SupplierName"]
 
