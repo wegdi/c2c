@@ -15,8 +15,10 @@ foreach ($pricelist as $key => $value) {
 
 
       $commissionTotal = $value + ($value * ($commission / 100));
-      echo $commissionTotal;
-      echo "<br>";
+
+      $data = array('price_one' => $commissionTotal );
+
+     echo $db->UpdateByObjectId("Products",(string)$key, $data);
 
 }
 
