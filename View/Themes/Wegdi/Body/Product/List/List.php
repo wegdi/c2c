@@ -17,6 +17,7 @@ $security->LoginControl($guvenlik);
 </div>
 
 
+<form id="transfer">
 
 <div class="row">
   <div class="col-lg-12">
@@ -121,3 +122,5 @@ $security->LoginControl($guvenlik);
     </div>
   </div><!--end col-->
 </div><!--end row-->
+  
+</form>
