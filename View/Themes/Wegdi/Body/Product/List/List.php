@@ -66,10 +66,8 @@ $security->LoginControl($guvenlik);
 
             </tr>
             <tr>
-              <th colspan="3" class="text-center">Toplu Ürün Fiyat Artışı  Güncelleme</th>
-              <th colspan="3" class="text-center"></th>
-              <th colspan="3" class="text-center">Sabit Fiyat<br> Artışı</th>
-              <th colspan="3" class="text-center"></th>
+              <th colspan="6" class="text-center">Toplu Ürün Fiyat Artışı  Güncelleme</th>
+              <th colspan="6" class="text-center">Sabit Fiyat Artışı</th>
 
             </tr>
             <tr>
