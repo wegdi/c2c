@@ -68,7 +68,7 @@ $security->LoginControl($guvenlik);
             <tr>
               <th colspan="4" class="text-center">Toplu Ürün Fiyat Artışı  Güncelleme</th>
               <th colspan="4" class="text-center">Sabit Fiyat Artışı</th>
-              <th colspan="4" class="text-center">İdeaSoft Gönder</th>
+              <th colspan="4" class="text-center">İdeaSoft'a Gönder</th>
 
             </tr>
             <tr>
