@@ -1,6 +1,10 @@
 <?php
 
 
-print_r($_POST);
+$pricelist=$_POST["pricelist"];
+
+foreach ($pricelist as $key => $value) {
+      print_r($value);
+}
 
  ?>
