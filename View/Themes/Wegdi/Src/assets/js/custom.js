@@ -574,26 +574,28 @@ $(document).ready(function() {
 
 
 $(document).ready(function () {
-    $('#productTable').on('change', '.js-example-basic-single', function () {
-        var selectedValue = $(this).val();
-        var productId = $(this).data('product-select-id');
 
-        // AJAX ile POST isteği gönderme
-        $.ajax({
-            type: 'POST',
-            url: '/Modal/Product/Add/Selecet.php',
-            data: {
-                selectedValue: selectedValue,
-                productId: productId
-            },
-            success: function (response) {
-                // Başarılı cevap durumunda yapılacak işlemler
-                console.log(response);
-            },
-            error: function (error) {
-                // Hata durumunda yapılacak işlemler
-                console.error(error);
-            }
-        });
-    });
+   $('#UrunList').on('change', '.js-example-basic-single', function () {
+       var selectedValue = $(this).val();
+       var productId = $(this).data('product-select-id');
+
+       // AJAX ile POST isteği gönderme
+       $.ajax({
+           type: 'POST',
+           url: '/Modal/Product/Add/Selecet.php',
+           data: {
+               selectedValue: selectedValue,
+               productId: productId
+           },
+           success: function (response) {
+               // Başarılı cevap durumunda yapılacak işlemler
+               console.log(response);
+           },
+           error: function (error) {
+               // Hata durumunda yapılacak işlemler
+               console.error(error);
+           }
+       });
+   });
+
 });
