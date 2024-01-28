@@ -8,5 +8,5 @@ $db = new General();
 
 
 $data = array('CategoryId' => (int)$_POST["selectedValue"] );
-echo $db->UpdateByObjectId("Products",(string)$key, $data);
+echo $db->UpdateByObjectId("Products",(string)$_POST["productId"], $data);
  ?>
