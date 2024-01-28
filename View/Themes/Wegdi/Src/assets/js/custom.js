@@ -577,7 +577,7 @@ $(document).ready(function () {
 
    $('#UrunList').on('change', '.js-example-basic-single', function () {
        var selectedValue = $(this).val();
-       var productId = $(this).data('product-select-id');
+       var productId = $(this).data('product-selecet-id');
 
        // AJAX ile POST isteği gönderme
        $.ajax({
