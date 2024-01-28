@@ -5,17 +5,17 @@ require_once(SYSTEM.'General/General.php');
 
 $db = new General();
 
-$Search=(string)$_GET["search"];
+$Search = (string)$_GET["search"];
 
 if ($Search) {
-  $query = [
-      'Slug' => new MongoDB\BSON\Regex($Search, 'i'), // 'i' for case-insensitive
-  ];
-}else {
-  $query =[];
+    $query = [
+        'Slug' => new MongoDB\BSON\Regex($Search, 'i'),
+    ];
+} else {
+    $query = [];
 }
 
-$IdeaSoftCategory = $db->Query('IdeaSoftCategory',$query, [], 'COK');
+$IdeaSoftCategory = $db->Query('IdeaSoftCategory', $query, [], 'COK');
 
 // Tüm kategorileri depolamak için bir dizi oluşturun
 $categories = [];
