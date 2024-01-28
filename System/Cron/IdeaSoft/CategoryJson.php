@@ -22,7 +22,6 @@ $categories = [];
 
 // Ana kategorileri bulun
 foreach ($IdeaSoftCategory as $key => $value) {
-  print_r($value);
     $categories[] = [
         'Name' => $value['Name'],
         'Slug' => $value['Slug'],
