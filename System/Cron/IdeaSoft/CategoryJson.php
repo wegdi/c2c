@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
+//header('Content-Type: application/json; charset=utf-8');
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SYSTEM.'General/General.php');
 
@@ -22,6 +22,7 @@ $categories = [];
 
 // Ana kategorileri bulun
 foreach ($IdeaSoftCategory as $key => $value) {
+  print_r($value);
     $categories[] = [
         'Name' => $value['Name'],
         'Slug' => $value['Slug'],
