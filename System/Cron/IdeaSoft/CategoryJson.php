@@ -5,7 +5,7 @@ require_once(SYSTEM.'General/General.php');
 
 $db = new General();
 
-$Search=$_GET["search"];
+$Search=(string)$_GET["search"];
 
 if ($Search!="") {
   $query = [
