@@ -1,4 +1,5 @@
 <?php
+//header('Content-Type: application/json; charset=utf-8');
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SYSTEM.'General/General.php');
 
@@ -6,7 +7,8 @@ $db = new General();
 
 $Search = (string)$_GET["search"];
 
-$IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], [], 'COK');
+
+$IdeaSoftCategory = $db->Query('IdeaSoftCategory',[], [], 'COK');
 
 // Tüm kategorileri depolamak için bir dizi oluşturun
 $categories = [];
@@ -22,19 +24,18 @@ foreach ($IdeaSoftCategory as $key => $value) {
 }
 
 // JSON çıktısı oluşturmak için ağaç yapısını oluşturun
-$tree = buildCategoryTree($categories, $Search);
+$tree = buildCategoryTree($categories);
 
 // JSON çıktısını ekrana yazdır
 echo json_encode($tree, JSON_PRETTY_PRINT);
 
 // Kategori ağacını oluşturan özyinelemeli fonksiyon
-function buildCategoryTree($categories, $searchTerm, $parentId = 0, $parentNames = [])
+function buildCategoryTree($categories, $parentId = 0, $parentNames = [])
 {
     $branch = [];
 
     foreach ($categories as $category) {
-        // Arama terimini içeren kategorileri filtrele
-        if (stripos($category['Name'], $searchTerm) !== false) {
+        if ($category['ParentId'] == $parentId) {
             $currentCategory = [
                 'Name' => implode(' -> ', array_merge($parentNames, [$category['Name']])),
                 'Slug' => $category['Slug'],
@@ -44,7 +45,7 @@ function buildCategoryTree($categories, $searchTerm, $parentId = 0, $parentNames
             $branch[] = $currentCategory;
 
             // Alt kategorileri ekleyin
-            $subcategories = buildCategoryTree($categories, $searchTerm, $category['IdeaSoftId'], array_merge($parentNames, [$category['Name']]));
+            $subcategories = buildCategoryTree($categories, $category['IdeaSoftId'], array_merge($parentNames, [$category['Name']]));
             $branch = array_merge($branch, $subcategories);
         }
     }
