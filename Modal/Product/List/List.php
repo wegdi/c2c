@@ -81,7 +81,9 @@ foreach ($Products as $ProductsGet) {
 
     $Supplier = $db->Query('Supplier',['SupplierCode' => $ProductsGet["SupplierCode"]], [], 'TEK',);
 
-
+    if ($ProductsGet["CategoryId"]) {
+      echo "string";
+    }
 
 
     $Log[] = array(
