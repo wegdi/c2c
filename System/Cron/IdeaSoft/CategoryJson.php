@@ -7,7 +7,7 @@ $db = new General();
 
 $Search=(string)$_GET["search"];
 
-if ($Search!="") {
+if ($Search) {
   $query = [
       'Slug' => new MongoDB\BSON\Regex($Search, 'i'), // 'i' for case-insensitive
   ];
