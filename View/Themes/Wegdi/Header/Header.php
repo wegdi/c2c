@@ -5,7 +5,7 @@ require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
 ?>
 <!doctype html>
-<html lang="TR" data-layout="horizontal" data-topbar="light" data-sidebar="dark" data-sidebar-size="sm-hover" data-sidebar-image="none" data-preloader="enable">
+<html lang="TR" data-layout="horizontal" data-layout-width="boxed" data-topbar="light" data-sidebar="dark" data-sidebar-size="sm-hover" data-sidebar-image="none" data-preloader="enable">
 
 <head>
 
