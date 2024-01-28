@@ -29,10 +29,7 @@ require_once(SYSTEM.'General/General.php');
 
 $db = new General();
 
-$Search = (string)$_GET["search"];
-
-
-$IdeaSoftCategory = $db->Query('IdeaSoftCategory',[], [], 'COK');
+$IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], [], 'COK');
 
 // Tüm kategorileri depolamak için bir dizi oluşturun
 $categories = [];
@@ -50,9 +47,18 @@ foreach ($IdeaSoftCategory as $key => $value) {
 // JSON çıktısı oluşturmak için ağaç yapısını oluşturun
 $tree = buildCategoryTree($categories);
 
-// JSON çıktısını ekrana yazdır
-echo json_encode($tree, JSON_PRETTY_PRINT);
+$Search = (string)$_GET["search"];
 
-// Kategori ağacını oluşturan özyinelemeli fonksiyon
+if ($Search) {
+    // Arama terimini içeren kategorileri filtrele
+    $filteredCategories = array_filter($tree, function ($category) use ($Search) {
+        return stripos($category['Name'], $Search) !== false;
+    });
 
+    // Filtrelenmiş kategorileri JSON çıktısı olarak gönder
+    echo json_encode($filteredCategories, JSON_PRETTY_PRINT);
+} else {
+    // Arama terimi yoksa, tüm kategorileri gönder
+    echo json_encode($tree, JSON_PRETTY_PRINT);
+}
 ?>
