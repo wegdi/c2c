@@ -7,6 +7,6 @@ require_once(SYSTEM.'General/General.php');
 $db = new General();
 
 
-$data = array('CategoryId' => $_POST["selectedValue"] );
+$data = array('CategoryId' => (int)$_POST["selectedValue"] );
 echo $db->UpdateByObjectId("Products",(string)$key, $data);
  ?>
