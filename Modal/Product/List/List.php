@@ -82,6 +82,10 @@ foreach ($Products as $ProductsGet) {
     $Supplier = $db->Query('Supplier',['SupplierCode' => $ProductsGet["SupplierCode"]], [], 'TEK',);
 
 
+    if ($ProductsGet["CategoryId"]) {
+      $CategorySelecet='<option  seleceted value="">'.$ProductsGet["CategoryId"].'</option>';
+    }
+
     $Log[] = array(
         '<input type="checkbox" name="selected['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["price"].'">',
         '<div class="flex-shrink-0 me-3">
@@ -100,7 +104,9 @@ foreach ($Products as $ProductsGet) {
         '<input type="text" id="remove-id-input" class="form-control" name="price_one[]" value="'.$ProductsGet["price_one"].'">
         <input type="hidden" id="remove-id-input" class="form-control" name="pricelist['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["TotalPrice"].'">
         ',
-        '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]"></select>',
+        '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">
+        '.$CategorySelecet.'
+        </select>',
         $Supplier["SupplierName"]
 
     );
