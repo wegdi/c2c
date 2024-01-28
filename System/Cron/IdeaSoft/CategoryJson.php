@@ -67,7 +67,7 @@ if ($Search) {
     }, $filteredCategories);
 
     // Filtrelenmiş ve düzenlenmiş kategorileri JSON çıktısı olarak gönder
-    echo json_encode($formattedCategories, JSON_PRETTY_PRINT);
+    echo json_encode(array_values($formattedCategories), JSON_PRETTY_PRINT);
 } else {
     // Arama terimi yoksa, tüm kategorileri gönder
     echo json_encode($tree, JSON_PRETTY_PRINT);
