@@ -1,5 +1,29 @@
 <?php
 //header('Content-Type: application/json; charset=utf-8');
+
+function buildCategoryTree($categories, $parentId = 0, $parentNames = [])
+{
+    $branch = [];
+
+    foreach ($categories as $category) {
+        if ($category['ParentId'] == $parentId) {
+            $currentCategory = [
+                'Name' => implode(' -> ', array_merge($parentNames, [$category['Name']])),
+                'Slug' => $category['Slug'],
+                'IdeaSoftId' => $category['IdeaSoftId'],
+            ];
+
+            $branch[] = $currentCategory;
+
+            // Alt kategorileri ekleyin
+            $subcategories = buildCategoryTree($categories, $category['IdeaSoftId'], array_merge($parentNames, [$category['Name']]));
+            $branch = array_merge($branch, $subcategories);
+        }
+    }
+
+    return $branch;
+}
+
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SYSTEM.'General/General.php');
 
@@ -30,26 +54,5 @@ $tree = buildCategoryTree($categories);
 echo json_encode($tree, JSON_PRETTY_PRINT);
 
 // Kategori ağacını oluşturan özyinelemeli fonksiyon
-function buildCategoryTree($categories, $parentId = 0, $parentNames = [])
-{
-    $branch = [];
 
-    foreach ($categories as $category) {
-        if ($category['ParentId'] == $parentId) {
-            $currentCategory = [
-                'Name' => implode(' -> ', array_merge($parentNames, [$category['Name']])),
-                'Slug' => $category['Slug'],
-                'IdeaSoftId' => $category['IdeaSoftId'],
-            ];
-
-            $branch[] = $currentCategory;
-
-            // Alt kategorileri ekleyin
-            $subcategories = buildCategoryTree($categories, $category['IdeaSoftId'], array_merge($parentNames, [$category['Name']]));
-            $branch = array_merge($branch, $subcategories);
-        }
-    }
-
-    return $branch;
-}
 ?>
