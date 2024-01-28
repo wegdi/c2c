@@ -583,13 +583,17 @@ $(document).ready(function () {
        $.ajax({
            type: 'POST',
            url: '/Modal/Product/Add/Selecet.php',
+           dataType: 'Json',
            data: {
                selectedValue: selectedValue,
                productId: productId
            },
            success: function (response) {
-               // Başarılı cevap durumunda yapılacak işlemler
-               console.log(response);
+             Swal.fire({
+               icon: "success",
+               title: "İşleminiz Başarılı..",
+               text: "Eşleşme Yapıldı",
+             });
            },
            error: function (error) {
                // Hata durumunda yapılacak işlemler
