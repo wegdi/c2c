@@ -82,7 +82,11 @@ foreach ($Products as $ProductsGet) {
     $Supplier = $db->Query('Supplier',['SupplierCode' => $ProductsGet["SupplierCode"]], [], 'TEK',);
 
     if ($ProductsGet["CategoryId"]) {
-      $CategoryId= '<a href="">'.$ProductsGet["CategoryId"].'</a>';
+
+      $IdeaSoftCategory = $db->Query('IdeaSoftCategory', ['IdeaSoftId' => $ProductsGet["CategoryId"] ], [], 'TEK');
+
+
+      $CategoryId= '<a href="">'.$IdeaSoftCategory["Name"].'</a>';
     }else {
       $CategoryId= '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>';
 
