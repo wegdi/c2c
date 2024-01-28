@@ -105,7 +105,7 @@ function FromSaveGlobal(form, url, refresh = 0) {
               $("#exampleModalFullscreen").modal("hide");
             }
 
-                        $('#UrunList').DataTable().ajax.reload();
+            $('#UrunList').DataTable().ajax.reload();
             // Redirect to the success page after the delay
             if (refresh == 0) {
               window.location.reload();
@@ -594,6 +594,8 @@ $(document).ready(function () {
                title: "İşleminiz Başarılı..",
                text: "Eşleşme Yapıldı",
              });
+             $('#UrunList').DataTable().ajax.reload();
+
            },
            error: function (error) {
                // Hata durumunda yapılacak işlemler
