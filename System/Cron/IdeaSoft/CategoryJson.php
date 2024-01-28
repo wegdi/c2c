@@ -55,8 +55,19 @@ if ($Search) {
         return stripos($category['Name'], $Search) !== false;
     });
 
-    // Filtrelenmiş kategorileri JSON çıktısı olarak gönder
-    echo json_encode($filteredCategories, JSON_PRETTY_PRINT);
+    // Filtrelenmiş kategorileri düzenle
+    $formattedCategories = array_map(function ($category) {
+        $formattedCategory = [
+            'Name' => $category['Name'],
+            'Slug' => $category['Slug'],
+            'IdeaSoftId' => $category['IdeaSoftId'],
+        ];
+
+        return $formattedCategory;
+    }, $filteredCategories);
+
+    // Filtrelenmiş ve düzenlenmiş kategorileri JSON çıktısı olarak gönder
+    echo json_encode($formattedCategories, JSON_PRETTY_PRINT);
 } else {
     // Arama terimi yoksa, tüm kategorileri gönder
     echo json_encode($tree, JSON_PRETTY_PRINT);
