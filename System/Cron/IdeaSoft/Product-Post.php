@@ -32,18 +32,8 @@ curl_setopt_array($curl, [
     'stockAmount' => $Products["quantity"],
     'price1' => $Products["price_one"],
     'currency' => [
-        'property1' => [
-                'product',
-                'subscription_product',
-                'tabbed_midblock_product',
-                'draft_order'
-        ],
-        'property2' => [
-                'product',
-                'subscription_product',
-                'tabbed_midblock_product',
-                'draft_order'
-        ]
+        'id' => 1
+
     ],
     'discount' => 0,
     'discountType' => 0,
