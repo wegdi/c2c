@@ -101,7 +101,7 @@ foreach ($Products as $ProductsGet) {
         }
 
     $CategoryId= '
-    <a href="#" onclick="selectchange()" id="'.(string)$ProductsGet["_id"].'" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$targetCategory['Name'].'</a>
+    <a href="#" onclick="selectchange('.(string)$ProductsGet["_id"].')" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$targetCategory['Name'].'</a>
     <div class="om d-none" id="c'.(string)$ProductsGet["_id"].'"><select class="js-example-basic-single"  data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select></div>
     ';
 

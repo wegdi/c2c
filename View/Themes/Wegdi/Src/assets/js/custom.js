@@ -620,8 +620,8 @@ $(document).ready(function () {
 });
 
 
-function selectchange(){
-  var selectedElementId = this.id;
+function selectchange(id){
+  var selectedElementId = id;
     console.log(selectedElementId);
 }
 
