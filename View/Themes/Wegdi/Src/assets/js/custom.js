@@ -312,31 +312,6 @@ $(document).ready(function () {
         });
 
 
- $('#comission').on('keyup', function () {
-  var commission = $(this).val();
-  if(commission.length > 1){
-    var formData = {
-      commission: commission
-    };
-    $.ajax({
-      type: "POST",
-      url: "/Modal/Product/Commission/Commission.php",
-      data: formData,
-      dataType: "Json",
-      success: function(response) {
-
-        console.log(response);
-        table.draw();
-        // Başarılı bir şekilde gönderildiğinde gerekli işlemleri yapabilirsiniz.
-      },
-      error: function(error) {
-        console.error(error);
-        // Hata durumunda gerekli işlemleri yapabilirsiniz.
-      }
-    });
-  }
-});
-
 
   }
 
@@ -619,24 +594,8 @@ $(document).ready(function () {
 
 });
 
-
 function selectchange(element) {
   var selectedProductId = element.getAttribute('data-product-selecet-id');
   $('#c' + selectedProductId).removeClass('d-none');
   $(element).addClass('d-none');
 }
-
-
-
-
-$(document).ready(function () {
-    $('#ahrefselect').click(function (e) {
-      alert('tiklandi');
-        e.preventDefault();
-
-        var elementId = $(this).attr('id');
-        alert(elementId);
-        $('#c' + elementId).removeClass('d-none');
-        console.log('Element ID:', elementId);
-    });
-});
