@@ -7,29 +7,23 @@ require_once(SYSTEM.'General/General.php');
 $db = new General();
 
 
-
 // DataTables sends filter parameters in the request
 $draw = $_POST['draw'];
 $start = $_POST['start'];
 $length = $_POST['length'];
 $searchValue = $_POST['search']['value'];
 
+$filter = [];
 
-
-
-// Define your filtering criteria based on the DataTables search value ($searchValue)
-
-$Category_Menu = $db->Query('Category', [], ['sort' => ['Name' => -1]], 'COK', $start, $length);
+$Category = $db->Query('Category', $filter, [], 'COK', $start, $length);
 
 $Log = array();
-foreach ($Category_Menu as $Category_Menu_Item) {
-
+foreach ($Category as $CategoryGet) {
 
     $Log[] = array(
-        $Category_Menu_Item["Name"],
-        '<div class="hstack gap-2">
-            <a href="/Categories/List/'.$Category_Menu_Item['IdeaSoftId'].'" class="btn btn-sm btn-soft-info edit-list"><i class="ri-eye-2-line align-bottom"></i></a>
-         </div>'
+        $CategoryGet["Name"],
+        ''
+
     );
 }
 
