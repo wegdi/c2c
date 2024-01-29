@@ -4,6 +4,11 @@ require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
 ?>
 
+
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+  Tooltip with HTML
+</button>
+
 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
   <h4 class="mb-sm-0"><?php echo  $db->BarGet($param0.'/'.$param1,LANGUAGES_GET_DIL); ?></h4>
 
