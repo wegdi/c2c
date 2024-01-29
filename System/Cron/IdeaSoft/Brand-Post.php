@@ -31,9 +31,9 @@ foreach ($BrandGt as $key => $value) {
 
     ];
 
-    $result = $ideaSoftInstance->post($Brand, $yourApiUrl);
+    $result = $ideaSoftInstance->post($Brand,'brands');
 
-  echo $result;
+    echo $result;
 }
 
 
