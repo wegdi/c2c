@@ -147,7 +147,7 @@ curl_setopt_array($curl, [
         ]
     ],
     'categories' => [
-      (int)$Products["CategoryId"]
+      (string)$Products["CategoryId"]
 
     ],
     'prices' => [
