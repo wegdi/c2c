@@ -75,24 +75,20 @@ foreach ($Products as $ProductsGet) {
     if ($ProductsGet["CategoryId"]) {
 
 
-      $jsonData = file_get_contents('https://c2c.wegdi.com/System/Cron/IdeaSoft/CategoryJson.php');
+        $jsonData = file_get_contents('https://c2c.wegdi.com/System/Cron/IdeaSoft/CategoryJson.php?search='.$ProductsGet["CategoryId"].'&type=public');
 
         // JSON verisini PHP dizisine çevir
         $data = json_decode($jsonData, true);
 
-        // IdeaSoftId'si 1531 olan kategoriyi bul
-        $targetCategoryId = $ProductsGet["CategoryId"];
-        $targetCategory = null;
+        if ($ProductsGet["CategoryId"] == $data["IdeaSoftId"]) {
+          $Name=$data['Name'];
+        }else {
+          $Name="";
 
-        foreach ($data as $category) {
-            if ($category['IdeaSoftId'] == $targetCategoryId) {
-                $targetCategory = $category;
-                break;
-            }
         }
 
     $CategoryId= '
-    <a href="javascript:void(0);" onclick="selectchange(this)" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$targetCategory['Name'].'</a>
+    <a href="javascript:void(0);" onclick="selectchange(this)" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$Name.'</a>
     <div class="om d-none" id="c'.(string)$ProductsGet["_id"].'"><select class="js-example-basic-single"  data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select></div>
     ';
 
