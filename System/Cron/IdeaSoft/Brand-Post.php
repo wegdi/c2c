@@ -32,8 +32,11 @@ foreach ($BrandGt as $key => $value) {
     ];
 
     $result = $ideaSoftInstance->post($Brand,'brands');
+    $result = json_decode($result,1);
 
-    echo $result;
+    $data = array('BrandId' => $result["id"]);
+    echo $db->UpdateByObjectId("Products", (string)$value["_id"], $data);
+
 }
 
 
