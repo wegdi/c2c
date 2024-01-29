@@ -616,3 +616,14 @@ $(document).ready(function () {
    });
 
 });
+
+
+$(document).ready(function () {
+        $('.category-link').click(function (e) {
+            e.preventDefault(); // Prevent the default behavior of the anchor tag
+
+            // Toggle the visibility of the corresponding select box
+            var productId = $(this).data('product-id');
+            $('.js-example-basic-single-x[data-product-selecet-id="' + productId + '"]').toggleClass('d-none');
+        });
+    });
