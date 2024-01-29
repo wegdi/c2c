@@ -152,7 +152,7 @@ curl_setopt_array($curl, [
       ],
     ],
     'prices' => [
-    
+
     ],
     'distributors' => [
 
@@ -161,7 +161,7 @@ curl_setopt_array($curl, [
 
     ],
     'images' => [
-      $Products["main_image"]
+      
     ],
     'tags' => [
 
