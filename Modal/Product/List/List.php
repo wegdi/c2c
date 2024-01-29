@@ -25,7 +25,7 @@ function CategoryGet($category='')
             break;
         }
     }
-    return $targetCategory;
+    return $targetCategory["Name"];
 }
 
 // DataTables sends filter parameters in the request
@@ -95,10 +95,10 @@ foreach ($Products as $ProductsGet) {
     if ($ProductsGet["CategoryId"]) {
 
 
-      CategoryGet($ProductsGet["CategoryId"]);
+    $CategoryGet=CategoryGet($ProductsGet["CategoryId"]);
 
     $CategoryId= '
-    <a href="javascript:void(0);" onclick="selectchange(this)" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$targetCategory['Name'].'</a>
+    <a href="javascript:void(0);" onclick="selectchange(this)" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$CategoryGet.'</a>
     <div class="om d-none" id="c'.(string)$ProductsGet["_id"].'"><select class="js-example-basic-single"  data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select></div>
     ';
 
