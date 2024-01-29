@@ -16,16 +16,10 @@ $searchValue = $_POST['search']['value'];
 
 
 
-if($_GET["Params"]){
-    $filter = ['GroupId' => (int)$_GET["Params"]];
-}else{
-    $filter = ['GroupId' => '0'];
-}
-
 
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
-$Category_Menu = $db->Query('IdeaSoftCategory', $filter, ['sort' => ['_id' => -1]], 'COK', $start, $length);
+$Category_Menu = $db->Query('Category', [], ['sort' => ['Name' => -1]], 'COK', $start, $length);
 
 $Log = array();
 foreach ($Category_Menu as $Category_Menu_Item) {
@@ -42,8 +36,8 @@ foreach ($Category_Menu as $Category_Menu_Item) {
 
 $getir = array(
     "draw" => (int) $draw,
-    "recordsTotal" => $db->Quantity('IdeaSoftCategory'),
-    "recordsFiltered" => $db->Quantity('IdeaSoftCategory', $filter), // Here, we use the filtered data count
+    "recordsTotal" => $db->Quantity('Category'),
+    "recordsFiltered" => $db->Quantity('Category', $filter), // Here, we use the filtered data count
     "data" => $Log
 );
 
