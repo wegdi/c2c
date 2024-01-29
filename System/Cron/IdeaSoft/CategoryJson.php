@@ -13,7 +13,7 @@ if (ctype_digit($_GET["search"])) {
   $filtre["Name"]= (string)$_GET["Name"];
 }
 
-$Category = $db->Query('Category', [], [], 'COK');
+$Category = $db->Query('Category',$filtre, [], 'COK');
 $CategoryJson = [];
 
 foreach ($Category as $key => $value) {
