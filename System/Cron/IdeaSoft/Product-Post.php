@@ -68,7 +68,8 @@ curl_setopt_array($curl, [
     'metaDescription' => $Products["product_name"].' '.$Products["product_meta_keyword"],
     'metaKeywords' => '',
     'canonicalUrl' => '',
-    'parent' => [],
+    'parent' => [
+],
     'brand' => [
         'property1' => [
                 'product',
@@ -130,7 +131,9 @@ curl_setopt_array($curl, [
         ]
     ],
     'categories' =>   [
-      'id' => '60104',
+      'id' => [
+              '60104'
+      ],
     ],
     'prices' => [
 
