@@ -16,7 +16,8 @@ $searchValue = $_POST['search']['value'];
 $filter = [];
 
 if ($searchValue) {
-  $filter["Name"]= $searchValue;
+  $filtre["Name"] = new MongoDB\BSON\Regex($searchValue, 'i');
+
 }
 
 $Category = $db->Query('Category', $filter, [], 'COK', $start, $length);
