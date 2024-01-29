@@ -99,7 +99,7 @@ foreach ($Products as $ProductsGet) {
         }
 
         $selectBox = '<select class="js-example-basic-single" data-product-selecet-id="' . (string)$ProductsGet["_id"] . '" name="category[]"></select>';
-        $CategoryId = '<a href="#" class="category-link" data-toggle="tooltip" title="' . $selectBox . '">' . $targetCategory['Name'] . '</a>';
+        $CategoryId = '<a href="#" class="category-link" data-toggle="tooltip" title="' . htmlspecialchars($selectBox) . '">' . $targetCategory['Name'] . '</a>';
     } else {
         $CategoryId = '<select class="js-example-basic-single" data-product-selecet-id="' . (string)$ProductsGet["_id"] . '" name="category[]"></select>';
     }
