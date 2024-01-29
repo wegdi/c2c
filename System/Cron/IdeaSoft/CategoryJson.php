@@ -8,9 +8,10 @@ $db = new General();
 
 $Category = $db->Query('Category', [], [], 'COK');
 
-foreach ($Category as $key => &$value) {
+foreach ($Category as $key => $value) {
     unset($value['_id']);
-    print_r($value);
 }
+
+echo json_encode($value);
 
 ?>
