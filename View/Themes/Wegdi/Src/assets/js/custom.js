@@ -627,6 +627,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         var elementId = $(this).attr('id');
+        alert(elementId);
         $('#c' + elementId).removeClass('d-none');
         console.log('Element ID:', elementId);
     });
