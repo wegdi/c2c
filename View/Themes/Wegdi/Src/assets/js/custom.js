@@ -624,6 +624,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('.ahrefselect').click(function (e) {
+      alert('tiklandi');
         e.preventDefault();
 
         var elementId = $(this).attr('id');
