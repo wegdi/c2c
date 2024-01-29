@@ -35,7 +35,7 @@ foreach ($BrandGt as $key => $value) {
     $result = json_decode($result,1);
 
     $data = array('BrandId' => $result["id"]);
-    echo $db->UpdateByObjectId("Products", (string)$value["_id"], $data);
+    echo $db->UpdateByObjectId("Brand", (string)$value["_id"], $data);
 
 }
 
