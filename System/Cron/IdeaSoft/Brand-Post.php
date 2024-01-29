@@ -19,8 +19,8 @@ foreach ($BrandGt as $key => $value) {
 
   $Brand=[
       'name' => $value["Name"],
-      'slug' => 'string',
-      'status' => 0,
+      'slug' => $db->Seflink($value["Name"]),
+      'status' => 1,
       'sortOrder' => 999,
       'showcaseContent' => '',
       'displayShowcaseContent' => 0,
