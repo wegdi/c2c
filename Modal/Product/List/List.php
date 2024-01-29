@@ -74,13 +74,7 @@ foreach ($Products as $ProductsGet) {
 
     if ($ProductsGet["CategoryId"]) {
 
-
-        $jsonData = file_get_contents('https://c2c.wegdi.com/System/Cron/IdeaSoft/CategoryJson.php?search='.$ProductsGet["CategoryId"].'&type=public');
-
-        // JSON verisini PHP dizisine çevir
-        $data = json_decode($jsonData, true);
-
-        $Category = $db->Query('Category',['IdeaSoftId' => $ProductsGet["CategoryId"]], [], 'TEK',);
+    $Category = $db->Query('Category',['IdeaSoftId' => (int)$ProductsGet["CategoryId"]], [], 'TEK',);
 
 
 
