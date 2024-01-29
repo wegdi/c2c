@@ -82,9 +82,7 @@ foreach ($Products as $ProductsGet) {
     $Supplier = $db->Query('Supplier',['SupplierCode' => $ProductsGet["SupplierCode"]], [], 'TEK',);
 
     if ($ProductsGet["CategoryId"]) {
-
-
-      $jsonData = file_get_contents('https://c2c.wegdi.com/System/Cron/IdeaSoft/CategoryJson.php');
+        $jsonData = file_get_contents('https://c2c.wegdi.com/System/Cron/IdeaSoft/CategoryJson.php');
 
         // JSON verisini PHP dizisine çevir
         $data = json_decode($jsonData, true);
@@ -100,13 +98,11 @@ foreach ($Products as $ProductsGet) {
             }
         }
 
-
-      $CategoryId= '<a href="">'.$targetCategory['Name'].'</a>';
-    }else {
-      $CategoryId= '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>';
-
+        $selectBox = '<select class="js-example-basic-single" data-product-selecet-id="' . (string)$ProductsGet["_id"] . '" name="category[]"></select>';
+        $CategoryId = '<a href="#" class="category-link" data-toggle="tooltip" title="' . htmlspecialchars($selectBox) . '">' . $targetCategory['Name'] . '</a>';
+    } else {
+        $CategoryId = '<select class="js-example-basic-single" data-product-selecet-id="' . (string)$ProductsGet["_id"] . '" name="category[]"></select>';
     }
-
 
     $Log[] = array(
         '<input type="checkbox" name="selected['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["price"].'">',
