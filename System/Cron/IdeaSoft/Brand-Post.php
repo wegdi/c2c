@@ -12,7 +12,7 @@ $ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 $IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
 
 
-$BrandGt = $db->Query('Brand',[], [], 'COK');
+$BrandGt = $db->Query('Brand',['BrandId' => null ], [], 'COK');
 
 foreach ($BrandGt as $key => $value) {
 
