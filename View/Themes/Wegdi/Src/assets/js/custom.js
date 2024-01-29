@@ -272,7 +272,7 @@ $(document).ready(function () {
       "ordering": false,  // Disable sorting
       "searching": false, // Disable searching
       "lengthChange": false,
-      "pageLength": 25
+      "pageLength": 10
     });
 
     $('#ProductName').on('keyup', function () {
@@ -590,7 +590,7 @@ $(document).ready(function () {
        });
    });
 
-  
+
 
 });
 
