@@ -161,7 +161,7 @@ curl_setopt_array($curl, [
 
     ],
     'images' => [
-      
+
     ],
     'tags' => [
 
@@ -222,5 +222,6 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo $response;
+  $ss=json_decode($response,1);
+  print_r($ss);
 }
