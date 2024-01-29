@@ -621,7 +621,7 @@ $(document).ready(function () {
 
 
 function selectchange(){
-  var selectedProductId = this.attr('data-product-select-id');
+  var selectedProductId = $(this).attr('data-product-select-id');
     console.log(selectedProductId);
 }
 
