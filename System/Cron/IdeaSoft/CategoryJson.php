@@ -6,14 +6,17 @@ require_once(SYSTEM.'General/General.php');
 
 $db = new General();
 
-$filtre=[];
+$filtre = [];
+
 if (ctype_digit($_GET["search"])) {
-  $filtre["IdeaSoftId"]= (int)$_GET["search"];
-}else {
-  $filtre["Name"]= (string)$_GET["Name"];
+    $filtre["IdeaSoftId"] = (int)$_GET["search"];
+} else {
+    // Using a case-insensitive regex for the "Name" field
+    $filtre["Name"] = new MongoDB\BSON\Regex($_GET["search"], 'i');
 }
 
-$Category = $db->Query('Category',$filtre, [], 'COK');
+$Category = $db->Query('Category', $filtre, [], 'COK');
+
 $CategoryJson = [];
 
 foreach ($Category as $key => $value) {
