@@ -28,20 +28,15 @@ foreach ($BrandGt as $key => $value) {
       'metaDescription' => $value["Name"].' yedek parça ürünleri.',
       'canonicalUrl' => 'marka/'.$db->Seflink($value["Name"]),
       'attachment' => '',
-      'seoSetting' => [
-          'property1' => [
-                  'brand'
-          ],
-          'property2' => [
-                  'brand'
-          ]
-      ]
-    ];
-    print_r($Brand);
 
+    ];
+
+    $result = $ideaSoftInstance->post($Brand, $yourApiUrl);
+
+  echo $result;
 }
 
 
 
 
-//$result = $ideaSoftInstance->post($yourPostData, $yourApiUrl);
+//
