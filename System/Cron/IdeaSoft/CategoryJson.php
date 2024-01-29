@@ -6,10 +6,11 @@ require_once(SYSTEM.'General/General.php');
 
 $db = new General();
 
-$Category = $db->Query('Category',[], [], 'COK');
+$Category = $db->Query('Category', [], [], 'COK');
 
-foreach ($Category as $key => $value) {
-    unset('_id');
-   print_R($value);
+foreach ($Category as $key => &$value) {
+    unset($value['_id']);
+    print_r($value);
 }
+
 ?>
