@@ -47,7 +47,6 @@ $tree = buildCategoryTree($categories);
 
 
 foreach ($tree as $key => $value) {
-  print_r($value);
 
   $Category = $db->Query('Category', ["IdeaSoft" => (int)$value["IdeaSoft"]], [], 'TEK');
 
