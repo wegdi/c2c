@@ -47,6 +47,6 @@ foreach ($IdeaSoftCategory as $key => $value) {
 // JSON çıktısı oluşturmak için ağaç yapısını oluşturun
 $tree = buildCategoryTree($categories);
 
-echo json_encode($tree, JSON_PRETTY_PRINT);
+print_r($tree);
 
 ?>
