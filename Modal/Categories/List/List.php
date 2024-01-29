@@ -15,6 +15,7 @@ $searchValue = $_POST['search']['value'];
 
 $filter = [];
 
+echo $searchValue;
 if ($searchValue) {
   $filtre["Name"] = new MongoDB\BSON\Regex($searchValue, 'i');
 
