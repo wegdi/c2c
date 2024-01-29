@@ -49,7 +49,7 @@ $tree = buildCategoryTree($categories);
 
 $Search = (string)$_GET["search"];
 
-if ($Search) {
+if (is_string($Search)) {
     // Arama terimini içeren kategorileri filtrele
     $filteredCategories = array_filter($tree, function ($category) use ($Search) {
         return stripos($category['Name'], $Search) !== false;
@@ -68,6 +68,25 @@ if ($Search) {
 
     // Filtrelenmiş ve düzenlenmiş kategorileri JSON çıktısı olarak gönder
     echo json_encode(array_values($formattedCategories), JSON_PRETTY_PRINT);
+}elseif (is_numeric($Search)) {
+  // Arama terimini içeren kategorileri filtrele
+  $filteredCategories = array_filter($tree, function ($category) use ($Search) {
+      return stripos($category['IdeaSoftId'], $Search) !== false;
+  });
+
+  // Filtrelenmiş kategorileri düzenle
+  $formattedCategories = array_map(function ($category) {
+      $formattedCategory = [
+          'Name' => $category['Name'],
+          'Slug' => $category['Slug'],
+          'IdeaSoftId' => $category['IdeaSoftId'],
+      ];
+
+      return $formattedCategory;
+  }, $filteredCategories);
+
+  // Filtrelenmiş ve düzenlenmiş kategorileri JSON çıktısı olarak gönder
+  echo json_encode(array_values($formattedCategories), JSON_PRETTY_PRINT);
 } else {
     // Arama terimi yoksa, tüm kategorileri gönder
     echo json_encode($tree, JSON_PRETTY_PRINT);
