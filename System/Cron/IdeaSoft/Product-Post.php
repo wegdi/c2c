@@ -152,7 +152,7 @@ curl_setopt_array($curl, [
       ],
     ],
     'prices' => [
-      1.00
+    
     ],
     'distributors' => [
 
