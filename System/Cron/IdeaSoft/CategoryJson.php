@@ -10,7 +10,7 @@ $Category = $db->Query('Category', [], [], 'COK');
 $CategoryJson=[];
 foreach ($Category as $key => $value) {
     unset($value['_id']);
-    $CategoryJson=$value;
+    $CategoryJson[]=$value;
 }
 
 echo json_encode($value);
