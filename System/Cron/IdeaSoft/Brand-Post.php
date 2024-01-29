@@ -5,7 +5,7 @@ require_once(SYSTEM . 'General/General.php');
 $db = new General();
 
 
-function ideaSoftPost($post='')
+function ideaSoftPost($post='',$url)
 {
 
   $IdeaSoft = $this->Query('IdeaSoft', [], [], 'TEK');
@@ -15,7 +15,7 @@ function ideaSoftPost($post='')
   $curl = curl_init();
 
   curl_setopt_array($curl, [
-    CURLOPT_URL => $Domain."/admin-api/brands",
+    CURLOPT_URL => $Domain."/admin-api/".$url,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
