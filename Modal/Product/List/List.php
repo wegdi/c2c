@@ -54,15 +54,6 @@ $sortOptions = ['quantity' => -1]; // Sort by "quantity" in descending order
 $Products = $db->Query('Products', $filter, ['sort' => $sortOptions], 'COK', $start, $length);
 
 
-$url = 'https://c2c.wegdi.com/System/Cron/IdeaSoft/CategoryJson.php';
-
-// JSON verilerini çekin
-$jsonData = file_get_contents($url);
-$jsonData= json_decode($jsonData,1);
-$ideaSoftCategoryItem = '';
-foreach ($jsonData as $value) {
-  $ideaSoftCategoryItem .= '<option value="'.$value["IdeaSoftId"].'">'.$value["Name"].'</option>';
-}
 
 $Log = array();
 foreach ($Products as $ProductsGet) {
