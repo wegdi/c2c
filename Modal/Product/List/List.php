@@ -100,8 +100,10 @@ foreach ($Products as $ProductsGet) {
             }
         }
 
-    $CategoryId.= '<a href="#categoryedit" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$targetCategory['Name'].'</a>';
-    $CategoryId.= '<select class="js-example-basic-single-x d-none" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>';
+    $CategoryId= '
+    <a href="#categoryedit" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$targetCategory['Name'].'</a>
+    <select class="js-example-basic-single-x d-none" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>
+    ';
 
     }else {
       $CategoryId= '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>';
