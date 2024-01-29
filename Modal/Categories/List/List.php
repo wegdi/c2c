@@ -15,6 +15,10 @@ $searchValue = $_POST['search']['value'];
 
 $filter = [];
 
+if ($searchValue) {
+  $filter["Name"]= $searchValue;
+}
+
 $Category = $db->Query('Category', $filter, [], 'COK', $start, $length);
 
 $Log = array();
