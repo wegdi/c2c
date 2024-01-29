@@ -100,8 +100,9 @@ foreach ($Products as $ProductsGet) {
             }
         }
 
-
-      $CategoryId= '<a href="">'.$targetCategory['Name'].'</a>';
+    $CategoryId= '
+      <button type="button" class="btn btn-outline-success">'.$targetCategory['Name'].'</button>
+      ';
     }else {
       $CategoryId= '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>';
 
