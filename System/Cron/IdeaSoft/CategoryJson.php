@@ -7,12 +7,14 @@ require_once(SYSTEM.'General/General.php');
 $db = new General();
 
 $Category = $db->Query('Category', [], [], 'COK');
-$CategoryJson=[];
+$CategoryJson = [];
+
 foreach ($Category as $key => $value) {
     unset($value['_id']);
-    $CategoryJson[]=$value;
+    $CategoryJson[] = $value;
 }
 
-echo json_encode($value);
+echo json_encode($CategoryJson);
+
 
 ?>
