@@ -48,7 +48,7 @@ $tree = buildCategoryTree($categories);
 
 foreach ($tree as $key => $value) {
 
-  $Category = $db->Query('Category', ["IdeaSoft" => (int)$value["IdeaSoft"]], [], 'TEK');
+  $Category = $db->Query('Category', ["IdeaSoftId" => (int)$value["IdeaSoftId"]], [], 'TEK');
 
   if ($Category["_id"] == "") {
 
