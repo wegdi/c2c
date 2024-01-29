@@ -621,9 +621,8 @@ $(document).ready(function () {
 
 
 function selectchange(){
-    var selectedElement = document.activeElement;
-    var selectedProductId = selectedElement.getAttribute('data-product-select-id');
-    console.log(selectedProductId);
+  var selectedElementId = this.id;
+    console.log(selectedElementId);
 }
 
 
