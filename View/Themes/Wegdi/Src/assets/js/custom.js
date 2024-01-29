@@ -623,6 +623,7 @@ $(document).ready(function () {
 function selectchange(element) {
   var selectedProductId = element.getAttribute('data-product-selecet-id');
   $('#c' + selectedProductId).removeClass('d-none');
+  element.addClass('d-none');
 }
 
 
