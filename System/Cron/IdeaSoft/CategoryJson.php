@@ -6,8 +6,9 @@ require_once(SYSTEM.'General/General.php');
 
 $db = new General();
 
-$IdeaSoftCategory = $db->Query('Category',[], [], 'COK');
+$Category = $db->Query('Category',[], [], 'COK');
 
-echo $IdeaSoftCategory;
-
+foreach ($Category as $key => $value) {
+   print_R($value);
+}
 ?>
