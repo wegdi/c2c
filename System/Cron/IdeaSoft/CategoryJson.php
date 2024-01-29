@@ -69,6 +69,7 @@ if (is_string($Search)) {
     // Filtrelenmiş ve düzenlenmiş kategorileri JSON çıktısı olarak gönder
     echo json_encode(array_values($formattedCategories), JSON_PRETTY_PRINT);
 }elseif (is_numeric($Search)) {
+  echo "string";
   // Arama terimini içeren kategorileri filtrele
   $filteredCategories = array_filter($tree, function ($category) use ($Search) {
       return stripos($category['IdeaSoftId'], $Search) !== false;
