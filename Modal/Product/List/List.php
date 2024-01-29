@@ -80,15 +80,12 @@ foreach ($Products as $ProductsGet) {
         // JSON verisini PHP dizisine çevir
         $data = json_decode($jsonData, true);
 
-        if ($ProductsGet["CategoryId"] == $data[0]["IdeaSoftId"]) {
-          $Name=$data[0]['Name'];
-        }else {
-          $Name="";
+        $Category = $db->Query('Category',['IdeaSoftId' => $ProductsGet["CategoryId"]], [], 'TEK',);
 
-        }
+
 
     $CategoryId= '
-    <a href="javascript:void(0);" onclick="selectchange(this)" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$Name.'</a>
+    <a href="javascript:void(0);" onclick="selectchange(this)" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$Category["Name"].'</a>
     <div class="om d-none" id="c'.(string)$ProductsGet["_id"].'"><select class="js-example-basic-single"  data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select></div>
     ';
 
