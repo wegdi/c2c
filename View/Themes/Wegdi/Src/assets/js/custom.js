@@ -300,6 +300,10 @@ $(document).ready(function () {
    table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
  });
 
+ $('[data-toggle="tooltip"]').tooltip({
+     html: true, // Enable HTML content in the tooltip
+ });
+
 
  $('#comission').on('keyup', function () {
   var commission = $(this).val();
@@ -605,11 +609,3 @@ $(document).ready(function () {
    });
 
 });
-
-
-$(document).ready(function () {
-      // Enable tooltips
-      $('[data-toggle="tooltip"]').tooltip({
-          html: true, // Enable HTML content in the tooltip
-      });
-  });
