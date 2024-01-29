@@ -622,7 +622,7 @@ $(document).ready(function () {
 
 function selectchange(element) {
   var selectedProductId = element.getAttribute('data-product-selecet-id');
-  alert(selectedProductId);
+  $('#c' + selectedProductId).removeClass('d-none');
 }
 
 
