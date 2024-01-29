@@ -605,3 +605,11 @@ $(document).ready(function () {
    });
 
 });
+
+
+$(document).ready(function () {
+      // Enable tooltips
+      $('[data-toggle="tooltip"]').tooltip({
+          html: true, // Enable HTML content in the tooltip
+      });
+  });
