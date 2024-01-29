@@ -50,13 +50,14 @@ var deletetitle = "<?php echo $Themes->Translate("TEXT_DELETE_ERROR"); ?>";
 
 
 <!-- JAVASCRIPT -->
-<!--
-   <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <script src="assets/libs/simplebar/simplebar.min.js"></script>
-   <script src="assets/libs/node-waves/waves.min.js"></script>
-   <script src="assets/libs/feather-icons/feather.min.js"></script>
-   <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-   <script src="assets/js/plugins.js"></script> -->
+
+   <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/simplebar/simplebar.min.js"></script>
+   <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/node-waves/waves.min.js"></script>
+   <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/libs/feather-icons/feather.min.js"></script>
+   <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+   <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/plugins.js"></script> 
+
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -72,14 +73,14 @@ var deletetitle = "<?php echo $Themes->Translate("TEXT_DELETE_ERROR"); ?>";
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 
    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
    <script src="/View/Themes/Wegdi/Src/assets/js/pages/select2.init.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/custom.js?rn=<?php echo rand(2222,22222222222); ?>"></script>
-<script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/core.js?rn=<?php echo rand(2222,22222222222); ?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/custom.js?rn=<?php echo rand(2222,22222222222); ?>"></script>
+    <script src="<?php echo $Themes->ThemeUrl(); ?>/assets/js/core.js?rn=<?php echo rand(2222,22222222222); ?>"></script>
 
 
 <script>
