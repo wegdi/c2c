@@ -9,6 +9,7 @@ $db = new General();
 $Category = $db->Query('Category',[], [], 'COK');
 
 foreach ($Category as $key => $value) {
+    unset('_id');
    print_R($value);
 }
 ?>
