@@ -615,16 +615,14 @@ $(document).ready(function () {
        });
    });
 
-
-   document.getElementById('selectchange').addEventListener('click', function() {
-    var selectedProductId = this.getAttribute('data-product-select-id');
-    console.log(selectedProductId);
-    
-  });
+  
 
 });
 
 
+function selectchange(){
+  console.log("aaaa");
+}
 
 
 
