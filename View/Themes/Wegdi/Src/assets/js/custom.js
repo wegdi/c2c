@@ -620,9 +620,9 @@ $(document).ready(function () {
 });
 
 
-function selectchange(){
-  var selectedProductId = $(this).attr('data-product-select-id');
-    console.log(selectedProductId);
+function selectchange(element) {
+  var selectedProductId = element.getAttribute('data-product-selecet-id');
+  alert(selectedProductId);
 }
 
 
