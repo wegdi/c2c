@@ -300,9 +300,16 @@ $(document).ready(function () {
    table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
  });
 
+
+
+
  $('[data-toggle="tooltip"]').tooltip({
-     html: true, // Enable HTML content in the tooltip
- });
+            container: 'body', // Ensure the tooltip is appended to the body
+            html: true, // Enable HTML content in the tooltip
+            title: function () {
+                return $(this).attr('title'); // Use the 'title' attribute as the tooltip content
+            }
+        });
 
 
  $('#comission').on('keyup', function () {
