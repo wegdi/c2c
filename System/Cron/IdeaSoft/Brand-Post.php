@@ -6,13 +6,13 @@ require_once('IdeaSoftFunc.php');
 $db = new General();
 
 $IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
-$ideaSoftInstance = new IdeaSoftPost($IdeaSoft["domain"],$IdeaSoft["access_token"]);
+$ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 
 
 $IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
 
 
-$BrandGt = $db->Query('Brand', [], [], 'COK');
+$BrandGt = $db->Query('Brand',[], [], 'COK');
 
 foreach ($BrandGt as $key => $value) {
 
