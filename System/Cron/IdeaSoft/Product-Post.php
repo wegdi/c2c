@@ -147,7 +147,9 @@ curl_setopt_array($curl, [
         ]
     ],
     'categories' =>   [
-      '64223'
+      'id' => [
+              '60104'
+      ],
     ],
     'prices' => [
       $Products["price_one"]
