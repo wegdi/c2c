@@ -2,13 +2,10 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
-$test='<select class="js-example-basic-single" data-product-selecet-id="65a4ffbd86428e5182031cf7" name="category[]"></select>';
 ?>
 
 
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<?php echo htmlspecialchars($test); ?>">
-  Tooltip with HTML
-</button>
+
 
 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
   <h4 class="mb-sm-0"><?php echo  $db->BarGet($param0.'/'.$param1,LANGUAGES_GET_DIL); ?></h4>
