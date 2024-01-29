@@ -102,7 +102,7 @@ foreach ($Products as $ProductsGet) {
 
     $CategoryId= '
     <a href="#categoryedit" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$targetCategory['Name'].'</a>
-    <select class="js-example-basic-single-x d-none" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>
+    <select class="js-example-basic-single" style="display: none !important;" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>
     ';
 
     }else {
