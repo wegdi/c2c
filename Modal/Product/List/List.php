@@ -80,8 +80,8 @@ foreach ($Products as $ProductsGet) {
         // JSON verisini PHP dizisine çevir
         $data = json_decode($jsonData, true);
 
-        if ($ProductsGet["CategoryId"] == $data["IdeaSoftId"]) {
-          $Name=$data['Name'];
+        if ($ProductsGet["CategoryId"] == $data[0]["IdeaSoftId"]) {
+          $Name=$data[0]['Name'];
         }else {
           $Name="";
 
