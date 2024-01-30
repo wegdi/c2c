@@ -81,7 +81,7 @@ $ProductPost=[
   'canonicalUrl' => '',
   'detail' => [
     'asdsad'
-  ]
+  ],
 
   'brand' => [
       'id' =>  $Brand["BrandId"]
