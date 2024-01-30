@@ -15,3 +15,9 @@ $Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TE
 $Resault = $ideaSoftInstance->delete('products/'.$Products["IdeaSoftProductId"]);
 
 echo json_encode(array('success' => true));
+
+
+$IdeaData = array(
+  'IdeaSoft' => 0,
+);
+$db->UpdateByObjectId("Products", (string)$ProductId,$IdeaData);
