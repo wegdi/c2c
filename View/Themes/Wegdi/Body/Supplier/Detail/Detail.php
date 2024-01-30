@@ -13,6 +13,8 @@
 $options = [
     "product_name" => "Ürün Adı",
     "product_description" => "Açıklama",
+    "product_description_1" => "Açıklama Ek",
+    "product_description_2" => "Açıklama Ek 2",
     "product_meta_description" => "Meta description",
     "product_meta_keyword" => "Meta keyword",
     "model" => "Ürün Kodu",
@@ -162,6 +164,9 @@ foreach ($databaseKeys as $item) {
 
             <option '.(($jsonUrl["product_name"] == $tag) ? "selected" : "").' value="product_name">Ürün Adı</option>
             <option '.(($jsonUrl["product_description"] == $tag) ? "selected" : "").' value="product_description">Açıklama</option>
+            <option '.(($jsonUrl["product_description_1"] == $tag) ? "selected" : "").' value="product_description">Açıklama Ek</option>
+            <option '.(($jsonUrl["product_description_2"] == $tag) ? "selected" : "").' value="product_description">Açıklama Ek 2</option>
+
             <option '.(($jsonUrl["product_meta_description"] == $tag) ? "selected" : "").' value="product_meta_description">Meta description</option>
             <option '.(($jsonUrl["product_meta_keyword"] == $tag) ? "selected" : "").' value="product_meta_keyword">Meta keyword</option>
             <option '.(($jsonUrl["model"] == $tag) ? "selected" : "").' value="model">Ürün Kodu</option>
