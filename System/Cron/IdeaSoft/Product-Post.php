@@ -79,6 +79,9 @@ $ProductPost=[
   'metaDescription' => $Products["product_name"].' '.$Products["product_meta_keyword"],
   'metaKeywords' => '',
   'canonicalUrl' => '',
+  'detail' => [
+    'asdsad'
+  ]
 
   'brand' => [
       'id' =>  $Brand["BrandId"]
