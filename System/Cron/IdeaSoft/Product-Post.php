@@ -125,6 +125,6 @@ $Image=[
 ];
 
 
-$result = $ideaSoftInstance->post($Image,'product_images');
-$result = json_decode($result,1);
+$imageresult = $ideaSoftInstance->post($Image,'product_images');
+$imageresult = json_decode($imageresult,1);
 print_r($result);
