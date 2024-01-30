@@ -89,6 +89,15 @@ foreach ($Products as $ProductsGet) {
     }
 
 
+      if ($ProductsGet["CategoryId"] and $ProductsGet["price_one"]!="") {
+
+        $button='<button type="button" class="btn rounded-pill btn-light waves-effect">Light</button';
+      }else {
+        $button='<button   type="button"  disabled class="btn rounded-pill btn-light waves-effect">Light</button';
+
+      }
+
+
     $Log[] = array(
         '<input type="checkbox" name="selected['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["price"].'">',
         '<div class="flex-shrink-0 me-3">
@@ -108,7 +117,8 @@ foreach ($Products as $ProductsGet) {
         <input type="hidden" id="remove-id-input" class="form-control" name="pricelist['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["TotalPrice"].'">
         ',
         $CategoryId,
-        $Supplier["SupplierName"]
+        $Supplier["SupplierName"],
+        $button
 
     );
 }
