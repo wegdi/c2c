@@ -90,7 +90,7 @@ $ProductPost=[
       ],
   ],
   'images' => [
-    $Products["main_image"]
+    new CURLFile($tempFileName)
 
   ]
 ];
