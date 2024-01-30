@@ -91,7 +91,7 @@ $ProductPost=[
   ],
   'images' => [
     [
-      'filename' => 'product_image',  // İsteğe bağlı bir dosya adı belirtin
+      'filename' => 'org_638333917681537565',  // İsteğe bağlı bir dosya adı belirtin
       'extension' => 'jpg',                // İsteğe bağlı bir dosya uzantısı belirtin
       'file' => new CURLFile($tempFileName)
     ],
