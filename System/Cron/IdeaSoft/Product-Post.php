@@ -69,74 +69,14 @@ $ProductPost=[
   'brand' => [
       'id' =>  $Brand["BrandId"]
   ],
-  'button' => [
-      'property1' => [
-              'product'
-      ],
-      'property2' => [
-              'product'
-      ]
-  ],
-  'countDown' => [
-      'property1' => [
-              'product'
-      ],
-      'property2' => [
-              'product'
-      ]
-  ],
+
 
   'categories' => [
       [
           'id' => $Products["CategoryId"],
       ],
   ],
-  'prices' => [
-
-  ],
-  'distributors' => [
-
-  ],
-  'extraInfos' => [
-
-  ],
   'images' => [
-
-  ],
-  'tags' => [
-
-  ],
-  'mappings' => [
-
-  ],
-  'selectionGroups' => [
-
-  ],
-  'optionGroups' => [
-
-  ],
-  'labels' => [
-
-  ],
-  'offeredProducts' => [
-
-  ],
-  'combineProducts' => [
-
-  ],
-  'customizationGroups' => [
-
-  ],
-
-  'seoSetting' => [
-      'property1' => [
-              'product'
-      ],
-      'property2' => [
-              'product'
-      ]
-  ],
-  'children' => [
 
   ]
 ];
