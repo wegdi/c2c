@@ -19,6 +19,19 @@ $Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TE
 $Brand = $db->Query('Brand', ['Name' => $Products["manufacturer_name"]], [], 'TEK');
 
 
+$base64Data = $Products["main_image"];
+
+// Veri tipi ve diğer meta bilgilerini çıkartın
+$data = explode(',', $base64Data);
+$imageData = end($data);
+
+// Base64 verisini decode edin
+$imageBinary = base64_decode($imageData);
+
+// Resmi geçici bir dosyaya yazın (isteğe bağlı)
+$tempFileName = tempnam(sys_get_temp_dir(), 'image_');
+file_put_contents($tempFileName, $imageBinary);
+echo $tempFileName;
 
 
 $ProductPost=[
@@ -77,7 +90,7 @@ $ProductPost=[
       ],
   ],
   'images' => [
-    $Products["main_image"] 
+    $Products["main_image"]
 
   ]
 ];
