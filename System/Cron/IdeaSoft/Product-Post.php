@@ -27,6 +27,7 @@ $imageData = end($data);
 
 // Base64 verisini decode edin
 $imageBinary = base64_decode($imageData);
+echo $imageBinary;
 
 // Resmi geçici bir dosyaya yazın (isteğe bağlı)
 $tempFileName = tempnam(sys_get_temp_dir(), 'image_');
@@ -100,7 +101,8 @@ $ProductPost=[
 ];
 
 
-
+/*
 $result = $ideaSoftInstance->post($ProductPost,'products');
 $result = json_decode($result,1);
 print_r($result);
+*/
