@@ -38,18 +38,23 @@ function imageToBase64($imageUrl, $extension)
 }
 
 
-function resizeImage($imagePath, $newWidth, $newHeight, $extension)
+function resizeImage($imagePath, $maxWidth, $maxHeight, $extension)
 {
     list($originalWidth, $originalHeight) = getimagesize($imagePath);
 
-    $ratio = $originalWidth / $originalHeight;
-    if ($newWidth / $newHeight > $ratio) {
-        $newWidth = $newHeight * $ratio;
-    } else {
-        $newHeight = $newWidth / $ratio;
-    }
+    $widthRatio = $maxWidth / $originalWidth;
+    $heightRatio = $maxHeight / $originalHeight;
 
-    $newImage = imagecreatetruecolor($newWidth, $newHeight);
+    $ratio = min($widthRatio, $heightRatio);
+
+    $newWidth = $originalWidth * $ratio;
+    $newHeight = $originalHeight * $ratio;
+
+    $newImage = imagecreatetruecolor($maxWidth, $maxHeight);
+
+    $white = imagecolorallocate($newImage, 255, 255, 255); // White color
+
+    imagefill($newImage, 0, 0, $white); // Fill with white background
 
     switch ($extension) {
         case 'jpg':
@@ -66,7 +71,10 @@ function resizeImage($imagePath, $newWidth, $newHeight, $extension)
             return false;
     }
 
-    imagecopyresampled($newImage, $source, 0, 0, 0, 0, $newWidth, $newHeight, $originalWidth, $originalHeight);
+    $offsetX = ($maxWidth - $newWidth) / 2;
+    $offsetY = ($maxHeight - $newHeight) / 2;
+
+    imagecopyresampled($newImage, $source, $offsetX, $offsetY, 0, 0, $newWidth, $newHeight, $originalWidth, $originalHeight);
 
     ob_start();
     imagejpeg($newImage);
@@ -76,6 +84,7 @@ function resizeImage($imagePath, $newWidth, $newHeight, $extension)
 
     return 'data:image/jpeg;base64,' . base64_encode($resizedImageData);
 }
+
 $resizedBase64Data = resizeImage($imageUrl, 1200, 1800, $extension);
 
 // Resmi base64'e çevir
