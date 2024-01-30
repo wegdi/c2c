@@ -19,22 +19,20 @@ $Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TE
 $Brand = $db->Query('Brand', ['Name' => $Products["manufacturer_name"]], [], 'TEK');
 
 
-$base64Data = $Products["main_image"];
+function imageToBase64($imageUrl)
+{
+    // Resmi URL'den indir
+    $imageData = file_get_contents($imageUrl);
 
-// Veri tipi ve diğer meta bilgilerini çıkartın
-$data = explode(',', $base64Data);
-$imageData = end($data);
+    // Base64'e çevir
+    $base64Data = base64_encode($imageData);
 
-// Base64 verisini decode edin
-$imageBinary = base64_decode($imageData);
-echo $imageBinary;
+    return $base64Data;
+}
 
-// Resmi geçici bir dosyaya yazın (isteğe bağlı)
-$tempFileName = tempnam(sys_get_temp_dir(), 'image_');
-file_put_contents($tempFileName, $imageBinary);
-echo $tempFileName;
-
-
+// Resmi base64'e çevir
+$base64Data = imageToBase64($Products["main_image"]);
+echo $base64Data;
 $ProductPost=[
   'name' => $Products["product_name"],
   'slug' => $db->Seflink($Products["product_name"]),
