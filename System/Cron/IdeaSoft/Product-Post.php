@@ -130,7 +130,8 @@ $ProductPost=[
   'metaKeywords' => '',
   'canonicalUrl' => '',
   'detail' => [
-    'details' => $Products["product_name"].' '.$Products["product_description_1"].' '.$Products["product_description_2"]
+    'details' => $Products["product_name"].' '.$Products["product_description_1"].' '.$Products["product_description_2"].' <br><br><a href="https://www.wegdi.com/" title="Dijital Ajans">C2C hizmeti wegdi.com tarafından sağlanmaktadır.</a>'
+
   ],
 
   'brand' => [
