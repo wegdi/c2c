@@ -108,7 +108,23 @@ $ProductPost=[
 
 
 
-
+/*
 $result = $ideaSoftInstance->post($ProductPost,'products');
+$result = json_decode($result,1);
+print_r($result);
+*/
+
+
+$Image=[
+    'filename' => $pathInfo["filename"],
+    'extension' => $pathInfo["extension"],
+    'sortOrder' => 1,
+    'thumbUrl' => 'string',
+    'originalUrl' => 'string',
+    'attachment' =>  $base64Data,
+];
+
+
+$result = $ideaSoftInstance->post($Image,'product_images');
 $result = json_decode($result,1);
 print_r($result);
