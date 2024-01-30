@@ -552,6 +552,8 @@ function deleteProductToIdeaSoft(productId) {
               title: "İşleme Alındı",
               text: "Ürün IdeaSoft'dan kaldırılma talebinde bulunuldu",
           });
+          $('#UrunList').DataTable().ajax.reload();
+
           }
         },
         error: function() {
