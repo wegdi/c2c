@@ -22,6 +22,7 @@ $imageUrl=$Products["main_image"];
 
 // Resmin uzantısını al
 $pathInfo = pathinfo($imageUrl);
+print_r($pathInfo);
 $extension = $pathInfo['extension'];
 
 // Resmi base64'e çevirme fonksiyonu
@@ -39,8 +40,7 @@ function imageToBase64($imageUrl, $extension)
 // Resmi base64'e çevir
 $base64Data = imageToBase64($imageUrl, $extension);
 
-// Çıktıyı görüntüle
-echo $base64Data;
+
 
 $ProductPost=[
   'name' => $Products["product_name"],
@@ -101,7 +101,7 @@ $ProductPost=[
     [
       'filename' => 'org_638333917681537565',  // İsteğe bağlı bir dosya adı belirtin
       'extension' => 'jpg',                // İsteğe bağlı bir dosya uzantısı belirtin
-      'file' => new CURLFile($tempFileName)
+      'file' => $base64Data
     ],
 
   ]
