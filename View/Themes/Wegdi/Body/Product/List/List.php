@@ -60,13 +60,13 @@ $security->LoginControl($guvenlik);
                 </select>
               </th>
 
-              <th colspan="2"> <select id="Category" class="js-example-basic-single"></select></th>
+              <th colspan="3"> <select id="Category" class="js-example-basic-single"></select></th>
 
             </tr>
             <tr style="background: #f3f3f9;">
               <th colspan="4" class="text-center">Toplu Ürün Fiyat Artışı  Güncelleme</th>
               <th colspan="4" class="text-center">Sabit Fiyat Artışı</th>
-              <th colspan="4" class="text-center">İdeaSoft'a Gönder</th>
+              <th colspan="5" class="text-center">İdeaSoft'a Gönder</th>
 
             </tr>
             <tr>
@@ -109,6 +109,7 @@ $security->LoginControl($guvenlik);
               <th style="width:10%;">Gönderilecek Fiyat</th>
               <th style="width:10%;">Kategori</th>
               <th>Tedarikçi</th>
+              <th>Gönder</th>
 
             </tr>
 
