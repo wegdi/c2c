@@ -533,6 +533,41 @@ function changeJsonContent(slc) {
 
 
 
+
+
+
+function sendProductToIdeaSoft(productId) {
+    // Make an AJAX request
+    $.ajax({
+        url: '/System/Cron/IdeaSoft/Product-Post.php?ProductId=' + productId,
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            if (response.success == true) {
+                Swal.fire({
+                    icon: "success",
+                    title: "İşleminiz Başarılı..",
+                    text: "Ürün IdeaSoft'a gönderildi",
+                });
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "İşlem Başarısız!",
+                    text: response.message, // You can display the error message from the server
+                });
+            }
+        },
+        error: function() {
+            Swal.fire({
+                icon: "error",
+                title: "Hata!",
+                text: "Sunucuyla iletişim sırasında bir hata oluştu",
+            });
+        }
+    });
+}
+
+
 $(document).ready(function() {
   if (param1=='Detail') {
     function updateOnizlemeget() {
