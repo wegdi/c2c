@@ -105,7 +105,13 @@ function FromSaveGlobal(form, url, refresh = 0) {
               $("#exampleModalFullscreen").modal("hide");
             }
 
-            $('#UrunList').DataTable().ajax.reload();
+            var currentPage = $('#UrunList').DataTable().page();
+
+// DataTable'ı yeniden yükle
+$('#UrunList').DataTable().ajax.reload(function() {
+    // Yeniden yükleme işlemi tamamlandıktan sonra mevcut sayfaya geri dön
+    $('#UrunList').DataTable().page(currentPage).draw('page');
+});
             // Redirect to the success page after the delay
             if (refresh == 0) {
               window.location.reload();
@@ -552,7 +558,13 @@ function deleteProductToIdeaSoft(productId) {
               title: "İşleme Alındı",
               text: "Ürün IdeaSoft'dan kaldırılma talebinde bulunuldu",
           });
-          $('#UrunList').DataTable().ajax.reload();
+          var currentPage = $('#UrunList').DataTable().page();
+
+// DataTable'ı yeniden yükle
+$('#UrunList').DataTable().ajax.reload(function() {
+    // Yeniden yükleme işlemi tamamlandıktan sonra mevcut sayfaya geri dön
+    $('#UrunList').DataTable().page(currentPage).draw('page');
+});
 
           }
         },
@@ -581,7 +593,13 @@ function sendProductToIdeaSoft(productId) {
                     text: "Ürün IdeaSoft'a gönderildi",
                 });
 
-                $('#UrunList').DataTable().ajax.reload();
+                var currentPage = $('#UrunList').DataTable().page();
+
+// DataTable'ı yeniden yükle
+$('#UrunList').DataTable().ajax.reload(function() {
+    // Yeniden yükleme işlemi tamamlandıktan sonra mevcut sayfaya geri dön
+    $('#UrunList').DataTable().page(currentPage).draw('page');
+});
 
             } else {
                 Swal.fire({
@@ -649,7 +667,13 @@ $(document).ready(function () {
                title: "İşleminiz Başarılı..",
                text: "Eşleşme Yapıldı",
              });
-             $('#UrunList').DataTable().ajax.reload();
+             var currentPage = $('#UrunList').DataTable().page();
+
+// DataTable'ı yeniden yükle
+$('#UrunList').DataTable().ajax.reload(function() {
+    // Yeniden yükleme işlemi tamamlandıktan sonra mevcut sayfaya geri dön
+    $('#UrunList').DataTable().page(currentPage).draw('page');
+});
 
            },
            error: function (error) {
