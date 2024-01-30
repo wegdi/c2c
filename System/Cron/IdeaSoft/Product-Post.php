@@ -32,11 +32,11 @@ $ProductPost=[
       'id' => 1
 
   ],
-  'discount' => 10,
+  'discount' => 0,
   'discountType' => 1,
   'moneyOrderDiscount' => '',
   'buyingPrice' => '',
-  'marketPriceDetail' => 'string',
+  'marketPriceDetail' => '',
   'taxIncluded' => 1,
   'tax' => $Products["kdv"],
   'warranty' => 24,
