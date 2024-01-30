@@ -543,13 +543,16 @@ function deleteProductToIdeaSoft(productId) {
     $.ajax({
         url: '/System/Cron/IdeaSoft/Product-Delete.php?ProductId=' + productId,
         type: 'GET',
-        dataType: 'json',
+        dataType: 'Json',
         success: function(response) {
+          if (response.success==true) {
+
           Swal.fire({
               icon: "success",
               title: "İşleme Alındı",
               text: "Ürün IdeaSoft'dan kaldırılma talebinde bulunuldu",
           });
+          }
         },
         error: function() {
             Swal.fire({

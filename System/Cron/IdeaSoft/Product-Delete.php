@@ -14,6 +14,4 @@ $Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TE
 
 $Resault = $ideaSoftInstance->delete('products/'.$Products["IdeaSoftProductId"]);
 
-$Resault = json_decode($Resault,1);
-
-print_r($Resault);
+echo json_encode(array('success' => true));
