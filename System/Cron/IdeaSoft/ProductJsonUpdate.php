@@ -34,10 +34,9 @@ $uniqid = uniqid();
 
     // JSON_ENCODE fonksiyonuna JSON_UNESCAPED_UNICODE sabitini ekleyerek Türkçe karakter uyumlu hale getir
     $json = json_encode($xml, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    echo $json;
-  /*  $jsonFilePath = JSONFILE.$value["SupplierCode"].'.json';
+    $jsonFilePath = JSONFILE.$value["SupplierCode"].'.json';
     file_put_contents($jsonFilePath, $json);
-*/
+
     }
 
 
