@@ -536,6 +536,43 @@ function changeJsonContent(slc) {
 
 
 
+
+
+function deleteProductToIdeaSoft(productId) {
+    // Make an AJAX request
+    $.ajax({
+        url: '/System/Cron/IdeaSoft/Product-Delete.php?ProductId=' + productId,
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            if (response.success == true) {
+                Swal.fire({
+                    icon: "success",
+                    title: "İşleminiz Başarılı..",
+                    text: "Ürün IdeaSoft'da silindi",
+                });
+
+                $('#UrunList').DataTable().ajax.reload();
+
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "İşlem Başarısız!",
+                    text: response.message, // You can display the error message from the server
+                });
+            }
+        },
+        error: function() {
+            Swal.fire({
+                icon: "error",
+                title: "Hata!",
+                text: "Sunucuyla iletişim sırasında bir hata oluştu",
+            });
+        }
+    });
+}
+
+
 function sendProductToIdeaSoft(productId) {
     // Make an AJAX request
     $.ajax({
