@@ -549,6 +549,9 @@ function sendProductToIdeaSoft(productId) {
                     title: "İşleminiz Başarılı..",
                     text: "Ürün IdeaSoft'a gönderildi",
                 });
+
+                $('#UrunList').DataTable().ajax.reload();
+
             } else {
                 Swal.fire({
                     icon: "error",
