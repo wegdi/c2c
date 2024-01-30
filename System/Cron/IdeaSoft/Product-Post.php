@@ -22,7 +22,6 @@ $imageUrl=$Products["main_image"];
 
 // Resmin uzantısını al
 $pathInfo = pathinfo($imageUrl);
-print_r($pathInfo);
 
 $extension = $pathInfo['extension'];
 
@@ -107,6 +106,7 @@ $ProductPost=[
 
   ]
 ];
+print_r($ProductPost);
 
 
 /*
