@@ -90,10 +90,10 @@ curl_setopt_array($curl, [
         ]
     ],
 
-    'categories' =>   [
-      'id' => [
-              '60104'
-      ],
+    'categories' => [
+        [
+            'id' => $Products["CategoryId"],
+        ],
     ],
     'prices' => [
 
