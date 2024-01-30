@@ -91,9 +91,9 @@ foreach ($Products as $ProductsGet) {
 
       if ($ProductsGet["CategoryId"] and $ProductsGet["price_one"]!="") {
 
-        $button='<button type="button" class="btn rounded-pill btn-light waves-effect">Light</button';
+        $button='<button type="button" class="btn rounded-pill btn-light waves-effect">Gönder</button';
       }else {
-        $button='<button   type="button"  disabled class="btn rounded-pill btn-light waves-effect">Light</button';
+        $button='';
 
       }
 
