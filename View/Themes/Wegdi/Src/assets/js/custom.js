@@ -545,22 +545,11 @@ function deleteProductToIdeaSoft(productId) {
         type: 'GET',
         dataType: 'json',
         success: function(response) {
-            if (response.success == true) {
-                Swal.fire({
-                    icon: "success",
-                    title: "İşleminiz Başarılı..",
-                    text: "Ürün IdeaSoft'da silindi",
-                });
-
-                $('#UrunList').DataTable().ajax.reload();
-
-            } else {
-                Swal.fire({
-                    icon: "error",
-                    title: "İşlem Başarısız!",
-                    text: response.message, // You can display the error message from the server
-                });
-            }
+          Swal.fire({
+              icon: "success",
+              title: "İşleme Alındı",
+              text: "Ürün IdeaSoft'dan kaldırılma talebinde bulunuldu",
+          });
         },
         error: function() {
             Swal.fire({
