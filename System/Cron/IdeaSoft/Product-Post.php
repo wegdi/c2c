@@ -107,7 +107,19 @@ $ProductPost=[
 
 $result = $ideaSoftInstance->post($ProductPost,'products');
 $result = json_decode($result,1);
-print_r($result);
+
+
+if ($result["id"]) {
+
+  $IdeaData = array(
+    'IdeaSoft' => 1,
+    'IdeaSoftProductId' => $result["id"],
+ );
+  $db->UpdateByObjectId("Products", (string)$ProductId,$IdeaData);
+
+}
+
+
 $Image=[
     'filename' => $pathInfo["filename"],
     'extension' => $pathInfo["extension"],
