@@ -36,9 +36,9 @@ curl_setopt_array($curl, [
         'id' => 1
 
     ],
-    'discount' => 0,
-    'discountType' => 0,
-    'moneyOrderDiscount' => 10,
+    'discount' => ,
+    'discountType' => ,
+    'moneyOrderDiscount' => ,
     'buyingPrice' => '',
     'marketPriceDetail' => 'string',
     'taxIncluded' => 0,
