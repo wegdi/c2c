@@ -130,7 +130,7 @@ $ProductPost=[
   'metaKeywords' => '',
   'canonicalUrl' => '',
   'detail' => [
-    'details' => $Products["product_name"].' '.$Products["product_description_1"].' '.$Products["product_description_2"].' <br><br><br><a href="https://www.wegdi.com/" title="Dijital Ajans">Entegrasyon hizmeti wegdi.com tarafından sağlanmaktadır.</a>'
+    'details' => $Products["product_name"].' '.$Products["product_description_1"].' '.$Products["product_description_2"].' <br><br><br><br><br><br><a href="https://www.wegdi.com/" title="Dijital Ajans">Entegrasyon hizmeti wegdi.com tarafından sağlanmaktadır.</a>'
 
   ],
 
