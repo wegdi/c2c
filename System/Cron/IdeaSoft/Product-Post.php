@@ -77,6 +77,7 @@ $ProductPost=[
       ],
   ],
   'images' => [
+    $Products["main_image"] 
 
   ]
 ];
