@@ -42,7 +42,7 @@ $ProductPost=[
   'stockAmount' => $Products["quantity"],
   'price1' => $Products["price_one"],
   'currency' => [
-      'id' => 2
+      'id' => 3
 
   ],
   'discount' => 0,
