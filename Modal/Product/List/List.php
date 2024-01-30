@@ -91,7 +91,7 @@ foreach ($Products as $ProductsGet) {
 
       if ($ProductsGet["CategoryId"] and $ProductsGet["price_one"]!="") {
 
-      $button = '<button type="button" onclick="sendProductToIdeaSoft(' . (string)$ProductsGet["_id"] . ')" class="btn rounded-pill btn-light waves-effect">Gönder</button>';
+    $button = '<button type="button" onclick="sendProductToIdeaSoft(\'' . (string)$ProductsGet["_id"] . '\')" class="btn rounded-pill btn-light waves-effect">Gönder</button>';
       }else {
         $button='';
 
