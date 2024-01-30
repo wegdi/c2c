@@ -89,14 +89,7 @@ curl_setopt_array($curl, [
                 'product'
         ]
     ],
-    'specialInfo' => [
-        'property1' => [
-                'product'
-        ],
-        'property2' => [
-                'product'
-        ]
-    ],
+  
     'specGroup' => [
         'property1' => [
                 'product'
