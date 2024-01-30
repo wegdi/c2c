@@ -42,7 +42,7 @@ class IdeaSoft {
 
 
 
-    public function delete($post = '', $url) {
+    public function delete($url) {
         $curl = curl_init();
 
         curl_setopt_array($curl, [
