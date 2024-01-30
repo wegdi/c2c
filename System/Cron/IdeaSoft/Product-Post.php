@@ -39,7 +39,7 @@ curl_setopt_array($curl, [
     'discount' => 0,
     'discountType' => 0,
     'moneyOrderDiscount' => 10,
-    'buyingPrice' => $Products["price_one"],
+    'buyingPrice' => '',
     'marketPriceDetail' => 'string',
     'taxIncluded' => 0,
     'tax' => $Products["kdv"],
