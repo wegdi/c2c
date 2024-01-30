@@ -89,23 +89,7 @@ curl_setopt_array($curl, [
                 'product'
         ]
     ],
-  
-    'specGroup' => [
-        'property1' => [
-                'product'
-        ],
-        'property2' => [
-                'product'
-        ]
-    ],
-    'protection' => [
-        'property1' => [
-                'product'
-        ],
-        'property2' => [
-                'product'
-        ]
-    ],
+
     'categories' =>   [
       'id' => [
               '60104'
@@ -147,14 +131,7 @@ curl_setopt_array($curl, [
     'customizationGroups' => [
 
     ],
-    'midblock' => [
-        'property1' => [
-                'product'
-        ],
-        'property2' => [
-                'product'
-        ]
-    ],
+
     'seoSetting' => [
         'property1' => [
                 'product'
