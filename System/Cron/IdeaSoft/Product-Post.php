@@ -80,7 +80,7 @@ $ProductPost=[
   'metaKeywords' => '',
   'canonicalUrl' => '',
   'detail' => [
-    'asdsad'
+    'details' => 'sadsd'
   ],
 
   'brand' => [
