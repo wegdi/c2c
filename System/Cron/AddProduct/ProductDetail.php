@@ -93,7 +93,7 @@ foreach ($suppliers as $supplier) {
                   "model", "sku", "quantity", "main_image", "image_1", "image_2", "image_3", "image_4", "image_5",
                   "image_6", "image_7", "image_8", "image_9", "image_10", "manufacturer_name", "price",
                   "product_option_price", "product_option_quantity", "product_option_name", "product_option_value",
-                  "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv"
+                  "product_attribute_group", "product_attribute_name", "product_attribute_value", "kdv","product_description_1","product_description_2"
               ];
 
               foreach ($productFields as $field) {
