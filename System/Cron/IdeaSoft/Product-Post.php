@@ -23,6 +23,7 @@ $imageUrl=$Products["main_image"];
 // Resmin uzantısını al
 $pathInfo = pathinfo($imageUrl);
 print_r($pathInfo);
+
 $extension = $pathInfo['extension'];
 
 // Resmi base64'e çevirme fonksiyonu
@@ -99,8 +100,8 @@ $ProductPost=[
   ],
   'images' => [
     [
-      'filename' => 'org_638333917681537565',  // İsteğe bağlı bir dosya adı belirtin
-      'extension' => 'jpg',                // İsteğe bağlı bir dosya uzantısı belirtin
+      'filename' => $pathInfo["filename"],  // İsteğe bağlı bir dosya adı belirtin
+      'extension' => $pathInfo["extension"],                // İsteğe bağlı bir dosya uzantısı belirtin
       'file' => $base64Data
     ],
 
