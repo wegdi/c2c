@@ -115,7 +115,7 @@ if ($result["id"]) {
     'IdeaSoft' => 1,
     'IdeaSoftProductId' => $result["id"],
  );
-  $db->UpdateByObjectId("Products", (string)$ProductId,$IdeaData);
+  echo $db->UpdateByObjectId("Products", (string)$ProductId,$IdeaData);
 
 }
 
