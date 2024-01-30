@@ -123,7 +123,10 @@ $Image=[
     'originalUrl' => 'string',
     'attachment' =>  $base64Data,
     'product' => [
-]
+      [
+        'id' => 71497
+      ]
+    ]
 ];
 
 
