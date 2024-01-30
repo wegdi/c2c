@@ -18,6 +18,6 @@ echo json_encode(array('success' => true));
 
 
 $IdeaData = array(
-  'IdeaSoft' => 0,
+  'IdeaSoft' => 0
 );
 $db->UpdateByObjectId("Products", (string)$ProductId,$IdeaData);
