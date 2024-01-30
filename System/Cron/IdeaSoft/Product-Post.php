@@ -101,7 +101,6 @@ $ProductPost=[
     [
       'filename' => $pathInfo["filename"],  // İsteğe bağlı bir dosya adı belirtin
       'extension' => $pathInfo["extension"],                // İsteğe bağlı bir dosya uzantısı belirtin
-      'file' => $base64Data
     ],
 
   ]
