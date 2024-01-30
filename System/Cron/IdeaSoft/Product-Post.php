@@ -90,7 +90,7 @@ $ProductPost=[
       ],
   ],
   'images' => [
-    'extension' => 'jpg',                // İsteğe bağlı bir dosya uzantısı belirtin
+    
     'file' => new CURLFile($tempFileName)
 
   ]
