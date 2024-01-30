@@ -108,13 +108,14 @@ $ProductPost=[
 
 
 
-/*
+
 $result = $ideaSoftInstance->post($ProductPost,'products');
 $result = json_decode($result,1);
 print_r($result);
-*/
 
 
+
+/*
 $Image=[
     'filename' => $pathInfo["filename"],
     'extension' => $pathInfo["extension"],
@@ -133,3 +134,4 @@ $Image=[
 $imageresult = $ideaSoftInstance->post($Image,'product_images');
 $imageresult = json_decode($imageresult,1);
 print_r($imageresult);
+*/
