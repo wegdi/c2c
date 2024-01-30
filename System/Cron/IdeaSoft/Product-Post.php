@@ -128,6 +128,5 @@ $Image=[
 
 
 $imageresult = $ideaSoftInstance->post($Image,'product_images');
-echo $imageresult;
 $imageresult = json_decode($imageresult,1);
-print_r($result);
+print_r($imageresult);
