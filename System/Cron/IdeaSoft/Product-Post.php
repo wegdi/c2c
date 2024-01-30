@@ -37,6 +37,47 @@ function imageToBase64($imageUrl, $extension)
     return $base64Data;
 }
 
+
+function resizeImage($imagePath, $newWidth, $newHeight, $extension)
+{
+    list($originalWidth, $originalHeight) = getimagesize($imagePath);
+
+    $ratio = $originalWidth / $originalHeight;
+    if ($newWidth / $newHeight > $ratio) {
+        $newWidth = $newHeight * $ratio;
+    } else {
+        $newHeight = $newWidth / $ratio;
+    }
+
+    $newImage = imagecreatetruecolor($newWidth, $newHeight);
+
+    switch ($extension) {
+        case 'jpg':
+        case 'jpeg':
+            $source = imagecreatefromjpeg($imagePath);
+            break;
+        case 'png':
+            $source = imagecreatefrompng($imagePath);
+            break;
+        case 'gif':
+            $source = imagecreatefromgif($imagePath);
+            break;
+        default:
+            return false;
+    }
+
+    imagecopyresampled($newImage, $source, 0, 0, 0, 0, $newWidth, $newHeight, $originalWidth, $originalHeight);
+
+    ob_start();
+    imagejpeg($newImage);
+    $resizedImageData = ob_get_clean();
+
+    imagedestroy($newImage);
+
+    return 'data:image/jpeg;base64,' . base64_encode($resizedImageData);
+}
+$resizedBase64Data = resizeImage($imageUrl, 1200, 1800, $extension);
+
 // Resmi base64'e çevir
 $base64Data = imageToBase64($imageUrl, $extension);
 
@@ -126,7 +167,7 @@ $Image=[
     'sortOrder' => 1,
     'thumbUrl' => 'string',
     'originalUrl' => 'string',
-    'attachment' =>  $base64Data,
+    'attachment' =>  $resizedBase64Data,
     'product' => [
 
         'id' => $result["id"],
