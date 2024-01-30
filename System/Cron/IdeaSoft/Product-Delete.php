@@ -13,3 +13,7 @@ $ProductId=$_GET["ProductId"];
 $Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TEK');
 
 $Resault = $ideaSoftInstance->delete('products/'.$Products["IdeaSoftProductId"]);
+
+$Resault = json_decode($Resault,1);
+
+print_r($Resault);
