@@ -124,8 +124,8 @@ $Image=[
     'attachment' =>  $base64Data,
     'product' => [
       [
-        'id' => 71497
-      ]
+        'id' => 71497,
+      ],
     ]
 ];
 
