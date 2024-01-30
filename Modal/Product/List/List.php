@@ -92,8 +92,10 @@ foreach ($Products as $ProductsGet) {
       if ($ProductsGet["CategoryId"] and $ProductsGet["price_one"]!="") {
 
         $button = '
+        <div class="btn-group" role="group" aria-label="Product Actions">
         <button type="button" onclick="sendProductToIdeaSoft(\'' . (string)$ProductsGet["_id"] . '\')" class="btn btn-xs rounded-pill btn-light waves-effect">Gönder</button>
         <button type="button" onclick="deleteProductToIdeaSoft(\'' . (string)$ProductsGet["_id"] . '\')" class="btn btn-xs rounded-pill btn-danger waves-effect">Sil</button>
+        </div>
         ';
       }else {
         $button='';
