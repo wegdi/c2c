@@ -12,6 +12,7 @@ $ProductId=$_GET["ProductId"];
 
 $Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TEK');
 
+$Brand = $db->Query('Brand', ['Name' => $Products["manufacturer_name"]], [], 'TEK');
 
 
 $curl = curl_init();
@@ -70,24 +71,7 @@ curl_setopt_array($curl, [
     'canonicalUrl' => '',
 
     'brand' => [
-        'property1' => [
-                'product',
-                'stock_warning',
-                'midblock'
-        ],
-        'property2' => [
-                'product',
-                'stock_warning',
-                'midblock'
-        ]
-    ],
-    'detail' => [
-        'property1' => [
-                'product'
-        ],
-        'property2' => [
-                'product'
-        ]
+        'id' =>  $Brand["BrandId"]
     ],
     'button' => [
         'property1' => [
