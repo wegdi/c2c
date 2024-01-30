@@ -18,21 +18,30 @@ $Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TE
 
 $Brand = $db->Query('Brand', ['Name' => $Products["manufacturer_name"]], [], 'TEK');
 
+$imageUrl=$Products["main_image"];
 
-function imageToBase64($imageUrl)
+// Resmin uzantısını al
+$pathInfo = pathinfo($imageUrl);
+$extension = $pathInfo['extension'];
+
+// Resmi base64'e çevirme fonksiyonu
+function imageToBase64($imageUrl, $extension)
 {
     // Resmi URL'den indir
     $imageData = file_get_contents($imageUrl);
 
-    // Base64'e çevir
-    $base64Data = base64_encode($imageData);
+    // Base64'e çevir ve başlık ekleyerek uzantıyı belirt
+    $base64Data = 'data:image/' . $extension . ';base64,' . base64_encode($imageData);
 
     return $base64Data;
 }
 
 // Resmi base64'e çevir
-$base64Data = imageToBase64($Products["main_image"]);
+$base64Data = imageToBase64($imageUrl, $extension);
+
+// Çıktıyı görüntüle
 echo $base64Data;
+
 $ProductPost=[
   'name' => $Products["product_name"],
   'slug' => $db->Seflink($Products["product_name"]),
