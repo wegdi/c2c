@@ -122,6 +122,8 @@ $Image=[
     'thumbUrl' => 'string',
     'originalUrl' => 'string',
     'attachment' =>  $base64Data,
+    'product' => [
+]
 ];
 
 
