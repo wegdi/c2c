@@ -12,3 +12,29 @@ $ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 $Domain=$IdeaSoft["domain"];
 
 $ProductId=$_GET["ProductId"];
+
+$Products = $db->Query('Products', ['IdeaSoft' => 1], [], 'COK');
+
+
+foreach ($Products as $key => $value) {
+
+
+  if ($value["price_one"]=="") {
+    $price=$value["price_one"];
+
+  }else {
+    $price=$value["price"];
+
+  }
+
+  $ProductPost = [
+      'id' => $value["IdeaSoftProductId"],
+      'type' => 1,
+      'value' => $price,
+
+  ];
+
+  $result = $ideaSoftInstance->put($ProductPost,'products');
+  $result = json_decode($result,1);
+  print_r($result);
+}
