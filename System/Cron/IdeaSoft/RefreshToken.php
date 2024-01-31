@@ -35,5 +35,3 @@ $UpdateData = array(
 );
 
 echo $db->UpdateByObjectId("IdeaSoft",'65a784f66b188048239f446c',$UpdateData);
-
-print_r($responseArrayx);
