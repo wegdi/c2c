@@ -83,5 +83,4 @@ foreach ($Products as $key => $value) {
 
   $result = $ideaSoftInstance->put($ProductPost,'products/'.$value["IdeaSoftProductId"]);
   $result = json_decode($result,1);
-  print_r($result);
 }
