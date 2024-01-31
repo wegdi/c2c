@@ -21,7 +21,7 @@ $Brand = $db->Query('Brand', ['Name' => $Products["manufacturer_name"]], [], 'TE
 $imageUrl=$Products["main_image"];
 
 
-if ($Products["price_one"]=="") {
+if ($Products["price_one"]!="") {
   $price=$Products["price_one"];
 
 }else {
