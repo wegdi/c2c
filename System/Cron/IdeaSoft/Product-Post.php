@@ -169,7 +169,6 @@ $ProductPost=[
 $result = $ideaSoftInstance->post($ProductPost,'products');
 $result = json_decode($result,1);
 
-print_r($result);
 if ($result["id"]) {
 
   $IdeaData = array(
