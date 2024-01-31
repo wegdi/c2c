@@ -20,6 +20,16 @@ $Brand = $db->Query('Brand', ['Name' => $Products["manufacturer_name"]], [], 'TE
 
 $imageUrl=$Products["main_image"];
 
+
+if ($Products["price_one"]=="") {
+  $price=$Products["price_one"];
+
+}else {
+  $price=$Products["price"];
+
+}
+
+
 // Resmin uzantısını al
 $pathInfo = pathinfo($imageUrl);
 
@@ -98,7 +108,7 @@ $ProductPost=[
   'sku' => $Products["C2Cmodel"],
   'barcode' => $Products["C2Cmodel"],
   'stockAmount' => $Products["quantity"],
-  'price1' => $Products["price_one"],
+  'price1' => $price,
   'currency' => [
       'id' => 3
 

@@ -89,7 +89,7 @@ foreach ($Products as $ProductsGet) {
     }
 
 
-      if ($ProductsGet["CategoryId"] and $ProductsGet["price_one"]!="") {
+      if ($ProductsGet["CategoryId"]) {
 
         $button = '
         <div class="btn-group" role="group" aria-label="Product Actions">
