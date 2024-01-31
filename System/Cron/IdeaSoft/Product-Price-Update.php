@@ -28,7 +28,7 @@ foreach ($Products as $key => $value) {
   }
 
   $ProductPost = [
-      'type' => 1,
+      'type' => 2,
       'value' => $price,
 
   ];
