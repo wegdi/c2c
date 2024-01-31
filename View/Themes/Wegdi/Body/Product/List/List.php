@@ -92,7 +92,7 @@ $security->LoginControl($guvenlik);
                   </div>
               </div>
           </th>
-          <th colspan="4">
+          <th colspan="5">
           </th>
 
             </tr>
