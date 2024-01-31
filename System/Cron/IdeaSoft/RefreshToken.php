@@ -26,4 +26,14 @@ $responseJsonx = file_get_contents($targetUrlx);
 
 // JSON verilerini diziye çevir
 $responseArrayx = json_decode($responseJsonx, true);
+
+
+$UpdateData = array(
+  'refresh_token' => $responseArrayx["refresh_token"],
+  'access_token' => $responseArrayx["access_token"],
+
+);
+
+echo $db->UpdateByObjectId("IdeaSoft",'65a784f66b188048239f446c',$UpdateData);
+
 print_r($responseArrayx);
