@@ -28,13 +28,12 @@ foreach ($Products as $key => $value) {
   }
 
   $ProductPost = [
-      'id' => $value["IdeaSoftProductId"],
       'type' => 1,
       'value' => $price,
 
   ];
 
-  $result = $ideaSoftInstance->put($ProductPost,'products');
+  $result = $ideaSoftInstance->put($ProductPost,'product_prices/'.$value["IdeaSoftProductId"]);
   $result = json_decode($result,1);
   print_r($result);
 }
