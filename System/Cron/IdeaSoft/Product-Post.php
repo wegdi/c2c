@@ -50,8 +50,27 @@ function imageToBase64($imageUrl, $extension)
 
 function resizeImage($imagePath, $maxWidth, $maxHeight, $extension)
 {
+    // $imagePath değişkeninin geçerli bir URL olup olmadığını kontrol et
+    if (!filter_var($imagePath, FILTER_VALIDATE_URL)) {
+        return false;
+    }
 
-    list($originalWidth, $originalHeight) = getimagesize($imagePath);
+    // Resmi indir ve geçerli bir resim olup olmadığını kontrol et
+    $imageContent = @file_get_contents($imagePath);
+
+    if ($imageContent === false) {
+        return false;
+    }
+
+    $image = imagecreatefromstring($imageContent);
+
+    // Geçerli bir resim olup olmadığını kontrol et
+    if ($image === false) {
+        return false;
+    }
+
+    $originalWidth = imagesx($image);
+    $originalHeight = imagesy($image);
 
     $widthRatio = $maxWidth / $originalWidth;
     $heightRatio = $maxHeight / $originalHeight;
@@ -63,42 +82,29 @@ function resizeImage($imagePath, $maxWidth, $maxHeight, $extension)
 
     $newImage = imagecreatetruecolor($maxWidth, $maxHeight);
 
-    $white = imagecolorallocate($newImage, 255, 255, 255); // White color
+    $white = imagecolorallocate($newImage, 255, 255, 255); // Beyaz renk
 
-    imagefill($newImage, 0, 0, $white); // Fill with white background
-
-    switch ($extension) {
-        case 'jpg':
-        case 'jpeg':
-            $source = imagecreatefromjpeg($imagePath);
-            break;
-        case 'png':
-            $source = imagecreatefrompng($imagePath);
-            break;
-        case 'gif':
-            $source = imagecreatefromgif($imagePath);
-            break;
-        default:
-            return false;
-    }
+    imagefill($newImage, 0, 0, $white); // Beyaz arka plan ile doldur
 
     $offsetX = ($maxWidth - $newWidth) / 2;
     $offsetY = ($maxHeight - $newHeight) / 2;
 
-    imagecopyresampled($newImage, $source, $offsetX, $offsetY, 0, 0, $newWidth, $newHeight, $originalWidth, $originalHeight);
+    imagecopyresampled($newImage, $image, $offsetX, $offsetY, 0, 0, $newWidth, $newHeight, $originalWidth, $originalHeight);
 
     ob_start();
     imagejpeg($newImage);
     $resizedImageData = ob_get_clean();
 
     imagedestroy($newImage);
+    imagedestroy($image);
 
     return 'data:image/jpeg;base64,' . base64_encode($resizedImageData);
 }
 
+
 if (strtolower(substr($imageUrl, 0, 7)) === 'http://') {
        $imageUrl = 'https://' . substr($imageUrl, 7);
-   }
+}
 
 $resizedBase64Data = resizeImage($imageUrl, 1200, 1800, $extension);
 
