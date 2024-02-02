@@ -50,6 +50,11 @@ function imageToBase64($imageUrl, $extension)
 
 function resizeImage($imagePath, $maxWidth, $maxHeight, $extension)
 {
+
+  if (strtolower(substr($imagePath, 0, 7)) === 'http://') {
+      $imageUrl = 'https://' . substr($imageUrl, 7);
+  }
+
     list($originalWidth, $originalHeight) = getimagesize($imagePath);
 
     $widthRatio = $maxWidth / $originalWidth;
