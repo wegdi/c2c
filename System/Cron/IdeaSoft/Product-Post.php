@@ -50,17 +50,7 @@ function imageToBase64($imageUrl, $extension)
 
 function resizeImage($imagePath, $maxWidth, $maxHeight, $extension)
 {
-    // Validate file existence
-    if (!file_exists($imagePath)) {
-        return false;
-    }
-
     list($originalWidth, $originalHeight) = getimagesize($imagePath);
-
-    // Validate image dimensions
-    if ($originalWidth === null || $originalHeight === null) {
-        return false;
-    }
 
     $widthRatio = $maxWidth / $originalWidth;
     $heightRatio = $maxHeight / $originalHeight;
@@ -79,7 +69,7 @@ function resizeImage($imagePath, $maxWidth, $maxHeight, $extension)
     switch ($extension) {
         case 'jpg':
         case 'jpeg':
-            $source = @imagecreatefromjpeg($imagePath); // Use @ to suppress warnings
+            $source = imagecreatefromjpeg($imagePath);
             break;
         case 'png':
             $source = imagecreatefrompng($imagePath);
@@ -89,11 +79,6 @@ function resizeImage($imagePath, $maxWidth, $maxHeight, $extension)
             break;
         default:
             return false;
-    }
-
-    // Validate image creation
-    if (!$source) {
-        return false;
     }
 
     $offsetX = ($maxWidth - $newWidth) / 2;
