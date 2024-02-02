@@ -51,10 +51,6 @@ function imageToBase64($imageUrl, $extension)
 function resizeImage($imagePath, $maxWidth, $maxHeight, $extension)
 {
 
-  if (strtolower(substr($imagePath, 0, 7)) === 'http://') {
-      $imageUrl = 'https://' . substr($imageUrl, 7);
-  }
-
     list($originalWidth, $originalHeight) = getimagesize($imagePath);
 
     $widthRatio = $maxWidth / $originalWidth;
@@ -99,6 +95,10 @@ function resizeImage($imagePath, $maxWidth, $maxHeight, $extension)
 
     return 'data:image/jpeg;base64,' . base64_encode($resizedImageData);
 }
+
+if (strtolower(substr($imageUrl, 0, 7)) === 'http://') {
+       $imageUrl = 'https://' . substr($imageUrl, 7);
+   }
 
 $resizedBase64Data = resizeImage($imageUrl, 1200, 1800, $extension);
 
