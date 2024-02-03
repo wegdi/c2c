@@ -25,6 +25,7 @@ $queryString = http_build_query($params);
 // Hedef URL'yi belirle
 $targetUrl = 'https://www.katfarlaryedekparca.com/oauth/v2/token?' . $queryString;
 
+echo $targetUrl;
 // Diğer sayfadaki JSON verilerini çek
 $responseJson = file_get_contents($targetUrl);
 echo $responseJson;
