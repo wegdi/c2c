@@ -43,7 +43,7 @@ if ($_POST["IdeaSoftSatatus"]!="") {
 
 
 if ($_POST["IdeaSoftCategory"]!="") {
-  $filter["IdeaSoftCategory"] = (int)$_POST["IdeaSoftCategory"];
+  //$filter["IdeaSoftCategory"] = (int)$_POST["IdeaSoftCategory"];
 }
 
 
