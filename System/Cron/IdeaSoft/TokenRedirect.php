@@ -27,7 +27,8 @@ $targetUrl = 'https://www.katfarlaryedekparca.com/oauth/v2/token?' . $queryStrin
 
 // Diğer sayfadaki JSON verilerini çek
 $responseJson = file_get_contents($targetUrl);
-
+echo $responseJson;
+/*
 // JSON verilerini diziye çevir
 $responseArray = json_decode($responseJson, true);
 
@@ -49,3 +50,4 @@ $Response = array(
 
 
 echo $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$Response);
+*/
