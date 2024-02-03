@@ -78,7 +78,7 @@ foreach ($Products as $ProductsGet) {
 
 
 
-    $CategoryId= '
+  /*  $CategoryId= '
     <a href="javascript:void(0);" onclick="selectchange(this)" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$Category["Name"].'</a>
     <div class="om d-none" id="c'.(string)$ProductsGet["_id"].'"><select class="js-example-basic-single"  data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select></div>
     ';
@@ -101,7 +101,7 @@ foreach ($Products as $ProductsGet) {
         $button='';
 
       }
-
+ */
 
     $Log[] = array(
         '<input type="checkbox" name="selected['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["price"].'">',
