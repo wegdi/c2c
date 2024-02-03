@@ -43,7 +43,7 @@ if ($_POST["IdeaSoftSatatus"]!="") {
 
 
 if ($_POST["IdeaSoftCategory"]!="") {
-  //$filter["IdeaSoftCategory"] = (int)$_POST["IdeaSoftCategory"];
+  $filter["IdeaSoftCategory"] = (int)$_POST["IdeaSoftCategory"];
 }
 
 
@@ -72,7 +72,7 @@ foreach ($Products as $ProductsGet) {
 
     $Supplier = $db->Query('Supplier',['SupplierCode' => $ProductsGet["SupplierCode"]], [], 'TEK',);
 
-    if ($ProductsGet["CategoryId"]) {
+    if ($ProductsGet["CategoryId"]!="") {
 
     $Category = $db->Query('Category',['IdeaSoftId' => (int)$ProductsGet["CategoryId"]], [], 'TEK',);
 
