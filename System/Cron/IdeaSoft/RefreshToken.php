@@ -27,6 +27,7 @@ $responseJsonx = file_get_contents($targetUrlx);
 // JSON verilerini diziye çevir
 $responseArrayx = json_decode($responseJsonx, true);
 
+print_r($responseArrayx);
 
 $UpdateData = array(
   'access_token' => $responseArrayx["access_token"],
