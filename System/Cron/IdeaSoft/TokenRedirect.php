@@ -33,26 +33,6 @@ $responseArray = json_decode($responseJson, true);
 
 print_r($responseArray);
 
-//2 Aylık Token Al
-$RefresToken = array(
-  'grant_type' => 'refresh_token',
-  'client_id' => '1iydisrb33pc88ccog88wgw8gwkwkc8k4woo4s8goss44koog8',
-  'client_secret' => '3lhhwkqmlc6cow88wgwwkwcc8k00gwsw8k8osg00084ossc4wo',
-  'refresh_token' => $responseArray["refresh_token"]
-);
-
-// Parametreleri URL'ye çevir
-$queryStringx = http_build_query($RefresToken);
-
-// Hedef URL'yi belirle
-$targetUrlx = 'https://www.katfarlaryedekparca.com/oauth/v2/token?' . $queryStringx;
-
-// Diğer sayfadaki JSON verilerini çek
-$responseJsonx = file_get_contents($targetUrlx);
-
-// JSON verilerini diziye çevir
-$responseArrayx = json_decode($responseJsonx, true);
-
 
 $Response = array(
     'state' => $state,
@@ -61,7 +41,10 @@ $Response = array(
     'client_id' => '1iydisrb33pc88ccog88wgw8gwkwkc8k4woo4s8goss44koog8',
     'response_type' => 'code',
     'state' => '3lhhwkqmlc6cow88wgwwkwcc8k00gwsw8k8osg00084ossc4wo',
-    'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
+    'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php',
+    'access_token' => $responseArray["access_token"],
+    'refresh_token' => $responseArray["refresh_token"],
+
 );
 
 
