@@ -123,7 +123,7 @@ foreach ($Products as $ProductsGet) {
         ',
         '',
         $Supplier["SupplierName"],
-        $button
+        ''
 
     );
 }
