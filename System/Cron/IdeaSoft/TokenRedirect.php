@@ -18,6 +18,7 @@ $params = array(
     'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
 );
 
+echo $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$params);
 
 // Parametreleri URL'ye çevir
 $queryString = http_build_query($params);
@@ -25,7 +26,7 @@ $queryString = http_build_query($params);
 // Hedef URL'yi belirle
 $targetUrl = 'https://www.katfarlaryedekparca.com/oauth/v2/token?' . $queryString;
 
-echo $targetUrl;
+echo
 // Diğer sayfadaki JSON verilerini çek
 $responseJson = file_get_contents($targetUrl);
 echo $responseJson;
