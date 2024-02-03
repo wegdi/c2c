@@ -29,7 +29,6 @@ $responseArrayx = json_decode($responseJsonx, true);
 
 
 $UpdateData = array(
-  'refresh_token' => $responseArrayx["refresh_token"],
   'access_token' => $responseArrayx["access_token"],
 
 );
