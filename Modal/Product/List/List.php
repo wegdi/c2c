@@ -58,26 +58,25 @@ foreach ($Products as $ProductsGet) {
     $Supplier = $db->Query('Supplier', ['SupplierCode' => $ProductsGet["SupplierCode"]], [], 'TEK');
 
     $CategoryId = '';
-    if ($ProductsGet["CategoryId"]) {
-        $Category = $db->Query('Category', ['IdeaSoftId' => (int)$ProductsGet["CategoryId"]], [], 'TEK');
-        $CategoryId = '
-            <a href="javascript:void(0);" onclick="selectchange(this)" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$Category["Name"].'</a>
-            <div class="om d-none" id="c'.(string)$ProductsGet["_id"].'"><select class="js-example-basic-single"  data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select></div>
-        ';
-    } else {
-        $CategoryId = '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>';
-    }
+  if (isset($ProductsGet["CategoryId"])) {
+      $Category = $db->Query('Category', ['IdeaSoftId' => (int)$ProductsGet["CategoryId"]], [], 'TEK');
+      $CategoryId = '
+          <a href="javascript:void(0);" onclick="selectchange(this)" data-product-selecet-id="'.(string)$ProductsGet["_id"].'">'.$Category["Name"].'</a>
+          <div class="om d-none" id="c'.(string)$ProductsGet["_id"].'"><select class="js-example-basic-single"  data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select></div>
+      ';
+  } else {
+      $CategoryId = '<select class="js-example-basic-single" data-product-selecet-id="'.(string)$ProductsGet["_id"].'" name="category[]">  </select>';
+  }
 
-    $button = '';
-    if ($ProductsGet["CategoryId"]) {
-        $button = '
-            <div class="btn-group" role="group" aria-label="Product Actions">
-                <button type="button" onclick="sendProductToIdeaSoft(\'' . (string)$ProductsGet["_id"] . '\')" class="btn btn-xs rounded-pill btn-light waves-effect">Gönder</button>
-                <button type="button" onclick="deleteProductToIdeaSoft(\'' . (string)$ProductsGet["_id"] . '\')" class="btn btn-xs rounded-pill btn-danger waves-effect">Sil</button>
-            </div>
-        ';
-    }
-
+  $button = '';
+  if (isset($ProductsGet["CategoryId"])) {
+      $button = '
+          <div class="btn-group" role="group" aria-label="Product Actions">
+              <button type="button" onclick="sendProductToIdeaSoft(\'' . (string)$ProductsGet["_id"] . '\')" class="btn btn-xs rounded-pill btn-light waves-effect">Gönder</button>
+              <button type="button" onclick="deleteProductToIdeaSoft(\'' . (string)$ProductsGet["_id"] . '\')" class="btn btn-xs rounded-pill btn-danger waves-effect">Sil</button>
+          </div>
+      ';
+  }
     $Log[] = array(
         '<input type="checkbox" name="selected['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["price"].'">',
         '<div class="flex-shrink-0 me-3">
