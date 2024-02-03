@@ -15,6 +15,7 @@ $RefresToken = array(
   'refresh_token' => $IdeaSoft["refresh_token"]
 );
 
+print_r($RefresToken);
 // Parametreleri URL'ye çevir
 $queryStringx = http_build_query($RefresToken);
 
