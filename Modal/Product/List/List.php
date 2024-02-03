@@ -121,7 +121,7 @@ foreach ($Products as $ProductsGet) {
         '<input type="text" id="remove-id-input" class="form-control" name="price_one[]" value="'.$ProductsGet["price_one"].'">
         <input type="hidden" id="remove-id-input" class="form-control" name="pricelist['.(string)$ProductsGet["_id"].']" value="'.$ProductsGet["TotalPrice"].'">
         ',
-        $CategoryId,
+        '',
         $Supplier["SupplierName"],
         $button
 
