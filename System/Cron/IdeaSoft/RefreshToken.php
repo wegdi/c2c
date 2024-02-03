@@ -28,8 +28,8 @@ $responseJsonx = file_get_contents($targetUrlx);
 $responseArrayx = json_decode($responseJsonx, true);
 
 print_r($responseArrayx);
-
 $UpdateData = array(
+  'refresh_token' => $responseArrayx["refresh_token"],
   'access_token' => $responseArrayx["access_token"],
 
 );
