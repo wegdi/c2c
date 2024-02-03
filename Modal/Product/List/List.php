@@ -19,30 +19,33 @@ $filter = [];
 
 
 
-
-if (isset($_POST["ProductName"])) {
-    $filter["product_name"] = new MongoDB\BSON\Regex($_POST["ProductName"], 'i');
+if ($_POST["ProductName"]!=="") {
+  $filter["product_name"] = new MongoDB\BSON\Regex($_POST["ProductName"], 'i');
 }
 
-if (isset($_POST["Model"])) {
-    $filter["model"] = new MongoDB\BSON\Regex($_POST["Model"], 'i');
+if ($_POST["Model"]!=="") {
+  $filter["model"] = new MongoDB\BSON\Regex($_POST["Model"], 'i');
 }
 
-if (isset($_POST["C2cCode"])) {
-    $filter["C2Cmodel"] = new MongoDB\BSON\Regex($_POST["C2cCode"], 'i');
+
+if ($_POST["C2cCode"]!=="") {
+  $filter["C2Cmodel"] = new MongoDB\BSON\Regex($_POST["C2cCode"], 'i');
 }
 
-if (isset($_POST["Brand"])) {
-    $filter["manufacturer_name"] = new MongoDB\BSON\Regex($_POST["Brand"], 'i');
+if ($_POST["Brand"]!=="") {
+  $filter["manufacturer_name"] = new MongoDB\BSON\Regex($_POST["Brand"], 'i');
 }
 
-if (isset($_POST["IdeaSoftSatatus"])) {
-    $filter["IdeaSoft"] = (int)$_POST["IdeaSoftSatatus"];
+
+if ($_POST["IdeaSoftSatatus"]!=="") {
+  $filter["IdeaSoft"] = (int)$_POST["IdeaSoftSatatus"];
 }
 
-if (isset($_POST["IdeaSoftCategory"])) {
-    $filter["IdeaSoftCategory"] = (int)$_POST["IdeaSoftCategory"];
+
+if ($_POST["IdeaSoftCategory"]!=="") {
+  $filter["IdeaSoftCategory"] = (int)$_POST["IdeaSoftCategory"];
 }
+
 
 
 
