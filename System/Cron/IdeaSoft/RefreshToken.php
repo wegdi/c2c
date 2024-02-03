@@ -15,7 +15,6 @@ $RefresToken = array(
   'refresh_token' => $IdeaSoft["refresh_token"]
 );
 
-print_r($RefresToken);
 // Parametreleri URL'ye çevir
 $queryStringx = http_build_query($RefresToken);
 
@@ -43,13 +42,10 @@ curl_close($curl);
 
 // JSON verilerini diziye çevir
 $responseArrayx = json_decode($response, true);
-print_r($responseArrayx);
-/*
+
 $UpdateData = array(
-  'refresh_token' => $responseArrayx["refresh_token"],
   'access_token' => $responseArrayx["access_token"],
 
 );
 
 echo $db->UpdateByObjectId("IdeaSoft",'65a784f66b188048239f446c',$UpdateData);
-*/
