@@ -31,6 +31,7 @@ $responseJson = file_get_contents($targetUrl);
 // JSON verilerini diziye çevir
 $responseArray = json_decode($responseJson, true);
 
+print_r($responseArray);
 
 //2 Aylık Token Al
 $RefresToken = array(
@@ -63,6 +64,5 @@ $Response = array(
     'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php'
 );
 
-print_r($Response);
 
 $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",array_merge($Response,$responseArrayx));
