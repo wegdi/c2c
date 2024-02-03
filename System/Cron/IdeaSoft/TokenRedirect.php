@@ -45,29 +45,10 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
-
-
-/*
-// JSON verilerini diziye çevir
-$responseArray = json_decode($responseJson, true);
-
-print_r($responseArray);
-
-
-$Response = array(
-    'state' => $state,
-    'code' => $code,
-    'domain' => $domain,
-    'client_id' => '1iydisrb33pc88ccog88wgw8gwkwkc8k4woo4s8goss44koog8',
-    'response_type' => 'code',
-    'state' => '3lhhwkqmlc6cow88wgwwkwcc8k00gwsw8k8osg00084ossc4wo',
-    'redirect_uri' => 'https://c2c.wegdi.com/System/Cron/IdeaSoft/TokenRedirect.php',
-    'access_token' => $responseArray["access_token"],
-    'refresh_token' => $responseArray["refresh_token"],
+$response =json_decode($response,1);
+$data = array(
+  'access_token' => $response["access_token"],
+  'refresh_token' => $response["refresh_token"],
 
 );
-
-
-echo $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$Response);
-*/
+echo $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$data);
