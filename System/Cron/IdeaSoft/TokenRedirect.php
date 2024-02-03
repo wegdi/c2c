@@ -48,4 +48,4 @@ $Response = array(
 );
 
 
-$db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",array_merge($Response,$responseArrayx));
+echo $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$Response);
