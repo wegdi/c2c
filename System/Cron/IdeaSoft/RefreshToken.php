@@ -21,13 +21,29 @@ $queryStringx = http_build_query($RefresToken);
 // Hedef URL'yi belirle
 $targetUrlx = 'https://www.katfarlaryedekparca.com/oauth/v2/token?' . $queryStringx;
 
-// Diğer sayfadaki JSON verilerini çek
-$responseJsonx = file_get_contents($targetUrlx);
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+		CURLOPT_URL => $targetUrlx,
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => '',
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 0,
+		CURLOPT_FOLLOWLOCATION => true,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'GET',
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+
 
 // JSON verilerini diziye çevir
-$responseArrayx = json_decode($responseJsonx, true);
-
+$responseArrayx = json_decode($response, true);
 print_r($responseArrayx);
+/*
 $UpdateData = array(
   'refresh_token' => $responseArrayx["refresh_token"],
   'access_token' => $responseArrayx["access_token"],
@@ -35,3 +51,4 @@ $UpdateData = array(
 );
 
 echo $db->UpdateByObjectId("IdeaSoft",'65a784f66b188048239f446c',$UpdateData);
+*/
