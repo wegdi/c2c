@@ -26,7 +26,7 @@ foreach ($Category as $CategoryGet) {
 
     $Log[] = array(
         $CategoryGet["Name"],
-        ''
+        $CategoryGet["IdeaSoftId"]
 
     );
 }
