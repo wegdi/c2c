@@ -4,25 +4,15 @@ header('Content-Type: application/json; charset=utf-8');
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SYSTEM.'General/General.php');
 
-header('Content-Type: application/json; charset=utf-8');
-
-require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
-require_once(SYSTEM.'General/General.php');
-
 $db = new General();
 
 $filtre = [];
 
-// Sanitize the search term
-$searchTerm = $_GET["search"];
-$searchTerm = preg_quote($searchTerm, '/');
-$searchTerm = htmlspecialchars($searchTerm, ENT_QUOTES, 'UTF-8');
-
-if (ctype_digit($searchTerm)) {
-    $filtre["IdeaSoftId"] = (int)$searchTerm;
+if (ctype_digit($_GET["search"])) {
+    $filtre["IdeaSoftId"] = (int)$_GET["search"];
 } else {
     // Using a case-insensitive regex for the "Name" field
-    $filtre["Name"] = new MongoDB\BSON\Regex($searchTerm, 'i');
+    $filtre["Name"] = new MongoDB\BSON\Regex($_GET["search"], 'i');
 }
 
 $Category = $db->Query('Category', $filtre, [], 'COK');
@@ -35,5 +25,6 @@ foreach ($Category as $key => $value) {
 }
 
 echo json_encode($CategoryJson);
+
 
 ?>
