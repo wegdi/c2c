@@ -16,7 +16,7 @@ foreach ($suppliers as $supplier) {
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
         $kategoriuc = $value["model"];
-        $kategoriler[] = $kategoriiki;
+        $kategoriler[] = $value["marka"].' > '.$kategoriiki .' > '.$kategoriuc;
     }
 }
 
