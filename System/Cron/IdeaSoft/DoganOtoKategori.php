@@ -13,17 +13,18 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
 
     foreach ($decodedData["stok"] as $key => $value) {
-      print_r($value["cokluKategori"]);
+          $kategoriler[] =$value["cokluKategori"];
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
         $kategoriuc = $value["model"];
-        $kategoriler[] =$kategoriiki;
+       //$kategoriiki;
     }
 }
 
 // Dizi elemanlarını artan düzende sıralar
 sort($kategoriler);
 
+print_r($kategoriler);
 // Tekrarlanmayan elemanları alır
 $newArray = array_unique($kategoriler);
 
