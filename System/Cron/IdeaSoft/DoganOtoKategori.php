@@ -17,16 +17,24 @@ foreach ($suppliers as $supplier) {
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
         $kategoriuc = $value["model"];
-       $kategoriler[] = $kategoribir.' > '. $kategoriiki.' > '.$kategoriuc;
+        //$kategoriler[] = $kategoribir.' > '. $kategoriiki.' > '.$kategoriuc;
+
+        // Kategoriyi parçala
+        $parcali_kategori = explode("", $kategoriiki);
+        // Son elemanı al (yıl)
+        $yil = end($parcali_kategori);
+        echo $yil;
+        // Eğer "Sonrası" kelimesi varsa, onu kaldır
+      //  $yil = str_replace(" Sonrası", "", $yil);
     }
 }
 
 // Dizi elemanlarını artan düzende sıralar
-sort($kategoriler);
+//sort($kategoriler);
 
 // Tekrarlanmayan elemanları alır
-$newArray = array_unique($kategoriler);
+//$newArray = array_unique($kategoriler);
 
-print_r($newArray);
+//print_r($newArray);
 
 ?>
