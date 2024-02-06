@@ -13,7 +13,7 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
 
     foreach ($decodedData["stok"] as $key => $value) {
-          //$kategoriler[] =$value["cokluKategori"];
+        //$kategoriler[] =$value["cokluKategori"];
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
         $kategoriuc = $value["model"];
@@ -21,9 +21,17 @@ foreach ($suppliers as $supplier) {
 
         // Kategoriyi parçala
         $parcali_kategori = explode(" ", $kategoriiki);
-        print_r($parcali_kategori);
+
+        // Dört basamaklı bir sayı içeren kategoriyi bul
+        foreach ($parcali_kategori as $parca) {
+            // Parçada dört basamaklı bir sayı varsa, ekrana yazdır
+            if (preg_match('/\b\d{4}\b/', $parca)) {
+                echo "Dört basamaklı sayı bulundu: $parca<br>";
+            }
+        }
     }
 }
+
 
 // Dizi elemanlarını artan düzende sıralar
 //sort($kategoriler);
