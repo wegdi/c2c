@@ -14,7 +14,7 @@ foreach ($suppliers as $supplier) {
 
     foreach ($decodedData["stok"]  as $key => $value) {
       $kategoribir=$value["marka"];
-      $kategoriiki=$value["kategori"].' Sonrası';
+      $kategoriiki=str_replace('-','', $value["kategori"]).' Sonrası';
       $kategoriuc=$value["model"];
       echo $kategoribir.' > '.$kategoriiki.' > '.$kategoriuc;
       echo "<br>";
