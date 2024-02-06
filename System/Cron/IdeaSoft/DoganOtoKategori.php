@@ -13,6 +13,7 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
 
     foreach ($decodedData["stok"] as $key => $value) {
+      print_r($value);
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
         $kategoriuc = $value["model"];
@@ -26,5 +27,5 @@ sort($kategoriler);
 // Tekrarlanmayan elemanları alır
 $newArray = array_unique($kategoriler);
 
-print_r($newArray);
+
 ?>
