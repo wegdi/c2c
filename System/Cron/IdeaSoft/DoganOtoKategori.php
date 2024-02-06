@@ -17,7 +17,7 @@ foreach ($suppliers as $supplier) {
       $kategoriiki=$value["kategori"].'>';
       $kategoriuc=$value["model"];
       echo $kategoribir.' -> '.$kategoriiki.' -> '.$kategoriuc;
-
+      echo "<br>";
 
 
 
