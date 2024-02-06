@@ -24,9 +24,9 @@ foreach ($suppliers as $supplier) {
 // Dizi elemanlarını artan düzende sıralar
 sort($kategoriler);
 
-print_r($kategoriler);
 // Tekrarlanmayan elemanları alır
 $newArray = array_unique($kategoriler);
 
+print_r($newArray);
 
 ?>
