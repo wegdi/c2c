@@ -12,7 +12,7 @@ foreach ($suppliers as $supplier) {
     $jsonData = file_get_contents($filePath);
     $decodedData = json_decode($jsonData, true);
 
-    print_R($supplier);
+    print_R($decodedData);
 
 }
 ?>
