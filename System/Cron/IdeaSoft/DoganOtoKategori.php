@@ -23,9 +23,9 @@ foreach ($suppliers as $supplier) {
         $parcali_kategori = explode(" ", $kategoriiki);
         // Son elemanı al (yıl)
         $yil = end($parcali_kategori);
-        echo $yil;
-        // Eğer "Sonrası" kelimesi varsa, onu kaldır
-      //  $yil = str_replace(" Sonrası", "", $yil);
+
+        $yil = str_replace(" Sonrası", "", $yil);
+          echo $yil;
     }
 }
 
