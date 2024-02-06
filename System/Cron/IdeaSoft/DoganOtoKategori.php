@@ -12,7 +12,7 @@ foreach ($suppliers as $supplier) {
     $jsonData = file_get_contents($filePath);
     $decodedData = json_decode($jsonData, true);
 
-    $itemsPerPage = TOTAL; // Her sayfada kaç öğe gösterileceğini belirtin
+    $itemsPerPage = 600; // Her sayfada kaç öğe gösterileceğini belirtin
     $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
 
     $startIndex = ($page - 1) * $itemsPerPage;
