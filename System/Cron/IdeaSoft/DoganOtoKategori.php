@@ -24,9 +24,9 @@ foreach ($suppliers as $supplier) {
 
         // Dört basamaklı bir sayı içeren kategoriyi bul
         foreach ($parcali_kategori as $parca) {
-            // Parçada dört basamaklı bir sayı varsa, ekrana yazdır
-            if (preg_match('/\b\d{4}\b/', $parca)) {
-                echo "Dört basamaklı sayı bulundu: $parca<br>";
+            // Parçada dört basamaklı bir sayı varsa ve 1960 ile 2025 arasında ise ekrana yazdır
+            if (preg_match('/\b\d{4}\b/', $parca) && $parca >= 1960 && $parca <= 2025) {
+                echo "Dört basamaklı sayı bulundu ve 1960 ile 2025 arasında: $parca<br>";
             }
         }
     }
