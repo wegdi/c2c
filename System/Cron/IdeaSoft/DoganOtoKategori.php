@@ -11,8 +11,15 @@ foreach ($suppliers as $supplier) {
     $filePath = $_SERVER['DOCUMENT_ROOT'] . $supplier["SupplierFilePath"];
     $jsonData = file_get_contents($filePath);
     $decodedData = json_decode($jsonData, true);
-            $slicedStok = array_slice($decodedData["stok"], 0, 100);
-    foreach (  $slicedStok as $key => $value) {
+
+    $itemsPerPage = TOTAL; // Her sayfada kaç öğe gösterileceğini belirtin
+    $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1; // Sayfa numarasını alın
+
+    $startIndex = ($page - 1) * $itemsPerPage;
+
+
+    $slicedStok = array_slice($decodedData["stok"],$startIndex, $itemsPerPage);
+    foreach ($slicedStok as $key => $value) {
         //$kategoriler[] =$value["cokluKategori"];
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
