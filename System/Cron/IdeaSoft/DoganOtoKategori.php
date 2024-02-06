@@ -13,7 +13,7 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
 
     foreach ($decodedData["stok"] as $key => $value) {
-      print_r($value);
+      print_r($value["cokluKategori"]);
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
         $kategoriuc = $value["model"];
