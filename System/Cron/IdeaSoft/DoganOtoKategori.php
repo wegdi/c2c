@@ -27,6 +27,7 @@ foreach ($suppliers as $supplier) {
             // Parçada dört basamaklı bir sayı varsa ve 1960 ile 2025 arasında ise ekrana yazdır
             if (preg_match('/\b\d{4}\b/', $parca) && $parca >= 1960 && $parca <= 2025) {
                 echo $value["kod"] .''.$parca;
+                echo "<br>";
                 //echo "Dört basamaklı sayı bulundu ve 1960 ile 2025 arasında: $parca<br>";
             }
         }
