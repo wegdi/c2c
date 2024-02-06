@@ -1,7 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once(SYSTEM . 'General/General.php');
-require_once('ProductFunction.php');
 
 $db = new General();
 
