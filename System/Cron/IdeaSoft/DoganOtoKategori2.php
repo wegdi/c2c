@@ -18,7 +18,23 @@ foreach ($suppliers as $supplier) {
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
         $kategoriuc = $value["model"];
-        $kategoriler[] = $kategoribir.' > '. $kategoriiki.' > Arka Takım Ve Süspansiyon';
+
+        // Kategoriyi parçala
+        $parcali_kategori = explode(" ", $kategoriiki);
+
+        // Dört basamaklı bir sayı içeren kategoriyi bul
+        foreach ($parcali_kategori as $parca) {
+            // Parçada dört basamaklı bir sayı varsa ve 1960 ile 2025 arasında ise ekrana yazdır
+            if (preg_match('/\b\d{4}\b/', $parca) && $parca >= 1960 && $parca <= 2025) {
+
+
+                $kategoriler[] = $kategoribir.' > '. $parca.' > Arka Takım Ve Süspansiyon';
+
+
+                //echo "Dört basamaklı sayı bulundu ve 1960 ile 2025 arasında: $parca<br>";
+            }
+        }
+
 
 
     }
