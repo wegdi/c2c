@@ -12,7 +12,10 @@ foreach ($suppliers as $supplier) {
     $jsonData = file_get_contents($filePath);
     $decodedData = json_decode($jsonData, true);
 
-    print_R($decodedData);
+    foreach ($decodedData["stok"]  as $key => $value) {
+      print_R($value);
+
+    }
 
 }
 ?>
