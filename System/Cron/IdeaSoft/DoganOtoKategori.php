@@ -26,8 +26,16 @@ foreach ($suppliers as $supplier) {
         foreach ($parcali_kategori as $parca) {
             // Parçada dört basamaklı bir sayı varsa ve 1960 ile 2025 arasında ise ekrana yazdır
             if (preg_match('/\b\d{4}\b/', $parca) && $parca >= 1960 && $parca <= 2025) {
-                echo $value["kod"] .' '.$parca;
-                echo "<br>";
+
+                $Products = $db->Query('Products', ["SupplierCode" => $supplier["SupplierCode"], "model" => $value["kod"]], [], 'TEK');
+
+                if ($Products["_id"] != "") {
+
+                    $value = array('ModelYili' => (int)$parca );
+                    $db->UpdateByObjectId("Products", (string)$Products["_id"], $value);
+
+                }
+
                 //echo "Dört basamaklı sayı bulundu ve 1960 ile 2025 arasında: $parca<br>";
             }
         }
