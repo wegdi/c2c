@@ -18,7 +18,7 @@ foreach ($suppliers as $supplier) {
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
         $kategoriuc = $value["model"];
-
+        print_r($value);
         // Kategoriyi parçala
         $parcali_kategori = explode(" ", $kategoriiki);
 
