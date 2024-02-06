@@ -11,8 +11,8 @@ foreach ($suppliers as $supplier) {
     $filePath = $_SERVER['DOCUMENT_ROOT'] . $supplier["SupplierFilePath"];
     $jsonData = file_get_contents($filePath);
     $decodedData = json_decode($jsonData, true);
-
-    foreach ($decodedData["stok"] as $key => $value) {
+            $slicedStok = array_slice($decodedData["stok"], 0, 100);
+    foreach (  $slicedStok as $key => $value) {
         //$kategoriler[] =$value["cokluKategori"];
         $kategoribir = $value["marka"];
         $kategoriiki = str_replace('-', '', $value["kategori"]) . ' Sonrası';
