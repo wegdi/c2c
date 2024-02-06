@@ -14,6 +14,12 @@ foreach ($suppliers as $supplier) {
 
     foreach ($decodedData["stok"]  as $key => $value) {
       print_R($value);
+      $kategoribir=$value["marka"];
+      $kategoriiki=$value["kategori"].'>';
+      $model=$value["model"];
+
+
+
 
     }
 
