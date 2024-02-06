@@ -20,7 +20,7 @@ foreach ($suppliers as $supplier) {
         //$kategoriler[] = $kategoribir.' > '. $kategoriiki.' > '.$kategoriuc;
 
         // Kategoriyi parçala
-        $parcali_kategori = explode("", $kategoriiki);
+        $parcali_kategori = explode(" ", $kategoriiki);
         // Son elemanı al (yıl)
         $yil = end($parcali_kategori);
         echo $yil;
