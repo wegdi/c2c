@@ -21,11 +21,7 @@ foreach ($suppliers as $supplier) {
 
         // Kategoriyi parçala
         $parcali_kategori = explode(" ", $kategoriiki);
-        // Son elemanı al (yıl)
-        $yil = end($parcali_kategori);
-
-        $yil = str_replace(" Sonrası", "", $yil);
-          echo $yil;
+        print_r($parcali_kategori);
     }
 }
 
