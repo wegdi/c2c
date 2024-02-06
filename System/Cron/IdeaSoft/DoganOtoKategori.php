@@ -16,12 +16,8 @@ foreach ($suppliers as $supplier) {
       $kategoribir=$value["marka"];
       $kategoriiki=$value["kategori"].'>';
       $kategoriuc=$value["model"];
-      echo $kategoribir;
-      echo "<br>";
-      echo $kategoriiki;
-      echo "<br>";
-      echo $kategoriuc;
-      echo "<br>";
+      echo $kategoribir.' -> '.$kategoriiki.' -> '.$kategoriuc;
+
 
 
 
