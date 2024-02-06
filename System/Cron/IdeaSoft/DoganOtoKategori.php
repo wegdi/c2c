@@ -24,7 +24,8 @@ foreach ($suppliers as $supplier) {
 
 
     }
-    print_r($kategoriler);
+    $newArray = array_unique($kategoriler);
+    print_r($newArray);
 
 }
 ?>
