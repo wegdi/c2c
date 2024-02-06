@@ -13,10 +13,15 @@ foreach ($suppliers as $supplier) {
     $decodedData = json_decode($jsonData, true);
 
     foreach ($decodedData["stok"]  as $key => $value) {
-      print_R($value);
       $kategoribir=$value["marka"];
       $kategoriiki=$value["kategori"].'>';
-      $model=$value["model"];
+      $kategoriuc=$value["model"];
+      echo $kategoribir;
+      echo "<br>";
+      echo $kategoriiki;
+      echo "<br>";
+      echo $kategoriuc;
+      echo "<br>";
 
 
 
