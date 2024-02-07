@@ -28,7 +28,7 @@ foreach ($suppliers as $supplier) {
             if (preg_match('/\b\d{4}\b/', $parca) && $parca >= 1960 && $parca <= 2025) {
 
               $bul      = array("DAVLUMBAZ","RADYATÖR");
-              $degistir = array("Karoser İç Parçalar:","Karoser İç Parçalar:");
+              $degistir = array("Karoser İç Parçalar","Karoser İç Parçalar:");
 
               // Çıktı: Burada 5 ve 6 yazıyor
 
