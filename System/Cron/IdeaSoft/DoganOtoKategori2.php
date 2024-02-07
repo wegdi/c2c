@@ -32,7 +32,7 @@ foreach ($suppliers as $supplier) {
 
               // Çıktı: Burada 5 ve 6 yazıyor
 
-              $metin = str_replace($bul, $degistir, $kategoriuc);
+              $metin = str_replace($bul,"Karoser İç Parçalar", $kategoriuc);
 
 
                 $kategoriler[] = $kategoribir.' > ' .$parcali_kategori[0].'  > '. $parca.' > '.$metin;
