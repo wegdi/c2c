@@ -48,10 +48,10 @@ foreach ($suppliers as $supplier) {
     }
 }
 
-
 sort($kategoriler);
 
 $newArray = array_unique($kategoriler);
+echo count($newArray);
 print_r($newArray);
 
 ?>
