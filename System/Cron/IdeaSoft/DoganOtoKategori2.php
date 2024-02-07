@@ -27,8 +27,9 @@ foreach ($suppliers as $supplier) {
             // Parçada dört basamaklı bir sayı varsa ve 1960 ile 2025 arasında ise ekrana yazdır
             if (preg_match('/\b\d{4}\b/', $parca) && $parca >= 1960 && $parca <= 2025) {
 
-              $bul      = array("DAVLUMBAZ","RADYATÖR","BAGAJ KAPAĞI","ETEK SACI","Kapı Bantları", "Kapı Kolu", "Kapı ve Kapı Sacları", "Motor Kaputları", "Panjur", "Spoyler", "Tampon", "Tampon ek Parçalar", "Tuning", "Çamurluk", "Ön Cam Izgara");
-              $degistir = array("Karoser İç Parçalar","Karoser İç Parçalar","Karoser İç Parçalar","BODY KİT");
+              $bul = array("DAVLUMBAZ", "RADYATÖR", "BAGAJ KAPAĞI", "ETEK SACI", "Kapı Bantları", "Kapı Kolu", "Kapı ve Kapı Sacları", "Motor Kaputları", "Panjur", "Spoyler", "Tampon", "Tampon ek Parçalar", "Tuning", "Çamurluk", "Ön Cam Izgara");
+
+  $bul = array_map('strtoupper', $bul);
 
               // Çıktı: Burada 5 ve 6 yazıyor
 
