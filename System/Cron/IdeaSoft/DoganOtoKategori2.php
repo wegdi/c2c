@@ -35,7 +35,7 @@ foreach ($suppliers as $supplier) {
               $metin = str_replace($bul, $degistir, $kategoriuc);
 
 
-                $kategoriler[] = $kategoribir.' > ' .$parcali_kategori[0].'  > '. $parca.' Sonrası > '.$metin;
+                $kategoriler[] = $kategoribir.' > ' .$parcali_kategori[0].'  > '. $parca.' > '.$metin;
 
 
                 //echo "Dört basamaklı sayı bulundu ve 1960 ile 2025 arasında: $parca<br>";
