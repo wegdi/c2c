@@ -28,7 +28,7 @@ foreach ($suppliers as $supplier) {
             if (preg_match('/\b\d{4}\b/', $parca) && $parca >= 1960 && $parca <= 2025) {
 
 
-                $kategoriler[] = $kategoribir.' > ' .$parcali_kategori[0].'  > '. $parca.' Sonrası > Arka Takım Ve Süspansiyon';
+                $kategoriler[] = $kategoribir.' > ' .$parcali_kategori[0].'  > '. $parca.' Sonrası > '.$kategoriuc;
 
 
                 //echo "Dört basamaklı sayı bulundu ve 1960 ile 2025 arasında: $parca<br>";
