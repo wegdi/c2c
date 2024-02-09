@@ -27,17 +27,23 @@ foreach ($suppliers as $supplier) {
             // Parçada dört basamaklı bir sayı varsa ve 1960 ile 2025 arasında ise ekrana yazdır
             if (preg_match('/\b\d{4}\b/', $parca) && $parca >= 1960 && $parca <= 2025) {
 
-              $bul = array("TAMPON BRAKETLERİ","TAMPON DEMİRİ VE TRAVERS","TAMPON EK PARÇALARI","DAVLUMBAZ", "RADYATÖR", "BAGAJ KAPAĞI", "ETEK SACI", "Kapı Bantları", "Kapı Kolu", "Kapı ve Kapı Sacları", "Motor Kaputları", "Panjur", "Spoyler", "Tampon", "Tampon ek Parçalar", "Tuning", "Çamurluk", "Ön Cam Izgara",);
+              $bul = array("DAVLUMBAZ", "RADYATÖR", "BAGAJ KAPAĞI", "ETEK SACI", "Kapı Bantları", "Kapı Kolu", "Kapı ve Kapı Sacları", "Motor Kaputları", "Panjur", "Spoyler", "Tampon", "Tampon ek Parçalar", "Tuning", "Çamurluk", "Ön Cam Izgara");
+$bul = array_map('strtoupper', $bul);
 
-              $bul = array_map('strtoupper', $bul);
+$kategoriuc = "Burada 5 ve 6 yazıyor";
+$kategoribir = "Birinci kategori";
+$parcali_kategori = array("Parçalı kategori");
+$parca = "Bir parça";
 
-              // Çıktı: Burada 5 ve 6 yazıyor
+foreach ($bul as $kelime) {
+  if (strpos($kategoriuc, $kelime) !== false) {
+      $kategoriuc = str_replace($kelime, "Karoser İç Parçalar", $kategoriuc);
+  }
+}
 
-              $metin = str_replace($bul,"Karoser İç Parçalar", $kategoriuc);
+$kategoriler[] = $kategoribir . ' > ' . $parcali_kategori[0] . '  > ' . $parca . ' > ' . $kategoriuc;
 
-
-                $kategoriler[] = $kategoribir.' > ' .$parcali_kategori[0].'  > '. $parca.' > '.$metin;
-
+print_r($kategoriler);
 
                 //echo "Dört basamaklı sayı bulundu ve 1960 ile 2025 arasında: $parca<br>";
             }
