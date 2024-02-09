@@ -44,7 +44,7 @@ foreach ($suppliers as $supplier) {
 
 
 
-            $db->Add("Products", $datalar);
+            $db->Add("Category", $datalar);
 
         }else {
           $db->UpdateByObjectId("Category", (string)$Category["_id"], $datalar);
