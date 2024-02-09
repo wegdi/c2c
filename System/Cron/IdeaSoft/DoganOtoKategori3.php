@@ -41,11 +41,7 @@ foreach ($suppliers as $supplier) {
         $Category = $db->Query('Category', ["CategoryFull" => (string)$kategorilerfull], [], 'TEK');
 
         if ($Category["_id"] == "") {
-
-
-
-            $db->Add("Category", $datalar);
-
+          $db->Add("Category", $datalar);
         }else {
           $db->UpdateByObjectId("Category", (string)$Category["_id"], $datalar);
         }
