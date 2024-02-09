@@ -38,12 +38,12 @@ foreach ($suppliers as $supplier) {
         );
 
 
-        $Category = $db->Query('Category', ["CategoryFull" => (string)$kategorilerfull], [], 'TEK');
+        $Category = $db->Query('CategoryList', ["CategoryFull" => (string)$kategorilerfull], [], 'TEK');
 
         if ($Category["_id"] == "") {
-          $db->Add("Category", $datalar);
+          $db->Add("CategoryList", $datalar);
         }else {
-          $db->UpdateByObjectId("Category", (string)$Category["_id"], $datalar);
+          $db->UpdateByObjectId("CategoryList", (string)$Category["_id"], $datalar);
         }
 
     }
