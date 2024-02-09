@@ -40,9 +40,9 @@ foreach ($suppliers as $supplier) {
                 //echo "Dört basamaklı sayı bulundu ve 1960 ile 2025 arasında: $parca<br>";
             }
         }
- */
 
 
+*/
     }
 }
 
