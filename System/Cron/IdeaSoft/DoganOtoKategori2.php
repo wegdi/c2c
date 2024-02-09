@@ -27,6 +27,7 @@ foreach ($suppliers as $supplier) {
         $kategoriiki = str_replace('-', '', $value["kategori"]);
         $kategoriuc = $value["model"];
         $kategoriler[] = $kategoribir.' > ' .$kategoriiki.'  > '. $kategoriuc;
+        $kategorilerfull = $kategoribir.' > ' .$kategoriiki.'  > '. $kategoriuc;
 
 
         $Products = $db->Query('Products', ["SupplierCode" => $supplier["SupplierCode"], "model" => $value["kod"]], [], 'TEK');
@@ -36,7 +37,8 @@ foreach ($suppliers as $supplier) {
             $value = array(
               'CategoryOne' => $kategoribir,
               'CategoryTwo' => $kategoriiki,
-              'CategoryTree' => $kategoriuc
+              'CategoryTree' => $kategoriuc,
+              'CategoryFull' => $kategorilerfull
 
             );
             $db->UpdateByObjectId("Products", (string)$Products["_id"], $value);
