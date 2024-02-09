@@ -34,11 +34,12 @@ foreach ($suppliers as $supplier) {
           'CategoryTwo' => (string)$kategoriiki,
           'CategoryTree' => (string)$kategoriuc,
           'CategoryFull' => (string)$kategorilerfull,
-          'IdeaSoftId' => ''
+          'IdeaSoftId' => '',
+          'SupplierCode' => (string)$supplier["SupplierCode"]
         );
 
 
-        $Category = $db->Query('CategoryList', ["CategoryFull" => (string)$kategorilerfull], [], 'TEK');
+        $Category = $db->Query('CategoryList', ["CategoryFull" => (string)$kategorilerfull,"SupplierCode" => (string)$supplier["SupplierCode"]], [], 'TEK');
 
         if ($Category["_id"] == "") {
           $db->Add("CategoryList", $datalar);
