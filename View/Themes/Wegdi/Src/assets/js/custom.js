@@ -114,13 +114,11 @@ function FromSaveGlobal(form, url, refresh = 0) {
             });
 
 
-            var currentPagec = $('#CategoryListler').DataTable().page();
-
-            // DataTable'ı yeniden yükle
             $('#CategoryListler').DataTable().ajax.reload(function() {
-                // Yeniden yükleme işlemi tamamlandıktan sonra mevcut sayfaya geri dön
-                $('#CategoryListler').DataTable().page(currentPagec).draw('page');
-            });
+    // Yeniden yükleme işlemi tamamlandıktan sonra mevcut sayfaya geri dön
+    $('#CategoryListler').DataTable().page(currentPagec).draw('page');
+});
+
 
 
 
