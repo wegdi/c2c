@@ -9,17 +9,14 @@ $db=new General();
 if (isset($_POST["selected"]) and isset($_POST["IdeaSoftId"])) {
   echo "string";
   foreach ($_POST["selected"] as $key => $value) {
-    print_r($value);
-    // code...
- /*
-  $data = array(
-    'IdeaSoftId' => (int)$_POST["IdeaSoftId"]
-  );
 
-  $response = $db->UpdateByObjectId("CategoryList",, $data);
-  */
+    $data = array(
+      'IdeaSoftId' => (int)$_POST["IdeaSoftId"]
+    );
+
+  $response = $db->UpdateByObjectId("CategoryList",$value, $data);
   }
-//  echo $response;
+  echo $response;
 
 }
 
