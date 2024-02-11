@@ -7,7 +7,7 @@ require_once(SYSTEM.'General/General.php');
 $db = new General();
 
 $Marka=$POST["Marka"];
-
+echo $Marka;
 $CategoryList = $db->Query('CategoryList',['CategoryOne' => $Marka], [], 'COK');
 
 $List=[];
