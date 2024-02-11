@@ -58,25 +58,7 @@ $security->LoginControl($guvenlik);
 
                           <select class="form-select" id="Model" name="Model">
                             <option selected value="">Model Seçiniz</option>
-                            <?php
-                            $Model = $db->Query('CategoryList', [], [], 'COK');
-                            $uniqueCategoriesz = []; // Benzersiz kategorileri saklamak için bir dizi oluşturuyoruz
-
-                            // Kategorileri A'dan Z'ye sıralamak için usort fonksiyonunu kullanıyoruz
-                            usort($Model, function($a, $b) {
-                                return strcmp($a["CategoryTwo"], $b["CategoryTwo"]);
-                            });
-
-                            foreach ($Model as $key => $value):
-                                // Eğer kategori daha önce eklenmediyse, seçeneği ekliyoruz
-                                if (!in_array($value["CategoryTwo"], $uniqueCategoriesz)):
-                                    $uniqueCategoriesz[] = $value["CategoryTwo"]; // Kategoriyi benzersiz dizisine ekliyoruz
-                            ?>
-                                <option value="<?php echo $value["CategoryTwo"]; ?>"><?php echo $value["CategoryTwo"]; ?></option>
-                            <?php
-                                endif;
-                            endforeach;
-                            ?>
+                            
                         </select>
 
                         </th>
