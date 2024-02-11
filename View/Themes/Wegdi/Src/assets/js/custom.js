@@ -723,12 +723,14 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#Model').change(function() {
-        var Tur = $(this).val();
+        var tur = $(this).val();
+        var marka = $(this).val();
+
         $.ajax({
             url: '/Modal/Supplier/Category/Category3.php',
             type: 'POST',
             dataType: 'json',
-            data: { Tur: Tur },
+            data: { Tur: tur, Marka: marka},
             success: function(response) {
                 var options = '<option selected value="">Tür Seçiniz</option>';
                 for (var i = 0; i < response.length; i++) {
