@@ -31,6 +31,7 @@ $security->LoginControl($guvenlik);
 
 
                     <tr>
+                        <th><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></th>
                         <th colspan="1">
                           <select class="form-select" id="Marka" name="Marka">
                             <option selected value="">Marka Seçiniz</option>
@@ -76,6 +77,7 @@ $security->LoginControl($guvenlik);
                     </tr>
 
                       <tr>
+                          <th><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></th>
                           <th>Marka</th>
                           <th>Model & Yıl</th>
                           <th>Tür</th>
