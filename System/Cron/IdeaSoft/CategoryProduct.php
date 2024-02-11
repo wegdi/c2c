@@ -5,4 +5,8 @@ require_once(SYSTEM . 'General/General.php');
 $db = new General();
 
 $CategoryList = $db->Query('CategoryList', ['IdeaSoftId' => ['$ne' => null]], [], 'COK');
-print_r($CategoryList);
+
+foreach ($CategoryList as $key => $value) {
+  print_r($value);
+
+}
