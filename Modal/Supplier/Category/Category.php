@@ -36,6 +36,19 @@ $Log = array();
 foreach ($Supplier as $SupplierGet) {
     // Initialize an empty string to store the authority names
 
+    if ($SupplierGet["IdeaSoftId"]!="") {
+      $Category = $db->Query('Category',['IdeaSoftId' => $SupplierGet["IdeaSoftId"]], [], 'TEK');
+
+      if ($Category["_id"]!="") {
+        $bas=$Category["Name"];
+      }else {
+        $bas='';
+      }
+    }else {
+      $bas='';
+    }
+
+
     $Log[] = array(
         '<input type="checkbox" name="selected[]" value="'.$SupplierGet["_id"].'">',
         $SupplierGet["CategoryOne"],
