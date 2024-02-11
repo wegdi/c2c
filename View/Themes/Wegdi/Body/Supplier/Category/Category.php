@@ -29,14 +29,24 @@ $security->LoginControl($guvenlik);
                   <thead>
                     <tr>
                         <th>
-                          <select class="form-select" id="Brand" name="Brand" >
-                              <option selected value="">Marka Seçiniz</option>
+                          <select class="form-select" id="Brand" name="Brand">
+      <option selected value="">Marka Seçiniz</option>
+      <?php
+      $CategoryList = $db->Query('CategoryList', [], [], 'COK');
+      $uniqueCategories = []; // Benzersiz kategorileri saklamak için bir dizi oluşturuyoruz
 
-                            <?php  $CategoryList = $db->Query('CategoryList',[], [], 'COK'); ?>
-                            <?php foreach ($CategoryList as $key => $value): ?>
-                              <option  value="<?php echo $value["CategoryOne"]; ?>"><?php echo $value["CategoryOne"]; ?></option>
-                            <?php endforeach; ?>
-                          </select>
+      foreach ($CategoryList as $key => $value):
+          // Eğer kategori daha önce eklenmediyse, seçeneği ekliyoruz
+          if (!in_array($value["CategoryOne"], $uniqueCategories)):
+              $uniqueCategories[] = $value["CategoryOne"]; // Kategoriyi benzersiz dizisine ekliyoruz
+      ?>
+          <option value="<?php echo $value["CategoryOne"]; ?>"><?php echo $value["CategoryOne"]; ?></option>
+      <?php
+          endif;
+      endforeach;
+      ?>
+  </select>
+
                         </th>
                         <th>Model & Yıl</th>
                         <th>Tür</th>
