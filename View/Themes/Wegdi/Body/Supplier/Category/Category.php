@@ -58,8 +58,7 @@ $security->LoginControl($guvenlik);
 
                           <select class="form-select" id="Model" name="Model">
                             <option selected value="">Model Seçiniz</option>
-                            
-                        </select>
+                          </select>
 
                         </th>
                         <th>Tür</th>
