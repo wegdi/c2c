@@ -22,7 +22,7 @@ if ($_POST['Marka']) {
 }
 
 if ($_POST['Model']) {
-    $filter["CategoryTwo"] = $_POST['Mode'];
+    $filter["CategoryTwo"] = $_POST['Model'];
 }
 
 if ($_POST['Tur']) {
