@@ -7,7 +7,6 @@ $db=new General();
 
 
 if (isset($_POST["selected"]) and isset($_POST["IdeaSoftId"])) {
-  echo "string";
   foreach ($_POST["selected"] as $key => $value) {
 
     $data = array(
