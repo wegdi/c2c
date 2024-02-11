@@ -28,7 +28,7 @@ $security->LoginControl($guvenlik);
               <table id="CategoryListler" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
                     <tr>
-                        <th>
+                        <th colspan="1">
                           <select class="form-select" id="Marka" name="Marka">
                             <option selected value="">Marka Seçiniz</option>
                             <?php
@@ -54,21 +54,21 @@ $security->LoginControl($guvenlik);
 
 
                         </th>
-                        <th>
+                        <th colspan="1">
 
                           <select class="form-select" id="Model" name="Model">
                             <option selected value="">Model Seçiniz</option>
                           </select>
 
                         </th>
-                        <th>
+                        <th colspan="1">
 
                           <select class="form-select" id="Tur" name="Tur">
                             <option selected value="">Tür</option>
                           </select>
 
                         </th>
-                        <th><select id="Category" class="js-example-basic-single"></select></th>
+                        <th colspan="2"><select id="Category" class="js-example-basic-single"></select></th>
 
                     </tr>
                       <tr>
