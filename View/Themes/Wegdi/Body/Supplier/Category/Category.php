@@ -27,6 +27,22 @@ $security->LoginControl($guvenlik);
           <div class="card-body">
               <table id="MetaTable" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
+                    <tr>
+                        <th>
+                          <select class="form-select" id="Brand" name="Brand" >
+                              <option selected value="">Marka Seçiniz</option>
+
+                            <?php  $CategoryList = $db->Query('CategoryList',[], [], 'COK'); ?>
+                            <?php foreach ($CategoryList as $key => $value): ?>
+                              <option  value="<?php echo $value["CategoryOne"]; ?>"><?php echo $value["CategoryOne"]; ?></option>
+                            <?php endforeach; ?>
+                          </select>
+                        </th>
+                        <th>Model & Yıl</th>
+                        <th>Tür</th>
+                        <th>Eşleştir</th>
+
+                    </tr>
                       <tr>
                           <th>Marka</th>
                           <th>Model & Yıl</th>
