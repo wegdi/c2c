@@ -72,12 +72,16 @@ $security->LoginControl($guvenlik);
                           </select>
 
                         </th>
-                        <th colspan="3"><select id="Category" class="js-example-basic-single"></select>
-                          <button type="button" id="kaydet" onclick="FromSave('#sendForm')" form="sendForm" class="btn btn-primary btn-label waves-effect waves-light">
-                            <i class="ri-user-smile-line label-icon align-middle fs-16 me-2"></i>
-                            <?php echo $Themes->Translate("BUTTON_REGISTER"); ?>
-                          </button>
-                        </th>
+                        <th colspan="3">
+      <div class="d-flex align-items-center">
+          <select id="Category" class="js-example-basic-single form-select me-2"></select>
+          <button type="button" id="kaydet" onclick="FromSave('#sendForm')" form="sendForm" class="btn btn-primary btn-label waves-effect waves-light">
+              <i class="ri-user-smile-line label-icon align-middle fs-16 me-2"></i>
+              <?php echo $Themes->Translate("BUTTON_REGISTER"); ?>
+          </button>
+      </div>
+  </th>
+
 
                     </tr>
 
