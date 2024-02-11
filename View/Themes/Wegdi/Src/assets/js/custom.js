@@ -718,3 +718,28 @@ $(document).ready(function() {
         });
     });
 });
+
+
+
+$(document).ready(function() {
+    $('#Model').change(function() {
+        var Tur = $(this).val();
+        $.ajax({
+            url: '/Modal/Supplier/Category/Category3.php',
+            type: 'POST',
+            dataType: 'json',
+            data: { Tur: Tur },
+            success: function(response) {
+                var options = '<option selected value="">Tür Seçiniz</option>';
+                for (var i = 0; i < response.length; i++) {
+                    options += '<option value="' + response[i] + '">' + response[i] + '</option>';
+                }
+                $('#Tur').html(options);
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+                // Hata durumunda kullanıcıya bilgi vermek için gerekli işlemler yapılabilir
+            }
+        });
+    });
+});
