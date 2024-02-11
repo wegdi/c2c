@@ -5,6 +5,8 @@ $db = new General();
 
 $filtre=[];
 $filtre['CategoryId']=['$ne' => null];
+$filtre['IdeaSoft']=0;
+
 
 $value = $db->Query('Products', $filtre,[], 'COK');
 
