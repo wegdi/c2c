@@ -17,5 +17,8 @@ foreach ($CategoryList as $key => $value) {
     }
 }
 
+// Benzersiz kategori değerlerini A'dan Z'ye doğru sıralıyoruz
+sort($uniqueCategories);
+
 echo json_encode($uniqueCategories);
 ?>
