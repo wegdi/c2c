@@ -25,7 +25,7 @@ foreach ($Supplier as $SupplierGet) {
     $Log[] = array(
         $SupplierGet["CategoryOne"],
         $SupplierGet["CategoryTwo"],
-        $SupplierGet["CategoryTree"]
+        $SupplierGet["CategoryTree"],
         $SupplierGet["IdeaSoftId"]
 
     );
