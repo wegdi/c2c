@@ -8,7 +8,13 @@ $CategoryList = $db->Query('CategoryList',[], [], 'COK');
 
 foreach ($CategoryList as $key => $value) {
   if ($value["IdeaSoftId"]!="") {
-    print_r($value);
+
+    $Products = $db->Query('Products',['CategoryFull' => $value["CategoryFull"]], [], 'COK');
+    print_r($Products);
+
+
+
+
 
   }
 
