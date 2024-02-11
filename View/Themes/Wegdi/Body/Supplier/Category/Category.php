@@ -72,7 +72,12 @@ $security->LoginControl($guvenlik);
                           </select>
 
                         </th>
-                        <th colspan="2"><select id="Category" class="js-example-basic-single"></select></th>
+                        <th colspan="2"><select id="Category" class="js-example-basic-single"></select>
+                          <button type="button" id="kaydet" onclick="FromSave('#sendForm')" form="sendForm" class="btn btn-primary btn-label waves-effect waves-light">
+                            <i class="ri-user-smile-line label-icon align-middle fs-16 me-2"></i>
+                            <?php echo $Themes->Translate("BUTTON_REGISTER"); ?>
+                          </button>
+                        </th>
 
                     </tr>
 
@@ -82,10 +87,7 @@ $security->LoginControl($guvenlik);
                           <th>Model & Yıl</th>
                           <th>Tür</th>
                           <th>Eşleştir
-                            <button type="button" id="kaydet" onclick="FromSave('#sendForm')" form="sendForm" class="btn btn-primary btn-label waves-effect waves-light">
-                              <i class="ri-user-smile-line label-icon align-middle fs-16 me-2"></i>
-                              <?php echo $Themes->Translate("BUTTON_REGISTER"); ?>
-                            </button>
+
                           </th>
 
                       </tr>
