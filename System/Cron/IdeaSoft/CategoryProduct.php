@@ -10,7 +10,14 @@ foreach ($CategoryList as $key => $value) {
   if ($value["IdeaSoftId"]!="") {
 
     $Products = $db->Query('Products',['CategoryFull' => $value["CategoryFull"]], [], 'COK');
-    print_r($Products);
+
+    foreach ($Products as $keyx => $valuex) {
+
+
+      $arrayName = array('CategoryId' => $value["IdeaSoftId"] );
+print_r($arrayName);
+
+    }
 
 
 
