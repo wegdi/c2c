@@ -15,7 +15,8 @@ foreach ($CategoryList as $key => $value) {
 
 
       $arrayName = array('CategoryId' => $value["IdeaSoftId"] );
-print_r($arrayName);
+      $db->UpdateByObjectId("Products", (string)$valuex["_id"], $arrayName);
+
 
     }
 
