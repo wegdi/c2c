@@ -16,7 +16,7 @@ $searchValue = $_POST['search']['value'];
 $filter = [];
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
-$Supplier = $db->Query('CategoryList', $filter, [], 'COK', $start, $length);
+$Supplier = $db->Query('CategoryList', $filter, ['sort' => ['CategoryOne' => 1] ], 'COK', $start, $length);
 
 $Log = array();
 foreach ($Supplier as $SupplierGet) {
