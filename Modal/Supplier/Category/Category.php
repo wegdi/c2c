@@ -16,6 +16,20 @@ $searchValue = $_POST['search']['value'];
 $filter = [];
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
+
+if ($_POST['Marka']) {
+    $filter["CategoryOne"] = $_POST['Marka'];
+}
+
+if ($_POST['Model']) {
+    $filter["CategoryTwo"] = $_POST['Mode'];
+}
+
+if ($_POST['Tur']) {
+    $filter["CategoryTree"] = $_POST['Tur'];
+}
+
+
 $Supplier = $db->Query('CategoryList', $filter, ['sort' => ['CategoryOne' => 1] ], 'COK', $start, $length);
 
 $Log = array();
