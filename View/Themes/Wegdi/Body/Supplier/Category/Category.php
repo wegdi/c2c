@@ -76,7 +76,7 @@ $security->LoginControl($guvenlik);
                   <div class="d-flex align-items-center">
                     <select id="Category" class="js-example-basic-single form-select me-2"></select>
                     <p></p>
-                    <button type="button" id="kaydet" onclick="FromSave('#sendForm')" form="sendForm" class="btn btn-primary">
+                    <button type="button" id="kaydet" onclick="FromSaveGlobal('#sendForm','/Modal/Supplier/Category/CategorySave.php')" form="sendForm" class="btn btn-primary">
                       <?php echo $Themes->Translate("BUTTON_REGISTER"); ?>
                     </button>
                   </div>
