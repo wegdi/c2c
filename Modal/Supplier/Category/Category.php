@@ -16,29 +16,25 @@ $searchValue = $_POST['search']['value'];
 $filter = [];
 // Define your filtering criteria based on the DataTables search value ($searchValue)
 
-$Supplier = $db->Query('Supplier', $filter, [], 'COK', $start, $length);
+$Supplier = $db->Query('CategoryList', $filter, [], 'COK', $start, $length);
 
 $Log = array();
 foreach ($Supplier as $SupplierGet) {
     // Initialize an empty string to store the authority names
 
     $Log[] = array(
-        $SupplierGet["SupplierName"],
-        $SupplierGet["SupplierUrl"],
-        '<div class="hstack gap-2"><button class="btn btn-sm btn-soft-danger remove-list" data-bs-toggle="modal" data-bs-target="#removeTaskItemModal" data-remove-id="'.$SupplierGet['_id'].'"><i class="ri-delete-bin-5-fill align-bottom"></i></button>
-        <a href="/Supplier/Edit/'.$SupplierGet['_id'].'" class="btn btn-sm btn-soft-info edit-list"><i class="ri-pencil-fill align-bottom"></i></a>
-         <a href="/Supplier/Detail/'.$SupplierGet['SupplierCode'].'/1" class="btn btn-sm btn-soft-primary edit-list"><i class="ri-eye-2-line align-bottom"></i></a>
-         <a href="/Supplier/Category/'.$SupplierGet['_id'].'" class="btn btn-sm btn-soft-info edit-list"><i class="ri-links-line  align-bottom"></i></a>
+        $SupplierGet["CategoryOne"],
+        $SupplierGet["CategoryTwo"],
+        $SupplierGet["CategoryTree"]
 
-       </div>'
     );
 }
 
 
 $getir = array(
     "draw" => (int) $draw,
-    "recordsTotal" => $db->Quantity('Supplier'),
-    "recordsFiltered" => $db->Quantity('Supplier', $filter), // Here, we use the filtered data count
+    "recordsTotal" => $db->Quantity('CategoryList'),
+    "recordsFiltered" => $db->Quantity('CategoryList', $filter), // Here, we use the filtered data count
     "data" => $Log
 );
 
