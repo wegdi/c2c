@@ -6,12 +6,11 @@ $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
 $db = new General();
 
-$Marka=$_POST["Marka"];
-$CategoryList = $db->Query('CategoryList',['CategoryOne' => $Marka], [], 'COK');
+$Marka = $_POST["Marka"];
+$CategoryList = $db->Query('CategoryList', ['CategoryOne' => $Marka], [], 'COK');
 
-$List=[];
-foreach ($CategoryList  as $key => $value) {
-      $List[]=$value["CategoryTwo"];
-}
+// Tekrarlanan değerleri kaldırmak için array_unique() fonksiyonunu kullanıyoruz
+$List = array_unique(array_column($CategoryList, 'CategoryTwo'));
 
 echo json_encode($List);
+?>
