@@ -4,9 +4,12 @@ require_once(SYSTEM . 'General/General.php');
 
 $db = new General();
 
-$CategoryList = $db->Query('CategoryList', ['IdeaSoftId' => ['$ne' => null]], [], 'COK');
+$CategoryList = $db->Query('CategoryList',[], [], 'COK');
 
 foreach ($CategoryList as $key => $value) {
-  print_r($value);
+  if ($value["IdeaSoftId"]!="") {
+    print_r($value);
+
+  }
 
 }
