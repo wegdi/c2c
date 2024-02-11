@@ -692,3 +692,29 @@ function selectchange(element) {
   $('#c' + selectedProductId).removeClass('d-none');
   $(element).addClass('d-none');
 }
+
+
+
+
+$(document).ready(function() {
+    $('#Marka').change(function() {
+        var marka = $(this).val();
+        $.ajax({
+            url: '/Modal/Supplier/Category/Category2.php',
+            type: 'POST',
+            dataType: 'json',
+            data: { Marka: marka },
+            success: function(response) {
+                var options = '<option selected value="">Model Seçiniz</option>';
+                for (var i = 0; i < response.length; i++) {
+                    options += '<option value="' + response[i] + '">' + response[i] + '</option>';
+                }
+                $('#Model').html(options);
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+                // Hata durumunda kullanıcıya bilgi vermek için gerekli işlemler yapılabilir
+            }
+        });
+    });
+});
