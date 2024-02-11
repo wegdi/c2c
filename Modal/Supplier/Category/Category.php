@@ -37,6 +37,7 @@ foreach ($Supplier as $SupplierGet) {
     // Initialize an empty string to store the authority names
 
     $Log[] = array(
+        '<input type="checkbox" name="selected[]" value="'.$SupplierGet["_id"].'">',
         $SupplierGet["CategoryOne"],
         $SupplierGet["CategoryTwo"],
         $SupplierGet["CategoryTree"],
