@@ -6,7 +6,7 @@ require_once(SYSTEM.'General/General.php');
 $db=new General();
 
 
-if ($_POST["selected"]!="" and $_POST["IdeaSoftId"]!="") {
+if (isset($_POST["selected"]) and isset($_POST["IdeaSoftId"])) {
   echo "string";
   foreach ($$_POST["selected"] as $key => $value) {
     print_r($value);
