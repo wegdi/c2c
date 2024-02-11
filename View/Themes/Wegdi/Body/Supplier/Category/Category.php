@@ -30,22 +30,28 @@ $security->LoginControl($guvenlik);
                     <tr>
                         <th>
                           <select class="form-select" id="Brand" name="Brand">
-      <option selected value="">Marka Seçiniz</option>
-      <?php
-      $CategoryList = $db->Query('CategoryList', [], [], 'COK');
-      $uniqueCategories = []; // Benzersiz kategorileri saklamak için bir dizi oluşturuyoruz
+                            <option selected value="">Marka Seçiniz</option>
+                            <?php
+                            $CategoryList = $db->Query('CategoryList', [], [], 'COK');
+                            $uniqueCategories = []; // Benzersiz kategorileri saklamak için bir dizi oluşturuyoruz
 
-      foreach ($CategoryList as $key => $value):
-          // Eğer kategori daha önce eklenmediyse, seçeneği ekliyoruz
-          if (!in_array($value["CategoryOne"], $uniqueCategories)):
-              $uniqueCategories[] = $value["CategoryOne"]; // Kategoriyi benzersiz dizisine ekliyoruz
-      ?>
-          <option value="<?php echo $value["CategoryOne"]; ?>"><?php echo $value["CategoryOne"]; ?></option>
-      <?php
-          endif;
-      endforeach;
-      ?>
-  </select>
+                            // Kategorileri A'dan Z'ye sıralamak için usort fonksiyonunu kullanıyoruz
+                            usort($CategoryList, function($a, $b) {
+                                return strcmp($a["CategoryOne"], $b["CategoryOne"]);
+                            });
+
+                            foreach ($CategoryList as $key => $value):
+                                // Eğer kategori daha önce eklenmediyse, seçeneği ekliyoruz
+                                if (!in_array($value["CategoryOne"], $uniqueCategories)):
+                                    $uniqueCategories[] = $value["CategoryOne"]; // Kategoriyi benzersiz dizisine ekliyoruz
+                            ?>
+                                <option value="<?php echo $value["CategoryOne"]; ?>"><?php echo $value["CategoryOne"]; ?></option>
+                            <?php
+                                endif;
+                            endforeach;
+                            ?>
+                        </select>
+
 
                         </th>
                         <th>Model & Yıl</th>
