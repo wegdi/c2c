@@ -68,7 +68,7 @@ $security->LoginControl($guvenlik);
                           </select>
 
                         </th>
-                        <th>Eşleştir</th>
+                        <th><select id="Category" class="js-example-basic-single"></select></th>
 
                     </tr>
                       <tr>
