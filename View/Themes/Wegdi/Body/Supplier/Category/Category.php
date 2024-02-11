@@ -61,7 +61,13 @@ $security->LoginControl($guvenlik);
                           </select>
 
                         </th>
-                        <th>Tür</th>
+                        <th>
+
+                          <select class="form-select" id="Tur" name="Tur">
+                            <option selected value="">Tür</option>
+                          </select>
+
+                        </th>
                         <th>Eşleştir</th>
 
                     </tr>
