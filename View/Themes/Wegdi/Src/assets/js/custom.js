@@ -107,11 +107,23 @@ function FromSaveGlobal(form, url, refresh = 0) {
 
             var currentPage = $('#UrunList').DataTable().page();
 
-// DataTable'ı yeniden yükle
-$('#UrunList').DataTable().ajax.reload(function() {
-    // Yeniden yükleme işlemi tamamlandıktan sonra mevcut sayfaya geri dön
-    $('#UrunList').DataTable().page(currentPage).draw('page');
-});
+            // DataTable'ı yeniden yükle
+            $('#UrunList').DataTable().ajax.reload(function() {
+                // Yeniden yükleme işlemi tamamlandıktan sonra mevcut sayfaya geri dön
+                $('#UrunList').DataTable().page(currentPage).draw('page');
+            });
+
+
+            var currentPagec = $('#CategoryListler').DataTable().page();
+
+            // DataTable'ı yeniden yükle
+            $('#CategoryListler').DataTable().ajax.reload(function() {
+                // Yeniden yükleme işlemi tamamlandıktan sonra mevcut sayfaya geri dön
+                $('#CategoryListler').DataTable().page(currentPagec).draw('page');
+            });
+
+
+
             // Redirect to the success page after the delay
             if (refresh == 0) {
               window.location.reload();
