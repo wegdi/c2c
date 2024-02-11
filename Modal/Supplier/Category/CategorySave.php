@@ -7,7 +7,7 @@ $db=new General();
 
 
 if ($_POST["selected"]!="" and $_POST["IdeaSoftId"]!="") {
-
+  echo "string";
   foreach ($$_POST["selected"] as $key => $value) {
     print_r($value);
     // code...
