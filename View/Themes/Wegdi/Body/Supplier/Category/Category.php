@@ -28,9 +28,9 @@ $security->LoginControl($guvenlik);
               <table id="MetaTable" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
                       <tr>
-                          <th><?php echo 'Tedarikçi'; ?></th>
-                          <th><?php echo 'Tedarikçi XML'; ?></th>
-                          <th></th>
+                          <th>Marka</th>
+                          <th>Model & Yıl</th>
+                          <th>Tür</th>
                       </tr>
                   </thead>
 
