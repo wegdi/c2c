@@ -25,7 +25,7 @@ $security->LoginControl($guvenlik);
               <h5 class="card-title mb-0"><?php echo  $db->BarGet($param0.'/'.$param1,LANGUAGES_GET_DIL); ?></h5>
           </div>
           <div class="card-body">
-              <table id="MetaTable" class="display table table-bordered dt-responsive" style="width:100%">
+              <table id="CategoryListler" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
                     <tr>
                         <th>

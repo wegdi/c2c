@@ -255,6 +255,78 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   // Check if an element with ID "MetaTable" exists on the page
+  if ($("#CategoryListler").length > 0) {
+    var table = $('#CategoryListler').DataTable({
+      "processing": true,
+      "serverSide": true,
+      "ajax": {
+        "url": "/Modal/" + param0 + "/" + param1 + "/" + param1 + ".php?Params="+(param2 || param3),
+        "type": "POST",
+        "data": function (d) {
+          d.Marka = $('#Marka').val();
+          d.Model = $('#Model').val();
+          d.Tur = $('#Tur').val();
+        }
+      },
+      "ordering": false,  // Disable sorting
+      "searching": false, // Disable searching
+      "lengthChange": false,
+      "pageLength": 10
+    });
+
+
+
+    $('#Marka').on('change', function () {
+     table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
+   });
+
+   $('#Model').on('change', function () {
+    table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
+  });
+
+  $('#Tur').on('change', function () {
+   table.draw(); // DataTable'Ä± yeniden Ã§izerek filtrelemeyi uygular
+ });
+
+
+
+  }
+
+  table.on('draw.dt', function () {
+    $('.js-example-basic-single').select2({
+      placeholder: 'Seçin',
+      ajax: {
+        url: '/System/Cron/IdeaSoft/CategoryJson.php',
+        data: function (params) {
+          var query = {
+            search: params.term,
+            type: 'public'
+          }
+          return query;
+        },
+        processResults: function (data) {
+          // Map the retrieved data to the format expected by Select2
+          var mappedData = data.map(function (item) {
+            return {
+              id: item.IdeaSoftId,
+              text: item.Name
+            };
+          });
+
+          return {
+            results: mappedData
+          };
+        }
+      }
+    });
+  });
+
+});
+
+
+
+$(document).ready(function () {
+  // Check if an element with ID "MetaTable" exists on the page
   if ($("#UrunList").length > 0) {
     var table = $('#UrunList').DataTable({
       "processing": true,
