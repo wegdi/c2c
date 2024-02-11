@@ -8,23 +8,14 @@ $filtre['CategoryId']=['$ne' => null];
 $filtre['IdeaSoft']=0;
 
 
-$value = $db->Query('Products', $filtre,[], 'COK');
+$valuex = $db->Query('Products', $filtre,[], 'COK');
 
-print_r($value);
-/*
-  $Total=ceil($value["Total"]/TOTAL);
+foreach ($valuex as $key => $value) {
 
+  $url = "https://c2c.wegdi.com/System/Cron/IdeaSoft/Product-Price-Send.php?ProductId=" . (string)$value["_id"];
+  file_get_contents($url);
 
-
-  for ($page = 1; $page <= $Total; $page++) {
-      $url = "https://c2c.wegdi.com/System/Cron/AddProduct/ProductDetail.php?page=" . $page;
-      file_get_contents($url);
-
-  }
-
-
-
-*/
+}
 
 
 
