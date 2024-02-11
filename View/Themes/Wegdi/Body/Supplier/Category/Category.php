@@ -27,6 +27,9 @@ $security->LoginControl($guvenlik);
           <div class="card-body">
               <table id="CategoryListler" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
+                    <form id="sendForm">
+
+
                     <tr>
                         <th colspan="1">
                           <select class="form-select" id="Marka" name="Marka">
@@ -71,6 +74,7 @@ $security->LoginControl($guvenlik);
                         <th colspan="2"><select id="Category" class="js-example-basic-single"></select></th>
 
                     </tr>
+                      </form>
                       <tr>
                           <th>Marka</th>
                           <th>Model & Yıl</th>
