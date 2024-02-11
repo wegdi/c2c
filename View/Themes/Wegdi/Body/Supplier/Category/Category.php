@@ -29,7 +29,7 @@ $security->LoginControl($guvenlik);
                   <thead>
                     <tr>
                         <th>
-                          <select class="form-select" id="Brand" name="Brand">
+                          <select class="form-select" id="Marka" name="Marka">
                             <option selected value="">Marka Seçiniz</option>
                             <?php
                             $CategoryList = $db->Query('CategoryList', [], [], 'COK');
