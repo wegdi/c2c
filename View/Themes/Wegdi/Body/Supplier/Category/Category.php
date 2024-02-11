@@ -17,7 +17,7 @@ $security->LoginControl($guvenlik);
 </div>
 
 
-
+  <form id="sendForm">
 <div class="row">
   <div class="col-lg-12">
       <div class="card">
@@ -27,7 +27,7 @@ $security->LoginControl($guvenlik);
           <div class="card-body">
               <table id="CategoryListler" class="display table table-bordered dt-responsive" style="width:100%">
                   <thead>
-                    <form id="sendForm">
+
 
 
                     <tr>
@@ -74,7 +74,7 @@ $security->LoginControl($guvenlik);
                         <th colspan="2"><select id="Category" class="js-example-basic-single"></select></th>
 
                     </tr>
-                      </form>
+
                       <tr>
                           <th>Marka</th>
                           <th>Model & Yıl</th>
@@ -90,7 +90,7 @@ $security->LoginControl($guvenlik);
   </div><!--end col-->
 </div><!--end row-->
 
-
+</form>
 
     <!-- removeFileItemModal -->
     <div id="removeTaskItemModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
