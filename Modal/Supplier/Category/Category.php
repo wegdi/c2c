@@ -26,6 +26,7 @@ foreach ($Supplier as $SupplierGet) {
         $SupplierGet["CategoryOne"],
         $SupplierGet["CategoryTwo"],
         $SupplierGet["CategoryTree"]
+        $SupplierGet["IdeaSoftId"]
 
     );
 }

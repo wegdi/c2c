@@ -31,6 +31,8 @@ $security->LoginControl($guvenlik);
                           <th>Marka</th>
                           <th>Model & Yıl</th>
                           <th>Tür</th>
+                          <th>Eşleştir</th>
+
                       </tr>
                   </thead>
 
