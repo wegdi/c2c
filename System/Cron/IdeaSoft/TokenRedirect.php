@@ -51,8 +51,4 @@ $data = array(
   'refresh_token' => $response["refresh_token"],
 
 );
-echo $response["access_token"];
-echo "<br>";
-echo $response["refresh_token"];
-echo "<br>";
 echo $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$data);
