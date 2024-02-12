@@ -40,8 +40,8 @@ if($Category1["IdeaSoftId"] != ""){
     $result = $db->Add("Category", $dataadd);
   }
 }
-
-
+echo  $responsejson;
+/*
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('Category',['Name' => $model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
@@ -80,7 +80,7 @@ if($Model["IdeaSoftId"] != ""){
   }
 }
 echo $result;
-
+*/
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
