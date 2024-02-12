@@ -12,6 +12,7 @@ $Category1 = $db->Query('Category',['Name' => $_POST["Marka"]], [], 'TEK');
 if($Category1["IdeaSoftId"] != ""){
   //kategori1 var ise
   $ideasoftidd = $Category1["IdeaSoftId"];
+  echo 'var';
 }else{
   // kategori 1 ideasoft ekle
   $data = [
