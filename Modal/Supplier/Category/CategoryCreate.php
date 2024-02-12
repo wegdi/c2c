@@ -31,8 +31,8 @@ if($Category1["_id"] != ""){
     'hasChildren' => 0,
     'isCombine' => 0
   ];
-  $response = $ideaSoftInstance->post($data,'categories');
-  $response = json_decode($response,true);
+  $responsec = $ideaSoftInstance->post($data,'categories');
+  $response = json_decode($responsec,true);
   print_r($response);
   /*
   if($response["id"] != ""){
