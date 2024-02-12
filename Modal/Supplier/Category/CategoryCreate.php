@@ -32,6 +32,7 @@ if($Category1["_id"] != ""){
     'isCombine' => 0
   ];
   $responsec = $ideaSoftInstance->post($data,'categories');
+  echo $responsec;
   $response = json_decode($responsec,true);
   print_r($response);
   /*
