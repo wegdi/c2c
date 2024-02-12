@@ -3,29 +3,34 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
+require_once(SYSTEM.'Cron/IdeaSoft/IdeaSoftFunc.php');
 $db=new General();
-
-/*
-if (isset($_POST["selected"]) and isset($_POST["IdeaSoftId"])) {
-  foreach ($_POST["selected"] as $key => $value) {
-
-    $data = array(
-      'IdeaSoftId' => (int)$_POST["IdeaSoftId"]
-    );
-
-  $response = $db->UpdateByObjectId("CategoryList",$value, $data);
-  }
-  echo $response;
-
-}*/
+$IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
+$ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 
 $Category1 = $db->Query('Category',['Name' => $_POST["Marka"]], [], 'TEK');
 if($Category1["IdeaSoftId"] != ""){
   //kategori1 var ise
 }else{
   // kategori 1 ideasoft ekle
+  $data = [
+    'name' => $_POST["Marka"],
+    'sortOrder' => 999,
+    'status' => 1,
+    'distributor' => '',
+    'percent' => 1,
+    'displayShowcaseContent' => 0,
+    'showcaseContentDisplayType' => 1,
+    'displayShowcaseFooterContent' => 0,
+    'showcaseFooterContent' => 'string',
+    'showcaseFooterContentDisplayType' => 1,
+    'hasChildren' => 0,
+    'isCombine' => 0
+  ];
+  $response = $ideaSoftInstance->post($data,'categories');
 }
-
+echo $response;
+/*
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('Category',['Name' => $model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
@@ -72,7 +77,7 @@ if($Tur["IdeaSoftId"] != ""){
   //Tur varsa
 }else{
   //Tur yok ideasoft ekle
-}
+}*/
 
 
 ?>
