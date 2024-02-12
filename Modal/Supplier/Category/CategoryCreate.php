@@ -28,6 +28,7 @@ if($Category1["IdeaSoftId"] != ""){
     'isCombine' => 0
   ];
   $response = $ideaSoftInstance->post($data,'categories');
+  $response = json_decode($response,true);
   if($response["id"] != ""){
     $dataadd = array(
         'Name' => $response["name"],
