@@ -32,24 +32,21 @@ if($Category1["IdeaSoftId"] != ""){
   $response = json_decode($responsejson,true);
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
-    /*
     $dataadd = array(
         'Name' => $response["name"],
         'Slug' => $response["slug"],
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("Category", $dataadd);
-    */
   }
 }
-echo $responsejson;
 
-/*
+
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('Category',['Name' => $model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
   //model varsa
-    
+  $ideasoftidd = $Model["IdeaSoftId"];  
 }else{
   //model yok ideasoft ekle
   $data = [
@@ -77,13 +74,13 @@ if($Model["IdeaSoftId"] != ""){
     $dataadd = array(
         'Name' => $_POST["Marka"]." -> ".$response["name"],
         'Slug' => $response["slug"],
-        'IdeaSoftId'  =>  $response["id"]
+        'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("Category", $dataadd);
   }
 }
 echo $result;
-*/
+
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
