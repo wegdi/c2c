@@ -36,6 +36,7 @@ class IdeaSoft {
         if ($err) {
             return $err;
         } else {
+          echo "stringsss";
             return $response;
         }
     }
