@@ -30,7 +30,7 @@ if ($_POST['Tur']) {
 }
 
 
-$Supplier = $db->Query('CategoryList', $filter, ['sort' => ['CategoryOne' => 1] ], 'COK', $start, $length);
+$Supplier = $db->Query('CategoryList', $filter, ['sort' => ['CategoryTwo' => 1] ], 'COK', $start, $length);
 
 $Log = array();
 foreach ($Supplier as $SupplierGet) {
