@@ -14,6 +14,8 @@ if($Category1["_id"] != ""){
   $ideasoftidd = $Category1["IdeaSoftId"];
   echo 'var';
 }else{
+
+  echo "string";
   // kategori 1 ideasoft ekle
   $data = [
     'name' => $_POST["Marka"],
@@ -49,7 +51,7 @@ $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('Category',['Name' => $model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
   //model varsa
-  $ideasoftidd = $Model["IdeaSoftId"];  
+  $ideasoftidd = $Model["IdeaSoftId"];
 }else{
   //model yok ideasoft ekle
   $data = [
