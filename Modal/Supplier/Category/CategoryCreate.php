@@ -9,7 +9,7 @@ $IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
 $ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 
 $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], [], 'TEK');
-if($Category1["IdeaSoftId"] != ""){
+if($Category1["_id"] != ""){
   //kategori1 var ise
   $ideasoftidd = $Category1["IdeaSoftId"];
   echo 'var';
