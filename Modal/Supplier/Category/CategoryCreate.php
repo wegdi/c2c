@@ -28,8 +28,16 @@ if($Category1["IdeaSoftId"] != ""){
     'isCombine' => 0
   ];
   $response = $ideaSoftInstance->post($data,'categories');
+  if($response["id"] != ""){
+    $dataadd = array(
+        'Name' => $response["name"],
+        'Slug' => $response["slug"],
+        'IdeaSoftId'  =>  $response["id"]
+    );
+    $result = $db->Add("Category", $dataadd);
+  }
 }
-echo $response;
+echo $result;
 /*
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('Category',['Name' => $model_name], [], 'TEK');
