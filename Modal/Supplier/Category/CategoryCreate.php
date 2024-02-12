@@ -5,7 +5,7 @@ $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
 $db=new General();
 
-
+/*
 if (isset($_POST["selected"]) and isset($_POST["IdeaSoftId"])) {
   foreach ($_POST["selected"] as $key => $value) {
 
@@ -17,7 +17,7 @@ if (isset($_POST["selected"]) and isset($_POST["IdeaSoftId"])) {
   }
   echo $response;
 
-}
+}*/
 
 
 ?>
