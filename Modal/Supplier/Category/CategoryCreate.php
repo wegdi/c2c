@@ -31,6 +31,7 @@ if($Category1["IdeaSoftId"] != ""){
   $responsejson = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($responsejson,true);
   if($response["id"] != ""){
+    /*
     $ideasoftidd = $response["id"];
     $dataadd = array(
         'Name' => $response["name"],
@@ -38,6 +39,7 @@ if($Category1["IdeaSoftId"] != ""){
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("Category", $dataadd);
+    */
   }
 }
 echo  $responsejson;
