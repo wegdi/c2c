@@ -46,6 +46,7 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 $response =json_decode($response,1);
+print_r($response);
 $data = array(
   'access_token' => $response["access_token"],
   'refresh_token' => $response["refresh_token"],
