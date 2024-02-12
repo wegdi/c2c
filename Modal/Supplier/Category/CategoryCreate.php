@@ -11,6 +11,7 @@ $ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 $Category1 = $db->Query('Category',['Name' => $_POST["Marka"]], [], 'TEK');
 if($Category1["IdeaSoftId"] != ""){
   //kategori1 var ise
+  $ideasoftidd = $Category1["IdeaSoftId"];
 }else{
   // kategori 1 ideasoft ekle
   $data = [
@@ -44,7 +45,7 @@ $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('Category',['Name' => $model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
   //model varsa
-  
+    
 }else{
   //model yok ideasoft ekle
   $data = [
@@ -62,7 +63,7 @@ if($Model["IdeaSoftId"] != ""){
     'isCombine' => 0,
     'parent' => [
       'id' => [
-          $response["id"]
+        $ideasoftidd
       ]
     ]
   ];
