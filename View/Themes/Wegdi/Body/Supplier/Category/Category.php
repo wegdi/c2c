@@ -81,7 +81,7 @@ $security->LoginControl($guvenlik);
                     </button>
                   </div>
                   <div class="d-flex align-items-center mt-2">
-                    <button type="button" id="iiiii" onclick="" form="iii" class="btn btn-secondary w-100">
+                    <button type="button" id="kaydet" onclick="FromSaveGlobal('#sendForm','/Modal/Supplier/Category/CategoryCreate.php',0)" form="sendForm" class="btn btn-secondary w-100">
                       <?php echo "Kategori Oluştur" ?>
                     </button>
                   </div>
