@@ -40,6 +40,8 @@ if($Category1["IdeaSoftId"] != ""){
     $result = $db->Add("Category", $dataadd);
   }
 }
+echo $response;
+echo $result;
 
 /*
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
