@@ -19,7 +19,8 @@ if (isset($_POST["selected"]) and isset($_POST["IdeaSoftId"])) {
 
 }*/
 
-echo $_POST["Marka"];
+$Category1 = $db->Query('Category',['Name' => $_POST["Marka"]], [], 'TEK');
+print_r($Category1);
 
 
 ?>
