@@ -32,12 +32,14 @@ if($Category1["IdeaSoftId"] != ""){
   $response = json_decode($responsejson,true);
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
+    /*
     $dataadd = array(
         'Name' => $response["name"],
         'Slug' => $response["slug"],
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("Category", $dataadd);
+    */
   }
 }
 echo $responsejson;
