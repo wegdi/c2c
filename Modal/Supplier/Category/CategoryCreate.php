@@ -31,6 +31,7 @@ if($Category1["IdeaSoftId"] != ""){
   ];
   $response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
+  print_r($response);
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
     $dataadd = array(
@@ -41,7 +42,7 @@ if($Category1["IdeaSoftId"] != ""){
     $result = $db->Add("Category", $dataadd);
   }
 }
-echo $result;
+
 /*
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('Category',['Name' => $model_name], [], 'TEK');
