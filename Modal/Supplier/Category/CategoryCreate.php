@@ -30,8 +30,6 @@ if($Category1["IdeaSoftId"] != ""){
     'isCombine' => 0
   ];
   $response = $ideaSoftInstance->post($data,'categories');
-  echo $response;
-  /*
   $response = json_decode($response,true);
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
@@ -41,9 +39,9 @@ if($Category1["IdeaSoftId"] != ""){
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("Category", $dataadd);
-  }*/
+  }
 }
-
+echo $result;
 /*
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('Category',['Name' => $model_name], [], 'TEK');
