@@ -19,7 +19,7 @@ if (isset($_POST["selected"]) and isset($_POST["IdeaSoftId"])) {
 
 }*/
 
-echo $_POST["marka"];
+echo $_POST["Marka"];
 
 
 ?>
