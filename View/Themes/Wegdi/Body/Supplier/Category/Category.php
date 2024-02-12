@@ -80,6 +80,11 @@ $security->LoginControl($guvenlik);
                       <?php echo $Themes->Translate("BUTTON_REGISTER"); ?>
                     </button>
                   </div>
+                  <div class="d-flex align-items-center">
+                    <button type="button" id="iiiii" onclick="" form="iii" class="btn btn-primary">
+                      <?php echo "Kategori Oluştur" ?>
+                    </button>
+                  </div>
                 </th>
 
 
