@@ -11,7 +11,7 @@ $ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 $Category1 = $db->Query('Category',['Name' => $_POST["Marka"]], [], 'TEK');
 if($Category1["IdeaSoftId"] != ""){
   //kategori1 var ise
-  $ideasoftidd = $Category1["IdeaSoftId"];
+  echo 'var';
 }else{
   // kategori 1 ideasoft ekle
   $data = [
@@ -31,17 +31,7 @@ if($Category1["IdeaSoftId"] != ""){
   $response = $ideaSoftInstance->post($data,'categories');
   echo $response;
   $response = json_decode($response,true);
-  if($response["id"] != ""){
-    /*
-    $ideasoftidd = $response["id"];
-    $dataadd = array(
-        'Name' => $response["name"],
-        'Slug' => $response["slug"],
-        'IdeaSoftId'  =>  $ideasoftidd
-    );
-    $result = $db->Add("Category", $dataadd);
-    */
-  }
+  
 }
 
 /*
