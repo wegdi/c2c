@@ -47,7 +47,6 @@ if($Model["IdeaSoftId"] != ""){
   
 }else{
   //model yok ideasoft ekle
-  $data =array();
   $data = [
     'name' => $_POST["Model"],
     'sortOrder' => 999,
