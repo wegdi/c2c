@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+require  '../../config.php';
 require SYSTEM . 'General/General.php';
 $db = new General();
 
