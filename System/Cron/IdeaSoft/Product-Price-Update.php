@@ -13,7 +13,7 @@ $Domain=$IdeaSoft["domain"];
 
 $ProductId=$_GET["ProductId"];
 
-$Products = $db->Query('Products', ['IdeaSoft' => 1], [], 'COK');
+$Products = $db->Query('Products', ['IdeaSoft' => 1], [], 'COK',1,10);
 
 
 foreach ($Products as $key => $value) {
