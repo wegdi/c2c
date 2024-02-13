@@ -63,7 +63,7 @@ if ($value["quantity"] >1 ) {
    'distributor' => 'superTedarik',
    'hasGift' => 0,
    'gift' => '',
-   'status' => 1,
+   'status' => $status,
    'hasOption' => 0,
    'shortDetails' => $value["product_name"],
    'searchKeywords' => '',
