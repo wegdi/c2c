@@ -29,6 +29,7 @@ if ($_POST['Tur']) {
     $filter["CategoryTree"] = $_POST['Tur'];
 }
 
+$filter["IdeaSoftId"] = ""];
 
 $Supplier = $db->Query('CategoryList', $filter, ['sort' => ['CategoryTwo' => 1] ], 'COK', $start, $length);
 
