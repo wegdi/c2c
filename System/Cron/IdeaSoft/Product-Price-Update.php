@@ -13,7 +13,7 @@ $Domain=$IdeaSoft["domain"];
 
 $ProductId=$_GET["ProductId"];
 
-$Products = $db->Query('Products', ['IdeaSoft' => 1], [], 'COK',1,10);
+$Products = $db->Query('Products', ['IdeaSoft' => 1], [], 'COK',2,10);
 
 
 foreach ($Products as $key => $value) {
@@ -28,12 +28,12 @@ foreach ($Products as $key => $value) {
   }
 
 
-if ($value["quantity"]==0) {
-  $status=0;
-}else {
-  $status=1;
+  if ($value["quantity"]==0) {
+    $status=0;
+  }else {
+    $status=1;
 
-}
+  }
 
 
 
