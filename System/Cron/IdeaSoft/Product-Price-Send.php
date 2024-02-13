@@ -33,9 +33,10 @@ if ($Products["price_one"]!="") {
 // Resmin uzantısını al
 $pathInfo = pathinfo($imageUrl);
 
-echo $pathInfo;
 
 $extension = $pathInfo['extension'];
+
+echo $extension;
 
 // Resmi base64'e çevirme fonksiyonu
 function imageToBase64($imageUrl, $extension)
