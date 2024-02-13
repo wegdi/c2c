@@ -5,4 +5,12 @@ $db = new General();
 
 
 $Products = $db->Quantity('Products', ['IdeaSoft' => 1]);
-echo ceil($Products/10);
+
+
+for ($i=0; ceil($Products/10) < ; $i++) {
+  $url = "https://c2c.wegdi.com/System/Cron/AddProduct/ProductAdd.php?SupplierCode=" . $value["SupplierCode"] . '&page=' . $page;
+
+
+  // Cevap beklemeden isteği gönder
+  //file_get_contents($url);
+}
