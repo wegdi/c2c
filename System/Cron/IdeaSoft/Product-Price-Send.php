@@ -32,7 +32,7 @@ if ($Products["price_one"]!="") {
 
 // Resmin uzantısını al
 $pathInfo = pathinfo($imageUrl);
-
+print_r($pathInfo);
 
 $extension = $pathInfo['extension'];
 
