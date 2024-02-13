@@ -1,6 +1,7 @@
 <?php
-require  '../../config.php';
-require SYSTEM . 'General/General.php';
+require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
+require_once(SYSTEM . 'General/General.php');
+echo LANGUAGES_GET_DIL;
 $db = new General();
 
 echo SYSTEM . 'General/General.php';
