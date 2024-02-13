@@ -13,6 +13,8 @@ $valuex = $db->Query('Products', $filtre,[], 'COK',1,20);
 $mh = curl_multi_init();
 
 foreach ($valuex as $key => $value) {
+
+    print_r($value);
     $url = "https://c2c.wegdi.com/System/Cron/IdeaSoft/Product-Price-Send.php?ProductId=" . (string)$value["_id"];
 
     // Curl oturumu oluşturma
