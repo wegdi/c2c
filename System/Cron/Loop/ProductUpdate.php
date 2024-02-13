@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
-require_once(SYSTEM . 'General/General.php');
+require $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+require SYSTEM . 'General/General.php';
 $db = new General();
 
 $Products = $db->Query('Products', ['IdeaSoft' => 1],[], 'COK');
