@@ -19,7 +19,7 @@ $Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TE
 $Brand = $db->Query('Brand', ['Name' => $Products["manufacturer_name"]], [], 'TEK');
 
 $imageUrl=$Products["main_image"];
-
+echo $imageUrl;
 
 if ($Products["price_one"]!="") {
   $price=$Products["price_one"];
