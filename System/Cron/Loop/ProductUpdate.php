@@ -4,6 +4,7 @@ require SYSTEM . 'General/General.php';
 $db = new General();
 
 echo SYSTEM . 'General/General.php';
+echo "<br>";
 echo __DIR__;
 /*
 $Products = $db->Query('Products', ['IdeaSoft' => 1],[], 'COK');
