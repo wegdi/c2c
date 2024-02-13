@@ -88,9 +88,3 @@ $value = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TEK')
 
   $result = $ideaSoftInstance->put($ProductPost,'products/'.$value["IdeaSoftProductId"]);
   $result = json_decode($result,1);
-
-
-  $IdeaData = array(
-    'Update_B' => 1
- );
-  echo $db->UpdateByObjectId("Products", (string)$ProductId,$IdeaData);
