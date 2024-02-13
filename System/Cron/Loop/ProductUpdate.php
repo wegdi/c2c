@@ -15,29 +15,6 @@ $mh = curl_multi_init();
 for ($i = 1; $i <= ceil($Products / 40); $i++) {
     $url = "https://c2c.wegdi.com/System/Cron/IdeaSoft/Product-Price-Update.php?page=".$i;
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    file_get_contents($url);
 
-    // Curl oturumunu multi oturum ile ilişkilendirme
-    curl_multi_add_handle($mh, $ch);
 }
-
-// Tüm istekler tamamlanana kadar döngüde kal
-$active = null;
-do {
-    $mrc = curl_multi_exec($mh, $active);
-} while ($mrc == CURLM_CALL_MULTI_PERFORM);
-
-// Tüm istekler tamamlandığında döngüden çık
-while ($active && $mrc == CURLM_OK) {
-    if (curl_multi_select($mh) != -1) {
-        do {
-            $mrc = curl_multi_exec($mh, $active);
-        } while ($mrc == CURLM_CALL_MULTI_PERFORM);
-    }
-}
-
-// Çoklu cURL oturumu kapat
-curl_multi_close($mh);
