@@ -5,4 +5,4 @@ $db = new General();
 
 
 $Products = $db->Quantity('Products', ['IdeaSoft' => 1]);
-echo $Products;
+echo $Products/10;
