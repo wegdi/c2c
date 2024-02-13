@@ -32,6 +32,8 @@ class IdeaSoft {
         $err = curl_error($curl);
 
         curl_close($curl);
+        echo $response;
+
 
         if ($err) {
             return $err;
@@ -96,7 +98,6 @@ class IdeaSoft {
         $err = curl_error($curl);
 
         curl_close($curl);
-        echo $response;
         if ($err) {
             return $err;
         } else {
