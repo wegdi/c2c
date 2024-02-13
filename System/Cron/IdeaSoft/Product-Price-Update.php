@@ -19,7 +19,9 @@ $Products = $db->Query('Products', ['IdeaSoft' => 1], [], 'COK',$_GET["page"],10
 foreach ($Products as $key => $value) {
 
 
-  if ($value["price_one"]=="") {
+
+
+  if ($Products["price_one"]!="") {
     $price=$value["price_one"];
 
   }else {
