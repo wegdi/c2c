@@ -1,5 +1,5 @@
 <?php
-require_once('../config.php');
+require_once('../../config.php');
 require_once(SYSTEM . 'General/General.php');
 echo LANGUAGES_GET_DIL;
 $db = new General();
