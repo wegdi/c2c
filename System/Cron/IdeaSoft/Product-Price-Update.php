@@ -28,10 +28,10 @@ foreach ($Products as $key => $value) {
   }
 
 
-if ($value["quantity"]!=0) {
-  $status=1;
-}else {
+if ($value["quantity"]==0) {
   $status=0;
+}else {
+  $status=1;
 
 }
 
