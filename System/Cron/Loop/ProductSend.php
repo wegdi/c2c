@@ -7,7 +7,7 @@ $filtre=[];
 $filtre['CategoryId']=['$ne' => null];
 $filtre['IdeaSoft']=0;
 
-$valuex = $db->Query('Products', $filtre,[], 'COK',1,20);
+$valuex = $db->Query('Products', $filtre,[], 'COK',1,30);
 
 // Curl multi oturumu başlatma
 $mh = curl_multi_init();
