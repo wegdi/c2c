@@ -3,7 +3,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once(SYSTEM . 'General/General.php');
 $db = new General();
 
-$Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId),'IdeaSoft' => 1], [], 'COK');
+$Products = $db->Query('Products', ['IdeaSoft' => 1],[], 'COK');
 
 
 foreach ($Products as $key => $value) {
