@@ -12,7 +12,7 @@ $value = array("SupplierCode" => "örnek_değer");
 $mh = curl_multi_init();
 
 // Her sayfa için bir cURL oturumu başlat
-for ($i = 1; $i <= ceil($Products / 10); $i++) {
+for ($i = 1; $i <= ceil($Products / 40); $i++) {
     $url = "https://c2c.wegdi.com/System/Cron/IdeaSoft/Product-Price-Update.php?page=".$i;
 
     $ch = curl_init();
