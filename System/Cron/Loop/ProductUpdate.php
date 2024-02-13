@@ -10,14 +10,10 @@ $Products = $db->Quantity('Products', ['IdeaSoft' => 1]);
 $value = array("SupplierCode" => "örnek_değer");
 
 // Döngünün koşulunu düzelt
-for ($i = 0; $i < ceil($Products / 10); $i++) {
-    echo $i;
+for ($i = 1; $i < ceil($Products / 10); $i++) {
 
-    // $page değişkeni tanımlanmamış gibi görünüyor, onu da tanımlamanız gerekebilir
-    $page = $i + 1;
 
-    $url = "https://c2c.wegdi.com/System/Cron/AddProduct/ProductAdd.php?SupplierCode=" . $value["SupplierCode"] . '&page=' . $page;
+    $url = "https://c2c.wegdi.com/System/Cron/IdeaSoft/Product-Price-Update.php?page=".$i;
 
-    // Cevap beklemeden isteği gönder
-    //file_get_contents($url);
+    file_get_contents($url);
 }
