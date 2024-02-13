@@ -17,7 +17,7 @@ $value = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TEK')
 
 
 
-  if ($Products["price_one"]!="") {
+  if ($value["price_one"]!="") {
     $price=$value["price_one"];
 
   }else {
