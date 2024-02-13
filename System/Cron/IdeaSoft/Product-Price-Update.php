@@ -28,7 +28,7 @@ foreach ($Products as $key => $value) {
   }
 
 
-if ($value["quantity"] >1 ) {
+if ($value["quantity"]!=0) {
   $status=1;
 }else {
   $status=0;
