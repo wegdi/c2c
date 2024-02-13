@@ -19,7 +19,14 @@ $Products = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TE
 $Brand = $db->Query('Brand', ['Name' => $Products["manufacturer_name"]], [], 'TEK');
 
 $imageUrl=$Products["main_image"];
-echo $imageUrl;
+
+if ($imageUrl=="") {
+
+  $IdeaData = array(
+    'IdeaSoft' => 3,
+ );
+  echo $db->UpdateByObjectId("Products", (string)$ProductId,$IdeaData);
+}
 
 if ($Products["price_one"]!="") {
   $price=$Products["price_one"];
@@ -32,11 +39,9 @@ if ($Products["price_one"]!="") {
 
 // Resmin uzantısını al
 $pathInfo = pathinfo($imageUrl);
-print_r($pathInfo);
 
 $extension = $pathInfo['extension'];
 
-echo $extension;
 
 // Resmi base64'e çevirme fonksiyonu
 function imageToBase64($imageUrl, $extension)
