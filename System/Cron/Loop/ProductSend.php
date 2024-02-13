@@ -8,7 +8,7 @@ $filtre['CategoryId']=['$ne' => null];
 $filtre['IdeaSoft']=0;
 
 
-$valuex = $db->Query('Products', $filtre,[], 'COK',5,5);
+$valuex = $db->Query('Products', $filtre,[], 'COK');
 
 foreach ($valuex as $key => $value) {
   print_r($value);
