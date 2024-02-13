@@ -13,11 +13,7 @@ $Domain=$IdeaSoft["domain"];
 
 $ProductId=$_GET["ProductId"];
 
-$Products = $db->Query('Products', ['IdeaSoft' => 1], [], 'COK',(int)$_GET["page"],40);
-
-
-foreach ($Products as $key => $value) {
-
+$value = $db->Query('Products', ['_id' => $db->ObjectId($ProductId)], [], 'TEK');
 
 
 
@@ -92,6 +88,3 @@ foreach ($Products as $key => $value) {
 
   $result = $ideaSoftInstance->put($ProductPost,'products/'.$value["IdeaSoftProductId"]);
   $result = json_decode($result,1);
-
-  print_r($result);
-}
