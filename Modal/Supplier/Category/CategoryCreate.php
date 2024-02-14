@@ -9,6 +9,11 @@ $db=new General();
 //$ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 $IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
 $token =$IdeaSoft["access_token"];
+
+
+$control = false;
+
+
 $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], [], 'TEK');
 if($Category1["_id"] != ""){
   //kategori1 var ise
@@ -238,8 +243,14 @@ if($Tur["IdeaSoftId"] != ""){
         'ParentId'  =>  (int)$ideasoftidd2
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd3);
+    $control = true;
   }
 }
-print_r($result);
+if($control){
+  print_r($result);
+}else{
+  echo 'X!';
+}
+
 
 ?>
