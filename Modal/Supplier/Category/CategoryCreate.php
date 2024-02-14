@@ -3,15 +3,16 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
 require_once(SECURITY.'Security.php');
 $security->LoginControl($guvenlik);
 require_once(SYSTEM.'General/General.php');
-require_once(SYSTEM.'Cron/IdeaSoft/IdeaSoftFunc.php');
+//require_once(SYSTEM.'Cron/IdeaSoft/IdeaSoftFunc.php');
 $db=new General();
-$IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
-$ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
+//$IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
+//$ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 
 $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], [], 'TEK');
 if($Category1["_id"] != ""){
   //kategori1 var ise
   $ideasoftidd = $Category1["IdeaSoftId"];
+  echo 'var';
 }else{
   // kategori 1 ideasoft ekle
   $data = [
@@ -61,8 +62,10 @@ if($Category1["_id"] != ""){
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd);
   }
+  echo 'yok';
 }
 
+/*
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('IdeaSoftCategory',['Name' => (string)$model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
@@ -121,6 +124,7 @@ if($Model["IdeaSoftId"] != ""){
     $result = $db->Add("IdeaSoftCategory", $dataadd);
   }
 }
+*/
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
