@@ -78,6 +78,7 @@ if($Model["IdeaSoftId"] != ""){
     $result = $db->Add("IdeaSoftCategory", $dataadd);
   }
 }
+echo $result;
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
