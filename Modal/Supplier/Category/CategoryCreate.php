@@ -75,7 +75,6 @@ $model_name = $_POST["Model"];
 $Model = $db->Query('IdeaSoftCategory',['Name' => (string)$model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
   //model varsa
-  $ideasoftidd = $Model["IdeaSoftId"];
   $ideasoftidd2 = $Model["IdeaSoftId"];
 }else{
   //model yok ideasoft ekle
@@ -182,7 +181,7 @@ $Tur = $db->Query('IdeaSoftCategory',[
 ], [], 'TEK');
 if($Tur["IdeaSoftId"] != ""){
   //Tur varsa
-  $ideasoftidd2 = $Tur["IdeaSoftId"];
+  $ideasoftidd3 = $Tur["IdeaSoftId"];
 }else{
   //Tur yok ideasoft ekle
   $data3 = [
