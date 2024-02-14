@@ -79,7 +79,7 @@ if($Model["IdeaSoftId"] != ""){
 }else{
   //model yok ideasoft ekle
   echo 'model yok, bu numara ile ekle:'.$ideasoftidd;
-  $data = [
+  $data2 = [
     'name' => $_POST["Model"],
     'sortOrder' => 999,
     'status' => 1,
@@ -104,8 +104,8 @@ if($Model["IdeaSoftId"] != ""){
     ],
     'isCombine' => 0
   ];
-  $curl = curl_init();
-  curl_setopt_array($curl, [
+  $curl2 = curl_init();
+  curl_setopt_array($curl2, [
     CURLOPT_URL => $IdeaSoft["domain"]."/admin-api/categories",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
@@ -113,25 +113,26 @@ if($Model["IdeaSoftId"] != ""){
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => json_encode($data),
+    CURLOPT_POSTFIELDS => json_encode($data2),
     CURLOPT_HTTPHEADER => [
       "Accept: application/json",
       "Authorization: Bearer $token",
       "Content-Type: application/json"
     ],
   ]);
-  $response = curl_exec($curl);
-  $err = curl_error($curl);
-  curl_close($curl);
+  $response2 = curl_exec($curl2);
+  $err2 = curl_error($curl2);
+  curl_close($curl2);
   //$response = $ideaSoftInstance->post($data,'categories');
-  $response = json_decode($response,true);
-  if($response["id"] != ""){
-    $dataadd = array(
-        'Name' => (string)$_POST["Marka"]." -> ".$response["name"],
-        'Slug' => $response["slug"],
-        'IdeaSoftId'  =>  $ideasoftidd
+  $response2 = json_decode($response2,true);
+  if($response2["id"] != ""){
+    $name2 = $_POST["Marka"]." -> ".$response2["name"];
+    $dataadd2 = array(
+        'Name' => (string)$name2,
+        'Slug' => $response2["slug"],
+        'IdeaSoftId'  =>  (int)$ideasoftidd
     );
-    $result = $db->Add("IdeaSoftCategory", $dataadd);
+    $result = $db->Add("IdeaSoftCategory", $dataadd2);
   }
 }
 print_r($result);
