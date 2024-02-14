@@ -75,7 +75,6 @@ $Model = $db->Query('IdeaSoftCategory',['Name' => (string)$model_name], [], 'TEK
 if($Model["IdeaSoftId"] != ""){
   //model varsa
   $ideasoftidd = $Model["IdeaSoftId"];
-  echo 'var';
 }else{
   //model yok ideasoft ekle
   echo 'model yok, bu numara ile ekle:'.$ideasoftidd;
@@ -98,11 +97,8 @@ if($Model["IdeaSoftId"] != ""){
     'canonicalUrl' => '',
     'attachment' => 'string',
     'parent' => [
-        'id' => [
-                $ideasoftidd
-        ]
-    ],
-    'isCombine' => 0
+        'id' => $ideasoftidd
+    ]
   ];
   $curl2 = curl_init();
   curl_setopt_array($curl2, [
