@@ -11,7 +11,6 @@ class IdeaSoft {
 
     public function post($post = '', $url) {
         $curl = curl_init();
-        print_r($post);
         curl_setopt_array($curl, [
             CURLOPT_URL => $this->domain."/admin-api/".$url,
             CURLOPT_RETURNTRANSFER => true,
