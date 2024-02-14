@@ -146,7 +146,7 @@ $box5_grup = 'Karoser İç Parçalar';
 $box6 = array('Ayna', 'Bagaj Kapagı', 'Body Kit', 'Etek Sacı', 'Kapı Bantları', 'Kapı Kolu', 'Kapı ve Kapı Sacları', 'Motor Kaputları', 'Panjur', 'Spoyler', 'Tampon', 'Tampon ek Parçalar', 'Tuning', 'Çamurluk', 'Ön Cam Izgara');
 $box6_grup = 'Karoser Dış Parçalar';
 $tur_title = '';
-$tur_type = $_POST["Tur"];
+$tur_type = ucfirst(strtolower($_POST["Tur"]));
 if(in_array($tur_type, $box1)){
   $tur_title = $box1_grup;
 }elseif(in_array($tur_type, $box2)){
