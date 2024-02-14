@@ -249,7 +249,7 @@ if($Tur["IdeaSoftId"] != ""){
 if($control){
   print_r($result);
 }else{
-  echo 'X!';
+  echo 'Daha önce eklenmiş!';
 }
 
 
