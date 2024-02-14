@@ -67,7 +67,6 @@ if($Category1["_id"] != ""){
     $result = $db->Add("IdeaSoftCategory", $dataadd);
   }
 }
-echo 'eklenen id:'.$ideasoftidd;
 
 
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
@@ -77,7 +76,6 @@ if($Model["IdeaSoftId"] != ""){
   $ideasoftidd = $Model["IdeaSoftId"];
 }else{
   //model yok ideasoft ekle
-  echo 'model yok, bu numara ile ekle:'.$ideasoftidd;
   $data2 = [
     'name' => $_POST["Model"],
     'sortOrder' => 999,
@@ -123,6 +121,7 @@ if($Model["IdeaSoftId"] != ""){
   $response2 = json_decode($response2,true);
   if($response2["id"] != ""){
     $name2 = $_POST["Marka"]." -> ".$response2["name"];
+    $ideasoftidd2 = $response2["id"];
     $dataadd2 = array(
         'Name' => (string)$name2,
         'Slug' => $response2["slug"],
@@ -131,9 +130,9 @@ if($Model["IdeaSoftId"] != ""){
     $result = $db->Add("IdeaSoftCategory", $dataadd2);
   }
 }
-print_r($result);
 
-/*
+
+
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
 $box2 = array('Yağ ve Su Bidonları');
@@ -146,8 +145,6 @@ $box5 = array('Davlumbaz', 'Radyatör', 'Tampon Demiri ve Travers', 'Torpido', '
 $box5_grup = 'Karoser İç Parçalar';
 $box6 = array('Ayna', 'Bagaj Kapagı', 'Body Kit', 'Etek Sacı', 'Kapı Bantları', 'Kapı Kolu', 'Kapı ve Kapı Sacları', 'Motor Kaputları', 'Panjur', 'Spoyler', 'Tampon', 'Tampon ek Parçalar', 'Tuning', 'Çamurluk', 'Ön Cam Izgara');
 $box6_grup = 'Karoser Dış Parçalar';
-
-
 $tur_title = '';
 $tur_type = $_POST["Tur"];
 if(in_array($tur_type, $box1)){
@@ -165,12 +162,65 @@ if(in_array($tur_type, $box1)){
 }
 
 $tur_name = $_POST["Marka"]." -> ".$_POST["Model"]." -> ".$tur_title;
-$Tur = $db->Query('Category',['Name' => $tur_name], [], 'TEK');
+$Tur = $db->Query('Category',['Name' => (string)$tur_name], [], 'TEK');
 if($Tur["IdeaSoftId"] != ""){
   //Tur varsa
+  $ideasoftidd2 = $Tur["IdeaSoftId"];
 }else{
   //Tur yok ideasoft ekle
-}*/
-
+  $data3 = [
+    'name' => $tur_title,
+    'sortOrder' => 999,
+    'status' => 1,
+    'distributor' => '',
+    'percent' => 1,
+    'displayShowcaseContent' => 0,
+    'showcaseContent' => 'Üst içerik metni.',
+    'showcaseContentDisplayType' => 1,
+    'displayShowcaseFooterContent' => 0,
+    'showcaseFooterContent' => 'string',
+    'showcaseFooterContentDisplayType' => 1,
+    'hasChildren' => 0,
+    'pageTitle' => 'string',
+    'metaDescription' => '',
+    'metaKeywords' => '',
+    'canonicalUrl' => '',
+    'attachment' => 'string',
+    'parent' => [
+        'id' => $ideasoftidd2
+    ]
+  ];
+  $curl3 = curl_init();
+  curl_setopt_array($curl3, [
+    CURLOPT_URL => $IdeaSoft["domain"]."/admin-api/categories",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => json_encode($data3),
+    CURLOPT_HTTPHEADER => [
+      "Accept: application/json",
+      "Authorization: Bearer $token",
+      "Content-Type: application/json"
+    ],
+  ]);
+  $response3 = curl_exec($curl3);
+  $err3 = curl_error($curl3);
+  curl_close($curl3);
+  $response3 = json_decode($response3,true);
+  if($response3["id"] != ""){
+    $name3 = $_POST["Marka"]." -> ".$_POST["Model"]." -> ".$response3["name"];
+    $ideasoftidd3 = $response3["id"];
+    $dataadd3 = array(
+        'Name' => (string)$name3,
+        'Slug' => $response3["slug"],
+        'IdeaSoftId'  =>  (int)$ideasoftidd3
+    );
+    $result = $db->Add("IdeaSoftCategory", $dataadd3);
+  }
+}
+print_r($result);
 
 ?>
