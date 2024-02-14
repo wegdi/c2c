@@ -63,17 +63,12 @@ if($Model["IdeaSoftId"] != ""){
     'showcaseFooterContent' => 'string',
     'showcaseFooterContentDisplayType' => 1,
     'hasChildren' => 0,
-    'isCombine' => 0,
-    'parent' => [
-      'id' => [
-        $ideasoftidd
-      ]
-    ]
+    'isCombine' => 0
   ];
   $response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
   print_r($response);
-  /*
+  
   if($response["id"] != ""){
     $dataadd = array(
         'Name' => $_POST["Marka"]." -> ".$response["name"],
@@ -81,7 +76,7 @@ if($Model["IdeaSoftId"] != ""){
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd);
-  }*/
+  }
 }
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
