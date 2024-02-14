@@ -57,6 +57,7 @@ if($Category1["_id"] != ""){
   curl_close($curl);
   //$response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
+  /*
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
     $dataadd = array(
@@ -67,7 +68,7 @@ if($Category1["_id"] != ""){
         'ParentId'  =>  0
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd);
-  }
+  }*/
 }
 
 
@@ -121,6 +122,7 @@ if($Model["IdeaSoftId"] != ""){
   curl_close($curl2);
   //$response = $ideaSoftInstance->post($data,'categories');
   $response2 = json_decode($response2,true);
+  /*
   if($response2["id"] != ""){
     $name2 = $response2["name"];
     $ideasoftidd2 = $response2["id"];
@@ -132,7 +134,7 @@ if($Model["IdeaSoftId"] != ""){
         'ParentId'  =>  (int)$ideasoftidd
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd2);
-  }
+  }*/
 }
 
 function ilkHarfiBuyut($cumle) {
@@ -224,6 +226,7 @@ if($Tur["IdeaSoftId"] != ""){
   curl_close($curl3);
   $response3 = json_decode($response3,true);
   //print_r($response3);
+  /*
   if($response3["id"] != ""){
     $name3 = $response3["name"];
     $ideasoftidd3 = $response3["id"];
@@ -235,7 +238,7 @@ if($Tur["IdeaSoftId"] != ""){
         'ParentId'  =>  (int)$ideasoftidd2
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd3);
-  }
+  }*/
 }
 print_r($result);
 
