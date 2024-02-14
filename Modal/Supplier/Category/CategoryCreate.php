@@ -28,11 +28,30 @@ if($Category1["_id"] != ""){
     'hasChildren' => 0,
     'isCombine' => 0
   ];
-  $response = $ideaSoftInstance->post($data,'categories');
+  $curl = curl_init();
+  curl_setopt_array($curl, [
+      CURLOPT_URL => "https://mfkoto.myideasoft.com/admin-api/categories",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => "",
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 30,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "POST",
+      CURLOPT_POSTFIELDS => json_encode($data),
+      CURLOPT_HTTPHEADER => [
+          "Accept: application/json",
+          "Authorization: Bearer YzJiMTBlZDAyZDY3YTcyMzUxZDhkZGYzZWRjYTc4M2FlMGFkZmVlZDQwNWM3YTUzZGJiYjQ5M2NlOTRmYmJlYg",
+          "Content-Type: application/json"
+      ],
+  ]);
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+  curl_close($curl);
+  //$response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
   print_r($response);
   echo '<br>';
-  /*
+  
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
     $dataadd = array(
@@ -41,7 +60,7 @@ if($Category1["_id"] != ""){
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd);
-  }*/
+  }
 }
 
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
@@ -70,10 +89,29 @@ if($Model["IdeaSoftId"] != ""){
       ]
     ]
   ];
-  $response = $ideaSoftInstance->post($data,'categories');
+  $curl = curl_init();
+  curl_setopt_array($curl, [
+      CURLOPT_URL => "https://mfkoto.myideasoft.com/admin-api/categories",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => "",
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 30,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "POST",
+      CURLOPT_POSTFIELDS => json_encode($data),
+      CURLOPT_HTTPHEADER => [
+          "Accept: application/json",
+          "Authorization: Bearer YzJiMTBlZDAyZDY3YTcyMzUxZDhkZGYzZWRjYTc4M2FlMGFkZmVlZDQwNWM3YTUzZGJiYjQ5M2NlOTRmYmJlYg",
+          "Content-Type: application/json"
+      ],
+  ]);
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+  curl_close($curl);
+  //$response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
   print_r($response);
-  /*
+  
   if($response["id"] != ""){
     $dataadd = array(
         'Name' => $_POST["Marka"]." -> ".$response["name"],
@@ -81,7 +119,7 @@ if($Model["IdeaSoftId"] != ""){
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd);
-  }*/
+  }
 }
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
