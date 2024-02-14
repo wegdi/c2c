@@ -76,6 +76,7 @@ $Model = $db->Query('IdeaSoftCategory',['Name' => (string)$model_name], [], 'TEK
 if($Model["IdeaSoftId"] != ""){
   //model varsa
   $ideasoftidd = $Model["IdeaSoftId"];
+  $ideasoftidd2 = $Model["ParentId"];
 }else{
   //model yok ideasoft ekle
   $data2 = [
