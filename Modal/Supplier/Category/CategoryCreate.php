@@ -47,7 +47,7 @@ $Model = $db->Query('IdeaSoftCategory',['Name' => (string)$model_name], [], 'TEK
 if($Model["IdeaSoftId"] != ""){
   //model varsa
   $ideasoftidd = $Model["IdeaSoftId"];
-  echo 'model var';
+  echo 'model var-'.$ideasoftidd;
 }else{
   //model yok ideasoft ekle
   echo 'model yok';
@@ -72,6 +72,8 @@ if($Model["IdeaSoftId"] != ""){
   ];
   $response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
+  print_r($response);
+  /*
   if($response["id"] != ""){
     $dataadd = array(
         'Name' => $_POST["Marka"]." -> ".$response["name"],
@@ -79,7 +81,7 @@ if($Model["IdeaSoftId"] != ""){
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd);
-  }
+  }*/
 }
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
