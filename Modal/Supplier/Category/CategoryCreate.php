@@ -47,8 +47,10 @@ $Model = $db->Query('IdeaSoftCategory',['Name' => $model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
   //model varsa
   $ideasoftidd = $Model["IdeaSoftId"];
+  echo 'model var';
 }else{
   //model yok ideasoft ekle
+  echo 'model yok';
   $data = [
     'name' => $_POST["Model"],
     'sortOrder' => 999,
@@ -79,7 +81,6 @@ if($Model["IdeaSoftId"] != ""){
     $result = $db->Add("IdeaSoftCategory", $dataadd);
   }
 }
-echo $result;
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
