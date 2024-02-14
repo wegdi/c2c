@@ -210,6 +210,8 @@ if($Tur["IdeaSoftId"] != ""){
   $err3 = curl_error($curl3);
   curl_close($curl3);
   $response3 = json_decode($response3,true);
+  print_r($response3);
+  /*
   if($response3["id"] != ""){
     $name3 = $_POST["Marka"]." -> ".$_POST["Model"]." -> ".$response3["name"];
     $ideasoftidd3 = $response3["id"];
@@ -219,8 +221,8 @@ if($Tur["IdeaSoftId"] != ""){
         'IdeaSoftId'  =>  (int)$ideasoftidd3
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd3);
-  }
+  }*/
 }
-print_r($result);
+
 
 ?>
