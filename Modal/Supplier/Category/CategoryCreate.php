@@ -143,7 +143,7 @@ $box4 = array('Far Yıkama Robotu');
 $box4_grup = 'Sensör,Valf ve Elektrik Ürünleri';
 $box5 = array('Davlumbaz', 'Radyatör', 'Tampon Demiri ve Travers', 'Torpido', 'Kaput Menteşeleri', 'Fan', 'Fan Davlumbazı', 'Karter ve Alt Muhafaza', 'Marşbiyel Bakaliti', 'Panel', 'Motor Üst Kapağı');
 $box5_grup = 'Karoser İç Parçalar';
-$box6 = array('Ayna', 'Bagaj Kapagı', 'Body Kit', 'Etek Sacı', 'Kapı Bantları', 'Kapı Kolu', 'Kapı ve Kapı Sacları', 'Motor Kaputları', 'Panjur', 'Spoyler', 'Tampon', 'Tampon ek Parçalar', 'Tuning', 'Çamurluk', 'Ön Cam Izgara');
+$box6 = array('Ayna', 'Bagaj Kapagı', 'Body Kit', 'Etek Sacı', 'Kapı Bantları', 'Kapı Kolu', 'Kapı ve Kapı Sacları', 'Motor Kaputları', 'PANJUR', 'Spoyler', 'Tampon', 'Tampon ek Parçalar', 'Tuning', 'Çamurluk', 'Ön Cam Izgara');
 $box6_grup = 'Karoser Dış Parçalar';
 $tur_title = '';
 $tur_type = $_POST["Tur"];
@@ -162,7 +162,7 @@ if(in_array($tur_type, $box1)){
 }
 
 $tur_name = $_POST["Marka"]." -> ".$_POST["Model"]." -> ".$tur_title;
-$Tur = $db->Query('Category',['Name' => (string)$tur_name], [], 'TEK');
+$Tur = $db->Query('IdeaSoftCategory',['Name' => (string)$tur_name], [], 'TEK');
 if($Tur["IdeaSoftId"] != ""){
   //Tur varsa
   $ideasoftidd2 = $Tur["IdeaSoftId"];
