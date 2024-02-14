@@ -10,8 +10,8 @@ $IdeaSoft = $db->Query('IdeaSoft',["_id" => $db->ObjectId('65a784f66b188048239f4
 //2 Aylık Token Al
 $RefresToken = array(
   'grant_type' => 'refresh_token',
-  'client_id' => '1iydisrb33pc88ccog88wgw8gwkwkc8k4woo4s8goss44koog8',
-  'client_secret' => '3lhhwkqmlc6cow88wgwwkwcc8k00gwsw8k8osg00084ossc4wo',
+  'client_id' => '3pebeuh6xb40swk0c08ckkow0g0ogcc40k4ggkw8so8owgowk4',
+  'client_secret' => '40cezisrdy68cwoso8k40c4kcso040o8sso80ggkggs4gkk84c',
   'refresh_token' => $IdeaSoft["refresh_token"]
 );
 
