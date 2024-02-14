@@ -249,7 +249,10 @@ if($Tur["IdeaSoftId"] != ""){
 if($control){
   print_r($result);
 }else{
-  echo 'Daha önce eklenmiş!';
+  echo json_encode([
+    'success' => false,
+    'message' =>  'Daha Önce Eklendi!'
+  ]);
 }
 
 
