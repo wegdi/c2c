@@ -35,9 +35,9 @@ class IdeaSoft {
 
 
         if ($err) {
-            return $err."X!";
+            return $err;
         } else {
-            return $response."S!";
+            return $response;
         }
     }
 
