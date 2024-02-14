@@ -135,7 +135,16 @@ if($Model["IdeaSoftId"] != ""){
   }
 }
 
-
+function ilkHarfiBuyut($cumle) {
+  $kelimeler = explode(" ", $cumle);
+  $duzeltilmisCumle = "";
+  foreach ($kelimeler as $kelime) {
+      $ilkHarf = strtoupper(substr($kelime, 0, 1));
+      $geriKalan = strtolower(substr($kelime, 1));
+      $duzeltilmisCumle .= $ilkHarf . $geriKalan . " ";
+  }
+  return rtrim($duzeltilmisCumle);
+}
 
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
@@ -150,7 +159,7 @@ $box5_grup = 'Karoser İç Parçalar';
 $box6 = array('Ayna', 'Bagaj Kapagı', 'Body Kit', 'Etek Sacı', 'Kapı Bantları', 'Kapı Kolu', 'Kapı ve Kapı Sacları', 'Motor Kaputları', 'PANJUR', 'Spoyler', 'Tampon', 'Tampon ek Parçalar', 'Tuning', 'Çamurluk', 'Ön Cam Izgara');
 $box6_grup = 'Karoser Dış Parçalar';
 $tur_title = '';
-$tur_type = $_POST["Tur"];
+$tur_type = ilkHarfiBuyut($_POST["Tur"]);
 if(in_array($tur_type, $box1)){
   $tur_title = $box1_grup;
 }elseif(in_array($tur_type, $box2)){
@@ -165,8 +174,8 @@ if(in_array($tur_type, $box1)){
   $tur_title = $box6_grup;
 }
 
-$tur_name = $tur_title;
-$Tur = $db->Query('IdeaSoftCategory',['Name' => (string)$tur_name], [], 'TEK');
+$tur_name = $_POST["Marka"]." -> ".$_POST["Model"]." -> ".$tur_title;
+$Tur = $db->Query('Category',['Name' => (string)$tur_name], [], 'TEK');
 if($Tur["IdeaSoftId"] != ""){
   //Tur varsa
   $ideasoftidd2 = $Tur["IdeaSoftId"];
