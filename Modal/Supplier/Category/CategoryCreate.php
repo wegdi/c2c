@@ -43,7 +43,7 @@ if($Category1["_id"] != ""){
 }
 
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
-$Model = $db->Query('IdeaSoftCategory',['Name' => $model_name], [], 'TEK');
+$Model = $db->Query('IdeaSoftCategory',['Name' => (string)$model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
   //model varsa
   $ideasoftidd = $Model["IdeaSoftId"];
