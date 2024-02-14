@@ -7,7 +7,8 @@ require_once(SYSTEM.'General/General.php');
 $db=new General();
 //$IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
 //$ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
-
+$IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
+$token =$IdeaSoft["access_token"];
 $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], [], 'TEK');
 if($Category1["_id"] != ""){
   //kategori1 var ise
@@ -36,35 +37,27 @@ if($Category1["_id"] != ""){
     'isCombine' => 0
   ];
 
-$curl = curl_init();
-curl_setopt_array($curl, [
-  CURLOPT_URL => "https://mfkoto.myideasoft.com/admin-api/categories",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => json_encode($data),
-  CURLOPT_HTTPHEADER => [
-    "Accept: application/json",
-    "Authorization: Bearer NzQxMTI1NWZkZWQzMTlmYWQxNmYzNzg4NThkZGRlYzY1NGU3YzZhZTQxYjQzZDIwZjlkOTdiNWZjNmRmZWVmYQ",
-    "Content-Type: application/json"
-  ],
-]);
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-}
+  $curl = curl_init();
+  curl_setopt_array($curl, [
+    CURLOPT_URL => $IdeaSoft["domain"]."/admin-api/categories",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => json_encode($data),
+    CURLOPT_HTTPHEADER => [
+      "Accept: application/json",
+      "Authorization: Bearer $token",
+      "Content-Type: application/json"
+    ],
+  ]);
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+  curl_close($curl);
   //$response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
-  print_r($response);
-  echo '<br>';
-  
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
     $dataadd = array(
