@@ -12,10 +12,7 @@ $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], 
 if($Category1["_id"] != ""){
   //kategori1 var ise
   $ideasoftidd = $Category1["IdeaSoftId"];
-  echo 'var';
 }else{
-
-  echo "string";
   // kategori 1 ideasoft ekle
   $data = [
     'name' => $_POST["Marka"],
@@ -31,11 +28,8 @@ if($Category1["_id"] != ""){
     'hasChildren' => 0,
     'isCombine' => 0
   ];
-  $responsec = $ideaSoftInstance->post($data,'categories');
-  echo $responsec;
-  $response = json_decode($responsec,true);
-  print_r($response);
-  /*
+  $response = $ideaSoftInstance->post($data,'categories');
+  $response = json_decode($response,true);
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
     $dataadd = array(
@@ -43,13 +37,12 @@ if($Category1["_id"] != ""){
         'Slug' => $response["slug"],
         'IdeaSoftId'  =>  $ideasoftidd
     );
-    $result = $db->Add("Category", $dataadd);
-  }*/
+    $result = $db->Add("IdeaSoftCategory", $dataadd);
+  }
 }
 
-/*
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
-$Model = $db->Query('Category',['Name' => $model_name], [], 'TEK');
+$Model = $db->Query('IdeaSoftCategory',['Name' => $model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
   //model varsa
   $ideasoftidd = $Model["IdeaSoftId"];
@@ -82,11 +75,11 @@ if($Model["IdeaSoftId"] != ""){
         'Slug' => $response["slug"],
         'IdeaSoftId'  =>  $ideasoftidd
     );
-    $result = $db->Add("Category", $dataadd);
+    $result = $db->Add("IdeaSoftCategory", $dataadd);
   }
 }
 echo $result;
-*/
+
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
