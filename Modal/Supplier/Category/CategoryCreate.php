@@ -33,7 +33,7 @@ if($Category1["_id"] != ""){
   print_r($response);
   $response = json_decode($response,true);
   print_r($response);
-  echo 'yok';
+  echo 'yoks';
   /*
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
