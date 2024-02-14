@@ -62,7 +62,9 @@ if($Category1["_id"] != ""){
     $dataadd = array(
         'Name' => $response["name"],
         'Slug' => $response["slug"],
-        'IdeaSoftId'  =>  $ideasoftidd
+        'IdeaSoftId'  =>  $ideasoftidd,
+        'Status'  =>  1,
+        'ParentId'  =>  0
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd);
   }
@@ -125,7 +127,9 @@ if($Model["IdeaSoftId"] != ""){
     $dataadd2 = array(
         'Name' => (string)$name2,
         'Slug' => $response2["slug"],
-        'IdeaSoftId'  =>  (int)$ideasoftidd
+        'IdeaSoftId'  =>  (int)$ideasoftidd2,
+        'Status'  =>  1,
+        'ParentId'  =>  (int)$ideasoftidd
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd2);
   }
@@ -217,7 +221,9 @@ if($Tur["IdeaSoftId"] != ""){
     $dataadd3 = array(
         'Name' => (string)$name3,
         'Slug' => $response3["slug"],
-        'IdeaSoftId'  =>  (int)$ideasoftidd3
+        'IdeaSoftId'  =>  (int)$ideasoftidd3,
+        'Status'  =>  1,
+        'ParentId'  =>  (int)$ideasoftidd2
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd3);
   }
