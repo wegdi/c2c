@@ -233,6 +233,7 @@ if($Tur["IdeaSoftId"] != ""){
   $response3 = json_decode($response3,true);
   //print_r($response3);
   if($response3["id"] != ""){
+    $control = true;
     $name3 = $response3["name"];
     $ideasoftidd3 = $response3["id"];
     $dataadd3 = array(
@@ -243,11 +244,10 @@ if($Tur["IdeaSoftId"] != ""){
         'ParentId'  =>  (int)$ideasoftidd2
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd3);
-    $control = true;
   }
 }
 if($control){
-  print_r($result);
+  echo $result;
 }else{
   echo json_encode([
     'success' => false,
