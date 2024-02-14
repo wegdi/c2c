@@ -29,7 +29,10 @@ if($Category1["_id"] != ""){
     'isCombine' => 0
   ];
   $response = $ideaSoftInstance->post($data,'categories');
+  print_r($response);
   $response = json_decode($response,true);
+  print_r($response);
+  /*
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
     $dataadd = array(
@@ -38,9 +41,9 @@ if($Category1["_id"] != ""){
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd);
-  }
+  }*/
 }
-
+/*
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('IdeaSoftCategory',['Name' => $model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
@@ -79,7 +82,7 @@ if($Model["IdeaSoftId"] != ""){
   }
 }
 echo $result;
-
+*/
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
