@@ -12,6 +12,7 @@ $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], 
 if($Category1["_id"] != ""){
   //kategori1 var ise
   $ideasoftidd = $Category1["IdeaSoftId"];
+  echo 'var';
 }else{
   // kategori 1 ideasoft ekle
   $data = [
@@ -32,6 +33,7 @@ if($Category1["_id"] != ""){
   print_r($response);
   $response = json_decode($response,true);
   print_r($response);
+  echo 'yok';
   /*
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
