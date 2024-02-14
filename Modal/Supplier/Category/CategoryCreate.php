@@ -174,8 +174,11 @@ if(in_array($tur_type, $box1)){
   $tur_title = $box6_grup;
 }
 
-$tur_name = $_POST["Marka"]." -> ".$_POST["Model"]." -> ".$tur_title;
-$Tur = $db->Query('Category',['Name' => (string)$tur_name], [], 'TEK');
+$tur_name = $tur_title;
+$Tur = $db->Query('IdeaSoftCategory',[
+  'Name' => (string)$tur_name,
+  'ParentId'  =>(int)$ideasoftidd2
+], [], 'TEK');
 if($Tur["IdeaSoftId"] != ""){
   //Tur varsa
   $ideasoftidd2 = $Tur["IdeaSoftId"];
