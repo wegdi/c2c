@@ -13,7 +13,6 @@ $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], 
 if($Category1["_id"] != ""){
   //kategori1 var ise
   $ideasoftidd = $Category1["IdeaSoftId"];
-  echo 'var';
 }else{
   // kategori 1 ideasoft ekle
   $data = [
@@ -69,7 +68,7 @@ if($Category1["_id"] != ""){
   }
 }
 
-/*
+
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('IdeaSoftCategory',['Name' => (string)$model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
@@ -84,41 +83,45 @@ if($Model["IdeaSoftId"] != ""){
     'distributor' => '',
     'percent' => 1,
     'displayShowcaseContent' => 0,
+    'showcaseContent' => 'Üst içerik metni.',
     'showcaseContentDisplayType' => 1,
     'displayShowcaseFooterContent' => 0,
     'showcaseFooterContent' => 'string',
     'showcaseFooterContentDisplayType' => 1,
     'hasChildren' => 0,
-    'isCombine' => 0,
+    'pageTitle' => 'string',
+    'metaDescription' => '',
+    'metaKeywords' => '',
+    'canonicalUrl' => '',
+    'attachment' => 'string',
     'parent' => [
-      'id' => [
-        $ideasoftidd
-      ]
-    ]
+        'id' => [
+                $ideasoftidd
+        ]
+    ],
+    'isCombine' => 0
   ];
   $curl = curl_init();
   curl_setopt_array($curl, [
-      CURLOPT_URL => "https://mfkoto.myideasoft.com/admin-api/categories",
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_ENCODING => "",
-      CURLOPT_MAXREDIRS => 10,
-      CURLOPT_TIMEOUT => 30,
-      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-      CURLOPT_CUSTOMREQUEST => "POST",
-      CURLOPT_POSTFIELDS => json_encode($data),
-      CURLOPT_HTTPHEADER => [
-          "Accept: application/json",
-          "Authorization: Bearer YzJiMTBlZDAyZDY3YTcyMzUxZDhkZGYzZWRjYTc4M2FlMGFkZmVlZDQwNWM3YTUzZGJiYjQ5M2NlOTRmYmJlYg",
-          "Content-Type: application/json"
-      ],
+    CURLOPT_URL => $IdeaSoft["domain"]."/admin-api/categories",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => json_encode($data),
+    CURLOPT_HTTPHEADER => [
+      "Accept: application/json",
+      "Authorization: Bearer $token",
+      "Content-Type: application/json"
+    ],
   ]);
   $response = curl_exec($curl);
   $err = curl_error($curl);
   curl_close($curl);
   //$response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
-  print_r($response);
-  
   if($response["id"] != ""){
     $dataadd = array(
         'Name' => $_POST["Marka"]." -> ".$response["name"],
@@ -128,7 +131,7 @@ if($Model["IdeaSoftId"] != ""){
     $result = $db->Add("IdeaSoftCategory", $dataadd);
   }
 }
-*/
+
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
