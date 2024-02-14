@@ -71,7 +71,7 @@ if($Category1["_id"] != ""){
 }
 
 
-$model_name = $_POST["Marka"]." -> ".$_POST["Model"];
+$model_name = $_POST["Model"];
 $Model = $db->Query('IdeaSoftCategory',['Name' => (string)$model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
   //model varsa
@@ -165,7 +165,7 @@ if(in_array($tur_type, $box1)){
   $tur_title = $box6_grup;
 }
 
-$tur_name = $_POST["Marka"]." -> ".$_POST["Model"]." -> ".$tur_title;
+$tur_name = $tur_title;
 $Tur = $db->Query('IdeaSoftCategory',['Name' => (string)$tur_name], [], 'TEK');
 if($Tur["IdeaSoftId"] != ""){
   //Tur varsa
