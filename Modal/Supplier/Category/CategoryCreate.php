@@ -12,7 +12,6 @@ $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], 
 if($Category1["_id"] != ""){
   //kategori1 var ise
   $ideasoftidd = $Category1["IdeaSoftId"];
-  echo 'var';
 }else{
   // kategori 1 ideasoft ekle
   $data = [
@@ -30,11 +29,8 @@ if($Category1["_id"] != ""){
     'isCombine' => 0
   ];
   $response = $ideaSoftInstance->post($data,'categories');
-  print_r($response);
   $response = json_decode($response,true);
-  print_r($response);
-  echo 'yoks';
-  /*
+  
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
     $dataadd = array(
@@ -43,9 +39,9 @@ if($Category1["_id"] != ""){
         'IdeaSoftId'  =>  $ideasoftidd
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd);
-  }*/
+  }
 }
-/*
+
 $model_name = $_POST["Marka"]." -> ".$_POST["Model"];
 $Model = $db->Query('IdeaSoftCategory',['Name' => $model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
@@ -84,7 +80,6 @@ if($Model["IdeaSoftId"] != ""){
   }
 }
 echo $result;
-*/
 /*
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
