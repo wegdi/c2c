@@ -120,7 +120,7 @@ if($Model["IdeaSoftId"] != ""){
   //$response = $ideaSoftInstance->post($data,'categories');
   $response2 = json_decode($response2,true);
   if($response2["id"] != ""){
-    $name2 = $_POST["Marka"]." -> ".$response2["name"];
+    $name2 = $response2["name"];
     $ideasoftidd2 = $response2["id"];
     $dataadd2 = array(
         'Name' => (string)$name2,
@@ -212,7 +212,7 @@ if($Tur["IdeaSoftId"] != ""){
   $response3 = json_decode($response3,true);
   //print_r($response3);
   if($response3["id"] != ""){
-    $name3 = $_POST["Marka"]." -> ".$_POST["Model"]." -> ".$response3["name"];
+    $name3 = $response3["name"];
     $ideasoftidd3 = $response3["id"];
     $dataadd3 = array(
         'Name' => (string)$name3,
