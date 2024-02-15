@@ -44,6 +44,7 @@ curl_close($curl);
 $responseArrayx = json_decode($response, true);
 
 $UpdateData = array(
+   'refresh_token' => $responseArrayx["refresh_token"],	
   'access_token' => $responseArrayx["access_token"],
 
 );
