@@ -10,7 +10,13 @@ $db=new General();
 $IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
 $domain = $IdeaSoft["domain"];
 $token =$IdeaSoft["access_token"];
-
+if(empty($token)){
+  echo json_encode([
+    'success' => false,
+    'message' =>  'access_token null!'
+  ]);
+  exit;
+}
 
 function ilkHarfiBuyut($cumle) {
   $kelimeler = explode(" ", $cumle);
