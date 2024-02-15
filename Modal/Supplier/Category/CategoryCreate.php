@@ -80,7 +80,6 @@ if($Category1["_id"] != ""){
   ];
 
   $response = CategoryCreateCurl($domain, $token, $data);
-  //$response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
   if($response["id"] != ""){
     $ideasoftidd = $response["id"];
@@ -99,7 +98,6 @@ if($Category1["_id"] != ""){
 $model_name = $_POST["Model"];
 $Model = $db->Query('IdeaSoftCategory',['Name' => (string)$model_name], [], 'TEK');
 if($Model["IdeaSoftId"] != ""){
-  //model varsa
   $ideasoftidd2 = $Model["IdeaSoftId"];
 }else{
   //model yok ideasoft ekle
@@ -126,7 +124,6 @@ if($Model["IdeaSoftId"] != ""){
     ]
   ];
   $response2 = CategoryCreateCurl($domain, $token, $data2);
-  //$response = $ideaSoftInstance->post($data,'categories');
   $response2 = json_decode($response2,true);
   if($response2["id"] != ""){
     $name2 = $response2["name"];
@@ -206,7 +203,6 @@ if($Tur["IdeaSoftId"] != ""){
   ];
   $response3 = CategoryCreateCurl($domain, $token, $data3);
   $response3 = json_decode($response3,true);
-  //print_r($response3);
   if($response3["id"] != ""){
     $control = true;
     $name3 = $response3["name"];
@@ -226,7 +222,7 @@ if($control){
 }else{
   echo json_encode([
     'success' => false,
-    'message' =>  'Bu Türe Sahip Kategori Daha Önce Eklendi!'
+    'message' =>  'Bu İsme Sahip Kategori Daha Önce Eklendi!'
   ]);
 }
 
