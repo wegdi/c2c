@@ -204,7 +204,6 @@ if($Tur["IdeaSoftId"] != ""){
   $response3 = CategoryCreateCurl($domain, $token, $data3);
   $response3 = json_decode($response3,true);
   if($response3["id"] != ""){
-    $control = true;
     $name3 = $response3["name"];
     $ideasoftidd3 = $response3["id"];
     $dataadd3 = array(
@@ -215,6 +214,7 @@ if($Tur["IdeaSoftId"] != ""){
         'ParentId'  =>  (int)$ideasoftidd2
     );
     $result = $db->Add("IdeaSoftCategory", $dataadd3);
+    $control = true;
   }
 }
 if($control){
