@@ -10,8 +10,8 @@ $IdeaSoft = $db->Query('IdeaSoft',["_id" => $db->ObjectId('65a784f66b188048239f4
 //2 Aylık Token Al
 $RefresToken = array(
   'grant_type' => 'refresh_token',
-  'client_id' => '3pebeuh6xb40swk0c08ckkow0g0ogcc40k4ggkw8so8owgowk4',
-  'client_secret' => '40cezisrdy68cwoso8k40c4kcso040o8sso80ggkggs4gkk84c',
+  'client_id' => $IdeaSoft["client_id"],
+  'client_secret' => $IdeaSoft["client_secret"],
   'refresh_token' => $IdeaSoft["refresh_token"]
 );
 
@@ -45,8 +45,8 @@ $responseArrayx = json_decode($response, true);
 
 $UpdateData = array(
    'refresh_token' => $responseArrayx["refresh_token"],	
-  'access_token' => $responseArrayx["access_token"],
-
+   'access_token' => $responseArrayx["access_token"],
+   'scope' => $responseArrayx["scope"]
 );
 
 echo $db->UpdateByObjectId("IdeaSoft",'65a784f66b188048239f446c',$UpdateData);

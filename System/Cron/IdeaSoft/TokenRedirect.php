@@ -52,6 +52,6 @@ print_r($response);
 $data = array(
   'access_token' => $response["access_token"],
   'refresh_token' => $response["refresh_token"],
-
+  'scope' => $response["scope"]
 );
 echo $db->UpdateByObjectId("IdeaSoft", "65a784f66b188048239f446c",$data);
