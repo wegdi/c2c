@@ -228,7 +228,7 @@ if($control){
 }else{
   echo json_encode([
     'success' => false,
-    'message' =>  'Bu İsme Sahip Kategori Daha Önce Eklendi!'
+    'message' =>  'Bu Kategori Daha Önce Eklendi.'
   ]);
 }
 
