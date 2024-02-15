@@ -8,11 +8,49 @@ $db=new General();
 //$IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
 //$ideaSoftInstance = new IdeaSoft($IdeaSoft["domain"],$IdeaSoft["access_token"]);
 $IdeaSoft = $db->Query('IdeaSoft', [], [], 'TEK');
+$domain = $IdeaSoft["domain"];
 $token =$IdeaSoft["access_token"];
 
 
-$control = false;
+function ilkHarfiBuyut($cumle) {
+  $kelimeler = explode(" ", $cumle);
+  $duzeltilmisCumle = "";
+  foreach ($kelimeler as $kelime) {
+      $ilkHarf = strtoupper(substr($kelime, 0, 1));
+      $geriKalan = strtolower(substr($kelime, 1));
+      $duzeltilmisCumle .= $ilkHarf . $geriKalan . " ";
+  }
+  return rtrim($duzeltilmisCumle);
+}
 
+function CategoryCreateCurl($domain, $token, $data) {
+  $curl = curl_init();
+  curl_setopt_array($curl, [
+    CURLOPT_URL => $domain."/admin-api/categories",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => json_encode($data),
+    CURLOPT_HTTPHEADER => [
+      "Accept: application/json",
+      "Authorization: Bearer $token",
+      "Content-Type: application/json"
+    ],
+  ]);
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+  curl_close($curl);
+  if ($err) {
+    return "cURL Error #:" . $err;
+  } else {
+    return $response;
+  }
+}
+
+$control = false;
 
 $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], [], 'TEK');
 if($Category1["_id"] != ""){
@@ -41,25 +79,7 @@ if($Category1["_id"] != ""){
     'isCombine' => 0
   ];
 
-  $curl = curl_init();
-  curl_setopt_array($curl, [
-    CURLOPT_URL => $IdeaSoft["domain"]."/admin-api/categories",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => "",
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 30,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => json_encode($data),
-    CURLOPT_HTTPHEADER => [
-      "Accept: application/json",
-      "Authorization: Bearer $token",
-      "Content-Type: application/json"
-    ],
-  ]);
-  $response = curl_exec($curl);
-  $err = curl_error($curl);
-  curl_close($curl);
+  $response = CategoryCreateCurl($domain, $token, $data);
   //$response = $ideaSoftInstance->post($data,'categories');
   $response = json_decode($response,true);
   if($response["id"] != ""){
@@ -105,25 +125,7 @@ if($Model["IdeaSoftId"] != ""){
         'id' => $ideasoftidd
     ]
   ];
-  $curl2 = curl_init();
-  curl_setopt_array($curl2, [
-    CURLOPT_URL => $IdeaSoft["domain"]."/admin-api/categories",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => "",
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 30,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => json_encode($data2),
-    CURLOPT_HTTPHEADER => [
-      "Accept: application/json",
-      "Authorization: Bearer $token",
-      "Content-Type: application/json"
-    ],
-  ]);
-  $response2 = curl_exec($curl2);
-  $err2 = curl_error($curl2);
-  curl_close($curl2);
+  $response2 = CategoryCreateCurl($domain, $token, $data2);
   //$response = $ideaSoftInstance->post($data,'categories');
   $response2 = json_decode($response2,true);
   if($response2["id"] != ""){
@@ -140,16 +142,7 @@ if($Model["IdeaSoftId"] != ""){
   }
 }
 
-function ilkHarfiBuyut($cumle) {
-  $kelimeler = explode(" ", $cumle);
-  $duzeltilmisCumle = "";
-  foreach ($kelimeler as $kelime) {
-      $ilkHarf = strtoupper(substr($kelime, 0, 1));
-      $geriKalan = strtolower(substr($kelime, 1));
-      $duzeltilmisCumle .= $ilkHarf . $geriKalan . " ";
-  }
-  return rtrim($duzeltilmisCumle);
-}
+
 
 $box1 = array('Aydınlatma', 'Far Grubu');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
@@ -211,25 +204,7 @@ if($Tur["IdeaSoftId"] != ""){
         'id' => $ideasoftidd2
     ]
   ];
-  $curl3 = curl_init();
-  curl_setopt_array($curl3, [
-    CURLOPT_URL => $IdeaSoft["domain"]."/admin-api/categories",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => "",
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 30,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => json_encode($data3),
-    CURLOPT_HTTPHEADER => [
-      "Accept: application/json",
-      "Authorization: Bearer $token",
-      "Content-Type: application/json"
-    ],
-  ]);
-  $response3 = curl_exec($curl3);
-  $err3 = curl_error($curl3);
-  curl_close($curl3);
+  $response3 = CategoryCreateCurl($domain, $token, $data3);
   $response3 = json_decode($response3,true);
   //print_r($response3);
   if($response3["id"] != ""){
