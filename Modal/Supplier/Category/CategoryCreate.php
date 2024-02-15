@@ -147,20 +147,20 @@ if($Model["IdeaSoftId"] != ""){
 
 
 
-$box1 = array('Aydınlatma', 'Far Grubu');
+$box1 = array('AYDINLATMA', 'FAR GRUBU');
 $box1_grup = 'Dış Aydınlatma Ürünleri';
-$box2 = array('Yağ ve Su Bidonları');
+$box2 = array('YAĞ VE SU BİDONLARI');
 $box2_grup = 'Motor ve Mekanik Parçaları';
-$box3 = array('Hava Filitre Kutusu');
+$box3 = array('HAVA FİLİTRE KUTUSU');
 $box3_grup = 'Periyodik Bakım Ürünleri';
-$box4 = array('Far Yıkama Robotu');
+$box4 = array('FAR YIKAMA ROBOTU');
 $box4_grup = 'Sensör,Valf ve Elektrik Ürünleri';
-$box5 = array('Davlumbaz', 'Radyatör', 'Tampon Demiri ve Travers', 'Torpido', 'Kaput Menteşeleri', 'Fan', 'Fan Davlumbazı', 'Karter ve Alt Muhafaza', 'Marşbiyel Bakaliti', 'Panel', 'Motor Üst Kapağı');
+$box5 = array('DAVLUMBAZ', 'RADYATÖR', 'TAMPON DEMİRİ VE TRAVERS', 'TORPİDO', 'KAPUT MENTEŞELERİ', 'FAN', 'FAN DAVLUMBAZI', 'KARTER VE ALT MUHAFAZA', 'MARŞBİYEL BAKALİTİ', 'PANEL', 'MOTOR ÜST KAPAĞI');
 $box5_grup = 'Karoser İç Parçalar';
-$box6 = array('Ayna', 'Bagaj Kapagı', 'Body Kit', 'Etek Sacı', 'Kapı Bantları', 'Kapı Kolu', 'Kapı ve Kapı Sacları', 'Motor Kaputları', 'Panjur', 'Spoyler', 'Tampon', 'Tampon ek Parçalar', 'Tuning', 'Çamurluk', 'Ön Cam Izgara');
+$box6 = array('AYNA', 'BAGAJ KAPAGI', 'BODY KİT', 'ETEK SAÇI', 'KAPI BANTLARI', 'KAPI KOLU', 'KAPI VE KAPI SAÇLARI', 'MOTOR KAPUTLARI', 'PANJUR', 'SPOYLER', 'TAMPON', 'TAMPON EK PARÇALAR', 'TUNİNG', 'ÇAMURLUK', 'ÖN CAM IZGARA');
 $box6_grup = 'Karoser Dış Parçalar';
 $tur_title = '';
-$tur_type = ilkHarfiBuyut($_POST["Tur"]);
+$tur_type = $_POST["Tur"];
 if(in_array($tur_type, $box1)){
   $tur_title = $box1_grup;
 }elseif(in_array($tur_type, $box2)){
