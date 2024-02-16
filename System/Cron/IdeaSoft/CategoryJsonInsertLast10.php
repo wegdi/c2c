@@ -27,7 +27,7 @@ require_once(SYSTEM.'General/General.php');
 
 $db = new General();
 
-$IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], ['_id' => -1], 'COK',1,10);
+$IdeaSoftCategory = $db->Query('IdeaSoftCategory', [], ['_id' => 1], 'COK',1,10);
 print_r($IdeaSoftCategory);
 // Tüm kategorileri depolamak için bir dizi oluşturun
 $categories = [];
