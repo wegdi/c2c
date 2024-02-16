@@ -34,6 +34,7 @@
 
       $data=[];
       $IdeaSoftCategory=json_decode($response,1);
+      print_r($IdeaSoftCategory);
       foreach ($IdeaSoftCategory as $key => $value) {
         $data["Name"] = $value["name"];
         $data["Slug"] = $value["slug"];
