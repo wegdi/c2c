@@ -54,7 +54,7 @@ foreach ($Supplier as $SupplierGet) {
         '<input type="checkbox" name="selected[]" value="'.$SupplierGet["_id"].'">',
         $SupplierGet["CategoryOne"],
         $SupplierGet["CategoryTwo"],
-        $SupplierGet["CategoryTree"].'.',
+        $SupplierGet["CategoryTree"],
       $bas
 
     );
