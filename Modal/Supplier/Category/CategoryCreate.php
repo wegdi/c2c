@@ -233,4 +233,9 @@ if($control){
 }
 
 
+$homepage = file_get_contents('https://c2c.wegdi.com/System/Cron/IdeaSoft/CategoryJsonInsertLast10.php');
+
+
+
+
 ?>
