@@ -25,7 +25,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
 
   ///İlk Kategoriyi Ekle
 
-  $CategoryS = $db->Query('Category',['Name' => $valuec], [], 'TEK');
+  $CategoryS = $db->Query('IdeaSoftCategory',['Name' => $valuec], [], 'TEK');
 
   if ($CategoryS["_id"]=="") {
 
