@@ -20,7 +20,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
 
   $CategoryS = $db->Query('Category',['Name' => $valuec], [], 'TEK');
 
-  if ($CategoryS["_id"]!="") {
+  if ($CategoryS["_id"]=="") {
     echo "string";
   }
 
