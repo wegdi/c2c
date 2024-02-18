@@ -32,7 +32,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
     $AltKategoriler = $db->Query('CategoryList',['CategoryOne' => $valuec], [], 'COK');
     foreach ($AltKategoriler as $keyAlt => $valueAlt) {
 
-
+      $deger=array('Marka' => $valuec,'Model' => $valueAlt["CategoryTwo"],'Tur' => $valueAlt["CategoryTree"]);
 
     $curl = curl_init();
 
@@ -45,7 +45,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
     		CURLOPT_FOLLOWLOCATION => true,
     		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     		CURLOPT_CUSTOMREQUEST => 'POST',
-    		CURLOPT_POSTFIELDS => array('Marka' => $valuec,'Model' => $valueAlt["CategoryTwo"],'Tur' => $valueAlt["CategoryTree"]),
+    		CURLOPT_POSTFIELDS => $deger,
     ));
 
     $response = curl_exec($curl);
