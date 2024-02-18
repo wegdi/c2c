@@ -17,6 +17,8 @@ foreach ($Category as $key => $value) {
 
 $CategoryOne=array_unique($CategoryOne);
 
+
+$NewAlt=[];
 foreach ($CategoryOne as $keyx => $valuec) {
 
   $CategoryS = $db->Query('Category',['Name' => $valuec], [], 'TEK');
@@ -24,7 +26,12 @@ foreach ($CategoryOne as $keyx => $valuec) {
   if ($CategoryS["_id"]=="") {
 
     $AltKategoriler = $db->Query('CategoryList',['CategoryOne' => $valuec], [], 'COK');
-    print_r($AltKategoriler);
+    foreach ($AltKategoriler as $keyAlt => $valueAlt) {
+      $NewAlt[]=$valueAlt["CategoryTwo"];
+    }
+    $NewAlt=array_unique($NewAlt);
+
+    print_r($NewAlt);
 
   }
 
