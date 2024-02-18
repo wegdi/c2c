@@ -41,7 +41,7 @@ if ($value["IdeaSoftId"] > 64914) {
     $IdeaSoftId=$response["data"]["IdeaSoftId"];
 
 
-    $SonDonus = $db->Query('CategoryList',['CategoryOne' => $valuecs,'CategoryTwo' => $valuecs["CategoryTwo"],'CategoryTree' => $valuecs["CategoryTree"] ], [], 'TEK');
+    $SonDonus = $db->Query('CategoryList',['CategoryOne' => $valuecs["CategoryOne"],'CategoryTwo' => $valuecs["CategoryTwo"],'CategoryTree' => $valuecs["CategoryTree"] ], [], 'TEK');
 
     if ($SonDonus["_id"]!="" and $IdeaSoftId!="") {
       $db->UpdateByObjectId("CategoryList", (string)$SonDonus["_id"], ['IdeaSoftId' => $IdeaSoftId]);
