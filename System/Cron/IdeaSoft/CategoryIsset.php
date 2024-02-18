@@ -7,7 +7,7 @@ $db = new General();
 
 $filtre = [];
 $filtre["ParentId"]=0;
-$Category = $db->Query('IdeaSoftCategory', $filtre, [], 'COK');
+$Category = $db->Query('IdeaSoftCategory', $filtre, ['sort' => ['_id' => 1]], 'COK');
 
 $CategoryOne=[];
 foreach ($Category as $key => $value) {
