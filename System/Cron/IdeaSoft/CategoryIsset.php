@@ -12,7 +12,7 @@ $Category = $db->Query('IdeaSoftCategory', $filtre, [], 'COK');
 $CategoryOne=[];
 foreach ($Category as $key => $value) {
 
-if ($value["IdeaSoftId"] > 64914) {
+if ($value["IdeaSoftId"] > 65070) {
 
   $CategoryList = $db->Query('CategoryList',['IdeaSoftId' => '','CategoryOne' => $value["Name"]], [], 'COK');
 
