@@ -32,6 +32,12 @@ foreach ($CategoryOne as $keyx => $valuec) {
     $AltKategoriler = $db->Query('CategoryList',['CategoryOne' => $valuec], [], 'COK');
     foreach ($AltKategoriler as $keyAlt => $valueAlt) {
 
+      echo '{
+      "Marka":"'.$value.'",
+      "Model": "'.$valueAlt["CategoryTwo"].'",
+      "Tur": "'.$valueAlt["CategoryTree"].'"
+      }';
+
       $curl = curl_init();
 
       curl_setopt_array($curl, array(
