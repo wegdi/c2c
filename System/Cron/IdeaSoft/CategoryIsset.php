@@ -9,7 +9,7 @@ $filtre = [];
 
 $filtre["IdeaSoftId"]="";
 $filtre["CategoryOne"] = ['$nin' => ['Honda']];
-$Category = $db->Query('CategoryList', $filtre, [], 'COK',1,1);
+$Category = $db->Query('CategoryList', $filtre, [], 'COK');
 
 $CategoryOne=[];
 foreach ($Category as $key => $value) {
