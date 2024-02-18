@@ -7,10 +7,39 @@ $db = new General();
 
 $filtre = [];
 $filtre["ParentId"]=0;
-$filtre["Name"]="FİAT";
+$markalar = [
+    "OPEL",
+    "CHEVROLET",
+    "BMW",
+    "MERCEDES-BENZ",
+    "VOLKSWAGEN",
+    "AUDİ",
+    "SEAT",
+    "SKODA",
+    "RENAULT",
+    "PEUGEOT",
+    "CİTROEN",
+    "FORD",
+    "FORDTİCARİ",
+    "VW TİCARİ",
+    "YAĞ",
+    "LAND",
+    "RENAULT TİCARİ",
+    "DS",
+    "MİNİ",
+    "PORSCHE",
+    "NISSAN",
+    "CUPRA",
+    "VOLVO",
+    "TOYOTA",
+    "AKSESUAR",
+    "DACIA",
+    "TESLA",
+];
+$query = ['Name' => ['$nin' => $markalar],'ParentId' => 0];
 
-$Category = $db->Query('IdeaSoftCategory', $filtre, [], 'COK');
-
+$Category = $db->Query('IdeaSoftCategory', $query, [], 'COK');
+print_r($Category);
 
 
 $CategoryOne=[];
@@ -21,7 +50,6 @@ foreach ($Category as $key => $value) {
 
   foreach ($CategoryList as $keycs => $valuecs) {
 
-    print_r($valuecs);
     $deger=array('Marka' =>  $valuecs["CategoryOne"],'Model' => $valuecs["CategoryTwo"],'Tur' => $valuecs["CategoryTree"]);
     $curl = curl_init();
 
