@@ -21,6 +21,8 @@ $CategoryOne=array_unique($CategoryOne);
 $NewAlt=[];
 foreach ($CategoryOne as $keyx => $valuec) {
 
+  ///İlk Kategoriyi Ekle
+
   $CategoryS = $db->Query('Category',['Name' => $valuec], [], 'TEK');
 
   if ($CategoryS["_id"]=="") {
@@ -31,7 +33,11 @@ foreach ($CategoryOne as $keyx => $valuec) {
     }
     $NewAlt=array_unique($NewAlt);
 
-    print_r($NewAlt);
+    foreach ($NewAlt as $keyAl => $valueAl) {
+      print_r($valueAl);
+    }
+
+
 
   }
 
