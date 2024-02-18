@@ -52,7 +52,15 @@ foreach ($CategoryOne as $keyx => $valuec) {
 
     curl_close($curl);
     $response =json_decode($response,1);
-    print_r($response);
+    $IdeaSoftId=$response["data"]["IdeaSoftId"];
+
+    $SonDonus = $db->Query('CategoryList',['CategoryOne' => $valuec,'CategoryTwo' => $valueAlt["CategoryTwo"],'CategoryTree' => $valueAlt["CategoryTree"] ], [], 'TEK');
+
+    if ($SonDonus["_id"]!="") {
+      $db->UpdateByObjectId("CategoryList", (string)$SonDonus["_id"], ['IdeaSoftId' => $IdeaSoftId]);
+
+    }
+
 
 
     }
