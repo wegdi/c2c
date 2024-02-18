@@ -7,7 +7,7 @@ $db = new General();
 
 $filtre = [];
 
-$Category = $db->Query('CategoryList', $filtre, [], 'COK');
+$Category = $db->Query('CategoryList', $filtre, [], 'COK',1,2);
 
 $CategoryOne=[];
 foreach ($Category as $key => $value) {
