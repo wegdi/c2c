@@ -33,7 +33,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
     foreach ($AltKategoriler as $keyAlt => $valueAlt) {
 
       $deger=array('Marka' => $valuec,'Model' => $valueAlt["CategoryTwo"],'Tur' => $valueAlt["CategoryTree"]);
-
+      print_r($deger);
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
