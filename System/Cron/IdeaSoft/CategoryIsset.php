@@ -24,7 +24,8 @@ foreach ($CategoryOne as $keyx => $valuec) {
   $CategoryS = $db->Query('Category',['Name' => $valuec], [], 'TEK');
 
   if ($CategoryS["_id"]=="") {
-
+    echo $valuec;
+    echo "<br>";
     $AltKategoriler = $db->Query('CategoryList',['CategoryOne' => $valuec], [], 'COK');
     foreach ($AltKategoriler as $keyAlt => $valueAlt) {
       $NewAlt[]=$valueAlt["CategoryTwo"];
