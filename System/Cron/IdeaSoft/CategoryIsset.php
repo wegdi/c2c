@@ -31,7 +31,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
 
     $AltKategoriler = $db->Query('CategoryList',['CategoryOne' => $valuec], [], 'COK');
     foreach ($AltKategoriler as $keyAlt => $valueAlt) {
-      echo $valueAlt;
+      print_r($valueAlt);
       /*
 
       $curl = curl_init();
