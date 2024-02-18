@@ -9,6 +9,9 @@ $filtre = [];
 
 $Category = $db->Query('CategoryList', $filtre, [], 'COK');
 
+$CategoryOne=[];
 foreach ($Category as $key => $value) {
-    print_r($value);
+    $CategoryOne[]=$value["CategoryOne"];
 }
+
+print_r($CategoryOne);
