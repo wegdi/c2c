@@ -18,7 +18,7 @@ if ($value["IdeaSoftId"] > 64914) {
 
   foreach ($CategoryList as $keycs => $valuecs) {
 
-
+    print_r($valuecs);
     $deger=array('Marka' =>  $valuecs["CategoryOne"],'Model' => $valuecs["CategoryTwo"],'Tur' => $valuecs["CategoryTree"]);
     $curl = curl_init();
 
