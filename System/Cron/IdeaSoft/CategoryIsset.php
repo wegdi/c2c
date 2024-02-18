@@ -15,4 +15,8 @@ foreach ($Category as $key => $value) {
 }
 
 $CategoryOne=array_unique($CategoryOne);
-print_r($CategoryOne);
+
+foreach ($CategoryOne as $keyx => $valuec) {
+  print_r($valuec);
+
+}
