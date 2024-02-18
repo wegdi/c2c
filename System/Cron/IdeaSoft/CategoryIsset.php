@@ -17,6 +17,12 @@ foreach ($Category as $key => $value) {
 $CategoryOne=array_unique($CategoryOne);
 
 foreach ($CategoryOne as $keyx => $valuec) {
-  print_r($valuec);
+
+  $CategoryS = $db->Query('Category',['Name' => $valuec], [], 'TEK');
+
+  if ($CategoryS["_id"]!="") {
+    echo "string";
+  }
+
 
 }
