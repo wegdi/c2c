@@ -51,8 +51,8 @@ foreach ($CategoryOne as $keyx => $valuec) {
     $response = curl_exec($curl);
 
     curl_close($curl);
-    echo $response;
-
+    $response =json_decode($response,1);
+    print_r($response);
 
 
     }
