@@ -8,7 +8,7 @@ $db = new General();
 $filtre = [];
 
 $filtre["IdeaSoftId"]="";
-
+$filtre["CategoryOne"] = ['$nin' => ['Honda']];
 $Category = $db->Query('CategoryList', $filtre, [], 'COK',1,1);
 
 $CategoryOne=[];
