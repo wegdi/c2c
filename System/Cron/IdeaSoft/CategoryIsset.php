@@ -32,37 +32,27 @@ foreach ($CategoryOne as $keyx => $valuec) {
     $AltKategoriler = $db->Query('CategoryList',['CategoryOne' => $valuec], [], 'COK');
     foreach ($AltKategoriler as $keyAlt => $valueAlt) {
 
-      echo '{
-      "Marka":"'.$valuec.'",
-      "Model": "'.$valueAlt["CategoryTwo"].'",
-      "Tur": "'.$valueAlt["CategoryTree"].'"
-      }';
 
-      $curl = curl_init();
 
-      curl_setopt_array($curl, array(
-      		CURLOPT_URL => 'https://c2c.wegdi.com/Modal/Supplier/Category/CategoryCreate.php',
-      		CURLOPT_RETURNTRANSFER => true,
-      		CURLOPT_ENCODING => '',
-      		CURLOPT_MAXREDIRS => 10,
-      		CURLOPT_TIMEOUT => 0,
-      		CURLOPT_FOLLOWLOCATION => true,
-      		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-      		CURLOPT_CUSTOMREQUEST => 'POST',
-      		CURLOPT_POSTFIELDS =>'{
-          "Marka":"'.$valuec.'",
-          "Model": "'.$valueAlt["CategoryTwo"].'",
-          "Tur": "'.$valueAlt["CategoryTree"].'"
-          }',
-      		CURLOPT_HTTPHEADER => array(
-      				'Content-Type: application/json'
-      		),
-      ));
+    $curl = curl_init();
 
-      $response = curl_exec($curl);
+    curl_setopt_array($curl, array(
+    		CURLOPT_URL => 'https://c2c.wegdi.com/Modal/Supplier/Category/CategoryCreate.php',
+    		CURLOPT_RETURNTRANSFER => true,
+    		CURLOPT_ENCODING => '',
+    		CURLOPT_MAXREDIRS => 10,
+    		CURLOPT_TIMEOUT => 0,
+    		CURLOPT_FOLLOWLOCATION => true,
+    		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    		CURLOPT_CUSTOMREQUEST => 'POST',
+    		CURLOPT_POSTFIELDS => array('Marka' => $valuec,'Model' => $valueAlt["CategoryTwo"],'Tur' => $valueAlt["CategoryTree"]),
+    ));
 
-      curl_close($curl);
-      echo $response;
+    $response = curl_exec($curl);
+
+    curl_close($curl);
+    echo $response;
+
 
 
     }
