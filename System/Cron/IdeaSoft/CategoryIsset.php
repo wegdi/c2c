@@ -11,6 +11,8 @@ $filtre["Name"]="FİAT";
 
 $Category = $db->Query('IdeaSoftCategory', $filtre, [], 'COK');
 
+print_r($Category);
+/*
 $CategoryOne=[];
 foreach ($Category as $key => $value) {
 
@@ -53,3 +55,4 @@ foreach ($Category as $key => $value) {
   }
 
 }
+*/
