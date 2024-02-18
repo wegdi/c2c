@@ -56,6 +56,8 @@ function CategoryCreateCurl($domain, $token, $data) {
   }
 }
 
+
+echo $_POST["Marka"];
 $control = false;
 
 $Category1 = $db->Query('IdeaSoftCategory',['Name' => (string)$_POST["Marka"]], [], 'TEK');
