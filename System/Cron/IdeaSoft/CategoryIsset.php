@@ -56,7 +56,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
 
     $SonDonus = $db->Query('CategoryList',['CategoryOne' => $valuec,'CategoryTwo' => $valueAlt["CategoryTwo"],'CategoryTree' => $valueAlt["CategoryTree"] ], [], 'TEK');
 
-    if ($SonDonus["_id"]!="") {
+    if ($SonDonus["_id"]!="" and $IdeaSoftId!="") {
       $db->UpdateByObjectId("CategoryList", (string)$SonDonus["_id"], ['IdeaSoftId' => $IdeaSoftId]);
 
     }
