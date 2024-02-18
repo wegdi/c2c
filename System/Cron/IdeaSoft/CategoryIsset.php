@@ -14,4 +14,5 @@ foreach ($Category as $key => $value) {
     $CategoryOne[]=$value["CategoryOne"];
 }
 
+$CategoryOne=array_unique($CategoryOne);
 print_r($CategoryOne);
