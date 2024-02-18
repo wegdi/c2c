@@ -7,7 +7,7 @@ $db = new General();
 
 $filtre = [];
 
-$Category = $db->Query('CategoryList', $filtre, [], 'COK');
+$Category = $db->Query('CategoryList', $filtre, [], 'COK',1,1);
 
 $CategoryOne=[];
 foreach ($Category as $key => $value) {
@@ -24,8 +24,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
   $CategoryS = $db->Query('Category',['Name' => $valuec], [], 'TEK');
 
   if ($CategoryS["_id"]=="") {
-    echo $valuec;
-    echo "<br>";
+
     $AltKategoriler = $db->Query('CategoryList',['CategoryOne' => $valuec], [], 'COK');
     foreach ($AltKategoriler as $keyAlt => $valueAlt) {
       $NewAlt[]=$valueAlt["CategoryTwo"];
