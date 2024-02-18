@@ -231,6 +231,7 @@ if($control){
   echo json_encode([
     'success' => false,
     'message' =>  'Bu Kategori Daha Önce Eklendi.'
+    'data' => ['ParentId' =>$ideasoftidd3 ]
   ]);
 }
 
