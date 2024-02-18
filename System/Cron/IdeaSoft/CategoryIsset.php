@@ -33,7 +33,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
     foreach ($AltKategoriler as $keyAlt => $valueAlt) {
 
       echo '{
-      "Marka":"'.$value.'",
+      "Marka":"'.$valuec.'",
       "Model": "'.$valueAlt["CategoryTwo"].'",
       "Tur": "'.$valueAlt["CategoryTree"].'"
       }';
