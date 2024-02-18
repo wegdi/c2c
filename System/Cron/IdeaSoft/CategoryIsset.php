@@ -19,6 +19,7 @@ foreach ($Category as $key => $value) {
 
 $CategoryOne=array_unique($CategoryOne);
 
+print_r($CategoryOne);
 
 $NewAlt=[];
 $NewAltSon=[];
