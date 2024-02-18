@@ -12,5 +12,8 @@ $Category = $db->Query('IdeaSoftCategory', $filtre, [], 'COK');
 $CategoryOne=[];
 foreach ($Category as $key => $value) {
 
-print_r($value);
+if ($value["IdeaSoftId"] > 64914) {
+  print_r($value);
+
+}
 }
