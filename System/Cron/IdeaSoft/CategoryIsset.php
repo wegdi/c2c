@@ -36,7 +36,7 @@ foreach ($CategoryOne as $keyx => $valuec) {
 
       $deger=array('Marka' => $valuec,'Model' => $valueAlt["CategoryTwo"],'Tur' => $valueAlt["CategoryTree"]);
       print_r($deger);
-    $curl = curl_init();
+      $curl = curl_init();
 
     curl_setopt_array($curl, array(
     		CURLOPT_URL => 'https://c2c.wegdi.com/Modal/Supplier/Category/CategoryCreate.php',
