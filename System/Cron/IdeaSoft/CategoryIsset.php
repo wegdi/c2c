@@ -7,12 +7,13 @@ $db = new General();
 
 $filtre = [];
 $filtre["ParentId"]=0;
+$filtre["Name"]="FİAT";
+
 $Category = $db->Query('IdeaSoftCategory', $filtre, [], 'COK');
 
 $CategoryOne=[];
 foreach ($Category as $key => $value) {
 
-if ($value["Name"]=="FİAT") {
 
   $CategoryList = $db->Query('CategoryList',['IdeaSoftId' => '','CategoryOne' => $value["Name"]], [], 'COK');
 
@@ -50,5 +51,5 @@ if ($value["Name"]=="FİAT") {
     }
 
   }
-}
+
 }
