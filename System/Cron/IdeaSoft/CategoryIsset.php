@@ -19,6 +19,8 @@ $CategoryOne=array_unique($CategoryOne);
 
 
 $NewAlt=[];
+$NewAltSon=[];
+
 foreach ($CategoryOne as $keyx => $valuec) {
 
   ///İlk Kategoriyi Ekle
@@ -30,15 +32,11 @@ foreach ($CategoryOne as $keyx => $valuec) {
     $AltKategoriler = $db->Query('CategoryList',['CategoryOne' => $valuec], [], 'COK');
     foreach ($AltKategoriler as $keyAlt => $valueAlt) {
       $NewAlt[]=$valueAlt["CategoryTwo"];
+      $NewAlt[]=$valueAlt["CategoryTree"];
+
     }
-    $NewAlt=array_unique($NewAlt);
 
-    foreach ($NewAlt as $keyAl => $valueAl) {
-
-      $AltKategorilerSon = $db->Query('CategoryList',['CategoryTwo' => $valueAl], [], 'COK');
-
-      print_R($AltKategorilerSon);
-    }
+  print_R($NewAlt);
 
 
 
