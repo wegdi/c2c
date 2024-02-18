@@ -15,6 +15,39 @@ foreach ($Category as $key => $value) {
 if ($value["IdeaSoftId"] > 64914) {
 
   $CategoryList = $db->Query('CategoryList',['IdeaSoftId' => '','CategoryOne' => $value["Name"]], [], 'COK');
-  print_r($CategoryList);
+
+  foreach ($CategoryList as $keycs => $valuecs) {
+
+
+    $deger=array('Marka' =>  $valuecs["CategoryOne"],'Model' => $valuecs["CategoryTwo"],'Tur' => $valuecs["CategoryTree"]);
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+    		CURLOPT_URL => 'https://c2c.wegdi.com/Modal/Supplier/Category/CategoryCreate.php',
+    		CURLOPT_RETURNTRANSFER => true,
+    		CURLOPT_ENCODING => '',
+    		CURLOPT_MAXREDIRS => 10,
+    		CURLOPT_TIMEOUT => 0,
+    		CURLOPT_FOLLOWLOCATION => true,
+    		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    		CURLOPT_CUSTOMREQUEST => 'POST',
+    		CURLOPT_POSTFIELDS => $deger,
+    ));
+
+    $response = curl_exec($curl);
+
+    curl_close($curl);
+    $response=json_decode($response,1);
+    $IdeaSoftId=$response["data"]["IdeaSoftId"];
+
+
+    $SonDonus = $db->Query('CategoryList',['CategoryOne' => $valuecs,'CategoryTwo' => $valuecs["CategoryTwo"],'CategoryTree' => $valuecs["CategoryTree"] ], [], 'TEK');
+
+    if ($SonDonus["_id"]!="" and $IdeaSoftId!="") {
+      $db->UpdateByObjectId("CategoryList", (string)$SonDonus["_id"], ['IdeaSoftId' => $IdeaSoftId]);
+
+    }
+
+  }
 }
 }
