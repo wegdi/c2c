@@ -34,7 +34,10 @@ foreach ($CategoryOne as $keyx => $valuec) {
     $NewAlt=array_unique($NewAlt);
 
     foreach ($NewAlt as $keyAl => $valueAl) {
-      print_r($valueAl);
+
+      $AltKategorilerSon = $db->Query('CategoryList',['CategoryTwo' => $valueAl], [], 'COK');
+
+      print_R($AltKategorilerSon);
     }
 
 
