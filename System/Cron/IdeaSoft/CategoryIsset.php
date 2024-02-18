@@ -13,7 +13,8 @@ $CategoryOne=[];
 foreach ($Category as $key => $value) {
 
 if ($value["IdeaSoftId"] > 64914) {
-  print_r($value);
 
+  $CategoryList = $db->Query('CategoryList',['IdeaSoftId' => '','CategoryOne' => $value["Name"]], [], 'COK');
+  print_r($CategoryList);
 }
 }
